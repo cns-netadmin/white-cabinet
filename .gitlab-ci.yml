@@ -8,9 +8,9 @@ test:
   script:
   - hugo
   - whoami
+  - hostname
   except:
   - master
-  - hostname
 
 pages:
   script:
