@@ -5,15 +5,27 @@ image: hugo:latest
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
+stages:
+  - test
+  - draft
+  - deploy
+  
 test:
   script:
   - hugo
-  - whoami
-  - hostname
   except:
   - master
+  - develop
 
-pages:
+draft:
+  script:
+    - hugo
+    - "rsync -au img/ public/img/"
+    - "rsync -au public/ /home/httpd/html/hugo_test/"
+  only:
+    - develop
+    
+deploy:
   script:
   - hugo
   artifacts:
