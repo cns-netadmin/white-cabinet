@@ -1,16 +1,31 @@
 # All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
-image: registry.gitlab.com/pages/hugo:latest
+#image: registry.gitlab.com/pages/hugo:latest
+image: hugo:latest
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
+stages:
+  - test
+  - draft
+  - deploy
+  
 test:
   script:
   - hugo
   except:
   - master
+  - develop
 
-pages:
+draft:
+  script:
+    - hugo
+    - "rsync -au img/ public/img/"
+    - "rsync -au public/ /home/httpd/html/hugo_test/"
+  only:
+    - develop
+    
+deploy:
   script:
   - hugo
   artifacts:
