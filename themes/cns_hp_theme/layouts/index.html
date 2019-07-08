@@ -57,6 +57,23 @@
       </div>
       <div class="sidebar__item sidebar__item--fixed">
         This is the sidebar__item--fixed
+
+{{/*        <h3>セクションを持たない記事ページ一覧（タイトル順）</h3>
+        <ol>
+          {{ range (where $.Site.RegularPages "Section" "").ByTitle }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <a href="www.google.com">GOOGLE</a>
+          {{ end }}
+        </ol>
+*/}}
+        <h3>とりあえずサイト内全ページの配列</h3>
+        <ol>
+          {{ range .Pages }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <a href="www.google.com">Google</a>
+          {{ end }}
+        </ol>
+
       </div>
     </div>
 
@@ -64,3 +81,9 @@
 
 
 {{ partial "footer.html" . }}
+
+{{/*
+       <a href="{{ with .Site.GetPage "/post/test5.md" }}{{ .Title }}{{ end }}">Here is a sample page that I made.</a>
+       {{ with .Site.GetPage "/post/test5.md" }}{{ .Title }}{{ end }}
+       {{< ref "/post/test5.md" >}}
+*/}}

@@ -1,3 +1,13 @@
 {{ define "main" }}
-    This is the single template
+  This is the single template
+
+  <section id="main">
+    <h1 id="title">{{ .Title }}</h1>
+    <div>
+        <article id="content">
+           {{ .Content }}
+        </article>
+    </div>
+  </section>
+
 {{end}}
