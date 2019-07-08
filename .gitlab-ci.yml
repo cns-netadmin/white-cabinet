@@ -9,8 +9,9 @@ before_script:
   - eval `ssh-agent`
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
 
-stages:
+#stages:
 #  - test
+stages:
   - draft
   - deploy
   
