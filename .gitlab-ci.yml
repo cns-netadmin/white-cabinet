@@ -10,7 +10,6 @@ before_script:
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
 
 stages:
-#  - test
   - draft
   - deploy
   
