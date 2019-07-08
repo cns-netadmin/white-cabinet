@@ -19,7 +19,7 @@ test:
   - hugo
   except:
   - master
-  - develop
+#  - develop
 
 draft:
   script:
