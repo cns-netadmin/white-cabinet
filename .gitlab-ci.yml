@@ -14,12 +14,7 @@ stages:
   - draft
   - deploy
   
-#test:
-#  script:
-#    - hugo
-#  except:
-#    - master
-#    - develop
+
 
 draft:
   script:
