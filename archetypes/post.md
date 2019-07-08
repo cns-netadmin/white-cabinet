@@ -4,7 +4,7 @@ date = {{ .Date }}
 tags = ["Seminar","Conference"]
 image = ""
 draft = true
-feature = ["true","false"]
+mkbanner = ["true","false"]
 +++
 
 ** Insert Lead pargraph here **
