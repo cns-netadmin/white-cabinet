@@ -9,9 +9,8 @@ before_script:
   - eval `ssh-agent`
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
 
-#stages:
-#  - test
 stages:
+#  - test
   - draft
   - deploy
   
@@ -24,8 +23,8 @@ stages:
 
 draft:
   script:
-    - hugo
-    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public web-updater@www-intra:/home/httpd/html/test/
+  - hugo
+  - rsync -au -e "ssh -oStrictHostKeyChecking=no" public web-updater@www-intra:/home/httpd/html/test/
 #  only:
 #    - develop
     
