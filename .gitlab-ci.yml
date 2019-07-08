@@ -5,6 +5,10 @@ image: hugo:latest
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
+before_script:
+  - eval `ssh-agent`
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+
 stages:
   - test
   - draft
@@ -20,8 +24,7 @@ test:
 draft:
   script:
     - hugo
-    - "rsync -au img/ public/img/"
-    - "rsync -au public/ /home/httpd/html/hugo_test/"
+    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public web-updater@www-intra:/home/httpd/html/test/
   only:
     - develop
     
