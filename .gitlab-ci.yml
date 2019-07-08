@@ -13,8 +13,6 @@ stages:
   - draft
   - deploy
   
-
-
 draft:
   script:
     - hugo
