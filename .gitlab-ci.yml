@@ -17,7 +17,7 @@ stages:
 test:
   script:
     - hugo
-    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public web-updater@www-intra:/home/httpd/html/test        
+    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test        
   except:
     - master
     - develop
