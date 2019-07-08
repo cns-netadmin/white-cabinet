@@ -66,13 +66,30 @@
           {{ end }}
         </ol>
 */}}
-        <h3>とりあえずサイト内全ページの配列</h3>
-        <ol>
-          {{ range .Pages }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <a href="www.google.com">Google</a>
-          {{ end }}
-        </ol>
+{{/*          <h3>とりあえずサイト内全ページの配列</h3>
+          <ol>
+            {{ range .Pages }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              <a href="www.google.com">Google</a>
+            {{ end }}
+          </ol>
+ */}}
+
+        <h3>Featureされたサイト内ページだけの配列</h3>
+          <ol>
+            {{ range .Pages }}
+              {{ if (.Param "mkbanner") }}
+                <li><a href="{{ .RelPermalink }}">Page {{ .Title }} is bannered</a>
+{{/*                <a href="www.google.com">Google</a> */}}
+              {{ else }}
+                {{ if .Title }}
+                  <li> Page <a href="{{ .RelPermalink }}">{{ .Title }}</a> is not bannered
+                {{ else }}
+                  <li> Page is not titled
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          </ol>
 
       </div>
     </div>

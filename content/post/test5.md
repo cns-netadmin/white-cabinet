@@ -4,6 +4,7 @@ date = 2019-07-08T15:02:56+09:00
 tags = ["Seminar","Conference"]
 image = ""
 draft = false
+mkbanner = false
 +++
 
 ** Insert Lead pargraph here **
