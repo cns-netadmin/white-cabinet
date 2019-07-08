@@ -1,8 +1,11 @@
----
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-draft: true
----
++++
+title =  "{{ replace .Name "-" " " | title }}"
+date = {{ .Date }}
+tags = ["Seminar","Conference"]
+image = ""
+draft = true
+feature = ["true","false"]
++++
 
 ** Insert Lead pargraph here **
 
