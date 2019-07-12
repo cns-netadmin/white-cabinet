@@ -5,6 +5,7 @@ tags = ["Seminar","Conference"]
 image = ""
 draft = false
 mkbanner = true
+mktile = true
 +++
 
 ** Insert Lead pargraph here **
@@ -15,7 +16,7 @@ mkbanner = true
 [![tile image](https://www.cns.s.u-tokyo.ac.jp/image/group_logo/tiles/en_6a_Fundamental_Symmetry.png "Fundamental Symmetry Tile")](https://sites.google.com/cns.s.u-tokyo.ac.jp/fundamental-symmetry-group){.pull-left}
 -->
 
-![tile image](https://www.cns.s.u-tokyo.ac.jp/image/group_logo/tiles/en_6a_Fundamental_Symmetry.png "Fundamental Symmetry Tile"){{ .alignleft }}
+![tile image](https://www.cns.s.u-tokyo.ac.jp/image/group_logo/tiles/en_6a_Fundamental_Symmetry.png)(https://sites.google.com/cns.s.u-tokyo.ac.jp/fundamental-symmetry-group)
 
 
 ## Lab introduction
