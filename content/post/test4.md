@@ -1,7 +1,8 @@
 ---
 title: "Test4"
 date: 2019-07-08T14:05:54+09:00
-draft: true
+draft: false
+mkbanner: true
 ---
 
 ** Insert Lead pargraph here **
