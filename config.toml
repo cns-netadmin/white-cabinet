@@ -1,5 +1,5 @@
 #baseurl = "https://pages.gitlab.io/hugo/"
-baseurl = "https://www.cns.s.u-tokyo.ac.jp/test/" # FOR TESTING
+baseurl = "https://www.cns.s.u-tokyo.ac.jp/test/public/" # FOR TESTING
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
