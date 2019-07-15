@@ -17,7 +17,7 @@ stages:
 
 create:
   script:
-    - if '[ -n "$FILENAME" ]'; then
+    - 'if [ -n "$FILENAME" ]; then'
     - hugo new post/$FILENAME.md
     - git config --global user.email $GITLAB_USER_EMAIL
     - git config --global user.name $GITLAB_USER_NAME
