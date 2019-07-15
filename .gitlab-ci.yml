@@ -23,7 +23,7 @@ create:
     - git config --global user.name $GITLAB_USER_NAME
     - git add content/post/$FILENAME.md
     - 'git commit -m "new content file creation: post/$FILENAME.md"'
-    - git push gitlab@www.cns.s.u-tokyo.ac.jp:root/cns-hp.git HEAD:${CI_COMMIT_REF_NAME}
+    - git push gitlab@www-intra.cns.s.u-tokyo.ac.jp:root/cns-hp.git HEAD:${CI_COMMIT_REF_NAME}
     - fi
   only:
     - draft_article
