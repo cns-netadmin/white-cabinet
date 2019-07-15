@@ -6,8 +6,13 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 before_script:
-  - eval `ssh-agent`
-  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+  - eval $(ssh-agent -s)
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - echo "SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  - 'echo -e "Host *\n\tStrictHostKeyChecking no \n\n" > ~/.ssh/config'
+  # - eval `ssh-agent`
+  # - ssh-add <(echo "$SSH_PRIVATE_KEY")
 
 stages:
   - create
