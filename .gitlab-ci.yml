@@ -6,13 +6,13 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 before_script:
-  - eval $(ssh-agent -s)
-  - mkdir -p ~/.ssh
-  - chmod 700 ~/.ssh
-  - echo "SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
-  - 'echo -e "Host *\n\tStrictHostKeyChecking no \n\n" > ~/.ssh/config'
-  # - eval `ssh-agent`
-  # - ssh-add <(echo "$SSH_PRIVATE_KEY")
+  # - eval $(ssh-agent -s)
+  # - mkdir -p ~/.ssh
+  # - chmod 700 ~/.ssh
+  # - echo "SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  # - 'echo -e "Host *\n\tStrictHostKeyChecking no \n\n" > ~/.ssh/config'
+  - eval `ssh-agent`
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
 
 stages:
   - create
@@ -28,6 +28,7 @@ create:
     - git config --global user.name $GITLAB_USER_NAME
     - git add content/post/$FILENAME.md
     - 'git commit -m "new content file creation: post/$FILENAME.md"'
+    - ssh-keyscan www-intra.cns.s.u-tokyo.ac.jp >> ~/.ssh/known_hosts
     - git push gitlab@www-intra.cns.s.u-tokyo.ac.jp:root/cns-hp.git HEAD:${CI_COMMIT_REF_NAME}
     - fi
   only:
