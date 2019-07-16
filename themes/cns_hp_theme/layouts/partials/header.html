@@ -5,10 +5,10 @@
   <title> {{ .Title }} </title>
 </head>
 <body>
-<header>
+<header class="black-belt">
   <link rel="stylesheet" href="css/header.css">
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/header.js"></script>
+  <script src="{{ .Site.BaseURL }}js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
   <h2> {{ .Title }} </h2>
     <div class="menu-trigger">
       <span></span>

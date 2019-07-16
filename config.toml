@@ -19,7 +19,7 @@ pygmentCodeFences = true
 weight = 1
 title = "東京大学原子核科学研究センター"
 [Languages.en]
-weight = 1
+weight = 2
 title = "Center for Nuclear Study"
 
 
