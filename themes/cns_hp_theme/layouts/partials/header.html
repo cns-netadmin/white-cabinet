@@ -3,11 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title> {{ .Title }} </title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1> {{ .Title }} </h1>
+  <link rel="stylesheet" href="css/header.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/header.js"></script>
+  <h2> {{ .Title }} </h2>
+    <div class="menu-trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="humberger-menu">
+      <ul>
+        <li>CNSについて</li>
+        <li>研究内容</li>
+        <li>進学希望の方へ</li>
+        <li>教員（研究室）一覧</li>
+        <li>イベント</li>
+        <li>国際サマースクール</li>
+        <li>セミナー情報</li>
+        <li>公募情報</li>
+      </ul>
+    </nav>
+
 </header>
  
 <main>
