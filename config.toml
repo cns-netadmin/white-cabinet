@@ -3,10 +3,9 @@ baseurl = "https://www.cns.s.u-tokyo.ac.jp/test/public/" # FOR TESTING
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
-title = "Beautiful Hugo"
 canonifyurls  = true
 
-DefaultContentLanguage = "en"
+DefaultContentLanguage = "ja"
 #theme = "beautifulhugo"
 theme = "cns_hp_theme"
 metaDataFormat = "yaml"
@@ -14,6 +13,16 @@ pygmentsUseClasses = true
 pygmentCodeFences = true
 #disqusShortname = "XXX"
 #googleAnalytics = "XXX"
+
+[Languages]
+[Languages.ja]
+weight = 1
+title = "東京大学原子核科学研究センター"
+[Languages.en]
+weight = 1
+title = "Center for Nuclear Study"
+
+
 
 [Params]
   subtitle = "Hugo Blog Template for GitLab Pages"
