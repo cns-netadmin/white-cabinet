@@ -3,12 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title> {{ .Title }} </title>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
+
+
+<script type="text/javascript">
+  var top_figure_images = {{ .Site.Params.top_figures }};
+  var i = Math.floor(Math.random() * top_figure_images.length);
+  var output = "<img class='top_figure' src=" + {{ .Site.BaseURL }} + top_figure_images[i] + ">";
+  document.open();
+  document.write(output);
+  document.close();
+</script>
+
 <body>
 <header class="black-belt">
-  <link rel="stylesheet" href="css/header.css">
   <script src="{{ .Site.BaseURL }}js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
+  <script type="text/javascript" src="+{{ .Site.BaseURL }}+js/header.js"></script>
+
   <h2> {{ .Title }} </h2>
     <div class="menu-trigger">
       <span></span>
@@ -27,5 +40,5 @@
       </ul>
     </nav>
 </header>
- 
+
 <main>

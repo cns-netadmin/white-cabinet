@@ -31,7 +31,15 @@ title = "Center for Nuclear Study"
   dateFormat = "2006/01/02"
   commit = false
   rss = true
-  comments = false
+  comments = true
+
+
+  top_figures = [
+    "img/top_figures/Fundamental_Symmetry.jpg",
+    "img/top_figures/OEDOa.jpg ",
+    "img/top_figures/Quark.jpg",
+    "img/top_figures/hyperECR.jpg"
+  ]
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 #[[Params.bigimg]]
@@ -47,134 +55,133 @@ title = "Center for Nuclear Study"
 
 [[menu.main]]
     identifier = "about"
-    name = "CNS¤Ë¤Ä¤¤¤Æ"
+    name = "CNSã«ã¤ã„ã¦"
     url = "/about"
     weight = 1
 
 [[menu.main]]
     parent = "about"
-    name = "¥»¥ó¥¿¡¼Ä¹°§»¢"
+    name = "ã‚»ãƒ³ã‚¿ãƒ¼é•·æŒ¨æ‹¶"
     url = "/about/greeting"
     weight = 1
 
 [[menu.main]]
     parent = "about"
-    name = "±è³×¡¦ÁÈ¿¥¿Ş"
+    name = "æ²¿é©ãƒ»çµ„ç¹”å›³"
     url = "/about/history"
     weight = 2
     
 [[menu.main]]
     parent = "about"
-    name = "¥Ñ¥ó¥Õ¥ì¥Ã¥È"
+    name = "ãƒ‘ãƒ³ãƒ•ãƒ¬ãƒƒãƒˆ"
     url = "/about/pamphlet"
     weight = 3
     
 [[menu.main]]
-    name = "¹­Êó¡¦¼ÂÀÓ¡¦É¾²Á"
+    name = "åºƒå ±ãƒ»å®Ÿç¸¾ãƒ»è©•ä¾¡"
     url = "/about/announcement"
     parent = "about"
     weight = 4
     
 [[menu.main]]
     identifier = "for_students"
-    name = "¿Ê³Ø´õË¾¤ÎÊı¤Ø"
+    name = "é€²å­¦å¸Œæœ›ã®æ–¹ã¸"
     url = "/for_students"
     weight = 2
     
 [[menu.main]]
     parent = "for_students"
-    name = "Âç³Ø±¡¿Ê³Ø¥¬¥¤¥À¥ó¥¹"
+    name = "å¤§å­¦é™¢é€²å­¦ã‚¬ã‚¤ãƒ€ãƒ³ã‚¹"
     url = "/for_students/guidance"
     weight = 1
 
 [[menu.main]]
     parent = "for_students"
-    name = "»ÜÀß¸«³Ø²ñ"
+    name = "æ–½è¨­è¦‹å­¦ä¼š"
     url = "/for_students/facility_tour"
     weight = 2
 
 [[menu.main]]
     identifier = "lab"
-    name = "¿Ê³Ø´õË¾¤ÎÊı¤Ø"
+    name = "é€²å­¦å¸Œæœ›ã®æ–¹ã¸"
     url = "/research"
     weight = 3
 
 [[menu.main]]
     parent = "lab"
-    name = "±§Ãè³ËÊªÍı"
+    name = "å®‡å®™æ ¸ç‰©ç†"
     url = "/research/cosmos"
     weight = 1
 
 [[menu.main]]
     parent = "lab"
-    name = "³Ë¥À¥¤¥Ê¥ß¥¯¥¹"
+    name = "æ ¸ãƒ€ã‚¤ãƒŠãƒŸã‚¯ã‚¹"
     url = "/research/donuts"
     weight = 2
 
 [[menu.main]]
     parent = "lab"
-    name = "¥¯¥©¡¼¥¯ÊªÍı"
+    name = "ã‚¯ã‚©ãƒ¼ã‚¯ç‰©ç†"
     url = "/research/quark"
     weight = 3
 
 [[menu.main]]
     parent = "lab"
-    name = "¥¨¥­¥¾¥Á¥Ã¥¯³ËÈ¿±ş"
+    name = "ã‚¨ã‚­ã‚¾ãƒãƒƒã‚¯æ ¸åå¿œ"
     url = "/research/enr"
     weight = 4
 
 [[menu.main]]
     parent = "lab"
-    name = "¶Ë¸Â¸¶»Ò³Ë¹½Â¤"
+    name = "æ¥µé™åŸå­æ ¸æ§‹é€ "
     url = "/research/nuspeq"
     weight = 5
 
 [[menu.main]]
     parent = "lab"
-    name = "´ğËÜÂĞ¾ÎÀ­"
+    name = "åŸºæœ¬å¯¾ç§°æ€§"
     url = "/research/edm"
     weight = 6
 
 [[menu.main]]
     parent = "lab"
-    name = "²ÃÂ®´ï³«È¯"
+    name = "åŠ é€Ÿå™¨é–‹ç™º"
     url = "/research/accelerator"
     weight = 7
 
 [[menu.main]]
     parent = "lab"
-    name = "OEDO-SHARAQ¥×¥í¥¸¥§¥¯¥È"
+    name = "OEDO-SHARAQãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆ"
     url = "/research/sharaq"
     weight = 8
 
 [[menu.main]]
     parent = "lab"
-    name = "¸¶»Ò³ËÍıÏÀ"
+    name = "åŸå­æ ¸ç†è«–"
     url = "/research/theory"
     weight = 9
 
 [[menu.main]]
-    name = "¶µ°÷¾Ò²ğ"
+    name = "æ•™å“¡ç´¹ä»‹"
     url = "/staffs"
     weight = 4
 
 [[menu.main]]
-    name = "¥¤¥Ù¥ó¥È¾ğÊó"
+    name = "ã‚¤ãƒ™ãƒ³ãƒˆæƒ…å ±"
     url = "/events"
     weight = 5
 
 [[menu.main]]
-    name = "¹ñºİ¥µ¥Ş¡¼¥¹¥¯¡¼¥ë"
+    name = "å›½éš›ã‚µãƒãƒ¼ã‚¹ã‚¯ãƒ¼ãƒ«"
     url = "/cnsss"
     weight = 6
 
 [[menu.main]]
-    name = "¥»¥ß¥Ê¡¼³«ºÅ°ÆÆâ"
+    name = "ã‚»ãƒŸãƒŠãƒ¼é–‹å‚¬æ¡ˆå†…"
     url = "/seminers"
     weight = 7
 
 [[menu.main]]
-    name = "¥¢¥¯¥»¥¹"
+    name = "ã‚¢ã‚¯ã‚»ã‚¹"
     url = "/access"
     weight = 8
-
