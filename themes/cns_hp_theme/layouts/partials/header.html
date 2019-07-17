@@ -20,7 +20,7 @@
 <body>
 <header class="black-belt">
   <script src="{{ .Site.BaseURL }}js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="+{{ .Site.BaseURL }}+js/header.js"></script>
+  <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
 
   <h2> {{ .Title }} </h2>
     <div class="menu-trigger">
@@ -30,10 +30,9 @@
     </div>
     <nav class="humberger-menu">
       <ul>
-        {{ range .Site.Menus.Main }}
+        {{ range .Site.Menus.main.ByWeight }}
         <li>
-          <a href="{{ .URL }}" title="{{ .Name }}">
-          </a>
+          <a href="{{ .URL }}"> {{ .Name }} </a>
         </li>
         {{ end }}
       </ul>
