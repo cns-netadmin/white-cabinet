@@ -27,8 +27,13 @@
 
 <body>
 <header class="black-belt">
-  <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
-  <h2> {{ .Title }} </h2>
+    <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
+    <div class="cns_logo">
+      <img src="{{ .Site.Params.logo }}" width="60px" />
+    </div>
+    <div class="title">
+      <h2> {{ .Title }} </h2>
+    </div>
     <div class="menu-trigger">
       <span></span>
       <span></span>
@@ -41,6 +46,14 @@
           <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
         </li>
         {{ end }}
+      </ul>
+    </nav>
+    <nav class="header-menu">
+      <ul>
+        <li>交通アクセス</li>
+        <li>採用情報</li>
+        <li>内部向け</li>
+        <li>English</li>
       </ul>
     </nav>
 </header>
