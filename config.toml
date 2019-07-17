@@ -19,7 +19,7 @@ pygmentCodeFences = true
 weight = 1
 title = "東京大学原子核科学研究センター"
 [Languages.en]
-weight = 1
+weight = 2
 title = "Center for Nuclear Study"
 
 
@@ -32,6 +32,14 @@ title = "Center for Nuclear Study"
   commit = false
   rss = true
   comments = true
+
+
+  top_figures = [
+    "img/top_figures/Fundamental_Symmetry.jpg",
+    "img/top_figures/OEDOa.jpg ",
+    "img/top_figures/Quark.jpg",
+    "img/top_figures/hyperECR.jpg"
+  ]
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 #[[Params.bigimg]]
