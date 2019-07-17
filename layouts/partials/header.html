@@ -17,17 +17,14 @@
     </div>
     <nav class="humberger-menu">
       <ul>
-        <li>CNSについて</li>
-        <li>研究内容</li>
-        <li>進学希望の方へ</li>
-        <li>教員（研究室）一覧</li>
-        <li>イベント</li>
-        <li>国際サマースクール</li>
-        <li>セミナー情報</li>
-        <li>公募情報</li>
+        {{ range .Site.Menus.Main }}
+        <li>
+          <a href="{{ .URL }}" title="{{ .Name }}">
+          </a>
+        </li>
+        {{ end }}
       </ul>
     </nav>
-
 </header>
  
 <main>
