@@ -85,7 +85,25 @@
 }
 .humberger-menu ul li {
   padding: 5px 0;
+  font-family: Comic Sans MS;
 }
+.humberger-menu ul li a:link {
+  color: #fff;
+  padding: 5px 0;
+}
+.humberger-menu ul li a:visited {
+  color: #efd;
+  padding: 5px 0;
+}
+.humberger-menu ul li a:hover {
+  color: #efe;
+  padding: 5px 0;
+}
+.humberger-menu ul li a:active {
+  color: #efe;
+  padding: 5px 0;
+}
+
 .is-fixed {
   position: fixed;
   top: 0;
