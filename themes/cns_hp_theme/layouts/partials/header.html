@@ -17,10 +17,11 @@
     </div>
     <nav class="humberger-menu">
       <ul>
-        {{ range .Site.Menus.Main }}
+        {{ range .Site.Menus.main }}
         <li>
           <a href="{{ .URL }}" title="{{ .Name }}">
-          </a>
+		{{ .Name }}
+	  </a>
         </li>
         {{ end }}
       </ul>
