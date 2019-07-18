@@ -1,6 +1,6 @@
 $(function(){
   var $win = $(window),
-      $main = $('.container'),
+      $main = $('main'),
       $belt = $('.black-belt'),
       beltHeight = $belt.outerHeight(),
       beltPos = $belt.offset().top,
@@ -13,6 +13,12 @@ $(function(){
     } else {
       $(this).addClass('active');
       $('.humberger-menu').slideDown();
+    }
+  });
+  $main.on('click',function(){
+    if($('.menu-trigger').hasClass('active')){
+      $('.menu-trigger').removeClass('active');
+      $('.humberger-menu').slideUp();
     }
   });
 
