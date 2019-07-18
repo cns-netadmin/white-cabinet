@@ -43,7 +43,12 @@
 .syncer-acdn-parent li p a:hover:after
 {
 	color: #333 ;
-	background: rgba( 0,0,255 , 0.1 ) ;
+/*	background: rgba( 0,0,255 , 0.1 ) ; */
+}
+
+.syncer-check input
+{
+	display: none ;
 }
 
 .syncer-acdn-parent li p a:after
@@ -51,14 +56,15 @@
 	position: absolute ;
 	top: 50% ;
 	right: 12px ;
-	content: "開閉" ;
+/*	content: "開閉" ; */
+	content: "▽" ;
+	transition: 500ms ;
 	font-size: .85em ;
 	margin-top: -12.5px ;
 	height: 17px ;
 	line-height: 17px ;
 	padding: 4px 8px ;
 }
-
 
 /* 親の[a]と子の[li] */
 .syncer-acdn-parent li p a ,
@@ -89,6 +95,7 @@
 /* 子の[a] */
 .syncer-acdn-child li a:before
 {
-	content: "∟" ;
+/*	content: "∟" ; */
+	content: "・" ;
 	padding-right: 5px ;
 }
