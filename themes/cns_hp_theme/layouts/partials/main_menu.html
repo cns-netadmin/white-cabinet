@@ -1,0 +1,90 @@
+<head>
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main_menu.css">
+    <script type="text/javascript" src="{{ .Site.BaseURL }}js/main_menu.js"></script>
+</head>
+
+<body>
+
+  <h2>アコーディオン</h2>
+  <p>ある程度のデザインを加えたアコーディオンです。そこに、メニューの内容も加えてみました。</p>
+
+
+  <h3>まずはメニューを単純に列挙</h3>
+  {{ if .Site.Menus.main }}
+    <nav>
+      <ul>
+        {{ range .Site.Menus.main.ByWeight }}
+          {{ if .HasChildren }}
+            <li>
+              <span>{{ .Name }}</span>
+              <ul>
+                {{ range .Children }}
+                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+                {{ end }}
+              </ul>
+            </li>
+          {{ else }}
+            <li>
+              <a href="{{ .URL }}">{{- .Name -}}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+  {{ end }}
+
+
+  <h3>次に、具体的に実装してみたメニュー</h3>
+  {{ if .Site.Menus.main }}
+    <nav>
+      <ul class="syncer-acdn-parent">
+        {{ range .Site.Menus.main.ByWeight }}
+          {{ if .HasChildren }}
+            <li><p><a class="syncer-acdn" data-target="syncer-acdn-{{ .Name }}">{{ .Name }}</a></p>
+              <ul id="syncer-acdn-{{ .Name }}" class="syncer-acdn-child">
+                {{ range .Children }}
+                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
+                {{ end }}
+              </ul>
+            </li>
+          {{ else }}
+            <li><p><a href="{{ .URL }}">{{- .Name -}}</a></p></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+  {{ end }}
+
+
+  <h3>これは元のアコーディオン</h3>
+  <ul class="syncer-acdn-parent">
+    <li><p><a class="syncer-acdn" data-target="syncer-acdn-03">親メニュー1</a></p>
+      <ul id="syncer-acdn-03" class="syncer-acdn-child">
+        <li><a href="#syncer-acdn-01">子メニュー 1-1</a></li>
+        <li><a href="#syncer-acdn-01">子メニュー 1-2</a></li>
+        <li><a href="#syncer-acdn-01">子メニュー 1-3</a></li>
+        <li><a href="#syncer-acdn-01">子メニュー 1-4</a></li>
+        <li><a href="#syncer-acdn-01">子メニュー 1-5</a></li>
+        <li><a href="#syncer-acdn-01">子メニュー 1-6</a></li>
+        <li><a href="#syncer-acdn-01">子メニュー 1-7</a></li>
+      </ul>
+    </li>
+    <li><p><a class="syncer-acdn" data-target="syncer-acdn-04">親メニュー2</a></p>
+      <ul id="syncer-acdn-04" class="syncer-acdn-child">
+        <li><a href="#syncer-acdn-02">子メニュー 2-1</a></li>
+        <li><a href="#syncer-acdn-02">子メニュー 2-2</a></li>
+        <li><a href="#syncer-acdn-02">子メニュー 2-3</a></li>
+        <li><a href="#syncer-acdn-02">子メニュー 2-4</a></li>
+        <li><a href="#syncer-acdn-02">子メニュー 2-5</a></li>
+        <li><a href="#syncer-acdn-02">子メニュー 2-6</a></li>
+        <li><a href="#syncer-acdn-02">子メニュー 2-7</a></li>
+      </ul>
+    </li>
+  </ul>
+
+
+
+
+</body>
+
+

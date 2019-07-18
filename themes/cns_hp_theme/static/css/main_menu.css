@@ -1,0 +1,94 @@
+/* デザインあり */
+
+/* 親の[ul] */
+.syncer-acdn-parent
+{
+	width: 250px ;
+	margin: 1.5em 0 0 ;
+	padding: 12px 18px ;
+	border: 2px solid rgba( 0,0,0, 0.1 ) ;
+}
+
+/* 子の[ul] */
+.syncer-acdn-child
+{
+	display: none ;
+}
+
+/* 余白設定 */
+.syncer-acdn-child ,
+.syncer-acdn-parent li ,
+.syncer-acdn-parent li p
+{
+	margin: 0 ;
+	padding: 0 ;
+}
+
+/* 親と子の[li] */
+.syncer-acdn-parent li
+{
+	list-style: none ;
+}
+
+
+/* 親の[a] */
+.syncer-acdn-parent li p a
+{
+	position: relative ;
+	top: 0 ;
+	left: 0 ;
+}
+
+.syncer-acdn-parent li p a:after ,
+.syncer-acdn-parent li p a:hover:after
+{
+	color: #333 ;
+	background: rgba( 0,0,255 , 0.1 ) ;
+}
+
+.syncer-acdn-parent li p a:after
+{
+	position: absolute ;
+	top: 50% ;
+	right: 12px ;
+	content: "開閉" ;
+	font-size: .85em ;
+	margin-top: -12.5px ;
+	height: 17px ;
+	line-height: 17px ;
+	padding: 4px 8px ;
+}
+
+
+/* 親の[a]と子の[li] */
+.syncer-acdn-parent li p a ,
+.syncer-acdn-child li
+{
+	border-bottom: 1px solid rgba( 0,0,0, 0.1 ) ;
+}
+
+
+/* 親と子の[a] */
+.syncer-acdn-parent li a
+{
+	display: block ;
+	padding: 8px 0 ;
+	font-weight: 700 ;
+	text-decoration: none ;
+	color: #333 ;
+}
+
+.syncer-acdn-parent li a:hover
+{
+	cursor: pointer ;
+	color: #f00 ;
+	background: rgba( 0,0,0, 0.1 ) ;
+}
+
+
+/* 子の[a] */
+.syncer-acdn-child li a:before
+{
+	content: "∟" ;
+	padding-right: 5px ;
+}
