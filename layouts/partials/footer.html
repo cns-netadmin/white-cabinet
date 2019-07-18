@@ -1,7 +1,19 @@
 </main>
  
 <footer>
-  <small>copyright</small>
+  <!--    <small>copyright</small> -->
+  <!--  <meta name="address1_description" content="{{if .IsHome}}{{$.Site.Params.address1_description}}{{else}}{{$.Address1_description}}{{end}}" /> -->
+  <!-- <meta name="hoge" content="hogehoge" /> -->
+ <!-- {{if .IsHome}}{{$.Site.Params.address1_description}}{{else}}{{.Address1_description}}{{end}} <!-- -\-> -->
+ <!-- {{.Site.Title}} -->
+<B>  {{ .Site.Params.address1_description }} </B></br>
+<!-- <B>  {{ .Params.address1_description }} </B></br> -->
+&#12306;{{ .Site.Params.address1_postcode }} </br>
+  {{ .Site.Params.address1_address }} </br>
+  {{ .Site.Params.address1_room }} </br>
+TEL: {{ .Site.Params.address1_tel }} </br>
+FAX: {{ .Site.Params.address1_fax }} </br>
+  
 </footer>
 </body>
 </html>
