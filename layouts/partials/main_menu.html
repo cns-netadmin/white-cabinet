@@ -40,9 +40,10 @@
       <ul class="syncer-acdn-parent">
         {{ range .Site.Menus.main.ByWeight }}
           {{ if .HasChildren }}
-            <li><p><a class="syncer-acdn" data-target="syncer-acdn-{{ .Name }}">{{ .Name }}</a></p>
-              <ul id="syncer-acdn-{{ .Name }}" class="syncer-acdn-child">
+            <li><p><a class="syncer-acdn" data-target="syncer-acdn-{{ .Identifier }}">{{ .Name }}</a></p>
+              <ul id="syncer-acdn-{{ .Identifier }}" class="syncer-acdn-child">
                 {{ range .Children }}
+<!--                  <p>My parent is {{ .Parent }}</p>  -->
                   <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
                 {{ end }}
               </ul>
