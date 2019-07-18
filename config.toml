@@ -103,7 +103,7 @@ title = "Center for Nuclear Study"
 
 [[menu.main]]
     identifier = "lab"
-    name = "進学希望の方へ"
+    name = "研究室紹介"
     url = "/research"
     weight = 3
 
