@@ -1,6 +1,6 @@
 $(function(){
   var $win = $(window),
-      $main = $('main'),
+      $main = $('.container'),
       $belt = $('.black-belt'),
       beltHeight = $belt.outerHeight(),
       beltPos = $belt.offset().top,
