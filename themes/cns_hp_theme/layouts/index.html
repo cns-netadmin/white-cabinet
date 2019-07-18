@@ -65,41 +65,9 @@
   </div>
 
 
-
-  <div class="sidebar">
-    <div class="sidebar__item">
-      This is the sidebar__item
-    </div>
-    <div class="sidebar__item sidebar__item--fixed">
-      This is the sidebar__item--fixed
-
-{{/*        <h3>セクションを持たない記事ページ一覧（タイトル順）</h3>
-        <ol>
-          {{ range (where $.Site.RegularPages "Section" "").ByTitle }}
-          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <a href="www.google.com">GOOGLE</a>
-          {{ end }}
-        </ol>
-*/}}
-    <h3>Featureされたサイト内ページだけの配列</h3>
-    <ol>
-      {{ range .Pages }}
-        {{ if (.Param "mkbanner") }}
-          <li><a href="{{ .RelPermalink }}">Page {{ .Title }} is bannered</a>
-        {{ else }}
-          {{ if .Title }}
-            <li> Page <a href="{{ .RelPermalink }}">{{ .Title }}</a> is not bannered
-          {{ else }}
-            <li> Page is not titled
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    </ol>
+  {{ partial "sidebar.html" }}
 
   </div>
-</div>
-
-
 
 {{ partial "footer.html" . }}
 

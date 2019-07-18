@@ -1,25 +1,44 @@
 .container {
   /* main + topics + link */
-  width: 1000px;
-  display: -webkit-flex;
-  display: flex;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  width: 100%;
 }
 .top_menu {
   display: block;
-  width: 660px;
-  margin-right: 20px;
+ /* width: 660px; */
+  width: 100%;
+  text-align: center;
 }
+/*
 .sidebar {
   width: 320px;
 }
+*/
+
+.sidebar {
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 200px;
+  width: 320px;
+  height: 600px;
+  right: 15px;
+  color: #000;
+}
+/*
 .sidebar__item {
-  margin-bottom: 20px;
+  border: solid 8px red;
+  box-sizing: border-box;
 }
 .sidebar__item--fixed {
-  position: sticky;
-  margin-bottom: 0;
-  top: 10px;
-  z-index: 1;
+  border: solid 8px red;
+  box-sizing: border-box;
+
 }
+.links {
+  border: solid 8px red;
+  box-sizing: border-box;
 
-
+}
+*/
