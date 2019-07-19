@@ -46,10 +46,11 @@
 /*	background: rgba( 0,0,255 , 0.1 ) ; */
 }
 
-.syncer-check input
+.syncer-invisible
 {
 	display: none ;
 }
+
 
 .syncer-acdn-parent li p a:after
 {
@@ -65,6 +66,12 @@
 	line-height: 17px ;
 	padding: 4px 8px ;
 }
+
+.syncer-acdn-parent.active li p a:after
+{
+	content: "△" ;
+}
+
 
 /* 親の[a]と子の[li] */
 .syncer-acdn-parent li p a ,
