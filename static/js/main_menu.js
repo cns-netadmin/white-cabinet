@@ -7,10 +7,16 @@ $(function()
 		// [data-target]の属性値を代入する
 		var target = $( this ).data( 'target' ) ;
 
+		// [data-flipper]の属性値を代入する
+		var flipper = $( this ).data( 'flipper' );
+
 		// [target]と同じ名前のIDを持つ要素に[slideToggle()]を実行する
 		$( '#' + target ).slideToggle() ;
+		// [flipper]と同じ名前のIDを持つ要素にactiveを付加/削除する
+		$( '#' + flipper ).toggleClass( 'active' ) ;
 
 		// 終了
 		return false ;
 	} ) ;
+
 }) ;
