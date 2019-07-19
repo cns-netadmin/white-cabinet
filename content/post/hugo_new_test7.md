@@ -1,17 +1,20 @@
 +++
 title =  "Hugo_new_test7"
-date = 2019-07-15T14:06:00Z
+date = 2019-07-19T12:29:29+09:00
 tags = ["Seminar","Conference"]
-image = ""
-draft = true
-#mkbanner = ["true","false"]
+image = "img/topics/CNS_Guidance_poster_2019.png"
+draft = false
 mkbanner = true
+weight = 1
+showonlyimage = true
 +++
 
 ** Insert Lead pargraph here **
 test page<br>
 2019 Guidance<br>
 進学ガイダンス<br>
+
 ## New cool posts
-
-
+<!-- 
+{{< figure src={{.Parm.image}} title="Guidance" class="center" width="400" >}}
+-->
