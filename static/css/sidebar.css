@@ -1,0 +1,31 @@
+/*
+ css file for sidebar
+ layouts/partial/sidebar.html
+ */
+
+.sidebar {
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 200px;
+  width: 320px;
+  height: 600px;
+  right: 15px;
+  color: #000;
+}
+/*
+.sidebar__item {
+  border: solid 8px red;
+  box-sizing: border-box;
+}
+.sidebar__item--fixed {
+  border: solid 8px red;
+  box-sizing: border-box;
+
+}
+.links {
+  border: solid 8px red;
+  box-sizing: border-box;
+
+}
+*/
