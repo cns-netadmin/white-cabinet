@@ -1,19 +1,23 @@
-</main>
- 
+</main> 
 <footer>
-  <!--    <small>copyright</small> -->
-  <!--  <meta name="address1_description" content="{{if .IsHome}}{{$.Site.Params.address1_description}}{{else}}{{$.Address1_description}}{{end}}" /> -->
-  <!-- <meta name="hoge" content="hogehoge" /> -->
- <!-- {{if .IsHome}}{{$.Site.Params.address1_description}}{{else}}{{.Address1_description}}{{end}} <!-- -\-> -->
- <!-- {{.Site.Title}} -->
-<B>  {{ .Site.Params.address1_description }} </B></br>
-<!-- <B>  {{ .Params.address1_description }} </B></br> -->
-&#12306;{{ .Site.Params.address1_postcode }} </br>
-  {{ .Site.Params.address1_address }} </br>
-  {{ .Site.Params.address1_room }} </br>
-TEL: {{ .Site.Params.address1_tel }} </br>
-FAX: {{ .Site.Params.address1_fax }} </br>
+  {{ if .Params.address  }}{{ $.Scratch.Set "address" .Params.address }}{{ end }}
+  {{ $address := $.Scratch.Get "address" }}
+
+  <!-- {{ range $address }} -->
   
+<b>  {{ $address.description }} </b></br>
+&#12306;{{ $address.postcode }} </br>
+  {{ $address.address }} </br>
+  {{ $address.room }} </br>
+TEL: {{ $address.tel }} </br>
+FAX: {{ $address.fax }} </br>
+<!-- <b>  {{ .Site.Params.address }} </b></br> -->
+<!-- &#12306;{{ .Site.Params.address1_postcode }} </br> -->
+<!--   {{ .Site.Params.address1_address }} </br> -->
+<!--   {{ .Site.Params.address1_room }} </br> -->
+<!-- TEL: {{ .Site.Params.address1_tel }} </br> -->
+<!-- FAX: {{ .Site.Params.address1_fax }} </br> -->
+<!-- {{ end }} -->
 </footer>
 </body>
 </html>

@@ -53,22 +53,23 @@ title = "Center for Nuclear Study"
 #  desc = "Hexagon"
 
 #[params]
-#[[params.address1]]
-  address1_description = "本郷本部"
+[[Params.address]]
+  description = "本郷本部"
 #  description = "本郷本部"
-  address1_postcode = "113-0033"
-  address1_address = "東京都文京区本郷7-3-1" 
-  address1_room = "東京大学本郷キャンパス理学部1号館316号室"
-  address1_tel = "03-3812-7886"
-  address1_fax = "03-5841-7642"
+  postcode = "113-0033"
+  address = "東京都文京区本郷7-3-1" 
+  room = "東京大学本郷キャンパス理学部1号館316号室"
+  tel = "03-3812-7886"
+  fax = "03-5841-7642"
 
-# [params.address2]
-#   name = "和光分室"
-#   postcode = "351-0198"
-#   address = "埼玉県和光市広沢2-1"
-#   room = "理化学研究所内"
-#   tel = "048-464-4191"
-#   fax = "048-464-4554"
+[[Params.address]]
+  description = "和光分室"
+  postcode = "351-0198"
+  address = "埼玉県和光市広沢2-1"
+  room = "理化学研究所内"
+  tel = "048-464-4191"
+  fax = "048-464-4554"
+
 
 [[menu.main]]
     identifier = "about"
