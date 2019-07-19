@@ -8,20 +8,10 @@
   <script src="{{ .Site.BaseURL }}js/jquery-3.4.1.min.js"></script>
 </head>
 
-
-
-
-
-
-
-
-
-
-
 <script type="text/javascript" src="{{ .Site.BaseURL }}js/top_figure.js"></script>
 <div class="top_figure">
   {{ range .Site.Params.top_figures }}
-    <img src="{{.}}">
+    <img src="{{ $.Site.BaseURL }}{{.}}">
   {{ end }}
 </div>
 
@@ -29,7 +19,7 @@
 <header class="black-belt">
     <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
     <div class="cns_logo">
-      <img src="{{ .Site.Params.logo }}" width="60px" />
+      <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" width="60px" />
     </div>
     <div class="title">
       <h2> {{ .Title }} </h2>
