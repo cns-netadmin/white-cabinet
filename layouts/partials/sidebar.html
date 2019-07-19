@@ -18,13 +18,26 @@
   <ol>
     {{ range .Pages }}
       {{ if (.Param "mkbanner") }}
-        <li><a href="{{ .RelPermalink }}">Page {{ .Title }} is bannered</a>
+        {{ if (.Param "image") }}
+           <a href="{{ .RelPermalink}}">
+             <figure>
+               <img src={{.Param "image"}} class="links" width="180" height="100" />
+             </figure>
+           </a>
+        {{ else if .Title }}
+           <li><a href="{{ .RelPermalink }}">Page {{ .Title }} </a>
+        {{ else }}
+           <li><a href="{{ .RelPermalink }}">Page is not titled</a>
+        {{ end }}
+
+      {{/* part of mkbanner false
       {{ else }}
         {{ if .Title }}
           <li> Page <a href="{{ .RelPermalink }}">{{ .Title }}</a> is not bannered
         {{ else }}
           <li> Page is not titled
         {{ end }}
+       */}}
       {{ end }}
     {{ end }}
   </ol> 
