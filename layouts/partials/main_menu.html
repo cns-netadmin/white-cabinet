@@ -12,7 +12,7 @@
 */}}
 
   {{ if .Site.Menus.main }}
-    <ul class="accordion">
+    <ul class="accordion right-side">
       {{ range .Site.Menus.main.ByWeight }}
         {{ if .HasChildren }}
           <button class="button">{{ .Name }}</button>
@@ -26,7 +26,7 @@
           </div>
         </li>
         {{ else }}
-          <button class="button" href="{{ .URL }}">{{- .Name -}}</button>
+          <a href="{{ .URL }}"><button class="pseudo_button">{{- .Name -}}</button></a>
         {{ end }}
       {{ end }}
     </ul>
