@@ -1,108 +1,55 @@
-/* デザインあり */
-
-/* 親の[ul] */
-.syncer-acdn-parent
+.accordion1
 {
-	width: 250px ;
-	margin: 1.5em 0 0 ;
-	padding: 12px 18px ;
-	border: 2px solid rgba( 0,0,0, 0.1 ) ;
+	text-align: center;
 }
 
-/* 子の[ul] */
-.syncer-acdn-child
+.accordion1 .inner 
 {
-	display: none ;
+	display: none;
 }
 
-/* 余白設定 */
-.syncer-acdn-child ,
-.syncer-acdn-parent li ,
-.syncer-acdn-parent li p
+.accordion1 p
 {
-	margin: 0 ;
-	padding: 0 ;
+	cursor: pointer; 
+	padding: 10px;
 }
 
-/* 親と子の[li] */
-.syncer-acdn-parent li
+.accordion1 p.ac1
 {
-	list-style: none ;
+	background: #F50057;
+}
+
+.accordion1 .inner1 li
+{
+	padding: 10px 0;
 }
 
 
-/* 親の[a] */
-.syncer-acdn-parent li p a
-{
-	position: relative ;
-	top: 0 ;
-	left: 0 ;
+
+.accordion {
+    width: 300px;
 }
-
-.syncer-acdn-parent li p a:after ,
-.syncer-acdn-parent li p a:hover:after
-{
-	color: #333 ;
-/*	background: rgba( 0,0,255 , 0.1 ) ; */
+.button {
+    padding: 10px;
+    width: 100%;
+    background-color: #1abc9c;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
 }
-
-.syncer-invisible
-{
-	display: none ;
+.button.button_1 {
+    background-color: #f5f4f2;
+    color: #1abc9c;
 }
-
-
-.syncer-acdn-parent li p a:after
-{
-	position: absolute ;
-	top: 50% ;
-	right: 12px ;
-/*	content: "開閉" ; */
-	content: "▽" ;
-	transition: 500ms ;
-	font-size: .85em ;
-	margin-top: -12.5px ;
-	height: 17px ;
-	line-height: 17px ;
-	padding: 4px 8px ;
+.button:after {
+/*    content: "\f067";*/
+    content: "\025bd";
+/*    font-family: FontAwesome;*/
+    position: absolute;
+    top: 11px;
+    right: 13px;
 }
-
-.syncer-acdn-parent.active li p a:after
-{
-	content: "△" ;
-}
-
-
-/* 親の[a]と子の[li] */
-.syncer-acdn-parent li p a ,
-.syncer-acdn-child li
-{
-	border-bottom: 1px solid rgba( 0,0,0, 0.1 ) ;
-}
-
-
-/* 親と子の[a] */
-.syncer-acdn-parent li a
-{
-	display: block ;
-	padding: 8px 0 ;
-	font-weight: 700 ;
-	text-decoration: none ;
-	color: #333 ;
-}
-
-.syncer-acdn-parent li a:hover
-{
-	cursor: pointer ;
-	color: #f00 ;
-	background: rgba( 0,0,0, 0.1 ) ;
-}
-
-
-/* 子の[a] */
-.syncer-acdn-child li a:before
-{
-/*	content: "∟" ; */
-	content: "・" ;
-	padding-right: 5px ;
+.button.active:after {
+/*    content: "\f068";*/
+    content: "\025b3";
 }
