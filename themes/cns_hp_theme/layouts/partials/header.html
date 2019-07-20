@@ -26,8 +26,9 @@
 </div>
 
 <body>
-<header class="black-belt">
-    <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
+<header>
+  <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
+  <div class="black-belt">
     <div class="cns_logo">
       <img src="{{ .Site.Params.logo }}" width="60px" />
     </div>
@@ -56,6 +57,8 @@
         <li>English</li>
       </ul>
     </nav>
+  </div>
+  <hr class="color-belt">	  
 </header>
 
 <main>
