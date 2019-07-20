@@ -1,31 +1,3 @@
-.accordion1
-{
-	text-align: center;
-}
-
-.accordion1 .inner 
-{
-	display: none;
-}
-
-.accordion1 p
-{
-	cursor: pointer; 
-	padding: 10px;
-}
-
-.accordion1 p.ac1
-{
-	background: #F50057;
-}
-
-.accordion1 .inner1 li
-{
-	padding: 10px 0;
-}
-
-
-
 .accordion {
     width: 300px;
 }
@@ -42,19 +14,19 @@
     cursor: pointer;
     position: relative;
 }
+
 .button.button_1 {
     background-color: #f5f4f2;
     color: #1abc9c;
 }
+
 .button:after {
-/*    content: "\f067";*/
     content: "\025bd";
-/*    font-family: FontAwesome;*/
     position: absolute;
     top: 11px;
     right: 13px;
 }
+
 .button.active:after {
-/*    content: "\f068";*/
     content: "\025b3";
 }
