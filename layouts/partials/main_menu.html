@@ -6,36 +6,11 @@
 
 <body>
 
-  <h2>アコーディオン</h2>
-  <p>ある程度のデザインを加えたアコーディオンです。そこに、メニューの内容も加えてみました。</p>
+{{/*
+  <h2>ようこそ</h2>
+  <p>原子核科学研究センター (<strong>C</strong>enter for <strong>N</strong>uclear <strong>S</strong>tudy) のホームページです。</p>
+*/}}
 
-
-  <h3>まずはメニューを単純に列挙</h3>
-  {{ if .Site.Menus.main }}
-    <nav>
-      <ul>
-        {{ range .Site.Menus.main.ByWeight }}
-          {{ if .HasChildren }}
-            <li>
-              <span>{{ .Name }}</span>
-              <ul>
-                {{ range .Children }}
-                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
-                {{ end }}
-              </ul>
-            </li>
-          {{ else }}
-            <li>
-              <a href="{{ .URL }}">{{- .Name -}}</a>
-            </li>
-          {{ end }}
-        {{ end }}
-      </ul>
-    </nav>
-  {{ end }}
-
-
-  <h3>次に、具体的に実装してみたメニュー</h3>
   {{ if .Site.Menus.main }}
     <ul class="accordion">
       {{ range .Site.Menus.main.ByWeight }}
@@ -57,64 +32,6 @@
     </ul>
   {{ end }}
 
-
-  <h3>これは元のアコーディオン (version 1)</h3>
-  <ul class="accordion">
-    <li>
-      <button class="button">親メニュー１</button>
-      <div class="nest">
-        <ul class="accordion_1">
-          <p>ここが親メニュー１です。</p>
-          <li><a href="#">子メニュー 1-1</a></li>
-          <li><a href="#">子メニュー 1-2</a></li>
-        </ul>
-      </div>
-    </li>
-    <li>
-      <button class="button">親メニュー２</button>
-      <div class="nest">
-        <ul class="accordion_1">
-          <p>ここが親メニュー２です。</p>
-          <li><a href="#">子メニュー 2-1</a></li>
-          <li><a href="#">子メニュー 2-2</a></li>
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-
-
-
-
-  <h3>これは元のアコーディオン (version 2)</h3>
-  <ul class="accordion1">
-    <li>
-      <p class="ac1">親メニュー1</p>
-      <ul class="inner1">
-        <p>ここは親メニュー１です。</p>
-        <li><a href="#">子メニュー 1-1</a></li>
-        <li><a href="#">子メニュー 1-2</a></li>
-        <li><a href="#">子メニュー 1-3</a></li>
-        <li><a href="#">子メニュー 1-4</a></li>
-        <li><a href="#">子メニュー 1-5</a></li>
-        <li><a href="#">子メニュー 1-6</a></li>
-        <li><a href="#">子メニュー 1-7</a></li>
-      </ul>
-    </li>
-    <li>
-      <p class="ac1">親メニュー2</p>
-      <ul class="inner">
-        <p>ここは親メニュー２です。</p>
-        <li><a href="#">子メニュー 2-1</a></li>
-        <li><a href="#">子メニュー 2-2</a></li>
-        <li><a href="#">子メニュー 2-3</a></li>
-        <li><a href="#">子メニュー 2-4</a></li>
-        <li><a href="#">子メニュー 2-5</a></li>
-        <li><a href="#">子メニュー 2-6</a></li>
-        <li><a href="#">子メニュー 2-7</a></li>
-      </ul>
-    </li>
-  </ul>
 
 
 </body>
