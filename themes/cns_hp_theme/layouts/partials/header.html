@@ -51,10 +51,11 @@
     </nav>
     <nav class="header-menu">
       <ul>
-        <li>交通アクセス</li>
-        <li>採用情報</li>
-        <li>内部向け</li>
-        <li>English</li>
+	{{ range .Site.Menus.header.ByWeight }}
+        <li>
+	  <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
+	</li>
+	{{ end }}
       </ul>
     </nav>
   </div>
