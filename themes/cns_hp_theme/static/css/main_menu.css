@@ -29,6 +29,11 @@
 .accordion {
     width: 300px;
 }
+
+.nest {
+    display: none;
+}
+
 .button {
     padding: 10px;
     width: 100%;

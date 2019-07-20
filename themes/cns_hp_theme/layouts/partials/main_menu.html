@@ -37,24 +37,24 @@
 
   <h3>次に、具体的に実装してみたメニュー</h3>
   {{ if .Site.Menus.main }}
-    <nav>
-      <ul class="syncer-acdn-parent">
-        {{ range .Site.Menus.main.ByWeight }}
-          {{ if .HasChildren }}
-            <li><p><a id="flipper-{{ .Identifier }}" class="syncer-acdn" data-flipper="flipper-{{ .Identifier }}" data-target="syncer-acdn-{{ .Identifier }}">{{ .Name }}</a></p>
-              <ul id="syncer-acdn-{{ .Identifier }}" class="syncer-acdn-child">
-                {{ range .Children }}
-<!--                  <p>My parent is {{ .Parent }}</p>  -->
-                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
-                {{ end }}
-              </ul>
-            </li>
-          {{ else }}
-            <li><p><a href="{{ .URL }}">{{- .Name -}}</a></p></li>
-          {{ end }}
+    <ul class="accordion">
+      {{ range .Site.Menus.main.ByWeight }}
+        {{ if .HasChildren }}
+          <button class="button">{{ .Name }}</button>
+          <div class="nest">
+          <p>These are the children of {{ .Identifier }}.</p>
+            <ul class="accordion_1">
+              {{ range .Children }}
+                <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
+              {{ end }}
+            </ul>
+          </div>
+        </li>
+        {{ else }}
+          <button class="button" href="{{ .URL }}">{{- .Name -}}</button>
         {{ end }}
-      </ul>
-    </nav>
+      {{ end }}
+    </ul>
   {{ end }}
 
 
