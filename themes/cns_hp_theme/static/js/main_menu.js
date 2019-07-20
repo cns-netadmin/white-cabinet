@@ -1,22 +1,18 @@
-// DOMを全て読み込んでから処理する
-$(function()
-{
-	// [.syncer-acdn]にクリックイベントを設定する
-	$( '.syncer-acdn' ).click( function()
-	{
-		// [data-target]の属性値を代入する
-		var target = $( this ).data( 'target' ) ;
+$(function(){
 
-		// [data-flipper]の属性値を代入する
-		var flipper = $( this ).data( 'flipper' );
+    //.accordion1の中のp要素がクリックされたら
+	$('.accordion1 p').click(function(){
 
-		// [target]と同じ名前のIDを持つ要素に[slideToggle()]を実行する
-		$( '#' + target ).slideToggle() ;
-		// [flipper]と同じ名前のIDを持つ要素にactiveを付加/削除する
-		$( '#' + flipper ).toggleClass( 'active' ) ;
+		//クリックされた.accordion1の中のp要素に隣接するul要素が開いたり閉じたりする。
+		$(this).next('ul').slideToggle();
 
-		// 終了
-		return false ;
-	} ) ;
+	});
 
-}) ;
+
+	$(".accordion li .nest").hide();
+	$(".accordion .button").on("click", function() {
+	    $(this).next().slideToggle();
+	    $(this).toggleClass("active");
+	});
+
+});
