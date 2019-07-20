@@ -1,18 +1,30 @@
 .accordion {
-    width: 300px;
+    display: block;
+    margin: 10px auto 0 auto;
+    padding-right: 20px;
+    max-width: 700px;
 }
 
 .nest {
     display: none;
+    text-align: left;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 .button {
     padding: 10px;
     width: 100%;
-    background-color: #1abc9c;
-    color: #fff;
+    height: 60px;
+    background-color: #fff;
+    color: #1700ad;
     cursor: pointer;
     position: relative;
+    font-size: 24px;
+    text-align: left;
+    border: solid #000;
+    margin-bottom: 5px;
+
 }
 
 .button.button_1 {
@@ -23,10 +35,26 @@
 .button:after {
     content: "\025bd";
     position: absolute;
-    top: 11px;
-    right: 13px;
+    right: 20px;
 }
 
 .button.active:after {
     content: "\025b3";
 }
+
+.pseudo_button {
+    padding: 10px;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    color: #1700ad;
+    cursor: pointer;
+    position: relative;
+    font-size: 24px;
+    text-align: left;
+    border: solid #000;
+    margin-bottom: 5px;
+
+}
+
+
