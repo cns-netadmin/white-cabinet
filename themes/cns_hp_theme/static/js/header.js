@@ -1,9 +1,8 @@
 $(function(){
   var $win = $(window),
       $main = $('main'),
-      $belt = $('.black-belt'),
-      beltHeight = $belt.outerHeight(),
-      beltPos = $belt.offset().top,
+      $header = $('header'),
+      headerPos = $header.offset().top,
       fixedClass = 'is-fixed';
 
   $('.menu-trigger').on('click',function(){
@@ -24,16 +23,16 @@ $(function(){
 
   $win.on('load scroll', function() {
     var value = $(this).scrollTop();
-    if ( value > beltPos ) {
-      $belt.addClass(fixedClass);
+    if ( value > headerPos ) {
+      $header.addClass(fixedClass);
     } else {
-      $belt.removeClass(fixedClass);
+      $header.removeClass(fixedClass);
     }
-    if ( value > beltPos/2 && value <= beltPos ) {
-      var trans = (value-beltPos/2)/(beltPos-beltPos/2)*0.5+0.5;
-      $belt.css('background-color', 'rgba(0, 0, 0,' + trans + ')');
+    if ( value > headerPos/2 && value <= headerPos ) {
+      var trans = (value-headerPos/2)/(headerPos-headerPos/2)*0.5+0.5;
+      $header.css('background-color', 'rgba(0, 0, 0,' + trans + ')');
     } else {
-      $belt.css('background-color', '');
+      $header.css('background-color', '');
     }
   });
 });
