@@ -191,3 +191,18 @@ title = "Center for Nuclear Study"
     name = "アクセス"
     url = "/access"
     weight = 8
+
+[[menu.header]]
+    name = "アクセス"
+    url = "/access"
+    weight = 1
+
+[[menu.header]]
+    name = "採用情報"
+    url = "/job"
+    weight = 2
+
+[[menu.header]]
+    name = "English"
+    url = "/en"
+    weight = 3
