@@ -4,7 +4,7 @@
 .top_figure img {
   position: absolute;
   width: 100%;
-  height: 200px;
+  height: 190px;
   left: 0;
   top: 0;
   z-index: 1;
@@ -14,7 +14,7 @@
 header {
   position: absolute;
   width: 100%;
-  height: 100px;
+  height: 90px;
   top: 100px;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -34,12 +34,11 @@ header {
 }
 .color-belt {
   position: absolute;
-  top: 92px;
+  top: 90px;
   left: 0;
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-color: #66ffcc;
-  border: none;
   margin: 0 0;
 }
 .cns_logo {
