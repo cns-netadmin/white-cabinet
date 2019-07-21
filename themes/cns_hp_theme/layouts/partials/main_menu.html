@@ -17,14 +17,19 @@
         {{ if .HasChildren }}
           <button class="button">{{ .Name }}</button>
           <div class="nest">
-          <p>These are the children of {{ .Identifier }}.</p>
+            <!-- Fetch description -->
+            {{ $pmenu := .Identifier }}
+            {{ range $.Site.RegularPages }}
+              {{ if eq (lower .Title) $pmenu }}
+                <p>These are the children of {{ .Title }} (weight = {{ .Weight }})</p>
+              {{ end }}
+            {{ end }}
             <ul class="accordion_1">
               {{ range .Children }}
                 <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
               {{ end }}
             </ul>
           </div>
-        </li>
         {{ else }}
           <a href="{{ .URL }}"><button class="pseudo_button">{{- .Name -}}</button></a>
         {{ end }}
