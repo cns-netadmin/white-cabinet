@@ -5,7 +5,7 @@ tags = ["Seminar","Conference"]
 image = ""
 draft = false
 weight = "2"
-description = true
+description = "CNSでは教授・准教授が東京大学理学系研究科物理学専攻の研究室を担当し、修士課程・博士課程の大学院生を受け入れています。共に新たな物理学の地平の開拓を目指す皆さんの挑戦を期待しています。"
 +++
 
 ** Insert content explanation here for {{< param title >}}. **

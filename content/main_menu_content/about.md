@@ -5,7 +5,7 @@ tags = ["Seminar","Conference"]
 image = ""
 draft = false
 weight = "1"
-description = true
+description = "東京大学原子核科学研究センター (CNS) では、原子核からクォークに至るハドロン多体系の物理を研究しています。"
 +++
 
 ** Insert content explanation here for {{< param title >}}. **
