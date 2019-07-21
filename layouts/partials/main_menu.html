@@ -19,7 +19,22 @@
           <div class="nest">
             <!-- Special action: "lab" -->
             {{ if eq .Identifier "lab" }}
-            <p>This is the {{ .Identifier }} section.</p>
+            <div>
+              {{ range .Children }}
+                {{ $w := sub .Weight 1 }}
+                {{ $pt := .URL | relLangURL }}
+                <!-- Fetch image path -->
+                {{ range $.Site.RegularPages }}
+                  {{ if eq .Title "Lab" }}
+                    {{ range $index, $element := (.Page.Param "image") }}
+                      {{ if eq $w $index }}
+                        <a href={{ $pt }}><img src="{{ . }}" ></a>
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            </div>
 
             <!-- END Special action: "lab" -->
 
