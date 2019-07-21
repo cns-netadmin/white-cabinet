@@ -21,7 +21,7 @@
             {{ $pmenu := .Identifier }}
             {{ range $.Site.RegularPages }}
               {{ if eq (lower .Title) $pmenu }}
-                <p>These are the children of {{ .Title }} (weight = {{ .Weight }})</p>
+                <p>{{ .Description }}</p>
               {{ end }}
             {{ end }}
             <ul class="accordion_1">
