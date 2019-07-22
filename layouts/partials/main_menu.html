@@ -21,6 +21,7 @@
             {{ if eq .Identifier "lab" }}
             <div>
               {{ range .Children }}
+                {{ $nm := .Name }}
                 {{ $w := sub .Weight 1 }}
                 {{ $pt := .URL | relLangURL }}
                 <!-- Fetch image path -->
@@ -28,7 +29,7 @@
                   {{ if eq .Title "Lab" }}
                     {{ range $index, $element := (.Page.Param "image") }}
                       {{ if eq $w $index }}
-                        <a href={{ $pt }}><img src="{{ . }}" ></a>
+                        <a href={{ $pt }} class="tile"><img src="{{ . }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
                       {{ end }}
                     {{ end }}
                   {{ end }}
