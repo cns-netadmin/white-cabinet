@@ -22,15 +22,13 @@
             <div>
               {{ range .Children }}
                 {{ $nm := .Name }}
-                {{ $w := sub .Weight 1 }}
+                {{ $w := .Weight }}
                 {{ $pt := .URL | relLangURL }}
                 <!-- Fetch image path -->
                 {{ range $.Site.RegularPages }}
-                  {{ if eq .Title "Lab" }}
-                    {{ range $index, $element := (.Page.Param "image") }}
-                      {{ if eq $w $index }}
-                        <a href={{ $pt }} class="tile"><img src="{{ . }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
-                      {{ end }}
+                  {{ if (.Param "mktile") }}
+                    {{ if eq .Weight $w }}
+                        <a href="{{ .RelPermalink }}" class="tile"><img src="{{ .Page.Param "image" }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
                     {{ end }}
                   {{ end }}
                 {{ end }}
