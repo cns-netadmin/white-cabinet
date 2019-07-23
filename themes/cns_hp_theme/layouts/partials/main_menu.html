@@ -56,17 +56,19 @@
           </div>
         {{ else }}
 
-           <!-- Special action: "events" -->
+          <!-- Special action: "event" -->
+          {{ if eq .URL "/events" }}
+            <button class="button">{{ .Name }}</button>
+            <div class="nest">
+              {{ range $.Site.Taxonomies.categories.event }}
+                <li><a href="{{ .Page.URL }}">{{ .Page.Title }}</a></li>
+              {{ end }}
+            </div>
+          <!-- END Special action: "events" -->
 
-           {{ if eq .URL "/events" }}
-             <button class="button">{{ .Name }}</button>
-             <div class="nest">
-               <p>This is where the upcoming events will be listed.</p>
-             </div>
-           <!-- END Special action: "events" -->
-           {{ else }}
-             <a href="{{ .URL }}"><button class="pseudo_button">{{- .Name -}}</button></a>
-           {{ end }}
+          {{ else }}
+            <a href="{{ .URL }}"><button class="pseudo_button">{{- .Name -}}</button></a>
+          {{ end }}
 
         {{ end }}
       {{ end }}
