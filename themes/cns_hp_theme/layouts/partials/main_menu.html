@@ -60,8 +60,16 @@
           {{ if eq .URL "/events" }}
             <button class="button">{{ .Name }}</button>
             <div class="nest">
-              {{ range $.Site.Taxonomies.categories.event }}
-                <li><a href="{{ .Page.URL }}">{{ .Page.Title }}</a></li>
+              <h3>今後のイベント</h3>
+              {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
+                {{ if eq $catkey "event" }}
+                  {{ range (.Pages.ByParam "eventdate").Reverse }}
+                    {{ if le now .Params.eventdate }}
+                      <li><a href="{{ .Page.URL }}">{{ .Page.Title }}</a> ({{ dateFormat "Monday, Jan 2, 2006" .Params.eventdate }}, TAG: {{ .Params.tags }})</li>
+                    {{ end }}
+                  {{ end }}
+                  <h3><a href="{{ .Page.URL }}">イベント情報一覧はこちら</a></h3>
+                {{ end }}
               {{ end }}
             </div>
           <!-- END Special action: "events" -->
