@@ -4,7 +4,7 @@ date = 2020-07-23T15:47:28+09:00
 categories = ["event"]
 tags = ["Conference"]
 image = ""
-draft = true
+draft = false
 mkbanner = ["true","false"]
 +++
 
