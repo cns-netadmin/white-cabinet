@@ -16,15 +16,20 @@ pygmentCodeFences = true
 
 [Languages]
 [Languages.ja]
-weight = 1
-title = "東京大学 原子核科学研究センター"
+  weight = 1
+  title = "東京大学 原子核科学研究センター"
+[Languages.ja.params]
+  Language_name="日本語" 
+
 [Languages.en]
-weight = 2
-title = "Center for Nuclear Study"
+  weight = 2
+  title = "Center for Nuclear Study"
+[Languages.en.params]
+  Language_name="English" 
 
 [taxonomies]
-tag = "tags"
-category = "categories"
+  tag = "tags"
+  category = "categories"
 
 [Params]
   subtitle = "Hugo Blog Template for GitLab Pages"
@@ -221,8 +226,3 @@ category = "categories"
     name = "採用情報"
     url = "/job"
     weight = 2
-
-[[menu.header]]
-    name = "English"
-    url = "/en"
-    weight = 3
