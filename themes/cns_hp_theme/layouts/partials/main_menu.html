@@ -23,7 +23,7 @@
                   {{ range $.Site.RegularPages }}
                     {{ if (.Param "mktile") }}
                       {{ if eq .Weight $w }}
-                          <a href="{{ .Permalink }}" class="tile"><img src="{{ .Page.Param "image" }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
+                          <a href="{{ .Permalink }}" class="tile"><img src="{{ $.Page.Param "image" }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
                       {{ end }}
                     {{ end }}
                   {{ end }}
