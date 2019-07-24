@@ -64,11 +64,11 @@
                     <div class="eventbox">
                         {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
                           <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
-                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton">{{ .Params.tags }}</a>
+                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton_{{ .Params.tags }}">{{ .Params.tags }}</a>
                           </div>
                         {{ else }}
                           <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
-                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton">{{ .Params.tags }}</a>
+                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton_{{ .Params.tags }}">{{ .Params.tags }}</a>
                           </div>
                         {{ end }}
                       <p>{{ .Content }}</p>
