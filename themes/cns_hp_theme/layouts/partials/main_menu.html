@@ -58,9 +58,15 @@
               <h3>今後のイベント</h3>
               {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
                 {{ if eq $catkey "event" }}
-                  {{ range (.Pages.ByParam "eventdate").Reverse }}
-                    {{ if le now .Params.eventdate }}
-                      <li><a href="{{ .Permalink }}">{{ .Page.Title }}</a> ({{ dateFormat "Monday, Jan 2, 2006" .Params.eventdate }}, TAG: {{ .Params.tags }})</li>
+                  {{ range (.Pages.ByParam "eventEndDate").Reverse }}
+                    {{ if le now .Params.eventEndDate }}
+                      <li><a href="{{ .Permalink }}">{{ .Page.Title }}</a> 
+                        {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
+                          ({{ dateFormat "2006.01.02" .Params.eventStartDate }}-{{ dateFormat "2006.01.02" .Params.eventEndDate }}, TAG: {{ .Params.tags }})
+                        {{ else }}
+                          ({{ dateFormat "2006.01.02" .Params.eventEndDate }}, TAG: {{ .Params.tags }})
+                        {{ end }}
+                      </li>
                     {{ end }}
                   {{ end }}
                   <h3><a href="{{ .Page.Permalink }}">イベント情報一覧はこちら</a></h3>

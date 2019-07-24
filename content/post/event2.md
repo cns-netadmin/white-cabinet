@@ -1,7 +1,8 @@
 +++
 title =  "これからのSeminar"
 date = 2019-07-23T15:00:00+09:00
-eventdate = 2019-08-23T15:46:53+09:00
+eventStartDate = 2019-08-23
+eventEndDate = 2019-08-23
 tags = "Seminar"
 categories = "event"
 image = ""
@@ -11,4 +12,4 @@ mkbanner = ["true","false"]
 
 これからあるSeminarです
 
-開催日: {{< param eventdate >}}
+開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}}

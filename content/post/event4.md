@@ -1,7 +1,8 @@
 +++
 title =  "これからのconference"
 date = 2019-07-23T15:00:00+09:00
-eventdate = 2020-07-23T15:47:28+09:00
+eventStartDate = 2020-07-23
+eventEndDate = 2020-07-23
 categories = "event"
 tags = "Conference"
 image = ""
@@ -11,4 +12,4 @@ mkbanner = ["true","false"]
 
 2020年に開催します
 
-開催日: {{< param eventdate >}}
+開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}}
