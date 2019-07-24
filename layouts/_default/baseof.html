@@ -1,31 +1,18 @@
 {{ partial "header.html" . }}
 <head>
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
-    <meta charset="UTF-8">
-    <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
-    <!--meta http-equiv="X-UA-Compatible" content="ie-edge"-->
-    <!-- <title>Document</title> -->
-
+  <meta charset="UTF-8">
+  <title>{{ .Site.Params.Title }}</title>
 </head>
-
-<!--    {{- partial "head.html" . -}} -->
 <body>
-<!--        {{- partial "header.html" . -}}
-        <div id="content">
-<!        {{- block "main" . }}{{- end }}
-        </div>
-<!        {{- partial "footer.html" . -}}
--->
-    Top of baseof
-    <hr>
-    {{ block "main" . }}
+{{/*  {{ partial "header.html" . }} */}}
+    <div class="container">
+      {{ block "main" . }}{{ end }}
+      
+      {{ partial "sidebar.html" . }}
 
-    {{end}}
-    <br>
-    {{ block "footer" . }}
-        This is the default baseof Footer
-    {{end}}
-    <hr>
-    Bottom of baseof
+    </div>
+
+    {{ partial "footer.html" . }}
 </body>
 </html>

@@ -10,16 +10,18 @@
 
 <script type="text/javascript" src="{{ .Site.BaseURL }}js/top_figure.js"></script>
 <div class="top_figure">
+  {{ $path := .Site.BaseURL }}
   {{ range .Site.Params.top_figures }}
-    <img src="{{ $.Site.BaseURL }}{{.}}">
+  <img src={{ . | printf "%s%s" $path }}>
   {{ end }}
 </div>
 
 <body>
-<header class="black-belt">
-    <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
+<header>
+  <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
+  <div class="black-belt">
     <div class="cns_logo">
-      <img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" width="60px" />
+      <a href="{{ .Site.BaseURL }}"><img src={{ .Site.Params.logo | printf "%s%s" $path }} width="60px" /></a>
     </div>
     <div class="title">
       <h2> {{ .Title }} </h2>
@@ -40,12 +42,22 @@
     </nav>
     <nav class="header-menu">
       <ul>
-        <li>交通アクセス</li>
-        <li>採用情報</li>
-        <li>内部向け</li>
-        <li>English</li>
+	{{ range .Site.Menus.header.ByWeight }}
+      <li>
+	    <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
+	    </li>
+	{{ end }}
+          {{ if .IsTranslated }}
+          {{ range .Translations }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Site.Params.language_name }}</a>
+        </li>
+          {{ end }}
+          {{ end }}
       </ul>
     </nav>
+  </div>
+  <div class="color-belt"></div>	  
 </header>
 
 <main>

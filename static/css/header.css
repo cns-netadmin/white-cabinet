@@ -4,14 +4,21 @@
 .top_figure img {
   position: absolute;
   width: 100%;
-  height: 200px;
+  height: 190px;
   left: 0;
   top: 0;
   z-index: 1;
   background-color: white;
   object-fit: cover;
 } 
-
+header {
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  top: 100px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .black-belt {
   display: flex;
   flex-wrap: wrap;
@@ -19,12 +26,20 @@
   align-items: center;
   position: absolute;
   width: 100%;
-  height: 100px;
+  height: 92px;
   left: 0;
-  top: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
   z-index: 2;
   color: #fff;
+}
+.color-belt {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #66ffcc;
+  margin: 0 0;
 }
 .cns_logo {
   display: flex;
@@ -142,7 +157,7 @@
   display: inline-block;
   margin: 0 14px;
   vertical-align: center;
-  position: relative;;
+  position: relative;
 }
 .header-menu ul li::after {
   display: block;
@@ -157,3 +172,7 @@
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
+.header-menu ul li a{
+  color: #fff;
+  text-decoration: none;
+} 

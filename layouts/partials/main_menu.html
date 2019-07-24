@@ -1,88 +1,97 @@
 <head>
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main_menu.css">
-    <script type="text/javascript" src="{{ .Site.BaseURL }}js/main_menu.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main_menu.css">
+  <script type="text/javascript" src="{{ .Site.BaseURL }}js/main_menu.js"></script>
 </head>
 
 <body>
 
-  <h2>アコーディオン</h2>
-  <p>ある程度のデザインを加えたアコーディオンです。そこに、メニューの内容も加えてみました。</p>
-
-
-  <h3>まずはメニューを単純に列挙</h3>
   {{ if .Site.Menus.main }}
-    <nav>
-      <ul>
-        {{ range .Site.Menus.main.ByWeight }}
-          {{ if .HasChildren }}
-            <li>
-              <span>{{ .Name }}</span>
-              <ul>
+    <ul class="accordion right-side">
+      {{ range .Site.Menus.main.ByWeight }}
+        {{ if .HasChildren }}
+          <button class="button">{{ .Name }}</button>
+          <div class="nest">
+            <!-- Special action: "lab" -->
+            {{ if eq .Identifier "lab" }}
+              <div>
                 {{ range .Children }}
-                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+                  {{ $nm := .Name }}
+                  {{ $w := .Weight }}
+                  {{ $pt := .URL | relLangURL }}
+                  <!-- Fetch image path -->
+                  {{ range $.Site.RegularPages }}
+                    {{ if (.Param "mktile") }}
+                      {{ if eq .Weight $w }}
+                          <a href="{{ .Permalink }}" class="tile"><img src="{{ $.Page.Param "image" }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
                 {{ end }}
-              </ul>
-            </li>
-          {{ else }}
-            <li>
-              <a href="{{ .URL }}">{{- .Name -}}</a>
-            </li>
-          {{ end }}
-        {{ end }}
-      </ul>
-    </nav>
-  {{ end }}
+              </div>
 
+            <!-- END Special action: "lab" -->
 
-  <h3>次に、具体的に実装してみたメニュー</h3>
-  {{ if .Site.Menus.main }}
-    <nav>
-      <ul class="syncer-acdn-parent">
-        {{ range .Site.Menus.main.ByWeight }}
-          {{ if .HasChildren }}
-            <li><p><a class="syncer-acdn" data-target="syncer-acdn-{{ .Identifier }}">{{ .Name }}</a></p>
-              <ul id="syncer-acdn-{{ .Identifier }}" class="syncer-acdn-child">
-                {{ range .Children }}
-<!--                  <p>My parent is {{ .Parent }}</p>  -->
-                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
+            <!-- Default action -->
+            {{ else }}
+              <!-- Fetch description -->
+              {{ $pmenu := .Identifier }}
+              {{ range $.Site.RegularPages }}
+                {{ if eq (lower .Title) $pmenu }}
+                  <p>{{ .Content }}</p>
                 {{ end }}
+              {{ end }}
+              <ul class="accordion_1">
+<!--                {{/* range .Children */}}
+                  <li><a href="{{/* .URL | relLangURL */}}">{{/* .Name */}} </a></li>
+                {{/* end */}}  -->
               </ul>
-            </li>
+              <!-- END Default action -->
+            {{ end }}
+          </div>
+        {{ else }}
+
+          <!-- Special action: "event" -->
+          {{ if eq .URL "/events" }}
+            <button class="button">{{ .Name }}</button>
+            <div class="nest">
+              <h3>今後のイベント</h3>
+
+              {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
+                {{ if eq $catkey "event" }}
+                  {{ range (.Pages.ByParam "eventEndDate").Reverse }}
+                    {{ if le now .Params.eventEndDate }}
+                    <div class="eventbox">
+                        {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
+                          <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
+                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
+                          </div>
+                        {{ else }}
+                          <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
+                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
+                          </div>
+                        {{ end }}
+                      <h2>{{ .Title }}</h2>
+                      <p>{{ .Content }}</p>
+                      <p><a href="{{ .Permalink }}" class="read-more">続きを読む</a></p>
+                    </div>
+                    {{ end }}
+                  {{ end }}
+                  <h3><a href="{{ $.Site.BaseURL }}categories/event/">イベント情報一覧はこちら</a></h3>
+                {{ end }}
+              {{ end }}
+
+            </div>
+          <!-- END Special action: "events" -->
+
           {{ else }}
-            <li><p><a href="{{ .URL }}">{{- .Name -}}</a></p></li>
+            <a href="{{ .URL }}"><button class="pseudo_button">{{- .Name -}}</button></a>
           {{ end }}
+
         {{ end }}
-      </ul>
-    </nav>
+      {{ end }}
+    </ul>
   {{ end }}
-
-
-  <h3>これは元のアコーディオン</h3>
-  <ul class="syncer-acdn-parent">
-    <li><p><a class="syncer-acdn" data-target="syncer-acdn-03">親メニュー1</a></p>
-      <ul id="syncer-acdn-03" class="syncer-acdn-child">
-        <li><a href="#syncer-acdn-01">子メニュー 1-1</a></li>
-        <li><a href="#syncer-acdn-01">子メニュー 1-2</a></li>
-        <li><a href="#syncer-acdn-01">子メニュー 1-3</a></li>
-        <li><a href="#syncer-acdn-01">子メニュー 1-4</a></li>
-        <li><a href="#syncer-acdn-01">子メニュー 1-5</a></li>
-        <li><a href="#syncer-acdn-01">子メニュー 1-6</a></li>
-        <li><a href="#syncer-acdn-01">子メニュー 1-7</a></li>
-      </ul>
-    </li>
-    <li><p><a class="syncer-acdn" data-target="syncer-acdn-04">親メニュー2</a></p>
-      <ul id="syncer-acdn-04" class="syncer-acdn-child">
-        <li><a href="#syncer-acdn-02">子メニュー 2-1</a></li>
-        <li><a href="#syncer-acdn-02">子メニュー 2-2</a></li>
-        <li><a href="#syncer-acdn-02">子メニュー 2-3</a></li>
-        <li><a href="#syncer-acdn-02">子メニュー 2-4</a></li>
-        <li><a href="#syncer-acdn-02">子メニュー 2-5</a></li>
-        <li><a href="#syncer-acdn-02">子メニュー 2-6</a></li>
-        <li><a href="#syncer-acdn-02">子メニュー 2-7</a></li>
-      </ul>
-    </li>
-  </ul>
-
 
 
 
