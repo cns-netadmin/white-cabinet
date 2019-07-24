@@ -43,10 +43,17 @@
     <nav class="header-menu">
       <ul>
 	{{ range .Site.Menus.header.ByWeight }}
-        <li>
-	  <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
-	</li>
+      <li>
+	    <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
+	    </li>
 	{{ end }}
+          {{ if .IsTranslated }}
+          {{ range .Translations }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Site.Params.language_name }}</a>
+        </li>
+          {{ end }}
+          {{ end }}
       </ul>
     </nav>
   </div>
