@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
     <meta charset="UTF-8">
     <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
     <!--meta http-equiv="X-UA-Compatible" content="ie-edge"-->
-    <title>Document</title>
+    <title>{{ .Site.Params.Title }}</title>
 </head>
 <!--    {{- partial "head.html" . -}} -->
 <body>
-<!--        {{- partial "header.html" . -}}
-        <div id="content">
-<!        {{- block "main" . }}{{- end }}
-        </div>
-<!        {{- partial "footer.html" . -}}
--->
-    Top of baseof
-    <hr>
-    {{ block "main" . }}
+  {{ partial "header.html" . }}
+  <!-- <div id="content"> -->
+    <div class="container">
+    {{ block "main" . }}{{ end }}
 
-    {{end}}
-    <br>
-    {{ block "footer" . }}
-        This is the default baseof Footer
-    {{end}}
-    <hr>
-    Bottom of baseof
+  {{ partial "sidebar.html" . }}
+
+  </div>
+
+  {{ partial "footer.html" . }}
+    <!-- Top of baseof -->
+    <!-- <hr> -->
+    <!-- {{ block "main" . }} -->
+
+    <!-- {{end}} -->
+    <!-- <br> -->
+    <!-- {{ block "footer" . }} -->
+    <!--     This is the default baseof Footer -->
+    <!-- {{end}} -->
+    <!-- <hr> -->
+    <!-- Bottom of baseof -->
 </body>
 </html>
