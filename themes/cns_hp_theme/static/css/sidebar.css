@@ -7,11 +7,25 @@
   display: block;
   position: -webkit-sticky;
   position: sticky;
-  top: 200px;
+  top: 100px;
+  bottom: 1000px;
   width: 320px;
-  height: 600px;
+  height: 1000px;
   right: 15px;
   color: #000;
+}
+
+.tile {
+    display: block;
+    position: relative;
+    width: 250px;
+    height: auto;
+}
+
+.topic_list {
+    width: auto;
+    height: 200px;
+    overflow: scroll;
 }
 /*
 .sidebar__item {
