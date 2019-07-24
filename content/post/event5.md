@@ -10,6 +10,8 @@ draft = false
 mkbanner = ["true","false"]
 +++
 
+<!--- # {{< param title >}} --->
+
 理研で一般公開をしました
 
-開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}}
+<!--- 開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}} --->

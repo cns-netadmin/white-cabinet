@@ -10,6 +10,9 @@ draft = false
 mkbanner = ["true","false"]
 +++
 
+<!---# {{< param title >}}--->
+
+<!--- #### 開催日: {{< param eventEndDate.Format "2006年7月23日" >}} --->
+
 終わったConferenceです
 
-開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}}

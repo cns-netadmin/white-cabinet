@@ -10,6 +10,8 @@ draft = false
 mkbanner = ["true","false"]
 +++
 
+<!---# {{< param title >}}--->
+
 これからあるSeminarです
 
-開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}}
+<!--- 開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}} --->
