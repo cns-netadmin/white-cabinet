@@ -127,13 +127,14 @@
     color: #fff;
 }
 
-.eventbox div a.tagbutton {
+/* the default tag button */
+
+.eventbox div a.tagbutton_ {
     position: absolute;
     width: auto;
     height: 10px;
     top: 5%;
     left: calc(100% + 10px); 
-/*    display: inline-box;*/
     line-height: 10px;
     padding: 8px;
     border-radius: 25px;
@@ -143,9 +144,69 @@
     transition: .4s;
 }
 
-.eventbox div a.tagbutton:hover {
+.eventbox div a.tagbutton_:hover {
     background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
+
+
+/* custom tag button for Seminar */
+.eventbox div a.tagbutton_Seminar {
+    position: absolute;
+    width: auto;
+    height: 10px;
+    top: 5%;
+    left: calc(100% + 10px); 
+    line-height: 10px;
+    padding: 8px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #1700ad;
+    background-image: linear-gradient(45deg, #7AFB00 0%, #1bc702 100%);
+}
+.eventbox div a.tagbutton_Seminar:hover{
+    background-image: linear-gradient(45deg, #7AFB00 0%, #16b100 100%);
+}
+
+
+/* custom tag button for Conference */
+.eventbox div a.tagbutton_Conference {
+    position: absolute;
+    width: auto;
+    height: 10px;
+    top: 5%;
+    left: calc(100% + 10px); 
+    line-height: 10px;
+    padding: 8px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #1700ad;
+    background-image: linear-gradient(45deg, #00BFFB 0%, #00d4ff 100%);
+}
+.eventbox div a.tagbutton_Conference:hover{
+    background-image: linear-gradient(45deg, #00BFFB 0%, #00caff 100%);
+}
+
+
+/* custom tag button for opencanpus */
+.eventbox div a.tagbutton_opencanpus {
+    position: absolute;
+    width: auto;
+    height: 10px;
+    top: 5%;
+    left: calc(100% + 10px); 
+    line-height: 10px;
+    padding: 8px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #1700ad;
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    transition: .4s;
+}
+
+.eventbox div a.tagbutton_:hover {
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
 
 .eventbox .read-more{
     position: absolute;
