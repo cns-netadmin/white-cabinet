@@ -71,8 +71,8 @@
                             <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton">{{ .Params.tags }}</a>
                           </div>
                         {{ end }}
-                      <h3><a href="{{ .Permalink }}">{{ .Page.Title }}</a></h3>
                       <p>{{ .Content }}</p>
+                      <p class="read-more"><a href="{{ .Permalink }}">もっと読む</a></p>
                     </div>
                     {{ end }}
                   {{ end }}
