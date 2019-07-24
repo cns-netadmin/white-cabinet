@@ -6,11 +6,6 @@
 
 <body>
 
-{{/*
-  <h2>ようこそ</h2>
-  <p>原子核科学研究センター (<strong>C</strong>enter for <strong>N</strong>uclear <strong>S</strong>tudy) のホームページです。</p>
-*/}}
-
   {{ if .Site.Menus.main }}
     <ul class="accordion right-side">
       {{ range .Site.Menus.main.ByWeight }}
@@ -19,21 +14,21 @@
           <div class="nest">
             <!-- Special action: "lab" -->
             {{ if eq .Identifier "lab" }}
-            <div>
-              {{ range .Children }}
-                {{ $nm := .Name }}
-                {{ $w := .Weight }}
-                {{ $pt := .URL | relLangURL }}
-                <!-- Fetch image path -->
-                {{ range $.Site.RegularPages }}
-                  {{ if (.Param "mktile") }}
-                    {{ if eq .Weight $w }}
-                        <a href="{{ .RelPermalink }}" class="tile"><img src="{{ .Page.Param "image" }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
+              <div>
+                {{ range .Children }}
+                  {{ $nm := .Name }}
+                  {{ $w := .Weight }}
+                  {{ $pt := .URL | relLangURL }}
+                  <!-- Fetch image path -->
+                  {{ range $.Site.RegularPages }}
+                    {{ if (.Param "mktile") }}
+                      {{ if eq .Weight $w }}
+                          <a href="{{ .Permalink }}" class="tile"><img src="{{ .Page.Param "image" }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
+                      {{ end }}
                     {{ end }}
                   {{ end }}
                 {{ end }}
-              {{ end }}
-            </div>
+              </div>
 
             <!-- END Special action: "lab" -->
 
@@ -55,7 +50,35 @@
             {{ end }}
           </div>
         {{ else }}
-          <a href="{{ .URL }}"><button class="pseudo_button">{{- .Name -}}</button></a>
+
+          <!-- Special action: "event" -->
+          {{ if eq .URL "/events" }}
+            <button class="button">{{ .Name }}</button>
+            <div class="nest">
+              <h3>今後のイベント</h3>
+              {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
+                {{ if eq $catkey "event" }}
+                  {{ range (.Pages.ByParam "eventEndDate").Reverse }}
+                    {{ if le now .Params.eventEndDate }}
+                      <li><a href="{{ .Permalink }}">{{ .Page.Title }}</a> 
+                        {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
+                          ({{ dateFormat "2006.01.02" .Params.eventStartDate }}-{{ dateFormat "2006.01.02" .Params.eventEndDate }}, TAG: {{ .Params.tags }})
+                        {{ else }}
+                          ({{ dateFormat "2006.01.02" .Params.eventEndDate }}, TAG: {{ .Params.tags }})
+                        {{ end }}
+                      </li>
+                    {{ end }}
+                  {{ end }}
+                  <h3><a href="{{ .Page.Permalink }}">イベント情報一覧はこちら</a></h3>
+                {{ end }}
+              {{ end }}
+            </div>
+          <!-- END Special action: "events" -->
+
+          {{ else }}
+            <a href="{{ .URL }}"><button class="pseudo_button">{{- .Name -}}</button></a>
+          {{ end }}
+
         {{ end }}
       {{ end }}
     </ul>
