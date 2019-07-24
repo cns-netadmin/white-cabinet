@@ -16,13 +16,20 @@ pygmentCodeFences = true
 
 [Languages]
 [Languages.ja]
-weight = 1
-title = "東京大学 原子核科学研究センター"
+  weight = 1
+  title = "東京大学 原子核科学研究センター"
+[Languages.ja.params]
+  Language_name="日本語" 
+
 [Languages.en]
-weight = 2
-title = "Center for Nuclear Study"
+  weight = 2
+  title = "Center for Nuclear Study"
+[Languages.en.params]
+  Language_name="English" 
 
-
+[taxonomies]
+  tag = "tags"
+  category = "categories"
 
 [Params]
   subtitle = "Hugo Blog Template for GitLab Pages"
@@ -57,6 +64,24 @@ title = "Center for Nuclear Study"
 #[[Params.bigimg]]
 #  src = "img/hexagon.jpg"
 #  desc = "Hexagon"
+
+#[params]
+[[Params.address]]
+  description = "本郷本部"
+#  description = "本郷本部"
+  postcode = "113-0033"
+  address = "東京都文京区本郷7-3-1" 
+  room = "東京大学本郷キャンパス理学部1号館316号室"
+  tel = "03-3812-7886"
+  fax = "03-5841-7642"
+
+[[Params.address]]
+  description = "和光分室"
+  postcode = "351-0198"
+  address = "埼玉県和光市広沢2-1"
+  room = "理化学研究所内"
+  tel = "048-464-4191"
+  fax = "048-464-4554"
 
 
 [[menu.main]]
@@ -192,5 +217,12 @@ title = "Center for Nuclear Study"
     url = "/access"
     weight = 8
 
+[[menu.header]]
+    name = "アクセス"
+    url = "/access"
+    weight = 1
 
-
+[[menu.header]]
+    name = "採用情報"
+    url = "/job"
+    weight = 2

@@ -1,6 +1,7 @@
 +++
 title =  "Test6"
 date = 2019-07-09T18:37:36+09:00
+categories = "post"
 tags = ["Seminar","Conference"]
 image = ""
 draft = false
