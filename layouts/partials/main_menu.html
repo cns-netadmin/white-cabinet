@@ -6,11 +6,6 @@
 
 <body>
 
-{{/*
-  <h2>ようこそ</h2>
-  <p>原子核科学研究センター (<strong>C</strong>enter for <strong>N</strong>uclear <strong>S</strong>tudy) のホームページです。</p>
-*/}}
-
   {{ if .Site.Menus.main }}
     <ul class="accordion right-side">
       {{ range .Site.Menus.main.ByWeight }}
@@ -28,7 +23,7 @@
                   {{ range $.Site.RegularPages }}
                     {{ if (.Param "mktile") }}
                       {{ if eq .Weight $w }}
-                          <a href="{{ .RelPermalink }}" class="tile"><img src="{{ .Page.Param "image" }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
+                          <a href="{{ .Permalink }}" class="tile"><img src="{{ .Page.Param "image" }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
                       {{ end }}
                     {{ end }}
                   {{ end }}
@@ -65,10 +60,10 @@
                 {{ if eq $catkey "event" }}
                   {{ range (.Pages.ByParam "eventdate").Reverse }}
                     {{ if le now .Params.eventdate }}
-                      <li><a href="{{ .Page.URL }}">{{ .Page.Title }}</a> ({{ dateFormat "Monday, Jan 2, 2006" .Params.eventdate }}, TAG: {{ .Params.tags }})</li>
+                      <li><a href="{{ .Permalink }}">{{ .Page.Title }}</a> ({{ dateFormat "Monday, Jan 2, 2006" .Params.eventdate }}, TAG: {{ .Params.tags }})</li>
                     {{ end }}
                   {{ end }}
-                  <h3><a href="{{ .Page.URL }}">イベント情報一覧はこちら</a></h3>
+                  <h3><a href="{{ .Page.Permalink }}">イベント情報一覧はこちら</a></h3>
                 {{ end }}
               {{ end }}
             </div>
