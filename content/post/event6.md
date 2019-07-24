@@ -10,10 +10,8 @@ draft = false
 mkbanner = ["true","false"]
 +++
 
-<!--- # {{< param title >}} --->
 
 
-<!--- 開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}} --->
 
 The 18th CNS International Summer School will be held on Augst 21st to 27th, 2019 at Hongo Campus, University of Tokyo. The school is hosted by the CNS, University of Tokyo and supported by RIKEN Nishina Center and cooperated by ANPhA.
 

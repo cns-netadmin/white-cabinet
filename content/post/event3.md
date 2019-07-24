@@ -10,8 +10,6 @@ draft = false
 mkbanner = ["true","false"]
 +++
 
-<!---# {{< param title >}}--->
 
 Open campus@本郷
 
-<!--- 開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}} --->

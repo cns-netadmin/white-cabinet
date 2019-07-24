@@ -10,8 +10,6 @@ draft = false
 mkbanner = ["true","false"]
 +++
 
-<!--- # {{< param title >}} --->
 
 2020年に開催します
 
-<!--- 開催日: {{< param eventStartDate >}} - {{< param eventEndDate >}} --->
