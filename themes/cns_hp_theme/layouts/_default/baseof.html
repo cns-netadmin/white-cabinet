@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+{{ partial "header.html" . }}
 <head>
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
     <meta charset="UTF-8">
@@ -7,6 +6,7 @@
     <!--meta http-equiv="X-UA-Compatible" content="ie-edge"-->
     <title>{{ .Site.Params.Title }}</title>
 </head>
+
 <!--    {{- partial "head.html" . -}} -->
 <body>
   {{ partial "header.html" . }}
