@@ -20,8 +20,9 @@
 
 <script type="text/javascript" src="{{ .Site.BaseURL }}js/top_figure.js"></script>
 <div class="top_figure">
+  {{ $path := .Site.BaseURL }}
   {{ range .Site.Params.top_figures }}
-    <img src="{{.}}">
+  <img src={{ . | printf "%s%s" $path }}>
   {{ end }}
 </div>
 
