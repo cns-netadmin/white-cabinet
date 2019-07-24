@@ -56,22 +56,30 @@
             <button class="button">{{ .Name }}</button>
             <div class="nest">
               <h3>今後のイベント</h3>
+
               {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
                 {{ if eq $catkey "event" }}
                   {{ range (.Pages.ByParam "eventEndDate").Reverse }}
                     {{ if le now .Params.eventEndDate }}
-                      <li><a href="{{ .Permalink }}">{{ .Page.Title }}</a> 
+                    <div class="eventbox">
                         {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
-                          ({{ dateFormat "2006.01.02" .Params.eventStartDate }}-{{ dateFormat "2006.01.02" .Params.eventEndDate }}, TAG: {{ .Params.tags }})
+                          <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
+                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton">{{ .Params.tags }}</a>
+                          </div>
                         {{ else }}
-                          ({{ dateFormat "2006.01.02" .Params.eventEndDate }}, TAG: {{ .Params.tags }})
+                          <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
+                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton">{{ .Params.tags }}</a>
+                          </div>
                         {{ end }}
-                      </li>
+                      <h3><a href="{{ .Permalink }}">{{ .Page.Title }}</a></h3>
+                      <p>{{ .Content }}</p>
+                    </div>
                     {{ end }}
                   {{ end }}
-                  <h3><a href="{{ .Page.Permalink }}">イベント情報一覧はこちら</a></h3>
+                  <h3><a href="{{ $.Site.BaseURL }}categories/event/">イベント情報一覧はこちら</a></h3>
                 {{ end }}
               {{ end }}
+
             </div>
           <!-- END Special action: "events" -->
 
