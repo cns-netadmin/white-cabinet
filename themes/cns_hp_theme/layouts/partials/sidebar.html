@@ -1,39 +1,65 @@
 <!--This page: Side bar of container -->
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/sideba.css">
+
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/sidebar.css">
 
 <div class="sidebar">
 
-<!-- Topics (future :from Event pages)-->
-  <div class="topics">
-  {{/* <h3>セクションを持たない記事ページ一覧（タイトル順）</h3>
-      <ol>
-        {{ range (where $.Site.RegularPages "Section" "").ByTitle }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <a href="www.google.com">GOOGLE</a>
-        {{ end }}
-      </ol>
-  */}}
-<article>
-  <h3>Featureされたサイト内ページだけの配列</h3>
-  <ol>
-    {{ range .Pages }}
-      {{ if (.Param "mkbanner") }}
-        <li><a href="{{ .RelPermalink }}">Page {{ .Title }} is bannered</a>
-      {{ else }}
-        {{ if .Title }}
-          <li> Page <a href="{{ .RelPermalink }}">{{ .Title }}</a> is not bannered
-        {{ else }}
-          <li> Page is not titled
-        {{ end }}
-      {{ end }}
-    {{ end }}
-  </ol> 
- </div>
+
+  <!-- Topics (future :from Event pages)-->
+  <!-- <div class="topics"> -->
+    <!-- {{/* <h3>セクションを持たない記事ページ一覧（タイトル順）</h3> -->
+    <!--     <ol> -->
+      <!--       <\!-- {{/* {{ range (where $.Site.RegularPages "Section" "").ByTitle }} */}} -\-> -->
+	<!--       <\!-- {{/* <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> */}} -\-> -->
+
+	  <!--       <\!-- {{/* {{ end }} */}} -\-> -->
+	    <!--     </ol> -->
+    <!-- */}} -->
+    <!-- <article> -->
+      <!-- <h3>Featureされたサイト内ページだけの配列</h3> -->
+      <!-- <ol> -->
+	{{ range .Pages }}
+	{{ if (.Param "mkbanner") }}
+	{{ if (.Param "image") }} 
+	<a href="{{ .RelPermalink }}"><img class="links" src="{{ $.Site.BaseURL}}/{{ .Params.image }}" width=250px height=auto></a>
+	{{ else }}
+{{/*	<div class="tile">
+	  <a href="{{ .RelPermalink }}">{{.Title}}</a>
+	</div>
+*/}}
+  <!-- </div> -->
+	{{ end }}
+	{{/*    <a href="{{ .RelPermalink }}">Page {{ .Title }} is bannered</a> */}}
+
+	{{ end }}
+
+	{{ end }}
+
+	<h3>recent topics</h3>
+	{{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
+	{{ if eq $catkey "topic" }}
+
+	<div class="topic_list">
+	  <ul>
+	    {{ range .Pages.ByDate }}
+	    <li> {{dateFormat "2 Jan, 2006" .Params.Date }} </li>
+	    <a href="{{ .RelPermalink }}"> {{ .Title }} </a>
+	    {{ end }}
+	  </ul>
+	</div>
+
+	{{ end }}
+	{{ end }}
+
+  <!-- </ol> -->
+  <!-- </article> -->
+
 
 <!-- Link -->
   <div class="links">
-    <a href="https://www.u-tokyo.ac.jp/"><img class="links" src="img/utokyo.jpg" width=180px height=auto></a>
-    <a href="https://www.s.u-tokyo.ac.jp/"><img class="links" src="img/sos_utokyo.jpg" width=230px height=auto></a>
-    <a href=""><h3>関連リンク</h3></a>
+  <a href="https://www.u-tokyo.ac.jp/"><img class="links" src="{{ $.Site.BaseURL }}img/utokyo.jpg" width=180px height=auto></a>
+  <a href="https://www.s.u-tokyo.ac.jp/"><img class="links" src="{{ $.Site.BaseURL }}img/sos_utokyo.jpg" width=230px height=auto></a>
+  <a href=""><h3>関連リンク</h3></a>
+
   </div>
 </div>

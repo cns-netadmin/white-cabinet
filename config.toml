@@ -22,7 +22,9 @@ title = "東京大学 原子核科学研究センター"
 weight = 2
 title = "Center for Nuclear Study"
 
-
+[taxonomies]
+tag = "tags"
+category = "categories"
 
 [Params]
   subtitle = "Hugo Blog Template for GitLab Pages"
