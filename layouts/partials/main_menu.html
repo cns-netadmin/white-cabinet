@@ -42,9 +42,9 @@
                 {{ end }}
               {{ end }}
               <ul class="accordion_1">
-                {{ range .Children }}
-                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
-                {{ end }}
+<!--                {{/* range .Children */}}
+                  <li><a href="{{/* .URL | relLangURL */}}">{{/* .Name */}} </a></li>
+                {{/* end */}}  -->
               </ul>
               <!-- END Default action -->
             {{ end }}
@@ -71,6 +71,7 @@
                             <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
                           </div>
                         {{ end }}
+                      <h2>{{ .Title }}</h2>
                       <p>{{ .Content }}</p>
                       <p><a href="{{ .Permalink }}" class="read-more">続きを読む</a></p>
                     </div>
