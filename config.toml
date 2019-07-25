@@ -225,14 +225,19 @@ pygmentCodeFences = true
     weight = 8
 
 [[menu.header]]
+    name = "ホーム"
+    url = "/"
+    weight = 1
+
+[[menu.header]]
     name = "アクセス"
     url = "/access"
-    weight = 1
+    weight = 2
 
 [[menu.header]]
     name = "採用情報"
     url = "/job"
-    weight = 2
+    weight = 3
 
 
 
@@ -371,14 +376,19 @@ pygmentCodeFences = true
     weight = 8
 
 [[Languages.en.menu.header]]
+    name = "HOME"
+    url = "/"
+    weight = 1
+
+[[Languages.en.menu.header]]
     name = "Access"
     url = "/access"
-    weight = 1
+    weight = 2
 
 [[Languages.en.menu.header]]
     name = "Recruitment Information"
     url = "/job"
-    weight = 2
+    weight = 3
 
 
 [[Languages.en.params.address]]
