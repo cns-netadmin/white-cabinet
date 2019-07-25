@@ -42,10 +42,10 @@ header {
   margin: 0 0;
 }
 .cns_logo {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   margin-right: 10px;
+}
+.cns_logo img {
+  width: 60px;
 }
 .black-belt .title {
   display: inline-block;
@@ -55,6 +55,7 @@ header {
 }
 .black-belt p {
   margin: 0 0;
+  line-height: 24px;
 }
 .black-belt .title .sub {
   font-size: 0.6em;
@@ -148,7 +149,6 @@ header {
 }
 .header-menu {
   position: absolute;
-  width: 450px;
   height: 25px;
   right: 0;
   bottom: 0;

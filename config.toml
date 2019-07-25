@@ -23,6 +23,7 @@ pygmentCodeFences = true
   link = "関連リンク"
   location = "所在地"
   sitemap = "サイトマップ"
+  subtitle = "Center for Nuclear Study, The University of Tokyo"
 
 [Languages.en]
   weight = 2
@@ -32,13 +33,14 @@ pygmentCodeFences = true
   link = "Links"
   location = "Location"
   sitemap = "Quicklinks"
+  subtitle = "The University of Tokyo"
 
 [taxonomies]
   tag = "tags"
   category = "categories"
 
 [Params]
-  subtitle = "Hugo Blog Template for GitLab Pages"
+# subtitle = "Hugo Blog Template for GitLab Pages"
   logo = "img/cns_mark_color_cut.png"
   favicon = "img/favicon.ico"
   dateFormat = "2006/01/02"
