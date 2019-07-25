@@ -49,6 +49,15 @@ header {
 }
 .black-belt .title {
   display: inline-block;
+  font-size: 1.6em;
+  font-weight: bold;
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+}
+.black-belt p {
+  margin: 0 0;
+}
+.black-belt .title .sub {
+  font-size: 0.6em;
 }
 .menu-trigger {
   display: inline-block;
