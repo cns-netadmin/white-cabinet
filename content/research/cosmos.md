@@ -1,7 +1,7 @@
 +++
 title =  "Cosmos"
 date = 2019-07-22T11:03:34+09:00
-image = "http://www.cns.s.u-tokyo.ac.jp/image/group_logo/tiles/ja_1a_Nuclear_Astrophysics.png"
+image = "img/top_figures/CRIB.jpg"
 draft = false
 mktile = true
 weight = "1"

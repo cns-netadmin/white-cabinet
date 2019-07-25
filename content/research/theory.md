@@ -1,7 +1,7 @@
 +++
 title =  "Theory"
 date = 2019-07-22T11:05:08+09:00
-image = "http://www.cns.s.u-tokyo.ac.jp/image/group_logo/tiles/ja_9a_Nuclear_Theory.png"
+image = "img/top_figures/Theory.png"
 mktile = true
 draft = false
 weight = "9"

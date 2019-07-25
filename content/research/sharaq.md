@@ -1,7 +1,7 @@
 +++
 title =  "Sharaq"
 date = 2019-07-22T11:04:59+09:00
-image = "http://www.cns.s.u-tokyo.ac.jp/image/group_logo/tiles/ja_8a_OEDO_SHARAQ_Project.png"
+image = "img/top_figures/OEDOa.jpg"
 mktile = true
 draft = false
 weight = "8"
