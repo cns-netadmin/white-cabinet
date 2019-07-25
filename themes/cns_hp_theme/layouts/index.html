@@ -11,59 +11,6 @@
 
     {{ partial "main_menu.html" . }}
 
-    <article>
-      <ul>
-        <li><a href="#"><span>2016/02/10</span>記事タイトル10</a></li>
-        <li><a href="#"><span>2016/02/09</span>記事タイトル9</a></li>
-        <li><a href="#"><span>2016/02/08</span>記事タイトル8</a></li>
-        <li><a href="#"><span>2016/02/07</span>記事タイトル7</a></li>
-        <li><a href="#"><span>2016/02/06</span>記事タイトル6</a></li>
-        <li><a href="#"><span>2016/02/05</span>記事タイトル5</a></li>
-        <li><a href="#"><span>2016/02/04</span>記事タイトル4</a></li>
-        <li><a href="#"><span>2016/02/03</span>記事タイトル3</a></li>
-        <li><a href="#"><span>2016/02/02</span>記事タイトル2</a></li>
-        <li><a href="#"><span>2016/02/01</span>記事タイトル1</a></li>
-        <li><a href="#"><span>2016/02/10</span>記事タイトル10</a></li>
-        <li><a href="#"><span>2016/02/09</span>記事タイトル9</a></li>
-        <li><a href="#"><span>2016/02/08</span>記事タイトル8</a></li>
-        <li><a href="#"><span>2016/02/07</span>記事タイトル7</a></li>
-        <li><a href="#"><span>2016/02/06</span>記事タイトル6</a></li>
-        <li><a href="#"><span>2016/02/05</span>記事タイトル5</a></li>
-        <li><a href="#"><span>2016/02/04</span>記事タイトル4</a></li>
-        <li><a href="#"><span>2016/02/03</span>記事タイトル3</a></li>
-        <li><a href="#"><span>2016/02/02</span>記事タイトル2</a></li>
-        <li><a href="#"><span>2016/02/01</span>記事タイトル1</a></li>
-        <li><a href="#"><span>2016/02/10</span>記事タイトル10</a></li>
-        <li><a href="#"><span>2016/02/09</span>記事タイトル9</a></li>
-        <li><a href="#"><span>2016/02/08</span>記事タイトル8</a></li>
-        <li><a href="#"><span>2016/02/07</span>記事タイトル7</a></li>
-        <li><a href="#"><span>2016/02/06</span>記事タイトル6</a></li>
-        <li><a href="#"><span>2016/02/05</span>記事タイトル5</a></li>
-        <li><a href="#"><span>2016/02/04</span>記事タイトル4</a></li>
-        <li><a href="#"><span>2016/02/03</span>記事タイトル3</a></li>
-        <li><a href="#"><span>2016/02/02</span>記事タイトル2</a></li>
-        <li><a href="#"><span>2016/02/01</span>記事タイトル1</a></li>
-      </ul>
-
-    </article>
-
-    <article>
-      <h3>研究室一覧</h3>
-      <ol>
-        {{ range.Pages }}
-          {{ if (.Param "mktile") }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ end }}
-        {{ end }}
-      </ol>
-    </article>
-
-
-    <nav>
-      <a href="#">前へ</a>
-      <a href="#">次へ</a>
-    </nav>
-
   </div><!--top menu-->
 
 
@@ -73,8 +20,4 @@
 
 {{ partial "footer.html" . }}
 
-{{/*
-       <a href="{{ with .Site.GetPage "/post/test5.md" }}{{ .Title }}{{ end }}">Here is a sample page that I made.</a>
-       {{ with .Site.GetPage "/post/test5.md" }}{{ .Title }}{{ end }}
-       {{< ref "/post/test5.md" >}}
-*/}}
+
