@@ -9,6 +9,14 @@
 
   <div class="top_menu">
 
+
+  <script type="text/javascript">
+  $(window).on('load resize', function(){
+    var browserWidth = $(window).width();
+    console.log(browserWidth);
+  });
+  </script>
+
     {{ partial "main_menu.html" . }}
 
   </div><!--top menu-->
