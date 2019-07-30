@@ -1,20 +1,50 @@
-# All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
-image: registry.gitlab.com/pages/hugo:latest
+image: hugo:latest
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
+before_script:
+  - eval `ssh-agent`
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+
+stages:
+  - create
+  - test
+  - draft
+  - deploy
+
+create:
+  script:
+    - 'if [ -n "$FILENAME" ]; then'
+    - hugo new post/$FILENAME.md
+    - git config --global user.email $GITLAB_USER_EMAIL
+    - git config --global user.name $GITLAB_USER_NAME
+    - git add content/post/$FILENAME.md
+    - 'git commit -m "new content file creation: post/$FILENAME.md"'
+    - git -c core.sshCommand="ssh -oStrictHostKeyChecking=no" push gitlab@www-intra.cns.s.u-tokyo.ac.jp:cns-netadmin/cns-hp.git HEAD:${CI_COMMIT_REF_NAME}
+    - fi
+  only:
+    - draft_article
+
 test:
   script:
-  - hugo
+    - hugo
   except:
-  - master
+    - master
+    - develop
 
-pages:
+draft:
   script:
-  - hugo
+    - hugo
+    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test
+  only:
+    - develop
+    
+deploy:
+  script:
+    - hugo
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master

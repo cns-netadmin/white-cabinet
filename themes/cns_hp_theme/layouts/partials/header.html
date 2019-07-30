@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <title> {{ .Site.Title }} </title>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/header.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+  <script src="{{ .Site.BaseURL }}js/jquery-3.4.1.min.js"></script>
+</head>
+
+<script type="text/javascript" src="{{ .Site.BaseURL }}js/top_figure.js"></script>
+<div class="top_figure">
+  {{ range .Site.Params.top_figures }}
+  <img src="{{ $.Site.BaseURL }}{{ . }}">
+  {{ end }}
+</div>
+
+<body>
+<header>
+  <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
+  <div class="black-belt">
+    <div class="cns_logo">
+      <a href="{{ .Site.BaseURL }}"><img src="{{ $.Site.BaseURL }}{{ .Site.Params.logo }}" /></a>
+    </div>
+    <div class="title">
+      <p> {{ .Site.Title }} </p>
+      <p class="sub">{{ .Site.Params.subtitle }}</p>
+    </div>
+    <div class="menu-trigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="humberger-menu">
+      <ul>
+        {{ range .Site.Menus.main.ByWeight }}
+        <li>
+          <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+    <nav class="header-menu">
+      <ul>
+	{{ range .Site.Menus.header.ByWeight }}
+      <li>
+	    <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
+	    </li>
+	{{ end }}
+          {{ if .IsTranslated }}
+          {{ range .Translations }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Site.Params.language_name }}</a>
+        </li>
+          {{ end }}
+          {{ end }}
+      </ul>
+    </nav>
+  </div>
+  <div class="color-belt"></div>	  
+</header>
+
+<main>

@@ -1,0 +1,17 @@
+.container {
+  /* main + topics + link */
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  width: 100%;
+}
+.top_menu {
+  display: block;
+ /* width: 660px; */
+  width: 100%;
+  text-align: center;
+}
+
+.side_container {
+    display: block;
+    margin-left: auto;
+}

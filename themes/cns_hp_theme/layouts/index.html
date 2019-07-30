@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+<head>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
+<!--  <link rel="stylesheet" href="css/body.css"> -->
+</head>
+
+<div class="container">
+
+  <div class="top_menu">
+
+    {{ partial "main_menu.html" . }}
+
+  </div><!--top menu-->
+
+
+  {{ partial "sidebar.html" .}}
+
+</div> <!--container-->
+
+{{ partial "footer.html" . }}
+
+

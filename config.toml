@@ -1,26 +1,67 @@
-baseurl = "https://pages.gitlab.io/hugo/"
+#baseurl = "https://pages.gitlab.io/hugo/"
+baseurl = "https://www.cns.s.u-tokyo.ac.jp/test/" # FOR TESTING
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
-title = "Beautiful Hugo"
 canonifyurls  = true
 
-DefaultContentLanguage = "en"
-theme = "beautifulhugo"
+DefaultContentLanguage = "ja"
+#theme = "beautifulhugo"
+theme = "cns_hp_theme"
 metaDataFormat = "yaml"
 pygmentsUseClasses = true
 pygmentCodeFences = true
 #disqusShortname = "XXX"
 #googleAnalytics = "XXX"
 
+[Languages]
+[Languages.ja]
+  weight = 1
+  title = "東京大学 原子核科学研究センター"
+[Languages.ja.params]
+  Language_name="日本語" 
+  link = "関連リンク"
+  location = "所在地"
+  sitemap = "サイトマップ"
+  subtitle = "Center for Nuclear Study, The University of Tokyo"
+
+[Languages.en]
+  weight = 2
+  title = "Center for Nuclear Study"
+[Languages.en.params]
+  Language_name="English" 
+  link = "Links"
+  location = "Location"
+  sitemap = "Quicklinks"
+  subtitle = "The University of Tokyo"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
 [Params]
-  subtitle = "Hugo Blog Template for GitLab Pages"
-  logo = "img/avatar-icon.png"
+# subtitle = "Hugo Blog Template for GitLab Pages"
+  logo = "img/cns_mark_color_cut.png"
   favicon = "img/favicon.ico"
-  dateFormat = "January 2, 2006"
+  dateFormat = "2006/01/02"
   commit = false
   rss = true
   comments = true
+
+
+
+  top_figures = [
+    "img/top_figures/Fundamental_Symmetry.jpg",
+    "img/top_figures/OEDOa.jpg",
+    "img/top_figures/Quark.jpg",
+    "img/top_figures/hyperECR.jpg",
+    "img/top_figures/CRIB.jpg",
+    "img/top_figures/DONUTS.jpg",
+    "img/top_figures/NUSPEQ.jpg",
+    "img/top_figures/ENR.jpg",
+    "img/top_figures/Theory.png"
+
+  ]
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 #[[Params.bigimg]]
@@ -33,62 +74,337 @@ pygmentCodeFences = true
 #  src = "img/hexagon.jpg"
 #  desc = "Hexagon"
 
-[Author]
-  name = "Some Person"
-  email = "youremail@domain.com"
-  facebook = "username"
-  googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
-  gitlab = "username"
-  github = "username"
-  twitter = "username"
-  reddit = "username"
-  linkedin = "username"
-  xing = "username"
-  stackoverflow = "users/XXXXXXX/username"
-  snapchat = "username"
-  instagram = "username"
-  youtube = "user/username" # or channel/channelname
-  soundcloud = "username"
-  spotify = "username"
-  bandcamp = "username"
-  itchio = "username"
-  keybase = "username"
+#[params]
+[[Params.address]]
+  description = "本郷本部"
+#  description = "本郷本部"
+  postcode = "113-0033"
+  address = "東京都文京区本郷7-3-1" 
+  room = "東京大学本郷キャンパス理学部1号館316号室"
+  tel = "03-3812-7886"
+  fax = "03-5841-7642"
+
+[[Params.address]]
+  description = "和光分室"
+  postcode = "351-0198"
+  address = "埼玉県和光市広沢2-1"
+  room = "理化学研究所内"
+  tel = "048-464-4191"
+  fax = "048-464-4554"
 
 
 [[menu.main]]
-    name = "Blog"
-    url = ""
+    identifier = "about"
+    name = "CNSについて"
+    url = "/about"
     weight = 1
 
 [[menu.main]]
-    name = "About"
-    url = "page/about/"
-    weight = 3
-
-[[menu.main]]
-    identifier = "samples"
-    name = "Samples"
-    weight = 2
-
-[[menu.main]]
-    parent = "samples"
-    name = "Big Image Sample"
-    url = "post/2017-03-07-bigimg-sample"
+    parent = "about"
+    name = "センター長挨拶"
+    url = "/about/greeting"
     weight = 1
 
 [[menu.main]]
-    parent = "samples"
-    name = "Math Sample"
-    url = "post/2017-03-05-math-sample"
+    parent = "about"
+    name = "沿革・組織図"
+    url = "/about/history"
+    weight = 2
+    
+[[menu.main]]
+    parent = "about"
+    name = "パンフレット"
+    url = "/about/pamphlet"
+    weight = 3
+    
+[[menu.main]]
+    name = "広報・実績・評価"
+    url = "/about/announcement"
+    parent = "about"
+    weight = 4
+    
+[[menu.main]]
+    identifier = "for_students"
+    name = "進学希望の方へ"
+    url = "/for_students"
+    weight = 2
+    
+[[menu.main]]
+    parent = "for_students"
+    name = "大学院進学ガイダンス"
+    url = "/for_students/guidance"
+    weight = 1
+
+[[menu.main]]
+    parent = "for_students"
+    name = "施設見学会"
+    url = "/for_students/facility_tour"
     weight = 2
 
 [[menu.main]]
-    parent = "samples"
-    name = "Code Sample"
-    url = "post/2016-03-08-code-sample"
+    identifier = "lab"
+    name = "研究室紹介"
+    url = "/research"
     weight = 3
 
 [[menu.main]]
-    name = "Tags"
-    url = "tags"
+    parent = "lab"
+    name = "宇宙核物理"
+    url = "/research/cosmos"
+    weight = 1
+
+[[menu.main]]
+    parent = "lab"
+    name = "核ダイナミクス"
+    url = "/research/donuts"
+    weight = 2
+
+[[menu.main]]
+    parent = "lab"
+    name = "クォーク物理"
+    url = "/research/quark"
     weight = 3
+
+[[menu.main]]
+    parent = "lab"
+    name = "エキゾチック核反応"
+    url = "/research/enr"
+    weight = 4
+
+[[menu.main]]
+    parent = "lab"
+    name = "極限原子核構造"
+    url = "/research/nuspeq"
+    weight = 5
+
+[[menu.main]]
+    parent = "lab"
+    name = "基本対称性"
+    url = "/research/edm"
+    weight = 6
+
+[[menu.main]]
+    parent = "lab"
+    name = "加速器開発"
+    url = "/research/accelerator"
+    weight = 7
+
+[[menu.main]]
+    parent = "lab"
+    name = "OEDO-SHARAQプロジェクト"
+    url = "/research/sharaq"
+    weight = 8
+
+[[menu.main]]
+    parent = "lab"
+    name = "原子核理論"
+    url = "/research/theory"
+    weight = 9
+
+[[menu.main]]
+    name = "教員紹介"
+    url = "/staffs"
+    weight = 4
+
+[[menu.main]]
+    name = "イベント情報"
+    url = "/events"
+    weight = 5
+
+[[menu.main]]
+    name = "国際サマースクール"
+    url = "/cnsss"
+    weight = 6
+
+[[menu.main]]
+    name = "セミナー開催案内"
+    url = "/seminers"
+    weight = 7
+
+[[menu.main]]
+    name = "アクセス"
+    url = "/access"
+    weight = 8
+
+[[menu.header]]
+    name = "ホーム"
+    url = "/"
+    weight = 1
+
+[[menu.header]]
+    name = "アクセス"
+    url = "/access"
+    weight = 2
+
+[[menu.header]]
+    name = "採用情報"
+    url = "/job"
+    weight = 3
+
+
+
+
+[[Languages.en.menu.main]]
+    identifier = "about"
+    name = "About CNS"
+    url = "/about"
+    weight = 1
+
+[[Languages.en.menu.main]]
+    parent = "about"
+    name = "Greeting from Director" 
+    url = "/about/greeting"
+    weight = 1
+
+[[Languages.en.menu.main]]
+    parent = "about"
+    name = "History/Organization Chart"
+    url = "/about/history"
+    weight = 2
+    
+[[Languages.en.menu.main]]
+    parent = "about"
+    name = "Pamphlet"
+    url = "/about/pamphlet"
+    weight = 3
+    
+[[Languages.en.menu.main]]
+    name = "広報・実績・評価"
+    url = "/about/announcement"
+    parent = "about"
+    weight = 4
+    
+[[Languages.en.menu.main]]
+    identifier = "for_students"
+    name = "For Students"
+    url = "/for_students"
+    weight = 2
+    
+[[Languages.en.menu.main]]
+    parent = "for_students"
+    name = "大学院進学ガイダンス"
+    url = "/for_students/guidance"
+    weight = 1
+
+[[Languages.en.menu.main]]
+    parent = "for_students"
+    name = "施設見学会"
+    url = "/for_students/facility_tour"
+    weight = 2
+
+[[Languages.en.menu.main]]
+    identifier = "lab"
+    name = "Research Groups"
+    url = "/research"
+    weight = 3
+
+[[Languages.en.menu.main]]
+    parent = "lab"
+    name = "宇宙核物理"
+    url = "/research/cosmos"
+    weight = 1
+
+[[Languages.en.menu.main]]
+    parent = "lab"
+    name = "核ダイナミクス"
+    url = "/research/donuts"
+    weight = 2
+
+[[Languages.en.menu.main]]
+    parent = "lab"
+    name = "クォーク物理"
+    url = "/research/quark"
+    weight = 3
+
+[[Languages.en.menu.main]]
+    parent = "lab"
+    name = "エキゾチック核反応"
+    url = "/research/enr"
+    weight = 4
+
+[[Languages.en.menu.main]]
+    parent = "lab"
+    name = "極限原子核構造"
+    url = "/research/nuspeq"
+    weight = 5
+
+[[Languages.en.menu.main]]
+    parent = "lab"
+    name = "基本対称性"
+    url = "/research/edm"
+    weight = 6
+
+[[Languages.en.menu.main]]
+    parent = "lab"
+    name = "加速器開発"
+    url = "/research/accelerator"
+    weight = 7
+
+[[Languages.en.menu.main]]
+    parent = "lab"
+    name = "OEDO-SHARAQプロジェクト"
+    url = "/research/sharaq"
+    weight = 8
+
+[[Languages.en.menu.main]]
+    parent = "lab"
+    name = "原子核理論"
+    url = "/research/theory"
+    weight = 9
+
+[[Languages.en.menu.main]]
+    name = "Staffs"
+    url = "/staffs"
+    weight = 4
+
+[[Languages.en.menu.main]]
+    name = "Event Info"
+    url = "/events"
+    weight = 5
+
+[[Languages.en.menu.main]]
+    name = "International Summer School"
+    url = "/cnsss"
+    weight = 6
+
+[[Languages.en.menu.main]]
+    name = "Seminors"
+    url = "/seminers"
+    weight = 7
+
+[[Languages.en.menu.main]]
+    name = "Access"
+    url = "/access"
+    weight = 8
+
+[[Languages.en.menu.header]]
+    name = "HOME"
+    url = "/"
+    weight = 1
+
+[[Languages.en.menu.header]]
+    name = "Access"
+    url = "/access"
+    weight = 2
+
+[[Languages.en.menu.header]]
+    name = "Recruitment Information"
+    url = "/job"
+    weight = 3
+
+
+[[Languages.en.params.address]]
+  description = "Hongo Campus"
+  postcode = "113-0033"
+  address = "7-3-1, Hongo, Bunkyo-ku, Tokyo, 113-0033, Japan" 
+  room = "Faculty of Science Bldg.1 #316"
+  tel = "03-3812-7886"
+  fax = "03-5841-7642"
+
+[[Languages.en.params.address]]
+  description = "Wako Campus"
+  postcode = "351-0198"
+  address = "2-1, Hirosawa, Wako-shi, Saitama, Japan"
+  room = "Center for Nuclear Study"
+  tel = "048-464-4191"
+  fax = "048-464-4554"
