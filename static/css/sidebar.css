@@ -3,32 +3,19 @@
  layouts/partial/sidebar.html
  */
 
-.sidebar {
-  display: block;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 100px;
-  bottom: 1000px;
-  width: 320px;
-  height: 1200px;
-  right: 15px;
-  color: #000;
-  
-}
-
 .tile {
     display: block;
     position: relative;
-    width: 250px;
+  /*  width: 250px;*/
+    width: auto;
     height: auto;
 }
 
 .topic_list {
     width: auto;
-    height: 200px;
+    height: 400px;
     overflow: scroll;
 }
-/*
 .sidebar__item {
   border: solid 8px red;
   box-sizing: border-box;
@@ -38,9 +25,4 @@
   box-sizing: border-box;
 
 }
-.links {
-  border: solid 8px red;
-  box-sizing: border-box;
 
-}
-*/
