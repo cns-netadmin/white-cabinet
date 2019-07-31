@@ -5,17 +5,11 @@
 <!--  <link rel="stylesheet" href="css/body.css"> -->
 </head>
 
+<!-- container part -->
+<script type="text/javascript" src="{{ .Site.BaseURL }}js/container.js"></script>
 <div class="container">
 
   <div class="top_menu">
-
-
-  <script type="text/javascript">
-  $(window).on('load resize', function(){
-    var browserWidth = $(window).width();
-    console.log(browserWidth);
-  });
-  </script>
 
     {{ partial "main_menu.html" . }}
 
