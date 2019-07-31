@@ -6,11 +6,12 @@
 <div class="sidebar">
   
   <div class="topic_list">
-    <ul>
   {{ range $.Site.RegularPages }}
     {{ if (.Param "mkbanner") }}
       {{ if (.Param "image") }} 
-      <a href="{{ .RelPermalink }}"><img class="topic" src="{{ .Site.BaseURL }}{{ .Params.image }}" width=250px height=auto></a>
+      <div class="topic">
+      <a href="{{ .RelPermalink }}"><img src="{{ .Site.BaseURL }}{{ .Params.image }}" ></a>
+      </div>
       {{ else }}
       <!-- {{/*	<div class="tile"> -->
         <!--   <a href="{{ .RelPermalink }}">{{.Title}}</a> -->
@@ -24,12 +25,13 @@
   {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
     {{ if eq $catkey "topic" }}
       {{ range .Pages.ByDate }}
-        <li> {{dateFormat "2 Jan, 2006" .Params.Date }} </li>
+        <div class="topic">
+        <a> {{dateFormat "2 Jan, 2006" .Params.Date }}  </a>
         <a href="{{ .RelPermalink }}"> {{ .Title }} </a>
+        </div>
       {{ end }}
     {{ end }}
   {{ end }}
-    </ul>
   </div> <!-- topic_list -->
 
 </div> <!-- sidebar -->
