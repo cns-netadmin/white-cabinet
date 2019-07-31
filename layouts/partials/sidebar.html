@@ -8,36 +8,36 @@
   <div class="topic_list">
     <ul>
   {{ range $.Site.RegularPages }}
-  {{ if (.Param "mkbanner") }}
-  {{ if (.Param "image") }} 
-  <a href="{{ .RelPermalink }}"><img class="topic" src="{{ .Site.BaseURL }}{{ .Params.image }}" width=250px height=auto></a>
-  {{ else }}
-  <!-- {{/*	<div class="tile"> -->
-    <!--   <a href="{{ .RelPermalink }}">{{.Title}}</a> -->
-    <!-- </div> -->
-  <!-- */}} -->
-  {{ end }}
-  {{ end }}
+    {{ if (.Param "mkbanner") }}
+      {{ if (.Param "image") }} 
+      <a href="{{ .RelPermalink }}"><img class="topic" src="{{ .Site.BaseURL }}{{ .Params.image }}" width=250px height=auto></a>
+      {{ else }}
+      <!-- {{/*	<div class="tile"> -->
+        <!--   <a href="{{ .RelPermalink }}">{{.Title}}</a> -->
+        <!-- </div> -->
+      <!-- */}} -->
+      {{ end }}
+    {{ end }}
   {{ end }}
 
  <!-- <h3>recent topics</h3> -->
   {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
-  {{ if eq $catkey "topic" }}
-
-{{ range .Pages.ByDate }}
-<li> {{dateFormat "2 Jan, 2006" .Params.Date }} </li>
-<a href="{{ .RelPermalink }}"> {{ .Title }} </a>
-{{ end }}
+    {{ if eq $catkey "topic" }}
+      {{ range .Pages.ByDate }}
+        <li> {{dateFormat "2 Jan, 2006" .Params.Date }} </li>
+        <a href="{{ .RelPermalink }}"> {{ .Title }} </a>
+      {{ end }}
+    {{ end }}
+  {{ end }}
     </ul>
   </div> <!-- topic_list -->
 
-  {{ end }}
-  {{ end }}
 </div> <!-- sidebar -->
 
+
 <div class="links">
-  <a href="https://www.u-tokyo.ac.jp/"><img class="links" src="{{ $.Site.BaseURL }}img/utokyo.jpg" width=180px height=auto></a>
-  <a href="https://www.s.u-tokyo.ac.jp/"><img class="links" src="{{ $.Site.BaseURL }}img/sos_utokyo.jpg" width=230px height=auto></a>
+  <a href="https://www.u-tokyo.ac.jp/"><img src="{{ $.Site.BaseURL }}img/utokyo.jpg" width=180px height=auto></a>
+  <a href="https://www.s.u-tokyo.ac.jp/"><img src="{{ $.Site.BaseURL }}img/sos_utokyo.jpg" width=230px height=auto></a>
   <a href="{{ .Site.BaseURL }}/link"><h3>{{ .Site.Params.link }}</h3></a>
 
 </div> <!-- links -->
