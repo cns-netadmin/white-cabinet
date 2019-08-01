@@ -1,24 +1,29 @@
 <!--This page: Side bar of container -->
 
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/slick-theme.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/slick.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/sidebar.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/swiper.min.css">
+
+<script type="text/javascript">
+  function link(url) {
+    location.href = url;
+  }
+</script>
 
 <div class="sidebar">
   
   <div class="topic_list">
 
-  <script>
-    function link(url) {
- location.href = url;
-}
-  </script>
-
   {{ range $.Site.RegularPages }}
     {{ if (.Param "mkbanner") }}
       {{ if (.Param "image") }} 
-      <div class="topic" style="background: url({{ .Site.BaseURL }}{{ .Params.image }});" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+     <!-- <div class="topic" style="background: url({{ .Site.BaseURL }}{{ .Params.image }});" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')"> -->
+     <div>
+      <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+        <img src="{{ .Site.BaseURL }}{{ .Params.image }}">
       </div>
+     </div>
       {{ else }}
       <!-- {{/*	<div class="tile"> -->
         <!--   <a href="{{ .RelPermalink }}">{{.Title}}</a> -->
@@ -31,24 +36,32 @@
  <!-- <h3>recent topics</h3> -->
   {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
     {{ if eq $catkey "topic" }}
-      {{ range .Pages.ByDate }}
-        <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
-        <h1> Recent Topic {{dateFormat "2 Jan, 2006" .Params.Date }}  </h1>
-        <h2> {{ .Title }} </h2>
+      {{ range .Pages.ByDate.Reverse }}
+        {{ if (.Param "image") }} 
+     <div>
+          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background: url({{ .Site.BaseURL }}{{ .Params.image }});" >
+          <div class="topic-mask">
+          <h1> Recent Topic {{dateFormat "2 Jan, 2006" .Params.Date }}  </h1>
+          <h2> {{ .Title }} </h2>
+          </div>
+          </div>
+     </div>
+          
+        {{ else }}
+     <div>
+          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+          <div class="topic-mask">
+          <h1> Recent Topic {{dateFormat "2 Jan, 2006" .Params.Date }}  </h1>
+          <h2> {{ .Title }} </h2>
+          </div>
         </div>
+     </div>
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}
 
-    <!-- Add Arrows
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-     -->
-
   </div> <!-- topic_list -->
-  <script src ="{{ .Site.BaseURL }}js/swiper.min.js"></script>
-
 </div> <!-- sidebar -->
 
 
@@ -58,3 +71,4 @@
   <a href="{{ .Site.BaseURL }}/link"><h3>{{ .Site.Params.link }}</h3></a>
 
 </div> <!-- links -->
+<script type="text/javascript" src="{{ .Site.BaseURL }}js/slick.min.js"></script>
