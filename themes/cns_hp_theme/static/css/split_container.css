@@ -14,7 +14,7 @@
   /* main + topics + link */
   display: grid;
   width: 100%;
-  grid-template-rows: 200px auto 400px;
+  grid-template-rows: 230px auto 200px;
   grid-template-areas:
     "areaB"
     "areaA"
@@ -36,9 +36,11 @@
 .sidebar {
   position: -webkit-sticky;
   position: sticky;
-  top: 100px;
+  top: 125px;
+  bottom: 530px;
+  margin-bottom: 300px;
 
-  height:450px;
+  height:550px;
   width: 100%;
   grid-area: areaB;
 
@@ -53,16 +55,18 @@
   height:200px;
   width: 100%;
   grid-area: areaB;
+  /*
 
   border: solid 4px orange;
   box-sizing: border-box;
+  */
 }
 
 .links {
   grid-area: areaC;
   position: -webkit-sticky;
   position: sticky;
-  top: 550px;
+  top: 725px;
   height:300px;
   width: 100%
 

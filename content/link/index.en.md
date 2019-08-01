@@ -7,7 +7,7 @@
 
 ***
 
-## 各研究所
+## Other Facility
 
 [RIKEN](http://www.riken.jp/en/)
 

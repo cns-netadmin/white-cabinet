@@ -6,39 +6,17 @@
 
   height: 200px;
   width: 96%;
+
   /* background-image setting */
-  background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 
-  /* test */
+  /* border */
   border: solid 1px #ddd;
   box-sizing: border-box;
 
-
-  /* text */
-  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
-  align-items: center; /* 縦方向中央揃え */
-  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
-  justify-content: center; /* 横方向中央揃え */
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-
-  box-shadow: 0 0 5px #ccc;
+  /* box shadow */
+  box-shadow: 0 0 9px #ccc;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
@@ -61,19 +39,56 @@
 
 .topic a {
   display: block;
-  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
-  justify-content: center; /* 横方向中央揃え */
   font-family: serif;
 }
+
+.topic img {
+  width: 100%;
+  height: 100%;
+}
+
 .topic h1 {
-  font-size: 5px;
+  font-size: 10px;
 }
 
 .topic h2 {
   font-size: 20px;
   color: #368;
+  font-weight: 900; 
+  /*
+  -webkit-text-stroke: 0.5px #999;
+  text-stroke: 0.5px #999;
+  */
+
 }
 
+.topic-mask {
+  height: 100%;
+  width: 100%;
+  background: rgba(255,255,255,0.5);
+
+  /* text */
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+}
 
 
 .tile {
@@ -95,13 +110,22 @@
 }
 
 .topic_list-narrow {
-    width: 100%;
+    align: center;
+    margin: auto;
+    width: 430px;
     height: 100%;
     /*
-    border: solid 8px black;
+    border: solid 4px orange;
     box-sizing: border-box;
-    */
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    */
+}
+
+.slick-prev:before {
+  color: #348;
+}
+.slick-next:before {
+  color: #348;
 }
