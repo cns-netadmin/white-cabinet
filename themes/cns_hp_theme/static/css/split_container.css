@@ -2,17 +2,19 @@
   /* main + topics + link */
   display: grid;
   width: 100%;
+  gap: 10px;
   grid-template-columns: 3fr 1fr;
+  grid-template-rows: minmax(300px, auto);
   grid-template-areas:
     "areaA areaB"
     "areaA areaC";
 }
 
-
 .container-narrow{
   /* main + topics + link */
   display: grid;
   width: 100%;
+  grid-template-rows: 200px auto 150px;
   grid-template-areas:
     "areaB"
     "areaA"
@@ -30,26 +32,18 @@
 }
 
 .sidebar {
-  grid-area: areaB;
-  display: block;
-  position: -webkit-sticky;
   position: sticky;
-  /*
-  top: 100px;
-  bottom: 400px;
-  width: 320px;  */
-
- /* height: 1200px;*/
-  right: 15px;
-  color: #000;
+  grid-area: areaB;
+  top: 0;
+  margin-top: 0px;
   border: solid 4px orange;
   box-sizing: border-box;
-  
 }
 
 .links {
   grid-area: areaC;
   border: solid 4px indigo;
-
+  top: 0;
+  bottom: 0;
 }
 

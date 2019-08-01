@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/sidebar.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/swiper.min.css">
 
 <div class="sidebar">
   
@@ -26,13 +27,21 @@
     {{ if eq $catkey "topic" }}
       {{ range .Pages.ByDate }}
         <div class="topic">
-        <a> {{dateFormat "2 Jan, 2006" .Params.Date }}  </a>
+        <h1> Recent Topic {{dateFormat "2 Jan, 2006" .Params.Date }}  </h1>
         <a href="{{ .RelPermalink }}"> {{ .Title }} </a>
         </div>
       {{ end }}
     {{ end }}
   {{ end }}
+
+    <!-- Add Arrows
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+     -->
+
   </div> <!-- topic_list -->
+  <script src ="{{ .Site.BaseURL }}js/swiper.min.js"></script>
 
 </div> <!-- sidebar -->
 
