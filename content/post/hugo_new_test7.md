@@ -4,9 +4,9 @@ date = 2019-07-19T12:29:29+09:00
 tags = ["Seminar","Conference"]
 image = "img/topics/CNS_Guidance_poster_2019.png"
 draft = true
-mkbanner = true
+mkbanner = false
 weight = 1
-showonlyimage = true
+showonlyimage = false
 +++
 
 ** Insert Lead pargraph here **
