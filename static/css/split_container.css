@@ -14,7 +14,7 @@
   /* main + topics + link */
   display: grid;
   width: 100%;
-  grid-template-rows: 200px 69% 400px;
+  grid-template-rows: 200px auto 400px;
   grid-template-areas:
     "areaB"
     "areaA"
@@ -27,8 +27,10 @@
  /* width: 660px; */
   width: 100%;
   text-align: center;
+  /*
   border: solid 4px red;
   box-sizing: border-box;
+  */
 }
 
 .sidebar {
@@ -40,8 +42,10 @@
   width: 100%;
   grid-area: areaB;
 
+  /*
   border: solid 4px orange;
   box-sizing: border-box;
+  */
 }
 
 .sidebar-narrow {
@@ -49,6 +53,7 @@
   height:200px;
   width: 100%;
   grid-area: areaB;
+
   border: solid 4px orange;
   box-sizing: border-box;
 }
@@ -60,8 +65,13 @@
   top: 550px;
   height:300px;
   width: 100%
+
+  /*
   border: solid 4px indigo;
-  background: #fff;
+  box-sizing: border-box;
+  */
+
+  background-color: #fff;
 }
 .links a {
   text-align: center;
@@ -88,12 +98,15 @@
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  margin: 0;
   bottom: 0;
   position: relative;
   height:150px;
   width: 100%
+  background-color: #fff;
+
+  /*
   border: solid 4px indigo;
-  background: #fff;
+  box-sizing: border-box;
+  */
 }
 

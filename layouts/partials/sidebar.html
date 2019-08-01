@@ -7,11 +7,17 @@
 <div class="sidebar">
   
   <div class="topic_list">
+
+  <script>
+    function link(url) {
+ location.href = url;
+}
+  </script>
+
   {{ range $.Site.RegularPages }}
     {{ if (.Param "mkbanner") }}
       {{ if (.Param "image") }} 
-      <div class="topic">
-      <a href="{{ .RelPermalink }}"><img src="{{ .Site.BaseURL }}{{ .Params.image }}" ></a>
+      <div class="topic" style="background: url({{ .Site.BaseURL }}{{ .Params.image }});" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
       </div>
       {{ else }}
       <!-- {{/*	<div class="tile"> -->
@@ -26,9 +32,9 @@
   {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
     {{ if eq $catkey "topic" }}
       {{ range .Pages.ByDate }}
-        <div class="topic">
+        <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
         <h1> Recent Topic {{dateFormat "2 Jan, 2006" .Params.Date }}  </h1>
-        <a href="{{ .RelPermalink }}"> {{ .Title }} </a>
+        <h2> {{ .Title }} </h2>
         </div>
       {{ end }}
     {{ end }}

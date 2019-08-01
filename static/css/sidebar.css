@@ -5,12 +5,16 @@
 .topic {
 
   height: 200px;
-  width: 100%;
-  background: #cce;
+  width: 96%;
+  /* background-image setting */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 
   /* test */
-  border: solid 2px black;
+  border: solid 1px #ddd;
   box-sizing: border-box;
+
 
   /* text */
   -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
@@ -34,26 +38,42 @@
   -webkit-align-items: center;
   align-items: center;
 
+  box-shadow: 0 0 5px #ccc;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 5px 5px 5px 5px;
+  opacity: 0.9;
+
+}
+
+.topic:hover {
+    filter:alpha(opacity=50);
+    -ms-filter: "alpha(opacity=50)";
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    opacity:0.5;
+    zoom:1;
+    cursor: pointer;
 }
 
 .topic a {
+  display: block;
   -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
   justify-content: center; /* 横方向中央揃え */
   font-family: serif;
-  font-size: 15px;
 }
 .topic h1 {
   font-size: 5px;
 }
 
-.topic img {
-  position: relative;
-  width: 300px;
-  height: auto;
-  left: 0;
-  top: 0;
-  object-fit: cover;
-} 
+.topic h2 {
+  font-size: 20px;
+  color: #368;
+}
+
 
 
 .tile {
@@ -68,15 +88,19 @@
     width: 100%;
     height: 100%;
     overflow: scroll;
+    /*
     border: solid 8px hotpink;
     box-sizing: border-box;
+    */
 }
 
 .topic_list-narrow {
     width: 100%;
     height: 100%;
+    /*
     border: solid 8px black;
     box-sizing: border-box;
+    */
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
