@@ -1,13 +1,12 @@
-{{ partial "header.html" . }}
-<head>
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
-</head>
+{{ partial "header" . }}
+
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
 <script type="text/javascript" src="{{ .Site.BaseURL }}js/container.js"></script>
 <div class="container">
 
     {{ block "main" . }}{{ end }}
-    {{ partial "sidebar.html" . }}
+    {{ partial "sidebar" . }}
 
 </div>
 
-{{ partial "footer.html" . }}
+{{ partial "footer" . }}
