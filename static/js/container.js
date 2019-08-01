@@ -13,7 +13,7 @@ $(function(){
 
       oldBrowserWidth = value+1;
       console.log("start logging");
-    
+      console.log($win.width());
       function wideCSS(){
          $topicList.className="topic_list";
          $sidebar.className="sidebar";
@@ -33,6 +33,7 @@ $(function(){
          $(function(){
            $('.topic_list-narrow').not('.slick-initialized').slick({
              dots: true,
+             respondTo: 'window',
              infinite: true,
              slidesToShow: 1,
              autoplay: true,
@@ -41,7 +42,6 @@ $(function(){
            });
            console.log("slick loaded");
          });
-
       }
 
       var browserWidth = $win.width();
@@ -53,6 +53,11 @@ $(function(){
          if (value <= oldBrowserWidth ){
            narrowCSS();
          }
+      /*
+         var calcWidth = Math.round(browserWidth*0.96);
+         $topicList.width = String(calcWidth) + "px";
+         console.log(calcWidth)
+         */
       }
       oldBrowserWidth = browserWidth;
 
