@@ -4,7 +4,7 @@
   width: 100%;
   gap: 10px;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: minmax(300px, auto);
+  grid-template-rows: minmax(450px, auto);
   grid-template-areas:
     "areaA areaB"
     "areaA areaC";
@@ -14,7 +14,7 @@
   /* main + topics + link */
   display: grid;
   width: 100%;
-  grid-template-rows: 200px auto 150px;
+  grid-template-rows: 200px 69% 400px;
   grid-template-areas:
     "areaB"
     "areaA"
@@ -34,20 +34,66 @@
 .sidebar {
   position: -webkit-sticky;
   position: sticky;
-  height:650px;
+  top: 100px;
+
+  height:450px;
   width: 100%;
   grid-area: areaB;
-  top: 100px;
+
+  border: solid 4px orange;
+  box-sizing: border-box;
+}
+
+.sidebar-narrow {
+
+  height:200px;
+  width: 100%;
+  grid-area: areaB;
   border: solid 4px orange;
   box-sizing: border-box;
 }
 
 .links {
+  grid-area: areaC;
   position: -webkit-sticky;
   position: sticky;
-  top: 400px;
+  top: 550px;
   height:300px;
-  grid-area: areaC;
+  width: 100%
   border: solid 4px indigo;
+  background: #fff;
+}
+.links a {
+  text-align: center;
+  font-family: 'MS Sans Serif';
+}
+.links a:link {
+  color: #191970;
+}
+.links a:visited{
+  color: #800000;
+}
+
+.links-narrow {
+  grid-area: areaC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 0;
+  bottom: 0;
+  position: relative;
+  height:150px;
+  width: 100%
+  border: solid 4px indigo;
+  background: #fff;
 }
 
