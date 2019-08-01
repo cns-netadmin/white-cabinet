@@ -1,41 +1,22 @@
-[東京大学](https://www.u-tokyo.ac.jp/)
+## [東京大学](https://www.u-tokyo.ac.jp/)
 
 [理学系研究科](https://www.s.u-tokyo.ac.jp/)
 
 [物理学専攻](https://www.phys.s.u-tokyo.ac.jp/)
 
 
-[[menu.link]]
-    identifier = "institute"
-    name = "研究機関"
+***
 
-[[menu.link]]
-    parent = "institute"
-    name = "理化学研究所"
-    url = "http://www.riken.jp/"
-    weight = 1
+## 各研究所
 
-[[menu.link]]
-    parent = "institute"
-    name = "理研仁科センター"
-    url = "http://www.rarf.riken.go.jp/"
-    weight = 2
+[理化学研究所](http://www.riken.jp/)
 
-[[menu.link]]
-    parent = "institute"
-    name = "高エネルギ加速器機構（KEK）"
-    url = "http://www.kek.jp/"
-    weight = 3
+[理研仁科センター](http://www.rarf.riken.go.jp/)
 
-[[menu.link]]
-    parent = "institute"
-    name = "大阪大学核物理研究センター（RCNP）"
-    url = "http://www.rcnp.osaka-u.ac.jp/"
-    weight = 4
+[高エネルギ加速器機構（KEK）](http://www.kek.jp/)
 
-[[menu.link]]
-    parent = "institute"
-    name = "ブルックへブン国立研究所高エネルギー重イオン衝突型加速器（RHIC）"
-    url = "http://www.bnl.gov/rhic"
-    weight = 5
+[大阪大学核物理研究センター（RCNP）](http://www.rcnp.osaka-u.ac.jp/)
+
+[ブルックへブン国立研究所高エネルギー重イオン衝突型加速器（RHIC）](http://www.bnl.gov/rhic)
+
 
