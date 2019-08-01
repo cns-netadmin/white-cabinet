@@ -24,7 +24,7 @@ create:
     - git -c core.sshCommand="ssh -oStrictHostKeyChecking=no" push gitlab@www-intra.cns.s.u-tokyo.ac.jp:cns-netadmin/cns-hp.git HEAD:${CI_COMMIT_REF_NAME}
     - fi
   only:
-    - ^draft_.*$
+    - ^draft_.*
 
 test:
   script:
