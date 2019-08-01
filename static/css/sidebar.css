@@ -2,20 +2,59 @@
  css file for sidebar
  layouts/partial/sidebar.html
  */
-.topic {
-  position: relative;
-  width: 300px;
+.swiper-slide {
+
+  display: -webkit-flex;
+  display: flex;
   height: 200px;
-  border: solid 4px cyan;
+  width: 300px;
+  background: #cce;
+
+  /* test */
+  border: solid 2px black;
+  box-sizing: border-box;
+
+  /* text */
+  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
+  align-items: center; /* 縦方向中央揃え */
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+}
+
+.topic a {
+  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
+  justify-content: center; /* 横方向中央揃え */
+  font-family: serif;
+  font-size: 15px;
+}
+.topic h1 {
+  font-size: 5px;
 }
 
 .topic img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  width: 300px;
+  height: auto;
   left: 0;
   top: 0;
-  z-index: 1;
   object-fit: cover;
 } 
 
@@ -29,30 +68,16 @@
 }
 
 .topic_list {
-    width: auto;
-    height: 400px;
+    width: 200px;
+    height: 300px;
     overflow: scroll;
-    border: solid 4px hotpink;
+    border: solid 8px hotpink;
     box-sizing: border-box;
 }
 
 .topic_list-narrow {
-    display: inline-block;
     width: 100%;
-    height: 250px;
-    overflow-x: scroll;
-    weblit-overflow-scrolling: touch;
-    border: solid 4px black;
+    height: 100%;
+    border: solid 8px black;
     box-sizing: border-box;
 }
-
-.sidebar__item {
-  border: solid 8px red;
-  box-sizing: border-box;
-}
-.sidebar__item--fixed {
-  border: solid 8px red;
-  box-sizing: border-box;
-
-}
-
