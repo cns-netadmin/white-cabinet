@@ -39,9 +39,9 @@
       {{ range .Pages.ByDate.Reverse }}
         {{ if (.Param "image") }} 
      <div>
-          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background: url({{ .Site.BaseURL }}{{ .Params.image }});" >
+          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
           <div class="topic-mask">
-          <h1> Recent Topic {{dateFormat "2 Jan, 2006" .Params.Date }}  </h1>
+          <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
           <h2> {{ .Title }} </h2>
           </div>
           </div>
@@ -51,7 +51,7 @@
      <div>
           <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
           <div class="topic-mask">
-          <h1> Recent Topic {{dateFormat "2 Jan, 2006" .Params.Date }}  </h1>
+          <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
           <h2> {{ .Title }} </h2>
           </div>
         </div>
