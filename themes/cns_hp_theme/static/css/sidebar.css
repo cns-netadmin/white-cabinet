@@ -5,24 +5,25 @@
 .topic {
 
   height: 200px;
-  width: 96%;
+  width: 100%;
 
   /* background-image setting */
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
 
   /* border */
   border: solid 1px #ddd;
   box-sizing: border-box;
 
   /* box shadow */
-  box-shadow: 0 0 9px #ccc;
+  box-shadow: 0 0 5px #ccc;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 5px 5px 5px 5px;
+  margin: 7px 7px 7px 7px;
   opacity: 0.9;
 
 }
@@ -33,7 +34,7 @@
     -moz-opacity:0.5;
     -khtml-opacity: 0.5;
     opacity:0.5;
-    zoom:1;
+    zoom:1.01;
     cursor: pointer;
 }
 
@@ -49,45 +50,27 @@
 
 .topic h1 {
   font-size: 10px;
+  font-family: 'Times New Roman';
+  justify-content: center;
+  text-align: center;
+
 }
 
 .topic h2 {
-  font-size: 20px;
+  font-size: 22px;
   color: #368;
-  font-weight: 900; 
-  /*
-  -webkit-text-stroke: 0.5px #999;
-  text-stroke: 0.5px #999;
-  */
+  -webkit-align-items: center;
+  align-items: center; 
+  -webkit-justify-content: center; 
+  justify-content: center; 
+  text-align: center;
 
 }
 
 .topic-mask {
   height: 100%;
   width: 100%;
-  background: rgba(255,255,255,0.5);
-
-  /* text */
-  -webkit-align-items: center; /* 縦方向中央揃え（Safari用） */
-  align-items: center; /* 縦方向中央揃え */
-  -webkit-justify-content: center; /* 横方向中央揃え（Safari用） */
-  justify-content: center; /* 横方向中央揃え */
-  text-align: center;
-  font-size: 18px;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-
+  background: rgba(255,255,255,0.6);
 }
 
 
