@@ -1,46 +1,74 @@
 <!--This page: Side bar of container -->
 
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/slick-theme.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/slick.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/sidebar.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
 
-<div class="side_container">
+<script type="text/javascript">
+  function link(url) {
+    location.href = url;
+  }
+</script>
 
-  <div class="sidebar">
-    
-    {{ range $.Site.RegularPages }}
+<div class="sidebar">
+  
+  <div class="topic_list">
+
+  {{ range $.Site.RegularPages }}
     {{ if (.Param "mkbanner") }}
-    {{ if (.Param "image") }} 
-    <a href="{{ .RelPermalink }}"><img class="links" src="{{ .Site.BaseURL }}{{ .Params.image }}" width=250px height=auto></a>
-    {{ else }}
-    <!-- {{/*	<div class="tile"> -->
-      <!--   <a href="{{ .RelPermalink }}">{{.Title}}</a> -->
-      <!-- </div> -->
-    <!-- */}} -->
+      {{ if (.Param "image") }} 
+     <!-- <div class="topic" style="background: url({{ .Site.BaseURL }}{{ .Params.image }});" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')"> -->
+     <div>
+      <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+        <img src="{{ .Site.BaseURL }}{{ .Params.image }}">
+      </div>
+     </div>
+      {{ else }}
+      <!-- {{/*	<div class="tile"> -->
+        <!--   <a href="{{ .RelPermalink }}">{{.Title}}</a> -->
+        <!-- </div> -->
+      <!-- */}} -->
+      {{ end }}
     {{ end }}
-    {{ end }}
-    {{ end }}
+  {{ end }}
 
-    <h3>recent topics</h3>
-    {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
+ <!-- <h3>recent topics</h3> -->
+  {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
     {{ if eq $catkey "topic" }}
-
-    <div class="topic_list">
-      <ul>
-	{{ range .Pages.ByDate }}
-	<li> {{dateFormat "2 Jan, 2006" .Params.Date }} </li>
-	<a href="{{ .RelPermalink }}"> {{ .Title }} </a>
-	{{ end }}
-      </ul>
-    </div> <!-- topic_list -->
-
+      {{ range .Pages.ByDate.Reverse }}
+        {{ if (.Param "image") }} 
+     <div>
+          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background: url({{ .Site.BaseURL }}{{ .Params.image }});" >
+          <div class="topic-mask">
+          <h1> Recent Topic {{dateFormat "2 Jan, 2006" .Params.Date }}  </h1>
+          <h2> {{ .Title }} </h2>
+          </div>
+          </div>
+     </div>
+          
+        {{ else }}
+     <div>
+          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+          <div class="topic-mask">
+          <h1> Recent Topic {{dateFormat "2 Jan, 2006" .Params.Date }}  </h1>
+          <h2> {{ .Title }} </h2>
+          </div>
+        </div>
+     </div>
+        {{ end }}
+      {{ end }}
     {{ end }}
-    {{ end }}
+  {{ end }}
 
-    <div class="links">
-      <a href="https://www.u-tokyo.ac.jp/"><img class="links" src="{{ $.Site.BaseURL }}img/utokyo.jpg" width=180px height=auto></a>
-      <a href="https://www.s.u-tokyo.ac.jp/"><img class="links" src="{{ $.Site.BaseURL }}img/sos_utokyo.jpg" width=230px height=auto></a>
-      <a href="{{ .Site.BaseURL }}/link"><h3>{{ .Site.Params.link }}</h3></a>
+  </div> <!-- topic_list -->
+</div> <!-- sidebar -->
 
-    </div> <!-- links -->
-  </div> <!-- sidebar -->
-</div> <!-- side_container -->
+
+<div class="links">
+  <a href="https://www.u-tokyo.ac.jp/"><img src="{{ $.Site.BaseURL }}img/utokyo.jpg" width=180px height=auto></a>
+  <a href="https://www.s.u-tokyo.ac.jp/"><img src="{{ $.Site.BaseURL }}img/sos_utokyo.jpg" width=230px height=auto></a>
+  <a href="{{ .Site.BaseURL }}/link"><h3>{{ .Site.Params.link }}</h3></a>
+
+</div> <!-- links -->
+<script type="text/javascript" src="{{ .Site.BaseURL }}js/slick.min.js"></script>
