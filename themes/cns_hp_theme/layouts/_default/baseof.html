@@ -1,11 +1,10 @@
 {{ partial "header.html" . }}
 <head>
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
-  <meta charset="UTF-8">
-  <title>{{ .Site.Params.Title }}</title>
 </head>
-  <div class="container">
-  <script type="text/javascript" src="{{ .Site.BaseURL }}js/container.js"></script>
+<script type="text/javascript" src="{{ .Site.BaseURL }}js/container.js"></script>
+<div class="container">
+
     {{ block "main" . }}{{ end }}
     {{ partial "sidebar.html" . }}
 
