@@ -11,9 +11,9 @@
       {{ range .Site.Menus.main.ByWeight }}
         {{ if .HasChildren }}
           <button class="button">{{ .Name }}</button>
-          <div class="nest">
-            <!-- Special action: "lab" -->
-            {{ if eq .Identifier "lab" }}
+          <!-- Special action: "lab" -->
+          {{ if eq .Identifier "lab" }}
+            <div class="nest">
               <div>
                 {{ range .Children }}
                   {{ $nm := .Name }}
@@ -29,11 +29,12 @@
                   {{ end }}
                 {{ end }}
               </div>
+            </div>
+          <!-- END Special action: "lab" -->
 
-            <!-- END Special action: "lab" -->
-
-            <!-- Default action -->
-            {{ else }}
+          <!-- Default action -->
+          {{ else }}
+            <div class="nest" style="display: none;">
               <!-- Fetch description -->
               {{ $pmenu := .Identifier }}
               {{ range $.Site.RegularPages }}
@@ -46,16 +47,20 @@
                   <li><a href="{{/* .URL | relLangURL */}}">{{/* .Name */}} </a></li>
                 {{/* end */}}  -->
               </ul>
-              <!-- END Default action -->
-            {{ end }}
-          </div>
+            </div>
+          <!-- END Default action -->
+          {{ end }}
         {{ else }}
 
           <!-- Special action: "event" -->
           {{ if eq .URL "/events" }}
             <button class="button">{{ .Name }}</button>
             <div class="nest">
-              <h3>今後のイベント</h3>
+              {{ range $.Site.RegularPages }}
+                {{ if eq (lower .Title) "events" }}
+                  <h3>{{ .Params.heading }}</h3>
+                {{ end }}
+              {{ end }}
 
               {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
                 {{ if eq $catkey "event" }}
@@ -77,7 +82,11 @@
                     </div>
                     {{ end }}
                   {{ end }}
-                  <h3><a href="{{ $.Site.BaseURL }}categories/event/">イベント情報一覧はこちら</a></h3>
+                  {{ range $.Site.RegularPages }}
+                    {{ if eq (lower .Title) "events" }}
+                      <h3><a href="{{ $.Site.BaseURL }}categories/event/">{{ .Content }}</a></h3>
+                    {{ end }}
+                  {{ end }}
                 {{ end }}
               {{ end }}
 
