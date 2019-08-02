@@ -10,9 +10,10 @@
     <ul class="accordion right-side">
       {{ range .Site.Menus.main.ByWeight }}
         {{ if .HasChildren }}
-          <button class="button">{{ .Name }}</button>
+          <!--button class="button">{{/* .Name */}}</button-->
           <!-- Special action: "lab" -->
           {{ if eq .Identifier "lab" }}
+            <button class="button active">{{ .Name }}</button>
             <div class="nest">
               <div>
                 {{ range .Children }}
@@ -34,6 +35,7 @@
 
           <!-- Default action -->
           {{ else }}
+            <button class="button">{{ .Name }}</button>
             <div class="nest" style="display: none;">
               <!-- Fetch description -->
               {{ $pmenu := .Identifier }}
@@ -54,7 +56,7 @@
 
           <!-- Special action: "event" -->
           {{ if eq .URL "/events" }}
-            <button class="button">{{ .Name }}</button>
+            <button class="button active">{{ .Name }}</button>
             <div class="nest">
               {{ range $.Site.RegularPages }}
                 {{ if eq (lower .Title) "events" }}
