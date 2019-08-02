@@ -8,4 +8,4 @@ weight = ""
 heading = "今後のイベント"
 +++
 
-[イベント情報一覧はこちら]({{ baseurl }}categories/event/)
+[イベント情報一覧はこちら](categories/event)
