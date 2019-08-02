@@ -56,7 +56,11 @@
           {{ if eq .URL "/events" }}
             <button class="button">{{ .Name }}</button>
             <div class="nest">
-              <h3>今後のイベント</h3>
+              {{ range $.Site.RegularPages }}
+                {{ if eq (lower .Title) "events" }}
+                  <h3>{{ .Params.heading }}</h3>
+                {{ end }}
+              {{ end }}
 
               {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
                 {{ if eq $catkey "event" }}
@@ -78,7 +82,11 @@
                     </div>
                     {{ end }}
                   {{ end }}
-                  <h3><a href="{{ $.Site.BaseURL }}categories/event/">イベント情報一覧はこちら</a></h3>
+                  {{ range $.Site.RegularPages }}
+                    {{ if eq (lower .Title) "events" }}
+                      <h3><a href="{{ $.Site.BaseURL }}categories/event/">{{ .Content }}</a></h3>
+                    {{ end }}
+                  {{ end }}
                 {{ end }}
               {{ end }}
 
