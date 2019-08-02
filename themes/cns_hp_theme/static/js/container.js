@@ -37,7 +37,7 @@ $(function(){
              infinite: true,
              slidesToShow: 1,
              autoplay: true,
-             autoplaySpeed: 1000,
+             autoplaySpeed: 4000,
              centerMode: true,
            });
            console.log("slick loaded");
