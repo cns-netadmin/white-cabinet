@@ -79,11 +79,17 @@
 }
 .links a {
   text-align: center;
+  text-decoration: none;
   font-family: 'MS Sans Serif';
 }
 
 .links a:hover{
   color : #ff7043;
+  filter:alpha(opacity=50);
+  -ms-filter: "alpha(opacity=50)";
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
 }
 
 .links a:link {
@@ -130,10 +136,17 @@
 .links-narrow a{
   color: #191970;
   text-decoration: none;
+  font-size: 3vw;
+
 }
 
 .links-narrow a:hover{
   color : #ff7043;
+  filter:alpha(opacity=50);
+  -ms-filter: "alpha(opacity=50)";
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity:0.5;
 }
 
 .links-narrow a:visited{
@@ -141,7 +154,7 @@
 }
 
 .links-narrow img {
-  width: 100px;
+  width: 30vw;
 }
 
 .links-narrow img:hover {
