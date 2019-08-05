@@ -14,7 +14,7 @@ before_script:
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
 
 file_creation:
-  stage: createion
+  stage: creation
   script:
     - 'if [ -n "$FILENAME" ]; then'
     - hugo new post/$FILENAME.md
