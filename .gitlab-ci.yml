@@ -9,8 +9,8 @@ before_script:
 
 stages:
   - create
-  - test
   - draft
+  - del_test
   - deploy
 
 create:
@@ -26,20 +26,18 @@ create:
   only:
     - /^draft_.*$/
 
-test:
-  script:
-    - hugo
-  except:
-    - master
-    - develop
-
 draft:
   script:
-    - hugo
-    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test
+    - 'hugo -b https://www.cns.s.u-tokyo.ac.jp/test/${CI_COMMIT_REF_NAME}'
+    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test/${CI_COMMIT_REF_NAME}
   only:
-    - develop
-    
+    - /^draft_.*$/
+
+del_test:
+  script:
+    - ssh -oStrictHostKeyChecking=no web-updater@www-intra rm -r /home/httpd/html/test/${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
+  only: [merge_requests]
+  
 deploy:
   script:
     - hugo
