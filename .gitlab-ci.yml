@@ -3,11 +3,18 @@ image: hugo:latest
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
+stages:
+  - creation
+  - test 
+  - del_test
+  - deploy
+  
 before_script:
   - eval `ssh-agent`
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
 
-creation:
+file_creation:
+  stage: createion
   script:
     - 'if [ -n "$FILENAME" ]; then'
     - hugo new post/$FILENAME.md
@@ -21,18 +28,21 @@ creation:
     - /^draft_.*$/
 
 draft:
+  stage: test
   script:
     - 'hugo -b https://www.cns.s.u-tokyo.ac.jp/test/${CI_COMMIT_REF_NAME}'
     - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test/${CI_COMMIT_REF_NAME}
   only:
     - /^draft_.*$/
 
-del_test:
+delete_testpage:
+  stage: del_test
   script:
     - ssh -oStrictHostKeyChecking=no web-updater@www-intra rm -r /home/httpd/html/test/${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
   only: [merge_requests]
   
 deploy:
+  stage: deploy
   script:
     - hugo
   artifacts:
