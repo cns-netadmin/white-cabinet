@@ -8,12 +8,13 @@ before_script:
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
 
 stages:
-  - create
+  - creation
   - draft
-  - del_test
+  - del_test  
   - deploy
 
-create:
+creation:
+  stage: creation
   script:
     - 'if [ -n "$FILENAME" ]; then'
     - hugo new post/$FILENAME.md
@@ -27,6 +28,7 @@ create:
     - /^draft_.*$/
 
 draft:
+  stage: draft
   script:
     - 'hugo -b https://www.cns.s.u-tokyo.ac.jp/test/${CI_COMMIT_REF_NAME}'
     - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test/${CI_COMMIT_REF_NAME}
@@ -34,11 +36,13 @@ draft:
     - /^draft_.*$/
 
 del_test:
+  stage: del_test
   script:
     - ssh -oStrictHostKeyChecking=no web-updater@www-intra rm -r /home/httpd/html/test/${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
   only: [merge_requests]
   
-deploy:
+                            deploy:
+  stage: deploy
   script:
     - hugo
   artifacts:
