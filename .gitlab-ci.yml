@@ -43,7 +43,7 @@ delete_testpage:
     refs:
     - merge_requests
   except:
-  - /^(?!draft_).+$/
+    - /^(?!draft_).+$/
   
 deploy:
   stage: deploy
