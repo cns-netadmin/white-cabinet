@@ -35,6 +35,14 @@ draft:
   only:
     - /^draft_.*$/
 
+conversion_test:
+  stage: test
+  script:
+    - hugo
+  except:
+    - /^draft_.*$/
+    - develop
+
 delete_testpage:
   stage: del_test
   script:
@@ -45,10 +53,18 @@ delete_testpage:
     variables:
       - $CI_COMMIT_REF_NAME == /^draft_.*$/
   
-deploy:
+staging:
+  stage: deploy
+  script: 
+  - hugo
+  - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test  
+  only:
+  - develop
+  
+production:
   stage: deploy
   script:
-    - hugo
+    - echo "まーだだよ"
   artifacts:
     paths:
       - public
