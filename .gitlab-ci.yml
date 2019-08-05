@@ -41,7 +41,7 @@ del_test:
     - ssh -oStrictHostKeyChecking=no web-updater@www-intra rm -r /home/httpd/html/test/${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
   only: [merge_requests]
   
-                            deploy:
+deploy:
   stage: deploy
   script:
     - hugo
