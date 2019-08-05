@@ -30,7 +30,7 @@ file_creation:
 draft:
   stage: test
   script:
-    - 'hugo -b https://www.cns.s.u-tokyo.ac.jp/test/${CI_COMMIT_REF_NAME}/'
+    - 'hugo -b https://www.cns.s.u-tokyo.ac.jp/test/${CI_COMMIT_REF_NAME}'
     - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test/${CI_COMMIT_REF_NAME}
   only:
     - /^draft_.*$/
