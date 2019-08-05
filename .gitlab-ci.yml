@@ -41,10 +41,9 @@ delete_testpage:
     - ssh -oStrictHostKeyChecking=no web-updater@www-intra rm -r /home/httpd/html/test/${CI_MERGE_REQUEST_SOURCE_BRANCH_NAME}
   only: 
     refs:
-    - merge_requests AND /^draft_.*$/
-    
-#  except:
-#    - ^(?!draft_).+$
+    - merge_requests
+  except:
+  - /^(?!draft_).+$/
   
 deploy:
   stage: deploy
