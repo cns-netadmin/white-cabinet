@@ -1,27 +1,68 @@
 </main> 
 <style type="text/css">
+
   .footer_all{
       /* display: grid; */
       /* grid-template-rows: 100px 500px; */
       position: -webkit-sticky; 
       position: sticky; 
-      color: #0404B4;
-      width: 100%;
+      /*color: #0404B4;*/
+      color: #eee;
+      width: 100vw;
       padding: 0px;
-      margin: 0px;
-      background-color: #9FF781;
+     /* background-color: #9FF781;*/
+      background-color: #00005a;
+      font-family: 'Hiragino Mincho Pro';
+      font-size: 12px;
+      /*
       grid-template-rows: 30px 200px;
       grid-template-columns: calc( (100% - 1em) / 2) calc( (100% -1em_) / 2);      
+      */
+  }
+  .footer_all:after {
+      content: "";
+      display: block;
+      clear: both;
+  }
+
+  .footer_all a:link {
+      color: #aaa;
+  }
+
+  .sitemap {
+    float: left;
+    width: 34vw;
+    margin: 20px 40px 40px 4px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-left: 40px;
+    text-align: left;
+  }
+  .address {
+    float: right;
+    margin-top: 20px;
+    width: 50vw;
+  }
+
+  .sitemap-narrow {
+    margin-bottom: 40px;
+    text-align: center;
+    list-style: none;
+  }
+  .address-narrow {
+    text-align: center;
+    background-color: #00005a;
   }
 
   .item_title {
-      display: grid;
       font-size: x-large;
-      grid-template-columns: calc( (100% - 1em) / 2) calc( (100% -1em_) / 2);
   }      
-  .item_content {
+  .item_sitemap{
       display: grid;
       grid-template-columns: calc( (100% - 1em) / 2) calc( (100% -1em_) / 2);
+  }
+  .item_sitemap ul{
+     /* list-style: none;*/
   }
   .item_address {
       display: grid;
@@ -30,60 +71,41 @@
       calc( (100% - 1em) / {{ len $.Site.Params.address }} )
       {{ end }};
   }
-  /* .item_sitemap { */
-  /*     display: inline-flex; */
-  /*     flex-direction: row; */
-  /*     flex-wrap: wrap; */
-  /*     justify-content: space-around; */
-  /*     align-content: flex-start; */
-  /*     align-self: stretch; */
-  /* } */
 
 </style>
 <footer>
   <div class="footer_all">
-    <div class="item_title">
-      <div>
+    <div class="sitemap">
+      <div class="item_title">
       {{ .Site.Params.sitemap}}
       </div>
-      <div>
+      <div class="item_sitemap">
+        <ul>
+        {{ range .Site.Menus.main.ByWeight }}
+          <li> <a href="{{ .URL }}"> {{ .Name }} </a> </li>
+        {{ end }}
+        </ul>
+      </div>
+	  </div>
+    <div class="address">
+      <div class="item_title">
       {{ .Site.Params.location }}
       </div>
-    </div>
-    <div class="item_content">
-        <div>
-	<!-- 	<div class="item_sitemap"> -->
-
-	  <ul>
-	    {{ range .Site.Menus.main.ByWeight }}
-	    <!-- <div> -->
-	      <li> <a href="{{ .URL }}"> {{ .Name }} </a> </li>
-	      <!-- <ul> -->
-		<!-- 	{{ range .Children }} -->
-		<!-- 	<li> <a href="{{ .URL }}"> {{ .Name }} </a> </li> -->
-		<!-- 	{{ end }} -->
-		<!-- </ul> -->
-	      <!-- </div> -->
-	    {{ end }}
-	  </ul>
-	</div>
-      <!-- </div> -->
       <div>
-	<div class="item_address">
-	  {{ range .Site.Params.address }}
-	  <div>
-	    <b> {{ .description }} </b><br>
-	    &#12306; {{ .postcode }} <br>
-	    {{ .address }} <br>
-	    {{ .room }} <br>
-	    TEL: {{ .tel }} <br>
-	    FAX: {{ .fax }} <br>
-	  </div>
-	  {{ end }}
-	</div>
+      <div class="item_address">
+      {{ range .Site.Params.address }}
+      <div>
+        <b> {{ .description }} </b><br>
+        &#12306; {{ .postcode }} <br>
+        {{ .address }} <br>
+        {{ .room }} <br>
+        TEL: {{ .tel }} <br>
+        FAX: {{ .fax }} <br>
       </div>
-    </div>
+      {{ end }}
+      </div>
   </div>
+
 </footer>
 </body>
 </html>

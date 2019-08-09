@@ -4,6 +4,8 @@ $(function(){
       $topicList = document.getElementsByClassName("topic_list")[0],
       $sidebar = document.getElementsByClassName("sidebar")[0],
       $links = document.getElementsByClassName("links")[0];
+      $sitemap = document.getElementsByClassName("sitemap")[0];
+      $address = document.getElementsByClassName("address")[0];
 
 
 
@@ -29,6 +31,8 @@ $(function(){
          $topicList.className="topic_list-narrow";
          $sidebar.className="sidebar-narrow";
          $links.className="links-narrow";
+         $sitemap.className="sitemap-narrow";
+         $address.className="address-narrow";
          console.log("width changed: narrow");
          $(function(){
            $('.topic_list-narrow').not('.slick-initialized').slick({
