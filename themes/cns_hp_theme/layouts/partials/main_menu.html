@@ -40,14 +40,15 @@
               <!-- Fetch description -->
               {{ $pmenu := .Identifier }}
               {{ range $.Site.RegularPages }}
-                {{ if eq (lower .Title) $pmenu }}
-                  <p>{{ .Content }}</p>
+	      <p>{{ .Section }}</p>
+                {{ if eq .Section $pmenu }}
+		  <p>{{ .Content }}</p>
                 {{ end }}
               {{ end }}
               <ul class="accordion_1">
-<!--                {{/* range .Children */}}
-                  <li><a href="{{/* .URL | relLangURL */}}">{{/* .Name */}} </a></li>
-                {{/* end */}}  -->
+                {{ range .Children }}
+                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
+                {{ end }}
               </ul>
             </div>
           <!-- END Default action -->
