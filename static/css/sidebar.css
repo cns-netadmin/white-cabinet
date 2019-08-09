@@ -2,20 +2,22 @@
  css file for sidebar
  layouts/partial/sidebar.html
  */
+
+
 .topic {
 
   height: 200px;
-  width: 97%;
+  width: 95%;
 
   /* background-image setting */
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 
   /* border */
   border: solid 1px #ddd;
   border-radius: 4px;
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
 
   /* box shadow */
   box-shadow: 0 0 5px #ccc;
@@ -24,19 +26,22 @@
   transition: all 0.2s ease-out;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 7px 7px 7px 7px;
-  opacity: 0.9;
+  margin: 6px 7px 6px 7px;
+  background-color:rgba(255,255,255,0.6);
+  background-blend-mode:lighten;
 
+}
+.topic img{
+  width:100%;
+  height:100%;
 }
 
 .topic:hover {
-    filter:alpha(opacity=50);
-    -ms-filter: "alpha(opacity=50)";
-    -moz-opacity:0.5;
-    -khtml-opacity: 0.5;
-    opacity:0.5;
-    zoom:1.01;
-    cursor: pointer;
+  filter:alpha(opacity=50);
+  -ms-filter: "alpha(opacity=50)";
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  cursor: pointer;
 }
 
 .topic a {
@@ -44,73 +49,77 @@
   font-family: serif;
 }
 
-.topic img {
-  width: 100%;
-  height: 100%;
-}
-
 .topic h1 {
-  font-size: 10px;
-  font-family: 'Times New Roman';
+  font-size: 16px;
+  font-family: 'Hiragino Mincho Pro';
   justify-content: center;
   text-align: center;
 
 }
 
 .topic h2 {
-  font-size: 22px;
-  color: #368;
+  font-size: 18px;
+  color: #444;
+  font-family: 'Hiragino Mincho Pro';
   -webkit-align-items: center;
   align-items: center; 
   -webkit-justify-content: center; 
   justify-content: center; 
   text-align: center;
+  margin: 10px 20px 10px 10px;
 
 }
 
 .topic-mask {
-  height: 100%;
+  position: static;
   width: 100%;
-  background: rgba(255,255,255,0.6);
+  height: 100%;
+  background : rgba(255,255,255,0.2);
+
 }
 
 
 .tile {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
   /*  width: 250px;*/
-    width: auto;
-    height: auto;
+  width: auto;
+  height: auto;
+
 }
 
 .topic_list {
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    /*
-    border: solid 8px hotpink;
-    box-sizing: border-box;
-    */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255,255,255,0.6);
+  /*
+  border: solid 8px hotpink;
+  box-sizing: border-box;
+  */
 }
 
 .topic_list-narrow {
-    align: center;
-    margin: auto;
-    width: 80vw;
-    height: 100%;
-    /*
-    border: solid 4px orange;
-    box-sizing: border-box;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    */
-
+  align: center;
+  margin: auto;
+  width: 80vw;
+  height: 105%;
+  /*
+  border: solid 4px orange;
+  box-sizing: border-box;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  */
 }
 
 .slick-prev:before {
-  color: #348;
+  color: #445;
+  opacity: 0.5;
 }
+
 .slick-next:before {
-  color: #348;
+  color: #445;
+  opacity: 0.5;
+  /*color: #348; */
 }
