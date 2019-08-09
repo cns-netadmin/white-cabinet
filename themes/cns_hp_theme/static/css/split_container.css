@@ -64,7 +64,7 @@
   grid-area: areaC;
   position: -webkit-sticky;
   position: sticky;
-  top: 725px;
+  top: 75vw;
   height: 30vw;
   width: 100%
   font-size: 10px;
