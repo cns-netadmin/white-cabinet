@@ -34,10 +34,11 @@ $(function(){
            $('.topic_list-narrow').not('.slick-initialized').slick({
              dots: true,
              respondTo: 'window',
+             centerPadding: '8px',
              infinite: true,
              slidesToShow: 1,
              autoplay: true,
-             autoplaySpeed: 1000,
+             autoplaySpeed: 4000,
              centerMode: true,
            });
            console.log("slick loaded");

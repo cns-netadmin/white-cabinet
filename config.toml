@@ -247,149 +247,149 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "about"
     name = "About CNS"
-    url = "/about"
+    url = "/en/about"
     weight = 1
 
 [[Languages.en.menu.main]]
     parent = "about"
     name = "Greeting from Director" 
-    url = "/about/greeting"
+    url = "/en/about/greeting"
     weight = 1
 
 [[Languages.en.menu.main]]
     parent = "about"
     name = "History/Organization Chart"
-    url = "/about/history"
+    url = "/en/about/history"
     weight = 2
     
 [[Languages.en.menu.main]]
     parent = "about"
     name = "Pamphlet"
-    url = "/about/pamphlet"
+    url = "/en/about/pamphlet"
     weight = 3
     
 [[Languages.en.menu.main]]
     name = "広報・実績・評価"
-    url = "/about/announcement"
+    url = "/en/about/announcement"
     parent = "about"
     weight = 4
     
 [[Languages.en.menu.main]]
     identifier = "for_students"
     name = "For Students"
-    url = "/for_students"
+    url = "/en/for_students"
     weight = 2
     
 [[Languages.en.menu.main]]
     parent = "for_students"
     name = "大学院進学ガイダンス"
-    url = "/for_students/guidance"
+    url = "/en/for_students/guidance"
     weight = 1
 
 [[Languages.en.menu.main]]
     parent = "for_students"
     name = "施設見学会"
-    url = "/for_students/facility_tour"
+    url = "/en/for_students/facility_tour"
     weight = 2
 
 [[Languages.en.menu.main]]
     identifier = "lab"
     name = "Research Groups"
-    url = "/research"
+    url = "/en/research"
     weight = 3
 
 [[Languages.en.menu.main]]
     parent = "lab"
-    name = "宇宙核物理"
-    url = "/research/cosmos"
+    name = "Nuclear Astrophysics"
+    url = "/en/research/cosmos"
     weight = 1
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "核ダイナミクス"
-    url = "/research/donuts"
+    url = "/en/research/donuts"
     weight = 2
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "クォーク物理"
-    url = "/research/quark"
+    url = "/en/research/quark"
     weight = 3
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "エキゾチック核反応"
-    url = "/research/enr"
+    url = "/en/research/enr"
     weight = 4
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "極限原子核構造"
-    url = "/research/nuspeq"
+    url = "/en/research/nuspeq"
     weight = 5
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "基本対称性"
-    url = "/research/edm"
+    url = "/en/research/edm"
     weight = 6
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "加速器開発"
-    url = "/research/accelerator"
+    url = "/en/research/accelerator"
     weight = 7
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "OEDO-SHARAQプロジェクト"
-    url = "/research/sharaq"
+    url = "/en/research/sharaq"
     weight = 8
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "原子核理論"
-    url = "/research/theory"
+    url = "/en/research/theory"
     weight = 9
 
 [[Languages.en.menu.main]]
     name = "Staffs"
-    url = "/staffs"
+    url = "/en/staffs"
     weight = 4
 
 [[Languages.en.menu.main]]
     name = "Event Info"
-    url = "/events"
+    url = "/en/events"
     weight = 5
 
 [[Languages.en.menu.main]]
     name = "International Summer School"
-    url = "/cnsss"
+    url = "/en/cnsss"
     weight = 6
 
 [[Languages.en.menu.main]]
     name = "Seminors"
-    url = "/seminers"
+    url = "/en/seminers"
     weight = 7
 
 [[Languages.en.menu.main]]
     name = "Access"
-    url = "/access"
+    url = "/en/access"
     weight = 8
 
 [[Languages.en.menu.header]]
     name = "HOME"
-    url = "/"
+    url = "/en/"
     weight = 1
 
 [[Languages.en.menu.header]]
     name = "Access"
-    url = "/access"
+    url = "/en/access"
     weight = 2
 
 [[Languages.en.menu.header]]
     name = "Recruitment Information"
-    url = "/job"
+    url = "/en/job"
     weight = 3
 
 
