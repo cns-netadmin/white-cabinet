@@ -7,7 +7,6 @@ categories = "event"
 tags = "Seminar"
 image = ""
 draft = false
-mkbanner = ["true","false"]
 +++
 
 

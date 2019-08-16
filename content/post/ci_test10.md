@@ -7,7 +7,6 @@ categories = "event"
 tags = ["Seminar","Conference"]
 image = ""
 draft = false
-mkbanner = ["true","false"]
 +++
 
 # タイトル

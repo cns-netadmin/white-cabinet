@@ -7,7 +7,7 @@ categories = "event"
 tags = ["Seminar","Conference"]
 image = ""
 draft = false
-mkbanner = ["true","false"]
+mkbanner = false
 +++
 
 # nyan_test
