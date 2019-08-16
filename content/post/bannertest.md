@@ -1,5 +1,5 @@
 +++
-draft =  true
+draft =  false
 title =  "Bannertest"
 date = 2019-08-16T06:47:24Z
 eventStartDate = 2019-08-16
