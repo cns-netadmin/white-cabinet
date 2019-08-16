@@ -12,9 +12,8 @@ bannerimg = ""
 +++
 
 # タイトル
-
+投稿テスト
 ## 項目
 
 ### New cool posts
-
-
+投稿テスト
