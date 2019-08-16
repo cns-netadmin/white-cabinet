@@ -7,7 +7,6 @@ categories = "event"
 tags = "opencanpus"
 image = ""
 draft = false
-mkbanner = ["true","false"]
 +++
 
 

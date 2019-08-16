@@ -7,7 +7,6 @@ tags = "opencampus"
 categories = "event"
 image = ""
 draft = false
-mkbanner = ["true","false"]
 +++
 
 

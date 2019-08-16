@@ -6,6 +6,7 @@ categories = ["topic"]
 image = "img/book-test.jpg"
 draft = false
 mkbanner = false
+bannerimg = ""
 +++
 
 論文が掲載されました。

@@ -5,7 +5,7 @@ tags = []
 categories = ["topic"]
 image = ""
 draft = false
-mkbanner = ["false"]
+mkbanner = false
 +++
 
 ** Insert Lead pargraph here **
