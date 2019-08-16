@@ -39,13 +39,13 @@
             <div class="nest" style="display: none;">
               <!-- Fetch description -->
               {{ $pmenu := .Identifier }}
-              {{ range $.Site.RegularPages }}
-	      <p>{{ .Section }}</p>
+              {{ range $.Site.Pages }}
                 {{ if eq .Section $pmenu }}
 		  <p>{{ .Content }}</p>
                 {{ end }}
               {{ end }}
-              <ul class="accordion_1">
+              <!-- Construct children list -->
+	      <ul class="accordion_1">
                 {{ range .Children }}
                   <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
                 {{ end }}
