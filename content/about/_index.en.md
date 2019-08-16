@@ -9,7 +9,3 @@ weight = "1"
 
 Center for Nuclear Study (CNS) has been studying nuclear/quark physics and many-body hadron system.
 
-* [Director Greeting](about/greeting)
-* [History/Organization Chart](about/history)
-* [Pamphlet](about/pamphlet)
-* [Advertisement, Achievement, Appraisal](about/announcement)
