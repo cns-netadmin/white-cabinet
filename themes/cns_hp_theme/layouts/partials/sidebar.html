@@ -18,17 +18,14 @@
   {{ range $.Site.RegularPages }}
     {{ if (.Param "mkbanner") }}
       {{ if (.Param "bannerimg") }} 
-     <div>
-      <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
-        <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
-      </div>
+        <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+          <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
+        </div>
       {{ else }}
-     <div>
-          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
+        <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
           <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
           <h2> {{ .Title }} </h2>
         </div>
-     </div>
       {{ end }}
     {{ end }}
   {{ end }}
@@ -38,26 +35,20 @@
     {{ if eq $catkey "topic" }}
       {{ range .Pages.ByDate.Reverse }}
         {{ if (.Param "bannerimg") }} 
-     <div>
-       <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
-       <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
-       </div>
-     </div>
-        {{ else if (.Param "image") }} 
-     <div>
-          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
-          <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
-          <h2> {{ .Title }} </h2>
+          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+            <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
           </div>
-     </div>
+        {{ else if (.Param "image") }} 
+          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
+            <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
+            <h2> {{ .Title }} </h2>
+          </div>
           
         {{ else }}
-     <div>
-          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
-          <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
-          <h2> {{ .Title }} </h2>
-        </div>
-     </div>
+           <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
+             <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
+             <h2> {{ .Title }} </h2>
+           </div>
         {{ end }}
       {{ end }}
     {{ end }}
