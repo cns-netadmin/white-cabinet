@@ -388,7 +388,7 @@ pygmentCodeFences = true
     weight = 2
 
 [[Languages.en.menu.header]]
-    name = "Recruitment Information"
+    name = "jobs"
     url = "/en/job"
     weight = 3
 
