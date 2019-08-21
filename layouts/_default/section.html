@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+<head>
+  <style>
+    .section_page {
+      display: block;
+      grid-area: areaA;
+      width: 100%;
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    .section_page h1 {
+      margin-left: 60px;
+    }
+
+    .section_page section div article img {
+      float: left;
+      margin: 0 15px 15px 0;
+      width: 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="section_page">
+    <section id="main">
+      {{ $pgttl := lower .Title }}
+      {{ range .Site.Menus.main.ByWeight }}
+        {{ if eq .Identifier $pgttl }}
+          <h1 id="title">{{ .Name }}</h1>
+	{{ end }}
+      {{ end }}
+      <div>
+	<article id="content">
+           {{ .Content }}
+	</article>
+      </div>
+    </section>
+  </div>
+</body>
+
+{{end}}
