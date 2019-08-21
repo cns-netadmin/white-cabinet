@@ -1,14 +1,38 @@
 {{ define "main" }}
 
-<div class="top_menu">
-  <section id="main">
-    <h1 id="title">{{ .Title }}</h1>
-    <div>
-        <article id="content">
+<head>
+  <style>
+    .single_page {
+      display: block;
+      grid-area: areaA;
+      width: 100%;
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    .single_page h1 {
+      margin-left: 60px;
+    }
+
+    .single_page section div article img {
+      float: left;
+      margin: 0 15px 15px 0;
+      width: 30%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="single_page">
+    <section id="main">
+        <h1 id="title">{{ .Title }}</h1>
+      <div>
+	<article id="content">
            {{ .Content }}
-        </article>
-    </div>
-  </section>
-</div>
+	</article>
+      </div>
+    </section>
+  </div>
+</body>
 
 {{end}}
