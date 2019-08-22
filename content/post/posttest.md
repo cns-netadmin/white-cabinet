@@ -1,8 +1,8 @@
 +++
 draft = false
-title =  "CNS_guidance"
-date = 2019-08-22T16:01:29+09:00
-publishDate = 2019-08-22T16:01:29+09:00
+title =  "Posttest"
+date = 2019-08-10T15:03:25+09:00
+publishDate = 2019-08-22T15:03:25+09:00
 
 #For events: delete first "#" of next column
 #categories = "event"
@@ -15,12 +15,13 @@ image = ""
 #banner
 mkbanner = true
 bannerEndDate = 2019-09-22
-bannerimg = "img/cnsguidance_banner.jpg"
+bannerimg = ""
 bannerWeight = ""
 +++
 
 # タイトル
-CNS Guidance 2019
+testテスト
+
 ## 項目
 
 ### New cool posts
