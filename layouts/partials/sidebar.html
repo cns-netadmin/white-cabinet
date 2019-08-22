@@ -8,55 +8,54 @@
 <script type="text/javascript">
   function link(url) {
     location.href = url;
-  }
+   }
 </script>
 
 <div class="sidebar">
-  
+
   <div class="topic_list">
-
-  {{ range $.Site.RegularPages }}
-    {{ if (.Param "mkbanner") }}
-      {{ if (.Param "bannerimg") }} 
-        <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
-          <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
-        </div>
-      {{ else }}
-        <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
-          <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
-          <h2> {{ .Title }} </h2>
-        </div>
-      {{ end }}
-    {{ end }}
-  {{ end }}
-
- <!-- <h3>recent topics</h3> -->
-  {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
-    {{ if eq $catkey "topic" }}
-      {{ range .Pages.ByDate.Reverse }}
-        {{ if (.Param "bannerimg") }} 
+    {{ range $.Site.RegularPages }}
+      {{ if $StatBanner := and (eq .Params.mkbanner true) (le now .Params.bannerEndDate) }}
+        {{ if .Params.bannerimg }} 
           <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
             <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
           </div>
-        {{ else if (.Param "image") }} 
-          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
-            <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
+        {{ else }}
+          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
+            <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
             <h2> {{ .Title }} </h2>
           </div>
-          
-        {{ else }}
-           <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
-             <h1> {{dateFormat "2 Jan, 2006" .Params.Date }}   </h1><br>
-             <h2> {{ .Title }} </h2>
-           </div>
-        {{ end }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
+        {{ end }}<!--bannerimg-->
+      {{ end }}<!--StatBanner-->
+    {{ end }}<!--range-->
 
+   <!--<h3>recent post</h3>-->
+    {{ with $.Site.GetPage "/post" }}
+      {{ range first 10 .Pages.ByDate.Reverse }}
+        {{$StatBanner := and (eq .Params.mkbanner true) (le now .Params.bannerEndDate) }}
+        {{ if ne $StatBanner true }}
+          {{ if .Params.bannerimg }} 
+            <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+              <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
+            </div>
+          {{ else if .Params.image }} 
+            <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
+              <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
+              <h2> {{ .Title }} </h2>
+            </div>
+            
+          {{ else }}
+             <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
+               <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
+               <h2> {{ .Title }} </h2>
+             </div>
+          {{ end }} <!--bannerimg-->
+        {{ end }}<!--exclude StatBanner-->
+      {{ end }}<!--range ByDate.Reverse-->
+    {{ end }}<!--from post-->
   </div> <!-- topic_list -->
-</div> <!-- sidebar -->
 
+</div> <!-- sidebar -->
 
 <div class="links">
   <a href="https://www.u-tokyo.ac.jp/"><img src="{{ $.Site.BaseURL }}img/utokyo.jpg" width=180px height=auto></a>
