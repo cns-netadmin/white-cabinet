@@ -47,9 +47,7 @@ pygmentCodeFences = true
   commit = false
   rss = true
   comments = true
-
-
-
+  
   top_figures = [
     "img/top_figures/Fundamental_Symmetry.jpg",
     "img/top_figures/OEDOa.jpg",
@@ -60,8 +58,10 @@ pygmentCodeFences = true
     "img/top_figures/NUSPEQ.jpg",
     "img/top_figures/ENR.jpg",
     "img/top_figures/Theory.png"
-
   ]
+
+[
+  sidebar_maxnum = 10
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 #[[Params.bigimg]]
@@ -77,7 +77,6 @@ pygmentCodeFences = true
 #[params]
 [[Params.address]]
   description = "本郷本部"
-#  description = "本郷本部"
   postcode = "113-0033"
   address = "東京都文京区本郷7-3-1" 
   room = "東京大学本郷キャンパス理学部1号館316号室"
