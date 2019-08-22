@@ -31,7 +31,7 @@
 
    <!--<h3>recent post</h3>-->
     {{ with $.Site.GetPage "/post" }}
-      {{ range first 10 .Pages.ByDate.Reverse }}
+      {{ range first .Site.Params.sidebar_maxnum .Pages.ByDate.Reverse }}
         {{$StatBanner := and (eq .Params.mkbanner true) (le now .Params.bannerEndDate) }}
         {{ if ne $StatBanner true }}
           {{ if .Params.bannerimg }} 
