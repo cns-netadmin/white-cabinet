@@ -16,7 +16,7 @@ image = ""
 mkbanner = true
 bannerEndDate = 2019-09-22
 bannerimg = ""
-bannerWeight = ""
+weight = "3"
 +++
 
 # タイトル
