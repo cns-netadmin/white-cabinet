@@ -6,6 +6,7 @@ publishdir    = "public"
 canonifyurls  = true
 
 DefaultContentLanguage = "ja"
+defaultContentLanguageInSubdir = true
 #theme = "beautifulhugo"
 theme = "cns_hp_theme"
 metaDataFormat = "yaml"
@@ -247,7 +248,8 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "about"
     name = "About CNS"
-    url = "/en/about"
+#    url = "/en/about"
+    url = "/about"
     weight = 1
 
 [[Languages.en.menu.main]]

@@ -8,21 +8,19 @@
 
 
 	<!-- New accordion menu loop -->
-  {{ if .Site.Menus.main }}
-    <ul class="accordion right-side">
-      {{ range .Site.Menus.main.ByWeight }}
-	{{ $indxfile := .URL | relLangURL }}
-        {{ $indexExists := fileExists $indxfile }}
-        {{ $indxname := string (.URL | relLangURL) }}
-	<h1>{{ .Name }}</h1>
-	{{ if $indexExists }}
-	  {{ with ($.Site.GetPage "section" $indxname) }}
-	    <p>{{ .Content }}</p>
-          {{ end }}
-	{{ end }}
+  <ul class="accordion right-side">
+    {{ range .Site.Menus.main.ByWeight }}
+      {{ $indxfile := .URL | relURL }}
+      {{ $indexExists := fileExists $indxfile }}
+      {{ $indxname := string $indxfile }}
+      <h1>{{ .Name }}</h1>
+      {{ if $indexExists }}
+        {{ with ($.Site.GetPage "section" $indxname) }}
+          <p>{{ .Content }}</p>
+        {{ end }}
       {{ end }}
-    </ul>
-  {{ end }}
+    {{ end }}
+  </ul>
 
 
 
