@@ -20,7 +20,7 @@ pygmentCodeFences = true
   title = "東京大学 原子核科学研究センター"
 [Languages.ja.params]
   Language_name="日本語" 
-  link = "関連リンク"
+  link = "関連リンクはこちら"
   location = "所在地"
   sitemap = "サイトマップ"
   subtitle = "Center for Nuclear Study, The University of Tokyo"
