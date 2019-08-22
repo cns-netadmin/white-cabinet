@@ -1,10 +1,10 @@
 +++
-title =  "Research"
-date = 2019-08-16T11:33:52+09:00
-image = ""
+title =  "Lab"
+date = 2019-07-21T16:09:46+09:00
+tags = ["Seminar","Conference"]
 draft = false
-mktile = false
-weight = ""
+weight = "3"
+image = ""
 +++
 
-CNSでは、以下の研究グループが活動しています。
+CNSでは以下の研究グループが活動しています。

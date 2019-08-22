@@ -1,6 +1,6 @@
 $(function(){
   var $win = $(window),
-      $main = $('main'),
+      /*$main = $('main'),*/
       $header = $('header'),
       headerPos = $header.offset().top,
       fixedClass = 'is-fixed';
@@ -9,15 +9,18 @@ $(function(){
     if($(this).hasClass('active')){
       $(this).removeClass('active');
       $('.humberger-menu').slideUp();
+      $('.background').hide();
     } else {
       $(this).addClass('active');
       $('.humberger-menu').slideDown();
+      $('.background').show(); 
     }
   });
-  $main.on('click',function(){
+  $('.background').on('click',function(){
     if($('.menu-trigger').hasClass('active')){
       $('.menu-trigger').removeClass('active');
       $('.humberger-menu').slideUp();
+      $('.background').hide();
     }
   });
 
