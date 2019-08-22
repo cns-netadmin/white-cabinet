@@ -64,7 +64,8 @@
               {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
                 {{ if eq $catkey "event" }}
                   {{ range (.Pages.ByParam "eventEndDate").Reverse }}
-                    {{ if le now .Params.eventEndDate }}
+                  {{ $FormattedNow := (now.AddDate 0 0 -1) }}
+                    {{ if le $FormattedNow .Params.eventEndDate }}
                     <div class="eventbox">
                         {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
                           <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}

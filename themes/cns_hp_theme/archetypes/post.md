@@ -1,14 +1,25 @@
 +++
-draft = true
+draft = false
 title =  "{{ replace .Name "-" " " | title }}"
 date = {{ .Date }}
-eventStartDate = {{ dateFormat "2006-01-02" .Date }}
-eventEndDate = {{ dateFormat "2006-01-02" .Date }}
-categories = "event"
-tags = ["Seminar","Conference"]
+publishDate = {{ .Date }}
+
+categories = ""
+##ex:  categories = "event"##
+## for categ. event : remove "#" following 2 columns. ##
+#eventStartDate = {{ dateFormat "2006-01-02" .Date }}
+#eventEndDate = {{ dateFormat "2006-01-02" .Date }}
+
+tags = ""
+##ex: tags = ["Seminar","Conference"]##
+
 image = ""
+
+###banner####
 mkbanner = false
+bannerEndDate = {{ dateFormat "2006-01-02" (now.AddDate 0 +1 0) }}
 bannerimg = ""
+weight = 3
 +++
 
 # タイトル
