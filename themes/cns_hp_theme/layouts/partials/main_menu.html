@@ -6,6 +6,30 @@
 
 <body>
 
+
+	<!-- New accordion menu loop -->
+  {{ if .Site.Menus.main }}
+    <ul class="accordion right-side">
+      {{ range .Site.Menus.main.ByWeight }}
+	{{ $indxfile := .URL | relLangURL }}
+        {{ $indexExists := fileExists $indxfile }}
+        {{ $indxname := string (.URL | relLangURL) }}
+	<h1>{{ .Name }}</h1>
+	{{ if $indexExists }}
+	  {{ with ($.Site.GetPage "section" $indxname) }}
+	    <p>{{ .Content }}</p>
+          {{ end }}
+	{{ end }}
+      {{ end }}
+    </ul>
+  {{ end }}
+
+
+
+
+
+
+	<!-- Old accordion menu loop -->
   {{ if .Site.Menus.main }}
     <ul class="accordion right-side">
       {{ range .Site.Menus.main.ByWeight }}
