@@ -13,11 +13,15 @@
       {{ $indxfile := .URL | relURL }}
       {{ $indexExists := fileExists $indxfile }}
       {{ $indxname := string $indxfile }}
-      <h1>{{ .Name }}</h1>
       {{ if $indexExists }}
-        {{ with ($.Site.GetPage "section" $indxname) }}
-          <p>{{ .Content }}</p>
-        {{ end }}
+        <button class="button active">{{ .Name }}</button>
+	<div class="nest">
+          {{ with ($.Site.GetPage "section" $indxname) }}
+            <p>{{ .Content }}</p>
+          {{ end }}
+        </div>
+      {{ else }}
+        <a href="{{ .URL | relLangURL }}"><button class="pseudo_button">{{- .Name -}}</button></a>
       {{ end }}
     {{ end }}
   </ul>
