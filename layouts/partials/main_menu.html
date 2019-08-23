@@ -14,14 +14,12 @@
       {{ $indxname := string $indxfile }}
       {{ $menuName := .Name }}
       {{ if $indexExists }}
-        {{ with ($.Site.GetPage "section" $indxname) }}
-	  <!-- Replace with shortcoded ".Content" from here -->
-	  <button class="button active">{{ $menuName }}</button>
-	  <div class="nest">
-            <p>{{ .Content }}</p>
-          </div>
-	  <!-- Replace with shortcoded ".Content" until here -->
-	{{ end }}
+        <button class="button active">{{ $menuName }}</button>
+	<div class="nest">
+          {{ with ($.Site.GetPage "section" $indxname) }}
+	    <p>{{ $indxfile }}:: {{ .Content }}</p>
+	  {{ end }}
+	</div>
       {{ else }}
         <a href="{{ .URL | relLangURL }}"><button class="pseudo_button">{{- $menuName -}}</button></a>
       {{ end }}
