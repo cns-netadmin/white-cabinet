@@ -17,7 +17,7 @@
         <button class="button active">{{ $menuName }}</button>
 	<div class="nest">
           {{ with ($.Site.GetPage "section" $indxname) }}
-	    <p>{{ $indxfile }}:: {{ .Content }}</p>
+	    <p>{{ .Content }}</p>
 	  {{ end }}
 	</div>
       {{ else }}
