@@ -6,7 +6,6 @@ publishdir    = "public"
 canonifyurls  = true
 
 DefaultContentLanguage = "ja"
-defaultContentLanguageInSubdir = true
 #theme = "beautifulhugo"
 theme = "cns_hp_theme"
 metaDataFormat = "yaml"
