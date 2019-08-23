@@ -8,17 +8,18 @@
       position: sticky; 
       /*color: #0404B4;*/
       color: #eee;
-      width: 100vw;
       padding: 0px;
+      margin: 0;
      /* background-color: #9FF781;*/
-      background-color: #00005a;
       font-family: 'Hiragino Mincho Pro';
       font-size: 12px;
+      padding-bottom: 30px;
       /*
       grid-template-rows: 30px 200px;
       grid-template-columns: calc( (100% - 1em) / 2) calc( (100% -1em_) / 2);      
       */
   }
+
   .footer_all:after {
       content: "";
       display: block;
@@ -38,46 +39,89 @@
     margin-left: 40px;
     text-align: left;
   }
+
   .address {
     float: right;
     margin-top: 20px;
     width: 50vw;
   }
 
-  .sitemap-narrow {
-    margin-bottom: 40px;
-    text-align: center;
-    list-style: none;
+  .sitemap ul{
+     /* list-style: none;*/
   }
+
+  .sitemap-narrow {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fffffff;
+  }
+
+  .sitemap-narrow ul {
+    text-align: left;
+    margin-left: 20vw;
+  }
+
   .address-narrow {
     text-align: center;
     background-color: #00005a;
   }
 
-  .item_title {
+  .item_title h1{
       font-size: x-large;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1em;
   }      
+
+  .item_title h1:before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      display: inline-block;
+      width: 80px;
+      height: 1px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background-color: #aaa;
+      border-radius: 2px;
+  }
+
   .item_sitemap{
       display: grid;
       grid-template-columns: calc( (100% - 1em) / 2) calc( (100% -1em_) / 2);
   }
-  .item_sitemap ul{
-     /* list-style: none;*/
-  }
   .item_address {
       display: grid;
+      padding: 15px;
+      column-gap: 20px;
       grid-template-columns:
       {{ range .Site.Params.address }}
       calc( (100% - 1em) / {{ len $.Site.Params.address }} )
       {{ end }};
   }
 
+  .footer-copyright {
+      padding-top: 30px;
+      padding-bottom: 10px;
+      clear: left;
+  }
+
+  footer {
+      background-color: #00005a;
+  }
+
 </style>
+
 <footer>
   <div class="footer_all">
     <div class="sitemap">
       <div class="item_title">
+        <h1>
       {{ .Site.Params.sitemap}}
+        </h1>
       </div>
       <div class="item_sitemap">
         <ul>
@@ -89,7 +133,9 @@
 	  </div>
     <div class="address">
       <div class="item_title">
+        <h1>
       {{ .Site.Params.location }}
+        </h1>
       </div>
       <div>
       <div class="item_address">
@@ -104,6 +150,10 @@
       </div>
       {{ end }}
       </div>
+  </div>
+
+  <div class="footer-copyright">© 2019 Copyright:
+    <a> Center for Nuclear Study </a>
   </div>
 
 </footer>
