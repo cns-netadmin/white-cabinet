@@ -279,7 +279,8 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "for_students"
     name = "For Students"
-    url = "/en/for_students"
+#    url = "/en/for_students"
+    url = "/for_students"
     weight = 2
     
 [[Languages.en.menu.main]]
@@ -297,7 +298,8 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "lab"
     name = "Research Groups"
-    url = "/en/research"
+#    url = "/en/research"
+    url = "/research"
     weight = 3
 
 [[Languages.en.menu.main]]
@@ -361,7 +363,8 @@ pygmentCodeFences = true
 
 [[Languages.en.menu.main]]
     name = "Event Info"
-    url = "/en/events"
+#    url = "/en/events"
+    url = "/events"
     weight = 5
 
 [[Languages.en.menu.main]]
