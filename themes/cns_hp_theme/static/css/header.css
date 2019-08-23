@@ -219,6 +219,15 @@ header {
     font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
     font-size: 20px;
   }
+  .humberger-menu .u-tokyo_logos {
+    display: none;
+  }
+  .humberger-menu .u-tokyo_logos {
+    padding: 0 0 !important;
+  }
+  .humberger-menu .u-tokyo_logos img {
+    display: none;
+  }
 }
 @media screen and (max-width: 700px) {
   .humberger-menu {
@@ -242,12 +251,18 @@ header {
     font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
     font-size: 20px;
   }
+  .humberger-menu .u-tokyo_logos {
+    padding: 0 0 !important;
+  }
+  .humberger-menu .u-tokyo_logos img {
+    width: 140px;
+  }
 }
 .humberger-menu ul li:hover {
-  background-color: rgba(0, 0, 0, 0.71);
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.humberger-menu ul li:active {
-  background-color: rgba(0, 0, 0, 0.71);
+.humberger-menu .u-tokyo_logos:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 .humberger-menu ul a {
   color: #fff;
@@ -293,10 +308,10 @@ header {
     vertical-align: center;
     position: relative;
   }
-  .u-tokyo_logos img {
+  .header-menu .u-tokyo_logos img {
     height: 30px;
   }
-  .u-tokyo_logos {
+  .header-menu .u-tokyo_logos {
    margin: 0 4px !important
   }
 }
@@ -316,7 +331,7 @@ header {
     position: relative;
     font-size: 0.8em;
   }
-  .u-tokyo_logos img {
+  .header-menu .u-tokyo_logos img {
     display: none;
   }
 }
@@ -337,6 +352,6 @@ header {
   color: #fff;
   text-decoration: none;
 }
-.u-tokyo_logos::after {
+.header-menu .u-tokyo_logos::after {
   display: none !important;
 }
