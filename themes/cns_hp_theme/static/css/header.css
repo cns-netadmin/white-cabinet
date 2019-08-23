@@ -273,7 +273,7 @@ header {
 }
 .header-menu {
   position: absolute;
-  height: 25px;
+  height: 30px;
   right: 0;
   bottom: 0;
   color: #fff;
@@ -286,13 +286,18 @@ header {
     align-items: center;
     list-style-type: none;
     margin: 0 0;
-    padding: 0 20px;
   }
   .header-menu ul li{
     display: inline-block;
-    margin: 0 14px;
+    margin: 0 10px;
     vertical-align: center;
     position: relative;
+  }
+  .u-tokyo_logos img {
+    height: 30px;
+  }
+  .u-tokyo_logos {
+   margin: 0 4px !important
   }
 }
 @media screen and (max-width: 700px) {
@@ -302,7 +307,7 @@ header {
     align-items: center;
     list-style-type: none;
     margin: 0 0;
-    padding: 4px 20px 0 20px;
+    padding: 8px 20px 0 20px;
   }
   .header-menu ul li{
     display: inline-block;
@@ -310,6 +315,9 @@ header {
     vertical-align: center;
     position: relative;
     font-size: 0.8em;
+  }
+  .u-tokyo_logos img {
+    display: none;
   }
 }
 .header-menu ul li::after {
@@ -328,4 +336,7 @@ header {
 .header-menu ul li a{
   color: #fff;
   text-decoration: none;
-} 
+}
+.u-tokyo_logos::after {
+  display: none !important;
+}

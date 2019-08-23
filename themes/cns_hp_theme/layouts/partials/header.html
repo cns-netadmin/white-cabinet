@@ -44,17 +44,22 @@
     <nav class="header-menu">
       <ul>
 	{{ range .Site.Menus.header.ByWeight }}
-      <li>
+          <li>
 	    <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
-	    </li>
+	  </li>
 	{{ end }}
-          {{ if .IsTranslated }}
+        {{ if .IsTranslated }}
           {{ range .Translations }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Site.Params.language_name }}</a>
-        </li>
+            <li>
+              <a href="{{ .Permalink }}">{{ .Site.Params.language_name }}</a>
+            </li>
           {{ end }}
-          {{ end }}
+        {{ end }}
+        {{ range .Site.Params.exlink }}
+	  <li class="u-tokyo_logos">
+            <a href="{{ .url }}"><img src="{{ $.Site.BaseURL }}{{ .pass }}"></a>
+	  </li>
+        {{ end }}
       </ul>
     </nav>
   </div>
