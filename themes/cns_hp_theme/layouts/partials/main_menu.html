@@ -53,8 +53,8 @@
           {{ end }}
         {{ else }}
 
-          <!-- Special action: "event" -->
-          {{ if eq .URL "/events" }}
+          <!-- Special action: "Posts" -->
+          {{ if eq .URL "/post" }}
             <button class="button active">{{ .Name }}</button>
             <div class="nest">
               {{ with $.Site.GetPage "/post" }}
@@ -82,12 +82,30 @@
                     </div>
                     {{ end }}
                   {{ end }}
-                  {{ with $.Site.GetPage "/post" }}
-                    <h3>{{ .Content }}</h3>
-                  {{ end }}
                 {{ end }}
-              {{ end }}
+	      {{ end }}
 
+	      <!-- For past posts -->
+
+	      <hr>
+
+	      <h3>New Posts</h3>
+
+	      {{ range first 3 (where $.Data.Pages "Section" "post") }}
+	        <div class="eventbox">
+		  <div class="eventdate">
+		    {{ dateFormat "2 Jan, 2006" .Date }}
+		    <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
+		  </div>
+		  <h2>{{ .Title }}</h2>
+		  <p>{{ .Content }}</p>
+		  <p><a href="{{ .Permalink }}" class="read-more">続きを読む</a></p>
+		</div>
+	      {{ end }}
+	    
+	      {{ with $.Site.GetPage "/post" }}
+                <h3>{{ .Content }}</h3>
+              {{ end }}
             </div>
           <!-- END Special action: "events" -->
 

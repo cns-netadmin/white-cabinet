@@ -206,8 +206,8 @@ pygmentCodeFences = true
     weight = 4
 
 [[menu.main]]
-    name = "イベント情報"
-    url = "/events"
+    name = "Posts"
+    url = "/post"
     weight = 5
 
 [[menu.main]]
@@ -357,8 +357,8 @@ pygmentCodeFences = true
     weight = 4
 
 [[Languages.en.menu.main]]
-    name = "Event Info"
-    url = "/en/events"
+    name = "Posts (in English)"
+    url = "/en/post"
     weight = 5
 
 [[Languages.en.menu.main]]
