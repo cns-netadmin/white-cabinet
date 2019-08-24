@@ -1,6 +1,6 @@
 +++
-heading = "Upcoming events"
+heading = "Upcoming"
 +++
 
-[List of all events](categories/event)
+[List of all posts](/post)
 
