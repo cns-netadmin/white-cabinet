@@ -1,5 +1,5 @@
 +++
-title =  "Quark"
+title = "クォーク"
 date = 2019-07-22T11:04:13+09:00
 image = "img/top_figures/Quark.jpg"
 draft = false

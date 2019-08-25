@@ -1,5 +1,5 @@
 +++
-title =  "Edm"
+title = "基本対称性"
 date = 2019-07-22T11:04:42+09:00
 image = "img/top_figures/Fundamental_Symmetry.jpg"
 draft = false

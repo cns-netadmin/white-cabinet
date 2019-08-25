@@ -1,5 +1,5 @@
 +++
-title =  "Nuspeq"
+title = "極限原子核構造"
 date = 2019-07-22T11:04:36+09:00
 image = "img/top_figures/NUSPEQ.jpg"
 draft = false
