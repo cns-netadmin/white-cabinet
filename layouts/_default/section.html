@@ -25,12 +25,13 @@
 <body>
   <div class="section_page">
     <section id="main">
-      {{ $pgttl := lower .Title }}
+    {{/*{{ $pgttl := lower .Title }}
       {{ range .Site.Menus.main.ByWeight }}
         {{ if eq .Identifier $pgttl }}
-          <h1 id="title">{{ .Name }}</h1>
+	<!--<h1 id="title">{{ .Name }}</h1>-->
 	{{ end }}
-      {{ end }}
+	{{ end }}*/}}
+      <h1 id="title">{{ .Title }}</h1>
       <div>
 	<article id="content">
            {{ .Content }}
