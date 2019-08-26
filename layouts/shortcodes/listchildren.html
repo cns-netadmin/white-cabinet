@@ -1,5 +1,5 @@
 <!-- Construct children list -->
-{{ with .Page.Sections }}  
+{{ with .Page.CurrentSection.Sections }}  
   <ul class="accordion_1">
     {{ range .ByWeight }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
