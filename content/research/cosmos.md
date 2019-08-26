@@ -1,5 +1,5 @@
 +++
-title =  "Cosmos"
+title = "宇宙核物理"
 date = 2019-07-22T11:03:34+09:00
 image = "img/top_figures/CRIB.jpg"
 draft = false

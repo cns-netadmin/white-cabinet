@@ -1,6 +1,9 @@
 
 @charset "UTF-8";
-
+body {
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+  font-weight: 500;
+}
 .top_figure img {
   position: absolute;
   width: 100%;
@@ -52,7 +55,6 @@ header {
     display: inline-block;
     font-size: 28px;
     font-weight: bold;
-    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
   }
   .black-belt p {
     margin: 0 0;
@@ -97,7 +99,6 @@ header {
     display: inline-block;
     font-size: 26px;
     font-weight: bold;
-    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
   }
   .black-belt p {
     line-height: 28px;
@@ -294,6 +295,19 @@ header {
     vertical-align: center;
     position: relative;
   }
+  .header-menu ul li::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 36%;
+    left: -0.8em;
+    width: 6px;
+    height: 6px;
+    border-right: 1.1px solid #fff;
+    border-bottom: 1.1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
 }
 @media screen and (max-width: 700px) {
   .header-menu ul {
@@ -302,7 +316,7 @@ header {
     align-items: center;
     list-style-type: none;
     margin: 0 0;
-    padding: 4px 20px 0 20px;
+    padding-top: 4px;
   }
   .header-menu ul li{
     display: inline-block;
@@ -311,19 +325,19 @@ header {
     position: relative;
     font-size: 0.8em;
   }
-}
-.header-menu ul li::after {
-  display: block;
-  content: '';
-  position: absolute;
-  top: .5em;
-  left: -0.8em;
-  width: 6px;
-  height: 6px;
-  border-right: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  .header-menu ul li::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: -0.9em;
+    width: 5px;
+    height: 5px;
+    border-right: 1.1px solid #fff;
+    border-bottom: 1.1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
 }
 .header-menu ul li a{
   color: #fff;

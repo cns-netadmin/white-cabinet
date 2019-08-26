@@ -8,3 +8,5 @@ image = ""
 +++
 
 CNSでは以下の研究グループが活動しています。
+
+{{< tilelist page="single" >}}
