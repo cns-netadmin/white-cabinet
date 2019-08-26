@@ -3,7 +3,8 @@ draft = false
 title =  "組織図"
 date = 2019-08-25T16:51:55+09:00
 publishDate = 2019-08-25T16:51:55+09:00
-image = ""
+image = "img/top_figures/DONUTS.jpg"
+mktile = true
 weight = "3"
 
 #banner
