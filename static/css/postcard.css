@@ -2,8 +2,9 @@
   background-color: #fff;
   padding: 10px;
   border-radius: 6px;
-  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.29);
-  width: 80%;
+/*  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.29); */
+  box-shadow: 0 2px 5px #ccc;
+  width: 75%;
   height: 200px;
   color: #1700ad;
   overflow: hidden;
@@ -11,12 +12,16 @@
   font-size: 16px;
   text-align: left;
   font-family: 'Hiragino Mincho Pro';
-  margin: 10px;
+  margin: 15px;
 }
 
 .postcard p{
   color: #222;
   font-size: 16px;
+}
+
+.postcard img{
+  display: none;
 }
 
 .postcard h1{
