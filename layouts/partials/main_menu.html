@@ -1,6 +1,6 @@
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main_menu.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main_menu.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
   <script type="text/javascript" src="{{ .Site.BaseURL }}js/main_menu.js"></script>
 </head>
 
@@ -66,7 +66,7 @@
                   {{ range (.Pages.ByParam "eventEndDate").Reverse }}
                   {{ $FormattedNow := (now.AddDate 0 0 -1) }}
                     {{ if le $FormattedNow .Params.eventEndDate }}
-                    <div class="eventbox">
+                    <div class="postcard">
                         {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
                           <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
                             <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
@@ -76,7 +76,7 @@
                             <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
                           </div>
                         {{ end }}
-                      <h2>{{ .Title }}</h2>
+                      <h2 class="post-title">{{ .Title }}</h2>
                       <p>{{ .Content }}</p>
                       <p><a href="{{ .Permalink }}" class="read-more">続きを読む</a></p>
                     </div>
@@ -92,12 +92,12 @@
 	      <h3>New Posts</h3>
 
 	      {{ range first 3 (where $.Data.Pages "Section" "post") }}
-	        <div class="eventbox">
+	        <div class="postcard">
 		  <div class="eventdate">
 		    {{ dateFormat "2 Jan, 2006" .Date }}
 		    <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
 		  </div>
-		  <h2>{{ .Title }}</h2>
+		  <h2 class="post-title">{{ .Title }}</h2>
 		  <p>{{ .Content }}</p>
 		  <p><a href="{{ .Permalink }}" class="read-more">続きを読む</a></p>
 		</div>
