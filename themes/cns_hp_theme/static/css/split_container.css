@@ -13,7 +13,7 @@
   /* main + topics + link */
   display: grid;
   width: 100%;
-  grid-template-rows: 230px auto 100px;
+  grid-template-rows: 260px auto 100px;
   grid-template-areas:
     "areaB"
     "areaA"
@@ -46,17 +46,20 @@
   width: 100%;
   grid-area: areaB;
 
-  /*
+  
+  margin-right: 15px;
+  border: none;
+  box-sizing: border-box;
+  padding-right: 15px;
+/*
   border: solid 4px orange;
   box-sizing: border-box;
-  */
-  
+*/
 }
 
 .sidebar-narrow {
 
   height:200px;
-  width: 100%;
   grid-area: areaB;
   
 /*

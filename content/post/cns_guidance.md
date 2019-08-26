@@ -15,7 +15,7 @@ image = ""
 #banner
 mkbanner = true
 bannerEndDate = 2019-09-22
-bannerimg = "img/cnsguidance_banner.jpg"
+bannerimg = "img/2019Guidance_bn.png"
 weight = 1
 +++
 
