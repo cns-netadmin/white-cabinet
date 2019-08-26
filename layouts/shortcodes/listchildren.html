@@ -1,8 +1,18 @@
 <!-- Construct children list -->
-{{ with .Page.CurrentSection.Sections }}  
-  <ul class="accordion_1">
-    {{ range .ByWeight }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
-    {{ end }}
-  </ul>
+{{ if eq (.Get "page") "section" }}
+  {{ with .Page.CurrentSection.Sections }}  
+    <ul class="accordion_1">
+      {{ range .ByWeight }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
+{{ else if eq (.Get "page") "single" }}
+  {{ with .Page.CurrentSection.Data.Pages }}  
+    <ul class="accordion_1">
+      {{ range .ByWeight }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
 {{ end }}
