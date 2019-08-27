@@ -1,0 +1,36 @@
+.breadcrumbs {
+    width: 100%;
+    margin: 10px auto 0;
+}
+
+.breadcrumbs ul {
+    display: table;
+    font-size: 14px;
+    list-style: none;
+}
+
+.breadcrumbs a:link {
+  text-decoration: none;
+  color: #aaa;
+}
+
+.breadcrumbs ul li {
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    float: left;
+}
+
+.breadcrumbs ul li:first-child::before {
+    padding: 0 3px 0 0;
+    content: "\0bb";
+    font-size: 13px;
+    color : #ddd;
+}
+
+.breadcrumbs ul li::before {
+    padding: 0 10px 0 0;
+    content: "\0bb";
+    font-size: 13px;
+    color : #ddd;
+}
+
