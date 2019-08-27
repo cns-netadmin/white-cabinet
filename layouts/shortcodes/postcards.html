@@ -34,7 +34,8 @@
 <!-- For past posts -->
 <hr>
 <h3>5 Newest Posts</h3>
-{{ range first 5 (where $.Site.Pages "Section" "post") }}
+<!--
+{{ range first 5 (where .Site.Pages "Section" "post") }}
   <div class="postcard">
     <div class="eventdate">
       {{ dateFormat "2 Jan, 2006" .Date }}
@@ -47,3 +48,4 @@
     <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p></div>
   </div>
 {{ end }}
+-->
