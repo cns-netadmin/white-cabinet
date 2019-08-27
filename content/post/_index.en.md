@@ -1,6 +1,10 @@
 +++
-heading = "Upcoming"
+title =  "Posts"
+date = 2019-08-02T10:25:28+09:00
+image = ""
+draft = false
 +++
 
-[List of all posts]({{< ref "/post/postlist.en.md" >}})
+{{/*< postcards >*/}}
 
+[Link to the list of posts]({{< ref "/post/postlist" >}})

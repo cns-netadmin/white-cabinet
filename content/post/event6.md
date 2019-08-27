@@ -4,7 +4,7 @@ eventStartDate = 2019-08-20
 eventEndDate = 2019-08-22
 date = 2019-07-24T14:01:03+09:00
 categories = "event"
-tags = "Seminar"
+tags = ["Seminar"]
 image = ""
 draft = false
 +++
