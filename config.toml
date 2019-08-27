@@ -371,9 +371,9 @@ pygmentCodeFences = true
     weight = 4
 
 [[Languages.en.menu.main]]
-    name = "Event Info"
+    name = "Posts"
 #    url = "/en/events"
-    url = "/events"
+    url = "/post"
     weight = 5
 
 [[Languages.en.menu.main]]
