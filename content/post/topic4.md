@@ -1,7 +1,7 @@
 +++
 title =  "入試ガイダンスに参加しました"
 date = 2019-05-24T01:53:59+09:00
-tags = []
+tags = [""]
 categories = ["topic"]
 image = ""
 draft = false
