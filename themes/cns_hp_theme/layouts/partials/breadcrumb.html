@@ -1,0 +1,80 @@
+<div class="cp_breadcrumb">
+<ul  class="breadcrumb">
+  {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+</ul>
+</div>
+
+{{ define "breadcrumbnav" }}
+{{ if .p1.Parent }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ else if not .p1.IsHome }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+{{ end }}
+<li{{ if eq .p1 .p2 }} class="active"{{ end }}>
+  <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+</li>
+{{ end }}
+
+
+<style type="text/css">
+
+.cp_breadcrumb *, .cp_breadcrumb *:after, .cp_breadcrumb *:before {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cp_breadcrumb {
+	margin: 1em auto;
+  height: 25px;
+	color: #777;
+	border-radius: 0.5em;
+}
+.cp_breadcrumb a {
+	text-decoration: none;
+	color: #7986CB;
+}
+.cp_breadcrumb .breadcrumbs {
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+.cp_breadcrumb li {
+	display: inline-block;
+	position: relative;
+	padding-right: calc(16px + 8px);
+	margin-right: 8px;
+	color: #7986CB;
+}
+.cp_breadcrumb li::before {
+	content: '›';
+	width: 1em;
+	height: 1em;
+	line-height: 1;
+	text-align: center;
+	font-size: 4px;
+	color: inherit;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+.cp_breadcrumb li:last-child {
+	margin-right: 0;
+	padding-right: 0;
+	color: #ffffff;
+}
+.cp_breadcrumb li:last-child::before {
+	content: normal;
+}
+
+.cp_breadcrumb .active {
+	margin-right: 0;
+	padding-right: 0;
+	color: #ffffff;
+}
+
+
+</style>
