@@ -95,7 +95,7 @@
 	        <div class="postcard">
 		  <div class="eventdate">
 		    {{ dateFormat "2 Jan, 2006" .Date }}
-		    <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton red">{{ .Params.tags }}</a>
+        <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
 		  </div>
 		  <h2 class="post-title">{{ .Title }}</h2>
 		  <p>{{ .Content }}</p>
