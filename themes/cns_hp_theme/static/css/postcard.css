@@ -4,8 +4,8 @@
   border-radius: 6px;
 /*  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.29); */
   box-shadow: 0 2px 5px #ccc;
-  width: 75%;
-  height: 200px;
+  width: 85%;
+  height: 165px;
   color: #1700ad;
   overflow: hidden;
   position: relative;
@@ -86,7 +86,8 @@
 
 .postcard div.eventdate {
   position: relative;
-  background-color: #125;
+  /*background-color: #125; */
+  background-color: #6494ed;
   padding: 3px 8px 3px 8px;
   text-align: center;
   font-size: 10px;
@@ -96,19 +97,28 @@
   color: #eef;
 }
 
+.postcard div.tags{
+  display: table;
+  border-collapse: separate;
+  border-spacing: 3px 0;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  height: auto;
+  left: calc(100% + 3px);
+  text-align: left;
+  top: 3px;
+}
+
+
 /* the default tag button */
 
 .postcard div a.tagbutton {
-  position: absolute;
-  width: auto;
-  height: auto;
-  padding: 7px;
-  left: calc(100% + 10px); 
-  line-height: 6px;
-  text-align: center;
+  padding: 1px 4px 1px 4px;
+  margin: 1px 5px 1px 5px;
+  height: 8px;
   font-size: 3px;
-  margin-top: -3px;
-  text-decoration: none;
   border-radius: 8px;
   transition: .4s;
   text-decoration: none;
@@ -133,15 +143,14 @@
 }
 
 .postcard div a.Seminar {
-  color:#333;
-  border: solid 1px #333;
+  color:#2f4f4f;
+  border: solid 1px #2f4f4f;
 }
 
 .postcard div a.Seminar:hover {
-  background-image: linear-gradient(45deg, #333 0%, #555 100%);
+  background-image: linear-gradient(45deg, #1d2d2d 0%, #2f4f4f 100%);
   color: white;
 }
-
 
 .postcard .read-more{
   position: absolute;

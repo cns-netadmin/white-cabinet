@@ -9,9 +9,11 @@
 	  {{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
           {{ $numtags := len .Params.tags }}
 	  {{ if gt $numtags 0 }}
+      <div class="tags">
 	    {{ range .Params.tags }}
       <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower . }}" class="tagbutton {{ . }}">{{ . }}</a>
 	    {{ end }}
+      </div>
 	  {{ end }}
 	</div>
       {{ else }}
@@ -19,9 +21,11 @@
 	  {{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
           {{ $numtags := len .Params.tags }}
           {{ if gt $numtags 0 }}
+      <div class="tags">
 	    {{ range .Params.tags }}
 	      <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton {{ . }}">{{ . }}</a>
-            {{ end }}
+        {{ end }}
+        </div>
 	  {{ end }}
 	</div>
       {{ end }}
@@ -42,9 +46,11 @@
   <div class="postcard">
     <div class="eventdate">
       {{ dateFormat "2 Jan, 2006" .Date }}
+      <div class="tags">
       {{ range .Params.tags }}
         <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton {{ . }}">{{ . }}</a>
       {{ end }}
+      </div>
     </div>
     <h2 class="post-title">{{ .Title }}</h2>
     <p>{{ .Content }}</p>
