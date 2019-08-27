@@ -20,6 +20,7 @@
       width: 30%;
     }
   </style>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
 </head>
 
 <body>
@@ -31,7 +32,8 @@
 	<!--<h1 id="title">{{ .Name }}</h1>-->
 	{{ end }}
 	{{ end }}*/}}
-      <h1 id="title">{{ .Title }}</h1>
+    {{ partial "breadcrumb.html" . }}
+    <div class="single-title">{{ .Title }}</div>
       <div>
 	<article id="content">
            {{ .Content }}
