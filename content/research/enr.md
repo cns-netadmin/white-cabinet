@@ -1,5 +1,5 @@
 +++
-title =  "Enr"
+title = "エキゾチック核反応"
 date = 2019-07-22T11:04:28+09:00
 image = "img/top_figures/ENR.jpg"
 draft = false

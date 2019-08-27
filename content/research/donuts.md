@@ -1,5 +1,5 @@
 +++
-title =  "Donuts"
+title = "核ダイナミクス"
 date = 2019-07-22T11:03:55+09:00
 image = "img/top_figures/DONUTS.jpg"
 draft = false
