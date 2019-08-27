@@ -13,7 +13,6 @@ tags = [""]
 ##ex: tags = ["Seminar","Conference"]##
 
 image = ""
-weight = ""
 
 ###banner####
 mkbanner = false
