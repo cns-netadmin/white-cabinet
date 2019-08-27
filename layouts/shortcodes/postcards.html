@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
+</head>
+
 <!-- For future posts -->
 <h3>Upcoming</h3>
 {{ range ($.Site.Pages.ByParam "eventEndDate").Reverse }}
@@ -19,7 +23,7 @@
 	  {{ end }}
 	</div>
       {{ end }}
-      <h2>{{ .Title }}</h2>
+      <h2 class="post-title">{{ .Title }}</h2>
       <p>{{ .Content }}</p>
       <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
     </div>
@@ -29,8 +33,8 @@
 
 <!-- For past posts -->
 <hr>
-<h3>New Posts</h3>
-{{ range first 5 (where $.Site.Pages.ByDate "Section" "post") }}
+<h3>5 Newest Posts</h3>
+{{ range first 5 (where $.Site.Pages "Section" "post") }}
   <div class="postcard">
     <div class="eventdate">
       {{ dateFormat "2 Jan, 2006" .Date }}
@@ -38,7 +42,7 @@
         <a href="{{ $.Site.BaseURL }}tags/{{ . }}/" class="tagbutton">{{ . }}</a>
       {{ end }}
     </div>
-    <h2>{{ .Title }}</h2>
+    <h2 class="post-title">{{ .Title }}</h2>
     <p>{{ .Content }}</p>
     <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p></div>
   </div>
