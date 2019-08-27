@@ -26,14 +26,6 @@ weight = 3
 #For Local
 draft = false
 +++
-
-# タイトル
-
-## 項目
-
-### New cool posts
-
-
 {{ range first 10 ( where .Site.RegularPages "Type" "cool" ) }}
 * {{ .Title }}
 {{ end }}
