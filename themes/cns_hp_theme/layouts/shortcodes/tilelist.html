@@ -37,8 +37,15 @@
   </style>
 </head>
 
+{{ $section := .Page.CurrentSection }}
+{{ $pass := .Get "pass" }}
+{{ with .Get "pass" }}
+  {{ with ($.Site.GetPage "section" $pass) }}
+    {{ $section = .CurrentSection }}
+  {{ end }}
+{{ end }} 
 {{ if eq (.Get "page") "section" }}
-  {{ with .Page.CurrentSection.Sections }}  
+{{ with $section.Sections }}  
   <div class="tilelist">
     {{ range .ByWeight }}
       {{ if .Params.mktile }}
@@ -48,7 +55,7 @@
   </div>
   {{ end }}
 {{ else if eq (.Get "page") "single" }}
-  {{ with .Page.CurrentSection.Data.Pages }}
+  {{ with $section.Data.Pages }}
     <div class="tilelist">
       {{ range .ByWeight }}
         {{ if .Params.mktile }}
