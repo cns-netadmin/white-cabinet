@@ -16,8 +16,9 @@
 }
 
 .postcard p{
+  margin-top : -15px;
   color: #222;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .postcard img{
@@ -25,13 +26,27 @@
 }
 
 .postcard h1{
-  color: #222;
-  font-size: 21px;
+  margin-top : -15px;
+  color: black;
+  font-size: 13px;
+}
+
+.postcard h2{
+  margin-top : -15px;
+  color: black;
+  font-size: 15px;
+}
+
+.postcard h3{
+  margin-top : -15px;
+  color: black;
+  font-size: 16px;
 }
 
 .postcard h2.post-title{
+  margin-top : 12px;
   color: black;
-  font-size: 22px;
+  font-size: 18px;
   position: relative;
   display: inline-block;
   margin-bottom: 1em;
@@ -58,22 +73,22 @@
   left: 0;
   width: 100%;
   height: 100px;
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%);
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.8) 50%, #fff 100%);
   background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%);
   content: "";
 }
 
 .postcard div.eventdate {
   position: relative;
-  background-color: #6666c6;
-  padding: 8px;
+  background-color: #125;
+  padding: 3px 8px 3px 8px;
   text-align: center;
   font-size: 14px;
   border: solid #008080 2px;
-  border-radius: 5px;
+  border-radius: 2px;
   width: 100px;
   height: auto;
-  color: #fff;
+  color: #eef;
 }
 
 /* the default tag button */
@@ -82,12 +97,14 @@
   position: absolute;
   width: auto;
   height: 10px;
-  top: 5%;
+  top: 8%;
   left: calc(100% + 10px); 
   line-height: 10px;
   padding: 8px;
+  margin-top: -1px;
   border-radius: 25px;
   text-decoration: none;
+  font-size: 5px;
   color: #1700ad;
   transition: .4s;
   background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
@@ -97,7 +114,6 @@
   background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }
 
-
 /* custom tag button for Seminar */
 .postcard div a.tagbutton[class*="Seminar"] {
   position: absolute;
@@ -105,7 +121,7 @@
   height: 10px;
   top: 5%;
   left: calc(100% + 10px); 
-  line-height: 10px;
+  line-height: 5px;
   padding: 8px;
   border-radius: 25px;
   text-decoration: none;
@@ -143,16 +159,20 @@
   right: 20px;
   width: auto;
   text-align: right;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
-  padding: 0.25em 0.25em;
+  /*padding: 0.25em 0.25em; */
+  padding: 1px 7px 1px 7px;
   text-decoration: none;
-  color: #00BCD4;
-  background: #ECECEC;
-  border-radius: 0 15px 15px 0;
+  border-radius: 4px 15px 15px 4px;
   transition: .4s;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
 }
 
 .postcard .read-more:hover{
-  background: #636363;
+  zoom: 1.02;
+  background: #67c5ff;
+  color: white;
 }
