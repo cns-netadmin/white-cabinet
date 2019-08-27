@@ -4,6 +4,7 @@ title =  "{{ replace .Name "-" " " | title }}"
 date = {{ .Date }}
 publishDate = {{ .Date }}
 image = ""
+weight = ""
 
 #banner
 mkbanner = false

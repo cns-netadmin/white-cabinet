@@ -1,5 +1,5 @@
 +++
-title =  "Sharaq"
+title = "OEDO-SHARAQ プロジェクト"
 date = 2019-07-22T11:04:59+09:00
 image = "img/top_figures/OEDOa.jpg"
 mktile = true

@@ -28,7 +28,9 @@
     border-radius: 5px;
     margin-bottom: 9px;
 
-    font-family: 'Times New Roman';
+    /*font-family: 'Times New Roman';*/
+    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+    font-weight: 500;
 }
 
 .button.button_1 {
@@ -63,6 +65,8 @@
     border-radius: 5px;
     margin-bottom: 9px;
 
+    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
+    font-weight: 500;
 }
 
 /* for the lab section */
