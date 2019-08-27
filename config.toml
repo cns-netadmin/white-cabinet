@@ -6,6 +6,7 @@ publishdir    = "public"
 canonifyurls  = true
 
 DefaultContentLanguage = "ja"
+DefaultContentLanguageInSubdir = true
 #theme = "beautifulhugo"
 theme = "cns_hp_theme"
 metaDataFormat = "yaml"
@@ -251,7 +252,6 @@ pygmentCodeFences = true
 
 [[Languages.en.menu.main]]
     parent = "about"
-    name = "Greeting from Director" 
     url = "/en/about/greeting"
     weight = 1
 
@@ -390,7 +390,6 @@ pygmentCodeFences = true
     name = "jobs"
     url = "/en/job"
     weight = 3
-
 
 [[Languages.en.params.address]]
   description = "Hongo Campus"
