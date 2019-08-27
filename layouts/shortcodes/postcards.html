@@ -1,0 +1,45 @@
+<!-- For future posts -->
+<h3>Upcoming</h3>
+{{ range ($.Site.Pages.ByParam "eventEndDate").Reverse }}
+  {{ $FormattedNow := (now.AddDate 0 0 -1) }}
+  {{ if le $FormattedNow .Params.eventEndDate }}
+    <div class="postcard">
+      {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
+        <div class="eventdate">
+	  {{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
+	  {{ range .Params.tags }}
+	    <a href="{{ $.Site.BaseURL }}tags/{{ . }}/" class="tagbutton">{{ . }}</a>
+	  {{ end }}
+	</div>	
+      {{ else }}
+        <div class="eventdate">
+	  {{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
+	  {{ range .Params.tags }}
+	    <a href="{{ $.Site.BaseURL }}tags/{{ . }}/" class="tagbutton">{{ . }}</a>
+	  {{ end }}
+	</div>
+      {{ end }}
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Content }}</p>
+      <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
+    </div>
+  {{ end }}
+{{ end }}
+<!-- Add alternate content to show when there is no upcoming event -->
+
+<!-- For past posts -->
+<hr>
+<h3>New Posts</h3>
+{{ range first 5 (where $.Site.Pages.ByDate "Section" "post") }}
+  <div class="postcard">
+    <div class="eventdate">
+      {{ dateFormat "2 Jan, 2006" .Date }}
+      {{ range .Params.tags }}
+        <a href="{{ $.Site.BaseURL }}tags/{{ . }}/" class="tagbutton">{{ . }}</a>
+      {{ end }}
+    </div>
+    <h2>{{ .Title }}</h2>
+    <p>{{ .Content }}</p>
+    <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p></div>
+  </div>
+{{ end }}
