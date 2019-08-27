@@ -10,7 +10,7 @@
           {{ $numtags := len .Params.tags }}
 	  {{ if gt $numtags 0 }}
 	    {{ range .Params.tags }}
-	      <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower . }}" class="tagbutton">{{ . }}</a>
+      <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower . }}" class="tagbutton {{ . }}">{{ . }}</a>
 	    {{ end }}
 	  {{ end }}
 	</div>
@@ -20,7 +20,7 @@
           {{ $numtags := len .Params.tags }}
           {{ if gt $numtags 0 }}
 	    {{ range .Params.tags }}
-	      <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton">{{ . }}</a>
+	      <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton {{ . }}">{{ . }}</a>
             {{ end }}
 	  {{ end }}
 	</div>
@@ -43,7 +43,7 @@
     <div class="eventdate">
       {{ dateFormat "2 Jan, 2006" .Date }}
       {{ range .Params.tags }}
-        <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton">{{ . }}</a>
+        <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton {{ . }}">{{ . }}</a>
       {{ end }}
     </div>
     <h2 class="post-title">{{ .Title }}</h2>
