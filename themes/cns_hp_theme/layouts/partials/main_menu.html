@@ -11,7 +11,7 @@
     {{ range .Site.Menus.main.ByWeight }}
       {{ $indxfile := .URL | relURL }}
       {{ $indexExists := fileExists $indxfile }}
-      {{ $indxname := string $indxfile }}
+      {{ $indxname := string (.URL | relLangURL) }}
       {{ $menuName := .Name }}
       {{ if $indexExists }}
         <button class="button active">{{ $menuName }}</button>
