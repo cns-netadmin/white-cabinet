@@ -1,25 +1,27 @@
-<head>
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
-</head>
-
 <!-- For future posts -->
 <h3>Upcoming</h3>
-{{ range ($.Site.Pages.ByParam "eventEndDate").Reverse }}
+{{ range ($.Page.CurrentSection.Pages.ByParam "endEventDate") }}
   {{ $FormattedNow := (now.AddDate 0 0 -1) }}
   {{ if le $FormattedNow .Params.eventEndDate }}
     <div class="postcard">
       {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
         <div class="eventdate">
 	  {{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
-	  {{ range .Params.tags }}
-	    <a href="{{ $.Site.BaseURL }}tags/{{ . }}/" class="tagbutton">{{ . }}</a>
+          {{ $numtags := len .Params.tags }}
+	  {{ if gt $numtags 0 }}
+	    {{ range .Params.tags }}
+	      <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower . }}" class="tagbutton">{{ . }}</a>
+	    {{ end }}
 	  {{ end }}
-	</div>	
+	</div>
       {{ else }}
         <div class="eventdate">
 	  {{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
-	  {{ range .Params.tags }}
-	    <a href="{{ $.Site.BaseURL }}tags/{{ . }}/" class="tagbutton">{{ . }}</a>
+          {{ $numtags := len .Params.tags }}
+          {{ if gt $numtags 0 }}
+	    {{ range .Params.tags }}
+	      <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton">{{ . }}</a>
+            {{ end }}
 	  {{ end }}
 	</div>
       {{ end }}
@@ -28,19 +30,20 @@
       <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
     </div>
   {{ end }}
-{{ end }}
 <!-- Add alternate content to show when there is no upcoming event -->
+{{ end }}
+
 
 <!-- For past posts -->
+{{ $numlist := 3 }} <!-- number of posts to display -->
 <hr>
-<h3>5 Newest Posts</h3>
-
-{{ range first 5 (where .Site.Pages "Section" "post") }}
+<h3>{{ $numlist }} Newest Posts</h3>
+{{ range first $numlist (where $.Page.CurrentSection.Pages "Section" "post") }}
   <div class="postcard">
     <div class="eventdate">
       {{ dateFormat "2 Jan, 2006" .Date }}
       {{ range .Params.tags }}
-        <a href="{{ $.Site.BaseURL }}tags/{{ . }}/" class="tagbutton">{{ . }}</a>
+        <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton">{{ . }}</a>
       {{ end }}
     </div>
     <h2 class="post-title">{{ .Title }}</h2>
@@ -48,4 +51,5 @@
     <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
   </div>
 {{ end }}
+
 
