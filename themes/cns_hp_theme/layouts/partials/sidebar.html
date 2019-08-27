@@ -30,7 +30,7 @@
             <h2> {{ .Title }} </h2>
           </div>
         {{ else }}
-          <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/ForBanner/BannerTemp.png);" >
+        <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Site.Params.defaultBannerImage }});" >
             <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
             <h2> {{ .Title }} </h2>
           </div>
@@ -56,7 +56,7 @@
               </div>
               
             {{ else }}
-               <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
+               <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Site.Params.defaultBannerImage }});" >
                  <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
                  <h2> {{ .Title }} </h2>
                </div>
@@ -70,6 +70,8 @@
 </div> <!-- sidebar -->
 
 <div class="links">
-  <a href="{{ .Site.BaseURL }}/link"><h3>{{ .Site.Params.link }}</h3></a>
+  {{ with .Site.Params.link }}
+  <a href="{{ $.Site.BaseURL }}/{{ $.Site.Params.linkpath }}"><h3>{{ . }}</h3></a>
+  {{ end }}
 </div> <!-- links -->
 <script type="text/javascript" src="{{ .Site.BaseURL }}js/slick.min.js"></script>
