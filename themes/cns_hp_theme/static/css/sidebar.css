@@ -3,12 +3,7 @@
  layouts/partial/sidebar.html
  */
 
-
 .topic {
-
-  height: 200px;
-  width: 95%;
-
   /* background-image setting */
   background-position: center;
   background-size: cover;
@@ -31,9 +26,19 @@
   background-blend-mode:lighten;
 
 }
+.imgsize{
+  width: 24vw;
+  height: 18vw;
+  /*border: solid 5px red; */
+}
+.bannersize{
+  width: 24vw;
+  padding-bottom: 25%;
+/*  border: solid 5px blue;*/
+}
 .topic img{
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: auto;
 }
 
 .topic:hover {
@@ -51,7 +56,6 @@
 
 .topic h1 {
   font-size: 16px;
-  font-family: 'Hiragino Mincho Pro';
   justify-content: center;
   text-align: center;
 
@@ -60,7 +64,6 @@
 .topic h2 {
   font-size: 18px;
   color: #444;
-  font-family: 'Hiragino Mincho Pro';
   -webkit-align-items: center;
   align-items: center; 
   -webkit-justify-content: center; 
@@ -70,23 +73,6 @@
 
 }
 
-.topic-mask {
-  position: static;
-  width: 100%;
-  height: 100%;
-  background : rgba(255,255,255,0.2);
-
-}
-
-
-.tile {
-  display: block;
-  position: relative;
-  /*  width: 250px;*/
-  width: auto;
-  height: auto;
-
-}
 
 .topic_list {
   width: 100%;

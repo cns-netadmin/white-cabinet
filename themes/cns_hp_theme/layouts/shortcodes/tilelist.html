@@ -9,7 +9,7 @@
     .tile {
       position: relative;
       float: left;
-      width: 180px;
+      width: 200px;
       height: 180px;
       margin: 0 7px;
     }
@@ -38,9 +38,9 @@
 </head>
 
 {{ $section := .Page.CurrentSection }}
-{{ $pass := .Get "pass" }}
-{{ with .Get "pass" }}
-  {{ with ($.Site.GetPage "section" $pass) }}
+{{ $path := .Get "path" }}
+{{ with .Get "path" }}
+  {{ with ($.Site.GetPage "section" $path) }}
     {{ $section = .CurrentSection }}
   {{ end }}
 {{ end }} 
