@@ -21,16 +21,16 @@
       {{ if $StatBanner := and (eq .Params.mkbanner true) (le now .Params.bannerEndDate) }}
       {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
         {{ if .Params.bannerimg }} 
-          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+          <div class="topic imgsize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
             <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
           </div>
         {{ else if .Params.image }} 
-          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
+          <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
             <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
             <h2> {{ .Title }} </h2>
           </div>
         {{ else }}
-          <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/ForBanner/BannerTemp.png);" >
+          <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/ForBanner/BannerTemp.png);" >
             <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
             <h2> {{ .Title }} </h2>
           </div>
@@ -46,17 +46,17 @@
         {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
           {{ if le ($.Scratch.Get "counter") $maxnum }} 
             {{ if .Params.bannerimg }} 
-              <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+              <div class="topic imgsize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
                 <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
               </div>
             {{ else if .Params.image }} 
-              <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
+              <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
                 <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
                 <h2> {{ .Title }} </h2>
               </div>
               
             {{ else }}
-               <div class="topic" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
+               <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}/img/pic1.png);" >
                  <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
                  <h2> {{ .Title }} </h2>
                </div>
