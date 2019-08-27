@@ -6,8 +6,8 @@ mkbanner = false
 bannerimg = ""
 +++
 
-{{< listchildren >}}
+# Laboratories
+{{< tilelist page="single" path="/education/labs" >}}
 
-[Laboratory]({{< ref "labs" >}})
-
-[Staffs]({{< ref "staffs" >}})
+# Reseaerchers
+{{< tilelist page="single" path="/education/staffs" >}}
