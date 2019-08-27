@@ -8,4 +8,4 @@ weight = ""
 heading = "Upcoming"
 +++
 
-[記事一覧はこちら](/post)
+[記事一覧はこちら]({{< ref "/post/postlist.md" >}})
