@@ -9,5 +9,4 @@ weight = "1"
 
 東京大学原子核科学研究センター (CNS) では、原子核からクォークに至るハドロン多体系の物理を研究しています。
 
-{{< tilelist page="section" >}}
-{{< listchildren page="single" >}}
+{{< tilelist page="single" pass="/research" >}}
