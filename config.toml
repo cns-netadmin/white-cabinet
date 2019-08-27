@@ -22,6 +22,7 @@ pygmentCodeFences = true
 [Languages.ja.params]
   Language_name="日本語" 
   link = "関連リンクはこちら"
+  linkPath = "ja/link"
   location = "所在地"
   sitemap = "サイトマップ"
   subtitle = "Center for Nuclear Study, The University of Tokyo"
@@ -32,6 +33,7 @@ pygmentCodeFences = true
 [Languages.en.params]
   Language_name="English" 
   link = "Links"
+  linkPath = "en/link"
   location = "Location"
   sitemap = "Quicklinks"
   subtitle = "The University of Tokyo"
@@ -45,6 +47,8 @@ pygmentCodeFences = true
   logo = "img/logos/cns_mark_color_cut.png"
   favicon = "img/favicon.ico"
   dateFormat = "2006/01/02"
+  # defaultBannerImage = "/img/ForBanner/book-test.jpg"
+  defaultBannerImage = ""
   commit = false
   rss = true
   comments = true
@@ -255,30 +259,29 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "about"
     name = "About CNS"
-#    url = "/en/about"
     url = "/about"
     weight = 1
 
 [[Languages.en.menu.main]]
     parent = "about"
-    url = "/en/about/greeting"
+    url = "/about/greeting"
     weight = 1
 
 [[Languages.en.menu.main]]
     parent = "about"
     name = "History/Organization Chart"
-    url = "/en/about/history"
+    url = "/about/history"
     weight = 2
     
 [[Languages.en.menu.main]]
     parent = "about"
     name = "Pamphlet"
-    url = "/en/about/pamphlet"
+    url = "/about/pamphlet"
     weight = 3
     
 [[Languages.en.menu.main]]
     name = "広報・実績・評価"
-    url = "/en/about/announcement"
+    url = "/about/announcement"
     parent = "about"
     weight = 4
     
@@ -292,13 +295,13 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     parent = "for_students"
     name = "大学院進学ガイダンス"
-    url = "/en/for_students/guidance"
+    url = "/for_students/guidance"
     weight = 1
 
 [[Languages.en.menu.main]]
     parent = "for_students"
     name = "施設見学会"
-    url = "/en/for_students/facility_tour"
+    url = "/for_students/facility_tour"
     weight = 2
 
 [[Languages.en.menu.main]]
@@ -317,54 +320,54 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "核ダイナミクス"
-    url = "/en/research/donuts"
+    url = "/research/donuts"
     weight = 2
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "クォーク物理"
-    url = "/en/research/quark"
+    url = "/research/quark"
     weight = 3
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "エキゾチック核反応"
-    url = "/en/research/enr"
+    url = "/research/enr"
     weight = 4
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "極限原子核構造"
-    url = "/en/research/nuspeq"
+    url = "/research/nuspeq"
     weight = 5
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "基本対称性"
-    url = "/en/research/edm"
+    url = "/research/edm"
     weight = 6
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "加速器開発"
-    url = "/en/research/accelerator"
+    url = "/research/accelerator"
     weight = 7
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "OEDO-SHARAQプロジェクト"
-    url = "/en/research/sharaq"
+    url = "/research/sharaq"
     weight = 8
 
 [[Languages.en.menu.main]]
     parent = "lab"
     name = "原子核理論"
-    url = "/en/research/theory"
+    url = "/research/theory"
     weight = 9
 
 [[Languages.en.menu.main]]
     name = "Staffs"
-    url = "/en/staffs"
+    url = "/staffs"
     weight = 4
 
 [[Languages.en.menu.main]]
@@ -375,32 +378,32 @@ pygmentCodeFences = true
 
 [[Languages.en.menu.main]]
     name = "International Summer School"
-    url = "/en/cnsss"
+    url = "/cnsss"
     weight = 6
 
 [[Languages.en.menu.main]]
     name = "Seminors"
-    url = "/en/seminers"
+    url = "/seminers"
     weight = 7
 
 [[Languages.en.menu.main]]
     name = "Access"
-    url = "/en/access"
+    url = "/access"
     weight = 8
 
 [[Languages.en.menu.header]]
     name = "HOME"
-    url = "/en/"
+    url = "/"
     weight = 1
 
 [[Languages.en.menu.header]]
     name = "Access"
-    url = "/en/access"
+    url = "/access"
     weight = 2
 
 [[Languages.en.menu.header]]
     name = "Jobs"
-    url = "/en/job"
+    url = "/job"
     weight = 3
 
 [[Languages.en.params.address]]
