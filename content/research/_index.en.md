@@ -7,12 +7,4 @@ mktile = true
 weight = ""
 +++
 
-# Name of the lab
-
-What is our research topic?
-
-## New cool posts
-
-What is our recent update?
-
 {{< tilelist page="single" pass="/research" >}}

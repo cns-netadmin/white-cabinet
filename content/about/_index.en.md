@@ -1,21 +1,14 @@
 +++
 title =  "About"
 date = 2019-07-21T14:06:22+09:00
-tags = ["Seminar","Conference"]
 image = ""
 draft = false
 weight = "1"
 +++
 
-Center for Nuclear Study (CNS) has been studying nuclear/quark physics and many-body hadron system.
+<div style="text-align:center;">"Origin and evoluation of matters and the universality in their hierarchy"</div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-{{< tilelist page="single" pass="/research" >}}
-=======
-{{< tilelist page="section" >}}
+Center for Nuclear Study, Faculty of Science, the University of Tokyo, promotes the collaborative project between RIKEN Nishina Center, the collaborative research in CERN and the research acitivities in heavy-ion science including nuclear physics and accelerator science.
+
 {{< listchildren page="single" >}}
->>>>>>> f1327fff51fafedc1bfedc7fd2afe38c1927d98c
-=======
-{{< tilelist page="single" pass="/research" >}}
->>>>>>> 20e0e3774317180f183760b7bf3cc436bbea2b0d
+
