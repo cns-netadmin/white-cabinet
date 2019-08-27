@@ -4,8 +4,10 @@
  categories = ["topic"]
  tags = []
  draft = false
- iamge = ""
- mkbanner = false
+ image = ""
+ mkbanner = true
+ bannerEndDate = 2019-09-23
+ weight = 1
  bannerimg = "img/topics/opencampus.png"
 +++
  2019/8/8-9に行われた東京大学理学部のオープンキャンパスに参加しました<br>

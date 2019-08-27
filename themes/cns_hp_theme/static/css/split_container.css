@@ -13,11 +13,15 @@
   /* main + topics + link */
   display: grid;
   width: 100%;
-  grid-template-rows: 230px auto 200px;
+  grid-template-rows: 260px auto 100px;
   grid-template-areas:
     "areaB"
     "areaA"
     "areaC";
+/*  
+  border: solid 4px blue;
+  box-sizing: border-box;
+*/ 
 }
 
 .top_menu {
@@ -26,54 +30,64 @@
  /* width: 660px; */
   width: 100%;
   text-align: center;
-  /*
+/*  
   border: solid 4px red;
   box-sizing: border-box;
-  */
+*/  
 }
 
 .sidebar {
   position: -webkit-sticky;
   position: sticky;
   top: 125px;
-  margin-bottom: 31vw;
+  margin-bottom: 0vw;
 
-  height: 60vw;
+  height: 70vw;
   width: 100%;
   grid-area: areaB;
 
-  /*
+  
+  margin-right: 15px;
+  border: none;
+  box-sizing: border-box;
+  padding-right: 15px;
+border: none;
+box-sizing: border-box;
+background-coloer: #fff;
+/*
   border: solid 4px orange;
   box-sizing: border-box;
-  */
+*/
 }
 
 .sidebar-narrow {
 
   height:200px;
-  width: 100%;
   grid-area: areaB;
-  /*
-
+  
+/*
   border: solid 4px orange;
   box-sizing: border-box;
-  */
+*/  
 }
 
 .links {
   grid-area: areaC;
   position: -webkit-sticky;
   position: sticky;
-  top: 75vw;
-  height: 30vw;
+  top: 86vw;
+  height: 7vw;
   width: 100%
   font-size: 10px;
+  border: none;
+  box-sizing: border-box;
+  background-color: #fff;
 
-  /*
+/* 
   border: solid 4px indigo;
   box-sizing: border-box;
   background-color: #fff;
-  */
+ */ 
 }
 .links a {
   text-align: center;
@@ -129,10 +143,14 @@
   align-items: center;
   bottom: 0;
   position: relative;
-  height:200px;
+  height:100px;
   width: 100%
   background-color: #fff;
   font-size: 5px;
+/*  
+  border: solid 4px orange;
+  box-sizing: border-box;
+*/  
 }
 
 .links-narrow a{

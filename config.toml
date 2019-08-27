@@ -21,7 +21,7 @@ pygmentCodeFences = true
   title = "東京大学 原子核科学研究センター"
 [Languages.ja.params]
   Language_name="日本語" 
-  link = "関連リンク"
+  link = "関連リンクはこちら"
   location = "所在地"
   sitemap = "サイトマップ"
   subtitle = "Center for Nuclear Study, The University of Tokyo"
@@ -48,9 +48,7 @@ pygmentCodeFences = true
   commit = false
   rss = true
   comments = true
-
-
-
+  
   top_figures = [
     "img/top_figures/Fundamental_Symmetry.jpg",
     "img/top_figures/OEDOa.jpg",
@@ -61,8 +59,10 @@ pygmentCodeFences = true
     "img/top_figures/NUSPEQ.jpg",
     "img/top_figures/ENR.jpg",
     "img/top_figures/Theory.png"
-
   ]
+  sidebar_maxnum = 10
+  sidebar_url = "/post"
+
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 #[[Params.bigimg]]
@@ -78,7 +78,6 @@ pygmentCodeFences = true
 #[params]
 [[Params.address]]
   description = "本郷本部"
-#  description = "本郷本部"
   postcode = "113-0033"
   address = "東京都文京区本郷7-3-1" 
   room = "東京大学本郷キャンパス理学部1号館316号室"
@@ -208,8 +207,8 @@ pygmentCodeFences = true
     weight = 4
 
 [[menu.main]]
-    name = "イベント情報"
-    url = "/events"
+    name = "Posts"
+    url = "/post"
     weight = 5
 
 [[menu.main]]
@@ -254,7 +253,6 @@ pygmentCodeFences = true
 
 [[Languages.en.menu.main]]
     parent = "about"
-    name = "Greeting from Director" 
     url = "/en/about/greeting"
     weight = 1
 
@@ -396,7 +394,6 @@ pygmentCodeFences = true
     name = "jobs"
     url = "/en/job"
     weight = 3
-
 
 [[Languages.en.params.address]]
   description = "Hongo Campus"
