@@ -6,118 +6,25 @@
 
 <body>
 
-  {{ if .Site.Menus.main }}
-    <ul class="accordion right-side">
-      {{ range .Site.Menus.main.ByWeight }}
-        {{ if .HasChildren }}
-          <!--button class="button">{{/* .Name */}}</button-->
-          <!-- Special action: "lab" -->
-          {{ if eq .Identifier "lab" }}
-            <button class="button active">{{ .Name }}</button>
-            <div class="nest">
-              <div>
-                {{ range .Children }}
-                  {{ $nm := .Name }}
-                  {{ $w := .Weight }}
-                  {{ $pt := .URL | relLangURL }}
-                  <!-- Fetch image path -->
-                  {{ range $.Site.RegularPages }}
-                    {{ if (.Param "mktile") }}
-                      {{ if eq .Weight $w }}
-                      <a href="{{ .Permalink }}" class="labtile"><img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ $nm }} title={{ $nm }}><div class="caption">{{ $nm }}</div></a>
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
-              </div>
-            </div>
-          <!-- END Special action: "lab" -->
 
-          <!-- Default action -->
-          {{ else }}
-            <button class="button">{{ .Name }}</button>
-            <div class="nest" style="display: none;">
-              <!-- Fetch description -->
-	      {{ with $.Site.GetPage .Identifier }}
-                <p>{{ .Content }}</p>
-              {{ end }}
-              
-              <!-- Construct children list -->
-	      <ul class="accordion_1">
-                {{ range .Children }}
-                  <li><a href="{{ .URL | relLangURL }}">{{ .Name }} </a></li>
-                {{ end }}
-              </ul>
-            </div>
-          <!-- END Default action -->
-          {{ end }}
-        {{ else }}
-
-          <!-- Special action: "Posts" -->
-          {{ if eq .URL "/post" }}
-            <button class="button active">{{ .Name }}</button>
-            <div class="nest">
-              {{ with $.Site.GetPage "/post" }}
-                <h3>{{ .Params.heading }}</h3>
-              {{ end }}
-
-              {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
-                {{ if eq $catkey "event" }}
-                  {{ range (.Pages.ByParam "eventEndDate").Reverse }}
-                  {{ $FormattedNow := (now.AddDate 0 0 -1) }}
-                    {{ if le $FormattedNow .Params.eventEndDate }}
-                    <div class="postcard">
-                        {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
-                          <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
-                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
-                          </div>
-                        {{ else }}
-                          <div class="eventdate">{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
-                            <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
-                          </div>
-                        {{ end }}
-                      <h2 class="post-title">{{ .Title }}</h2>
-                      <p>{{ .Content }}</p>
-                      <p><a href="{{ .Permalink }}" class="read-more">Read More</a></p>
-                    </div>
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
-	      {{ end }}
-
-	      <!-- For past posts -->
-
-	      <hr>
-
-	      <h3>New Posts</h3>
-
-	      {{ range first 3 (where $.Data.Pages "Section" "post") }}
-	        <div class="postcard">
-		  <div class="eventdate">
-		    {{ dateFormat "2 Jan, 2006" .Date }}
-        <a href="{{ $.Site.BaseURL }}tags/{{ .Params.tags }}/" class="tagbutton {{ .Params.tags }}">{{ .Params.tags }}</a>
-		  </div>
-		  <h2 class="post-title">{{ .Title }}</h2>
-		  <p>{{ .Content }}</p>
-		  <p><a href="{{ .Permalink }}" class="read-more">Read More</a></p>
-		</div>
-	      {{ end }}
-	    
-	      {{ with $.Site.GetPage "/post" }}
-                <h3>{{ .Content }}</h3>
-              {{ end }}
-            </div>
-          <!-- END Special action: "events" -->
-
-          {{ else }}
-            <a href="{{ .URL }}"><button class="pseudo_button">{{- .Name -}}</button></a>
-          {{ end }}
-
-        {{ end }}
+  <ul class="accordion right-side">
+    {{ range .Site.Menus.main.ByWeight }}
+      {{ $indxfile := .URL | relURL }}
+      {{ $indexExists := fileExists $indxfile }}
+      {{ $indxname := string $indxfile }}
+      {{ $menuName := .Name }}
+      {{ if $indexExists }}
+        <button class="button active">{{ $menuName }}</button>
+	<div class="nest">
+          {{ with ($.Site.GetPage "section" $indxname) }}
+	    <p>{{ .Content }}</p>
+	  {{ end }}
+	</div>
+      {{ else }}
+        <a href="{{ .URL | relLangURL }}"><button class="pseudo_button">{{- $menuName -}}</button></a>
       {{ end }}
-    </ul>
-  {{ end }}
-
+    {{ end }}
+  </ul>
 
 
 </body>

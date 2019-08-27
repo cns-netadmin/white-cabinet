@@ -6,7 +6,7 @@ publishdir    = "public"
 canonifyurls  = true
 
 DefaultContentLanguage = "ja"
-DefaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = true
 #theme = "beautifulhugo"
 theme = "cns_hp_theme"
 metaDataFormat = "yaml"
@@ -247,7 +247,8 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "about"
     name = "About CNS"
-    url = "/en/about"
+#    url = "/en/about"
+    url = "/about"
     weight = 1
 
 [[Languages.en.menu.main]]
@@ -276,7 +277,8 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "for_students"
     name = "For Students"
-    url = "/en/for_students"
+#    url = "/en/for_students"
+    url = "/for_students"
     weight = 2
     
 [[Languages.en.menu.main]]
@@ -294,7 +296,8 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "lab"
     name = "Research Groups"
-    url = "/en/research"
+#    url = "/en/research"
+    url = "/research"
     weight = 3
 
 [[Languages.en.menu.main]]
@@ -357,8 +360,9 @@ pygmentCodeFences = true
     weight = 4
 
 [[Languages.en.menu.main]]
-    name = "Posts (in English)"
-    url = "/en/post"
+    name = "Event Info"
+#    url = "/en/events"
+    url = "/events"
     weight = 5
 
 [[Languages.en.menu.main]]

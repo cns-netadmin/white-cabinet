@@ -35,7 +35,7 @@
     <nav class="humberger-menu">
       <ul>
         {{ range .Site.Menus.main.ByWeight }}
-	<a href="{{ .URL }}" title="{{ .Name }}">
+	<a href="{{ .URL | relLangURL }}" title="{{ .Name }}">
 	  <li>{{ .Name }}</li>
 	</a>
         {{ end }}
@@ -45,7 +45,7 @@
       <ul>
 	{{ range .Site.Menus.header.ByWeight }}
       <li>
-	    <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
+	    <a href="{{ .URL | relLangURL }}" title="{{ .Name }}"> {{ .Name }} </a>
 	    </li>
 	{{ end }}
           {{ if .IsTranslated }}
