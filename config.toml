@@ -6,6 +6,7 @@ publishdir    = "public"
 canonifyurls  = true
 
 DefaultContentLanguage = "ja"
+defaultContentLanguageInSubdir = true
 #theme = "beautifulhugo"
 theme = "cns_hp_theme"
 metaDataFormat = "yaml"
@@ -41,7 +42,7 @@ pygmentCodeFences = true
 
 [Params]
 # subtitle = "Hugo Blog Template for GitLab Pages"
-  logo = "img/cns_mark_color_cut.png"
+  logo = "img/logos/cns_mark_color_cut.png"
   favicon = "img/favicon.ico"
   dateFormat = "2006/01/02"
   commit = false
@@ -91,6 +92,14 @@ pygmentCodeFences = true
   tel = "048-464-4191"
   fax = "048-464-4554"
   googlemap_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.2116735633286!2d139.6139149738691!3d35.779142021664946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ebe32e58ab15%3A0xce5ed2faf0c053e1!2z5p2x5Lqs5aSn5a2mIOWOn-WtkOaguOenkeWtpueglOeptuOCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1564492140203!5m2!1sja!2sjp"
+
+[[Params.exlink]]
+  url = "https://www.u-tokyo.ac.jp/"
+  pass = "img/logos/UTlogo_bk.png"
+
+[[Params.exlink]]
+  url = "https://www.s.u-tokyo.ac.jp/"
+  pass = "img/logos/soslogo_bk.png"
 
 [[menu.main]]
     identifier = "about"
@@ -246,12 +255,12 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "about"
     name = "About CNS"
-    url = "/en/about"
+#    url = "/en/about"
+    url = "/about"
     weight = 1
 
 [[Languages.en.menu.main]]
     parent = "about"
-    name = "Greeting from Director" 
     url = "/en/about/greeting"
     weight = 1
 
@@ -276,7 +285,8 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "for_students"
     name = "For Students"
-    url = "/en/for_students"
+#    url = "/en/for_students"
+    url = "/for_students"
     weight = 2
     
 [[Languages.en.menu.main]]
@@ -294,7 +304,8 @@ pygmentCodeFences = true
 [[Languages.en.menu.main]]
     identifier = "lab"
     name = "Research Groups"
-    url = "/en/research"
+#    url = "/en/research"
+    url = "/research"
     weight = 3
 
 [[Languages.en.menu.main]]
@@ -357,8 +368,9 @@ pygmentCodeFences = true
     weight = 4
 
 [[Languages.en.menu.main]]
-    name = "Posts (in English)"
-    url = "/en/post"
+    name = "Event Info"
+#    url = "/en/events"
+    url = "/events"
     weight = 5
 
 [[Languages.en.menu.main]]
@@ -387,10 +399,9 @@ pygmentCodeFences = true
     weight = 2
 
 [[Languages.en.menu.header]]
-    name = "jobs"
+    name = "Jobs"
     url = "/en/job"
     weight = 3
-
 
 [[Languages.en.params.address]]
   description = "Hongo Campus"
@@ -399,6 +410,7 @@ pygmentCodeFences = true
   room = "Faculty of Science Bldg.1 #316"
   tel = "03-3812-7886"
   fax = "03-5841-7642"
+  googlemap_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202.46945047570898!2d139.76268896485885!3d35.7136441866265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x332e3cc4ac2e0017!2z5p2x5Lqs5aSn5a2mIOWkp-WtpumZoueQhuWtpuezu-eglOeptuenkSDnkIblrabpg6gx5Y-36aSo!5e0!3m2!1sja!2sjp!4v1564495972441!5m2!1sja!2sjp"
 
 [[Languages.en.params.address]]
   description = "Wako Campus"
@@ -407,3 +419,4 @@ pygmentCodeFences = true
   room = "Center for Nuclear Study"
   tel = "048-464-4191"
   fax = "048-464-4554"
+  googlemap_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.2116735633286!2d139.6139149738691!3d35.779142021664946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ebe32e58ab15%3A0xce5ed2faf0c053e1!2z5p2x5Lqs5aSn5a2mIOWOn-WtkOaguOenkeWtpueglOeptuOCu-ODs-OCv-ODvA!5e0!3m2!1sja!2sjp!4v1564492140203!5m2!1sja!2sjp"
