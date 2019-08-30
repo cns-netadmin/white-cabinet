@@ -55,7 +55,7 @@
   color: black;
   font-size: 12px;
 }
-iiii
+
 .postcard h5{
   margin-top : -15px;
   padding-top: 2px;
@@ -70,12 +70,11 @@ iiii
   font-size: 12px;
 }
 
-.postcard link{
+.postcard a:link{
   margin-top : -15px;
-  color: black;
   font-size: 12px;
+  text-decoration: none;
 }
-
 
 .postcard h2.post-title{
   margin-top : 12px;
@@ -185,7 +184,6 @@ iiii
   bottom: 20px;
   right: 20px;
   width: auto;
-  text-align: right;
   font-size: 12px;
   font-weight: bold;
   /*padding: 0.25em 0.25em; */
@@ -193,8 +191,8 @@ iiii
   border-radius: 4px 15px 15px 4px;
   transition: .4s;
   text-decoration: none;
-  color: #67c5ff;
   border: solid 2px #67c5ff;
+  color: #67c5ff;
 }
 
 .postcard .read-more:hover{
