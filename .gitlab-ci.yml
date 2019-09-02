@@ -63,17 +63,18 @@ staging:
   script: 
     - hugo
     - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test  
-    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www4:/var/www/vhosts/cns.s.u-tokyo.ac.jp/httpd/html/www4_test
+#    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www4:/var/www/vhosts/cns.s.u-tokyo.ac.jp/httpd/html/www4_test
   only:
   - develop
   
 production:
   stage: deploy
   script:
-    - hugo
+    - hugo -b https://www.cns.s.u-tokyo.ac.jp/www4_test/
     - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www4:/var/www/vhosts/cns.s.u-tokyo.ac.jp/httpd/html/www4_test
   artifacts:
     paths:
       - public
   only:
-    - master
+  - develop
+#    - master
