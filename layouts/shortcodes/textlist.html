@@ -1,0 +1,29 @@
+{{ $section := .Page.CurrentSection }}
+{{ if .Get "path" }}
+  {{ $path := .Get "path" }}
+  {{ with ($.Site.GetPage "section" $path) }}
+    {{ $section = .CurrentSection }}
+  {{ end }}
+{{ end }} 
+
+<ul class="textlist">
+  {{ $w := 0 }}
+  {{ $v := 0 }}
+  {{ range $section.Sections.ByWeight }}  
+    {{ $w = .Params.Weight }}
+    {{ range $section.Pages.ByWeight }}  
+      {{ if and (le .Params.Weight $w) (gt .Params.Weight $v) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
+      {{ end }}
+    {{ end }}  
+
+    <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
+    {{ $v = $w }} 
+  {{ end }}  
+
+  {{ range $section.Pages.ByWeight }}  
+    {{ if gt .Params.Weight $w }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
+    {{ end }}
+  {{ end }}  
+</ul>

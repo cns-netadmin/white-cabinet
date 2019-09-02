@@ -38,30 +38,25 @@
 </head>
 
 {{ $section := .Page.CurrentSection }}
-{{ $path := .Get "path" }}
-{{ with .Get "path" }}
+{{ if .Get "path" }}
+  {{ $path := .Get "path" }}
   {{ with ($.Site.GetPage "section" $path) }}
     {{ $section = .CurrentSection }}
   {{ end }}
 {{ end }} 
-{{ if eq (.Get "page") "section" }}
-{{ with $section.Sections }}  
-  <div class="tilelist">
-    {{ range .ByWeight }}
-      {{ if .Params.mktile }}
-        <a href="{{ .Permalink }}" class="tile"><img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}><div class="caption">{{ .Title }}</div></a>
-      {{ end }}
+
+<div class="tilelist">
+  <!-- For section pages -->
+  {{ range $section.Sections.ByWeight }}  
+    {{ if .Params.mktile }}
+      <a href="{{ .Permalink }}" class="tile"><img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}><div class="caption">{{ .Title }}</div></a>
     {{ end }}
-  </div>
-  {{ end }}
-{{ else if eq (.Get "page") "single" }}
-  {{ with $section.Data.Pages }}
-    <div class="tilelist">
-      {{ range .ByWeight }}
-        {{ if .Params.mktile }}
-          <a href="{{ .Permalink }}" class="tile"><img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}><div class="caption">{{ .Title }}</div></a>
-        {{ end }}
-      {{ end }}
-    </div>
-  {{ end }}
-{{ end }}
+  {{ end }}  
+
+  <!-- For single pages -->
+  {{ range $section.Pages.ByWeight }}  
+    {{ if .Params.mktile }}
+      <a href="{{ .Permalink }}" class="tile"><img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}><div class="caption">{{ .Title }}</div></a>
+    {{ end }}
+  {{ end }}  
+</div>
