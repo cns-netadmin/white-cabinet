@@ -11,11 +11,11 @@ layout = "single"
 
 # 研究室
 
-{{< tilelist page="single" path="/education/labs" >}}
+{{< tilelist path="/education/labs" >}}
 
 # 研究者紹介
 
-{{< tilelist page="single" path="/education/staffs" >}}
+{{< tilelist path="/education/staffs" >}}
 
 
 

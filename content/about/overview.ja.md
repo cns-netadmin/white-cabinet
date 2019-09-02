@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 title = "概要"
 date = 2019-08-23T15:19:25+09:00
 mkbanner = false

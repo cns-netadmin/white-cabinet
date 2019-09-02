@@ -9,4 +9,4 @@ weight = "2"
 
 The Professors and Associate Professors at the CNS run laboratories in the Physics Department of the School of Science, University of Tokyo, and accept graduate students. We look forward to work with those of you who aim to push forward the horizon of Physics.
 
-{{< listchildren >}}
+{{< textlist >}}
