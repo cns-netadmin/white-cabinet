@@ -69,7 +69,8 @@ staging:
 production:
   stage: deploy
   script:
-    - echo "まーだだよ"
+    - hugo
+    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www4:/var/www/vhosts/cns.s.u-tokyo.ac.jp/httpd/html/www4_test
   artifacts:
     paths:
       - public
