@@ -61,8 +61,9 @@ delete_testpage:
 staging:
   stage: deploy
   script: 
-  - hugo
-  - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test  
+    - hugo
+    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test  
+    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www4:/var/www/vhosts/cns.s.u-tokyo.ac.jp/httpd/html/www4_test
   only:
   - develop
   
