@@ -305,7 +305,7 @@ header {
   }
   .header-menu ul li{
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 5px;
     vertical-align: center;
     position: relative;
   }
@@ -327,8 +327,7 @@ header {
   }
   .header-menu ul li{
     display: inline-block;
-    margin: 0 10px;
-    vertical-align: center;
+    margin: 0 4px;
     position: relative;
     font-size: 0.8em;
   }
@@ -336,7 +335,15 @@ header {
     display: none;
   }
 }
-.header-menu ul li::after {
+  .header-menu ul li:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f054";
+    font-weight: 900;
+    position: relative;
+    color: #fff;
+    font-size: 0.8em;
+  }
+/*.header-menu ul li::after {
   display: block;
   content: '';
   position: absolute;
@@ -348,11 +355,11 @@ header {
   border-bottom: 1px solid #fff;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-}
+}*/
 .header-menu ul li a{
   color: #fff;
   text-decoration: none;
 }
-.header-menu .u-tokyo_logos::after {
+.header-menu .u-tokyo_logos:before {
   display: none !important;
 }
