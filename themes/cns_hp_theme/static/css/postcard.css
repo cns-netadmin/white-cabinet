@@ -1,3 +1,10 @@
+:root {
+  --gray-color: #808080;
+  --red-color: #8b0000;
+  --green-color: #2f4f4f;
+  --blue-color: #00008b;
+}
+
 .postcard {
   background-color: #fff;
   padding: 10px;
@@ -149,33 +156,43 @@
   border-radius: 8px;
   transition: .4s;
   text-decoration: none;
-  color:#8b0000;
-  border: solid 1px #8b0000;
+  color:var(--gray-color);
+  border: solid 1px var(--gray-color);
   transition: .4s;
 }
 
 .postcard div a.tagbutton:hover {
-  background-image: linear-gradient(45deg, #8b0000 0%, #b22222 100%);
+  background-image: linear-gradient(45deg, var(--gray-color) 0%, var(--gray-color) 100%);
   color: white;
 }
 
 .postcard div a.red {
-  color:#8b0000;
-  border: solid 1px #8b0000;
+  color:var(--red-color);
+  border: solid 1px var(--red-color);
 }
 
 .postcard div a.red:hover {
-  background-image: linear-gradient(45deg, #8b0000 0%, #b22222 100%);
+  background-image: linear-gradient(45deg, var(--red-color) 0%, var(--red-color) 100%);
   color: white;
 }
 
-.postcard div a.Seminar {
-  color:#2f4f4f;
-  border: solid 1px #2f4f4f;
+.postcard div a.blue{
+  color:var(--blue-color);
+  border: solid 1px var(--blue-color);
 }
 
-.postcard div a.Seminar:hover {
-  background-image: linear-gradient(45deg, #1d2d2d 0%, #2f4f4f 100%);
+.postcard div a.blue:hover {
+  background-image: linear-gradient(45deg, var(--blue-color) 0%, var(--blue-color) 100%);
+  color: white;
+}
+
+.postcard div a.green{
+  color:var(--green-color);
+  border: solid 1px var(--green-color);
+}
+
+.postcard div a.green:hover {
+  background-image: linear-gradient(45deg, var(--green-color) 0%, var(--green-color) 100%);
   color: white;
 }
 
