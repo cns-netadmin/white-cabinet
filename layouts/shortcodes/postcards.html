@@ -1,5 +1,6 @@
 <!-- For future posts -->
 <h3>Upcoming</h3>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
 {{ range ($.Page.CurrentSection.Pages.ByParam "endEventDate") }}
   {{ $FormattedNow := (now.AddDate 0 0 -1) }}
   {{ if le $FormattedNow .Params.eventEndDate }}
@@ -10,9 +11,19 @@
           {{ $numtags := len .Params.tags }}
 	  {{ if gt $numtags 0 }}
       <div class="tags">
-	    {{ range .Params.tags }}
-      <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower . }}" class="tagbutton {{ . }}">{{ . }}</a>
-	    {{ end }}
+      {{ range .Params.tags }}
+        {{ $category_name := . }}
+        {{ $categories_color := $.Site.Params.categories_color }}
+        {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
+          {{ range $i, $tag_name := $categories_color }}
+            {{ if eq $tag_name $category_name }} 
+              <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
+            {{ end }}
+          {{ end }}
+          {{ else }}
+            <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton">{{ $category_name }}</a>
+        {{ end }}
+      {{ end }}
       </div>
 	  {{ end }}
 	</div>
@@ -22,10 +33,20 @@
           {{ $numtags := len .Params.tags }}
           {{ if gt $numtags 0 }}
       <div class="tags">
-	    {{ range .Params.tags }}
-	      <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton {{ . }}">{{ . }}</a>
+      {{ range .Params.tags }}
+        {{ $category_name := . }}
+        {{ $categories_color := $.Site.Params.categories_color }}
+        {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
+          {{ range $i, $tag_name := $categories_color }}
+            {{ if eq $tag_name $category_name }} 
+              <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
+            {{ end }}
+          {{ end }}
+          {{ else }}
+            <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton">{{ $category_name }}</a>
         {{ end }}
-        </div>
+      {{ end }}
+      </div>
 	  {{ end }}
 	</div>
       {{ end }}
@@ -48,7 +69,17 @@
       {{ dateFormat "2 Jan, 2006" .Date }}
       <div class="tags">
       {{ range .Params.tags }}
-        <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower . }}/" class="tagbutton {{ . }}">{{ . }}</a>
+        {{ $category_name := . }}
+        {{ $categories_color := $.Site.Params.categories_color }}
+        {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
+          {{ range $i, $tag_name := $categories_color }}
+            {{ if eq $tag_name $category_name }} 
+              <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
+            {{ end }}
+          {{ end }}
+          {{ else }}
+            <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton">{{ $category_name }}</a>
+        {{ end }}
       {{ end }}
       </div>
     </div>
