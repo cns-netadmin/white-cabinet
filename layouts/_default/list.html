@@ -1,9 +1,22 @@
 {{ define "main" }}
 
+<head>
+  <style>
+    .main-list {
+      display: block;
+      width: 100%;
+    }
+  </style>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
+</head>
+
+<div class="main-list">
 {{ partial "breadcrumb.html" . }} 
-<ul>
-  {{ range .Pages }}
-  <li> <a href="{{.Permalink}}">{{.Date.Format "2006/01/02"}} | {{ .Title }} </a> </li>
-  {{ end }}
+  <ul>
+    {{ range .Pages }}
+      {{ partial "postcard" (dict "context" . "card_type" "simple" ) }}
+    {{ end }}
   </ul>
+</div>
+
 {{end}}
