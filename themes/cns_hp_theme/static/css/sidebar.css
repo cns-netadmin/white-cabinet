@@ -47,6 +47,8 @@
   -moz-opacity:0.5;
   -khtml-opacity: 0.5;
   cursor: pointer;
+  background-color:rgba(180,180,180,0.3);
+  box-shadow: 0 0 9px #bbb;
 }
 
 .topic a {
@@ -87,8 +89,8 @@
 
 .topic_list-narrow {
   align: center;
-  margin: auto;
-  width: 80vw;
+  margin: 0 auto;
+  width: 100vw;
   height: 105%;
   /*
   border: solid 4px orange;
@@ -98,6 +100,19 @@
   -webkit-overflow-scrolling: touch;
   */
 }
+
+.slick-initialized .slick-slide{
+  opacity: 0.55;
+}
+
+.slick-initialized .slick-slide.slick-active{
+  opacity: 1;
+  border: solid 1px #bbb;
+  border-radius: 4px;
+  box-shadow: 0 0 11px #ccc;
+}
+
+
 
 .slick-prev:before {
   color: #445;

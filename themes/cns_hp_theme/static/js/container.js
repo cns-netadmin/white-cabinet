@@ -41,6 +41,7 @@ $(function(){
         centerMode: true,
         //centerPadding: '20px',
         infinite: true,
+        arrows: false,
         slidesToShow: 1,
         autoplay: true,
         autoplaySpeed: 4000,

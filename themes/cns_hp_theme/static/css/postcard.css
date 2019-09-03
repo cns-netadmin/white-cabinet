@@ -15,7 +15,7 @@
 }
 
 .postcard p{
-  margin-top : -12px;
+  margin-top : -15px;
   color: #222;
   font-size: 12px;
 }
@@ -25,29 +25,56 @@
 }
 
 .postcard h1{
-  margin-top : -13px;
+  margin-top : -15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: black;
+  font-size: 14px;
+}
+
+.postcard h2{
+  margin-top : -15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   color: black;
   font-size: 13px;
 }
 
-.postcard h2{
-  margin-top : -12px;
+.postcard h3{
+  margin-top : -15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   color: black;
   font-size: 12px;
 }
 
-.postcard h3{
-  margin-top : -11px;
-  color: black;
-  font-size: 11px;
-}
-
 .postcard h4{
-  margin-top : -10px;
+  margin-top : -15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   color: black;
-  font-size: 10px;
+  font-size: 12px;
 }
 
+.postcard h5{
+  margin-top : -15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 12px;
+}
+
+.postcard h6{
+  margin-top : -15px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 12px;
+}
+
+.postcard a:link{
+  margin-top : -15px;
+  font-size: 12px;
+  text-decoration: none;
+}
 
 .postcard h2.post-title{
   margin-top : 12px;
@@ -157,7 +184,6 @@
   bottom: 20px;
   right: 20px;
   width: auto;
-  text-align: right;
   font-size: 12px;
   font-weight: bold;
   /*padding: 0.25em 0.25em; */
@@ -165,8 +191,8 @@
   border-radius: 4px 15px 15px 4px;
   transition: .4s;
   text-decoration: none;
-  color: #67c5ff;
   border: solid 2px #67c5ff;
+  color: #67c5ff;
 }
 
 .postcard .read-more:hover{
