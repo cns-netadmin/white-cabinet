@@ -4,89 +4,15 @@
 {{ range ($.Page.CurrentSection.Pages.ByParam "endEventDate") }}
   {{ $FormattedNow := (now.AddDate 0 0 -1) }}
   {{ if le $FormattedNow .Params.eventEndDate }}
-    <div class="postcard">
-      {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
-        <div class="eventdate">
-	  {{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
-          {{ $numtags := len .Params.tags }}
-	  {{ if gt $numtags 0 }}
-      <div class="tags">
-      {{ range .Params.tags }}
-        {{ $category_name := . }}
-        {{ $categories_color := $.Site.Params.categories_color }}
-        {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
-          {{ range $i, $tag_name := $categories_color }}
-            {{ if eq $tag_name $category_name }} 
-              <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
-            {{ end }}
-          {{ end }}
-          {{ else }}
-            <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton">{{ $category_name }}</a>
-        {{ end }}
-      {{ end }}
-      </div>
-	  {{ end }}
-	</div>
-      {{ else }}
-        <div class="eventdate">
-	  {{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
-          {{ $numtags := len .Params.tags }}
-          {{ if gt $numtags 0 }}
-      <div class="tags">
-      {{ range .Params.tags }}
-        {{ $category_name := . }}
-        {{ $categories_color := $.Site.Params.categories_color }}
-        {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
-          {{ range $i, $tag_name := $categories_color }}
-            {{ if eq $tag_name $category_name }} 
-              <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
-            {{ end }}
-          {{ end }}
-          {{ else }}
-            <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton">{{ $category_name }}</a>
-        {{ end }}
-      {{ end }}
-      </div>
-	  {{ end }}
-	</div>
-      {{ end }}
-      <h2 class="post-title">{{ .Title }}</h2>
-      <p>{{ .Content }}</p>
-      <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
-    </div>
+    {{ partial "postcard" (dict "context" . "card_type" "upcoming" ) }}
   {{ end }}
 <!-- Add alternate content to show when there is no upcoming event -->
 {{ end }}
-
 
 <!-- For past posts -->
 {{ $numlist := 3 }} <!-- number of posts to display -->
 <hr>
 <h3>{{ $numlist }} Newest Posts</h3>
 {{ range first $numlist (where $.Page.CurrentSection.Pages "Section" "post") }}
-  <div class="postcard">
-    <div class="eventdate">
-      {{ dateFormat "2 Jan, 2006" .Date }}
-      <div class="tags">
-      {{ range .Params.tags }}
-        {{ $category_name := . }}
-        {{ $categories_color := $.Site.Params.categories_color }}
-        {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
-          {{ range $i, $tag_name := $categories_color }}
-            {{ if eq $tag_name $category_name }} 
-              <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
-            {{ end }}
-          {{ end }}
-          {{ else }}
-            <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton">{{ $category_name }}</a>
-        {{ end }}
-      {{ end }}
-      </div>
-    </div>
-    <h2 class="post-title">{{ .Title }}</h2>
-    <p>{{ .Content }}</p>
-    <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
-  </div>
+  {{ partial "postcard" (dict "context" . "card_type" "normal" ) }}
 {{ end }}
-
-
