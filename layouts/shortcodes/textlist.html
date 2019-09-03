@@ -1,3 +1,32 @@
+<head>
+  <style>
+    .textlist {
+      position: relative;
+      border-top: solid #ddd 1px;
+      border-bottom: solid #ddd 1px;
+      padding: 0.5em 0 0.5em 2.3em;
+      margin-top: 30px;
+      width: 96%;
+    }
+    .textlist li {
+      list-style-type: none;
+      padding: 0.1em 0;
+    }
+    .textlist li:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f0da";
+      font-weight: 900;
+      position: relative;
+      left: -0.5em;
+      color: gray;
+    }
+    .textlist li a {
+      text-decoration: none;
+      color: #000;
+    }
+  </style>
+</head>
+
 {{ $section := .Page.CurrentSection }}
 {{ if .Get "path" }}
   {{ $path := .Get "path" }}
