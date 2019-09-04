@@ -1,0 +1,60 @@
+<head>
+  <style>
+    .textlist {
+      position: relative;
+      border-top: dashed #ddd 1px;
+      border-bottom: dashed #ddd 1px;
+      padding: 0.5em 0 0.5em 2.3em;
+      margin-top: 30px;
+    }
+    .textlist li {
+      list-style-type: none;
+      padding: 0.1em 0;
+    }
+    .textlist li:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f0da";
+      font-weight: 900;
+      position: relative;
+      left: -0.5em;
+      color: gray;
+    }
+    .textlist li a {
+      text-decoration: none;
+      color: #000;
+    }
+    .textlist li a:hover {
+      color: #67c5ff;
+    }
+  </style>
+</head>
+
+{{ $section := .Page.CurrentSection }}
+{{ if .Get "path" }}
+  {{ $path := .Get "path" }}
+  {{ with ($.Site.GetPage "section" $path) }}
+    {{ $section = .CurrentSection }}
+  {{ end }}
+{{ end }} 
+
+<ul class="textlist">
+  {{ $w := 0 }}
+  {{ $v := 0 }}
+  {{ range $section.Sections.ByWeight }}  
+    {{ $w = .Params.Weight }}
+    {{ range $section.Pages.ByWeight }}  
+      {{ if and (le .Params.Weight $w) (gt .Params.Weight $v) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
+      {{ end }}
+    {{ end }}  
+
+    <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
+    {{ $v = $w }} 
+  {{ end }}  
+
+  {{ range $section.Pages.ByWeight }}  
+    {{ if gt .Params.Weight $w }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }} </a></li>
+    {{ end }}
+  {{ end }}  
+</ul>
