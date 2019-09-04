@@ -6,7 +6,7 @@ draft = false
 weight = ""
 +++
 
-{{< tilelist page="section" >}}
+{{< tilelist >}}
 
 
 * [セミナーリスト](/ja/tags/seminar/)

@@ -10,5 +10,5 @@ weight = "1"
 
 Center for Nuclear Study, Faculty of Science, the University of Tokyo, promotes the collaborative project between RIKEN Nishina Center, the collaborative research in CERN and the research acitivities in heavy-ion science including nuclear physics and accelerator science.
 
-{{< listchildren page="single" >}}
+{{< textlist >}}
 
