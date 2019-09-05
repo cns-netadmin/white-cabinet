@@ -1,17 +1,28 @@
 /* For the accordion itself */
 
+
 .accordion {
     display: block;
     margin: 10px auto 0 auto;
-    padding-right: 20px;
     max-width: 700px;
+}
+
+@media screen and (min-width: 700px) {
+    .accordion {
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .accordion {
+        padding: 0 20px;
+    }
 }
 
 .nest {
 /*    display: none;*/
     text-align: left;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    padding: 0 15px 20px 15px;
 }
 
 .button {

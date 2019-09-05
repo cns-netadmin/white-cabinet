@@ -6,62 +6,99 @@
       justify-content: center;
       align-content: flex-start;      
     }
-    .tile {
-      position: relative;
-      float: left;
-      width: 200px;
-      height: 180px;
-      margin: 0 7px;
+    @media screen and (min-width: 900px) {
+      .tile {
+        position: relative;
+        width: 30%;
+        height: 170px;
+        margin: 10px 7px;
+        box-shadow: 0 2px 5px #ccc;
+        overflow: hidden;
+        border-radius: 3px;
+      }
+    }
+    @media screen and (max-width: 900px) and (min-width: 540px) {
+      .tile {
+        position: relative;
+        width: 40%;
+        height: 170px;
+        margin: 10px 7px;
+        box-shadow: 0 2px 5px #ccc;
+        overflow: hidden;
+        border-radius: 3px;
+      }
+    }
+    @media screen and (max-width: 540px) {
+      .tile {
+        position: relative;
+        width: 80%;
+        height: 170px;
+        margin: 10px 7px;
+        box-shadow: 0 2px 5px #ccc;
+        overflow: hidden;
+        border-radius: 3px;
+      }
+    }
+    .tile:hover {
+      box-shadow: 0px 0px 5px 2px #67c5ff;
     }
     .tile img {
-      width: 200px !important;
+      width: 100% !important;
       height: 130px;
       object-fit: cover;
-      margin: 0 0 50px 0 !important;
-      background: #f7f7f7;
-      box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.29);
-      clear: both;
+      margin: 0 0 !important;
     }
-    .tile div.caption {
+    .tile .caption {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       width: 100%;
-      top: 140px;
-      left: 0px;
+      height: 40px;
+      top: 130px;
+      left: 0;
       color: #000;
-      background: #fff;
+      background-color: #fff;
       font-size: 18px;
-      line-height: 18px;
       word-break: keep-all;
+    }
+    .tile .caption div {
+      line-height: 20px;
       text-align: center;
     }
   </style>
 </head>
 
 {{ $section := .Page.CurrentSection }}
-{{ $path := .Get "path" }}
-{{ with .Get "path" }}
+{{ if .Get "path" }}
+  {{ $path := .Get "path" }}
   {{ with ($.Site.GetPage "section" $path) }}
     {{ $section = .CurrentSection }}
   {{ end }}
 {{ end }} 
-{{ if eq (.Get "page") "section" }}
-{{ with $section.Sections }}  
-  <div class="tilelist">
-    {{ range .ByWeight }}
-      {{ if .Params.mktile }}
-        <a href="{{ .Permalink }}" class="tile"><img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}><div class="caption">{{ .Title }}</div></a>
-      {{ end }}
+
+<div class="tilelist">
+  <!-- For section pages -->
+  {{ range $section.Sections.ByWeight }}  
+    {{ if .Params.mktile }}
+      <a href="{{ .Permalink }}" class="tile">
+        <img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}>
+	<div class="caption">
+	  <div>{{ .Title }}</div>
+	</div>
+      </a>
     {{ end }}
-  </div>
-  {{ end }}
-{{ else if eq (.Get "page") "single" }}
-  {{ with $section.Data.Pages }}
-    <div class="tilelist">
-      {{ range .ByWeight }}
-        {{ if .Params.mktile }}
-          <a href="{{ .Permalink }}" class="tile"><img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}><div class="caption">{{ .Title }}</div></a>
-        {{ end }}
-      {{ end }}
-    </div>
-  {{ end }}
-{{ end }}
+  {{ end }}  
+
+  <!-- For single pages -->
+  {{ range $section.Pages.ByWeight }}  
+    {{ if .Params.mktile }}
+      <a href="{{ .Permalink }}" class="tile">
+        <img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}>
+	<div class="caption">
+	  <div>{{ .Title }}</div>
+	</div>
+      </a>
+    {{ end }}
+  {{ end }}  
+</div>
