@@ -136,12 +136,12 @@ pygmentCodeFences = true
     weight = 3
     pre = "open"
 
-
 [[menu.main]]
     name = "ニュース"
     url = "/post"
     weight = 4
     pre = "open"
+    post = "post/postcard"
 
 
 [[menu.header]]
@@ -188,6 +188,7 @@ pygmentCodeFences = true
     url = "/post"
     weight = 4
     pre = "open"
+    post = "post/postcard"
 
 [[Languages.en.menu.header]]
     name = "HOME"
