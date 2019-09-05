@@ -1,28 +1,22 @@
 {{ define "main" }}
 
 <head>
-  <style>
-    .main-list {
-      display: block;
-      width: 100%;
-    }
-  </style>
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/list.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
 </head>
-
 <div class="main-list">
   {{ partial "breadcrumb.html" . }} 
-
-  {{ $paginator := .Paginate .Data.Pages }}
-  {{ range ($paginator.Pages.GroupByDate "2006") }}
-    <div class="single-title">{{ .Key }}</div>
-    {{ range .Pages }}
-    {{ partial "postcard" (dict "context" . "card_type" "simple" ) }}
+  <section id="main">
+    {{ $paginator := .Paginate .Data.Pages }}
+    {{ range ($paginator.Pages.GroupByDate "2006") }}
+    <div class="year"><h1> {{ .Key }} </h1></div>
+      {{ range .Pages }}
+      {{ partial "postcard" (dict "context" . "card_type" "simple" ) }}
+      {{ end }}
     {{ end }}
-  {{ end }}
-
+  </section>
+  {{ partial "pagination" . }}
 </div>
-{{ partial "pagination" . }}
 
 {{end}}
