@@ -111,6 +111,7 @@ pygmentCodeFences = true
     name = "CNSについて"
     url = "/about"
     weight = 1
+    pre = "closed"
 
     
 [[menu.main]]
@@ -118,6 +119,7 @@ pygmentCodeFences = true
     name = "進学希望の方へ"
     url = "/education"
     weight = 2
+    pre = "closed"
     
 
 [[menu.main]]
@@ -125,11 +127,14 @@ pygmentCodeFences = true
     name = "研究活動"
     url = "/research"
     weight = 3
+    pre = "open"
+
 
 [[menu.main]]
     name = "ニュース"
     url = "/post"
     weight = 4
+    pre = "open"
 
 
 [[menu.header]]
@@ -155,24 +160,27 @@ pygmentCodeFences = true
     name = "About CNS"
     url = "/about"
     weight = 1
+    pre = "closed"
 
 [[Languages.en.menu.main]]
     identifier = "education"
     name = "Education"
     url = "/education"
     weight = 2
+    pre = "closed"
     
 [[Languages.en.menu.main]]
     identifier = "research"
     name = "Research"
-#    url = "/en/research"
     url = "/research"
     weight = 3
+    pre = "open"
 
 [[Languages.en.menu.main]]
     name = "News"
     url = "/post"
     weight = 4
+    pre = "open"
 
 [[Languages.en.menu.header]]
     name = "HOME"
