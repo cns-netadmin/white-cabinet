@@ -12,12 +12,20 @@
       {{ $indxfile := .URL | relURL }}
       {{ $indexExists := fileExists $indxfile }}
       {{ $indxname := string $indxfile }}
+      {{ $listfile := string .Post }}
+      {{/* $listExists := fileExists $listfile */}} <!-- bug?? -->
       {{ $menuName := .Name }}
       {{ if $indexExists }}
-        <button class="button active">{{ $menuName }}</button>
-	<div class="nest">
-          {{ with ($.Site.GetPage "section" $indxname) }}
-	    <p>{{ .Content }}</p>
+	<button class="button active">{{ $menuName }}</button>
+        <div class="nest">
+          {{ if .Post }}
+	    {{ with ($.Site.GetPage $listfile) }}
+	      <p>{{ .Content }}</p>
+	    {{ end }}
+	  {{ else }}
+	    {{ with ($.Site.GetPage "section" $indxname) }}
+	      <p>{{ .Content }}</p>
+	    {{ end }}
 	  {{ end }}
 	</div>
       {{ else }}
