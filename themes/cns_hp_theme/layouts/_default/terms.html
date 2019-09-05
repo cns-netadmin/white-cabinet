@@ -1,13 +1,21 @@
 {{ define "main" }}
-<ul>
-  {{ $data := .Data }}
-  {{ range  $value := .Data.Terms.Alphabetical }}
-  <li>
-    <a href="{{ $value.Name | urlize }}/">
-      {{ $value.Name }}
-    </a>
-    {{ $value.Count }}
-  </li>
-  {{ end }}
-</ul>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
+
+  <div class="main-terms">
+  {{ partial "breadcrumb.html" . }}
+  <section id="main">
+    <div class="single-title">{{ .Title }}</div>
+      <ul>
+        {{ $data := $.Data }}
+        {{ range  $value := .Data.Terms.Alphabetical }}
+          {{ if (not (eq $value.Name "" )) }}
+          <li>
+            <a href="{{ $value.Name | urlize }}/"> {{ $value.Name }}  </a>
+            {{ $value.Count }} Posts
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+  </section>
+  </div>
 {{ end }}

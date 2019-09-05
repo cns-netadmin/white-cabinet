@@ -8,6 +8,12 @@
 
 <!-- List of all the content pages inside /post -->
 
+{{ $temp := .Page.File }}
+
 {{ range where $.Site.Pages "Section" "post"  }}
-  <li><a href="{{ .Permalink }}">{{ .Title  }}</a></li>
+  {{ if (not (eq .Name "" )) }}
+    {{ if (not (eq .File $temp)) }}
+    {{ partial "postcard" (dict "context" . "card_type" "simple" ) }} 
+    {{ end  }}    
+  {{ end  }}    
 {{ end  }}    

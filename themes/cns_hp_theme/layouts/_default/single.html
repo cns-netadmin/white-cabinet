@@ -1,21 +1,18 @@
 {{ define "main" }}
-
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
 <head>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
 </head>
-
 <body>
   <div class="single_page">
     <section id="main">
       {{ partial "breadcrumb.html" . }}
-         <div class="single-title">{{ .Title }}</div>
+      <div class="single-title">{{ .Title }}</div>
       <div>
-	       <article class="content">
+        <article class="content">
            {{ .Content }}
-	       </article>
+        </article>
       </div>
     </section>
   </div>
 </body>
-
 {{end}}

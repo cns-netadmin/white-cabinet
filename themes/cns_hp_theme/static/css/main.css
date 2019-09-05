@@ -10,3 +10,14 @@ main {
   box-sizing: border-box;
   */
 }
+
+.main-list {
+  display: block;
+  width: 100%;
+}
+
+
+.main-terms {
+  display: block;
+  width: 100%;
+}
