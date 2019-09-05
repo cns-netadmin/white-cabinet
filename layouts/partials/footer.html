@@ -147,11 +147,14 @@
         </h1>
       </div>
       <div class="item_sitemap">
-        <ul>
-        {{ range .Site.Menus.main.ByWeight }}
-          <li> <a href="{{ .URL }}"> {{ .Name }} </a> </li>
-        {{ end }}
-        </ul>
+	{{ with  .Site.GetPage "sitemap"}}
+	{{ .Content }}
+	{{ end }}
+        <!-- {{/* <ul> */}} -->
+        <!-- {{/* {{ range .Site.Menus.main.ByWeight }} */}} -->
+        <!-- {{/*   <li> <a href="{{ .URL }}"> {{ .Name }} </a> </li> */}} -->
+        <!-- {{/* {{ end }} */}} -->
+        <!-- {{/* </ul> */}} -->
       </div>
 	  </div>
     <div class="address">
