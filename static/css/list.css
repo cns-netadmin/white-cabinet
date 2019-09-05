@@ -1,0 +1,28 @@
+.year {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.year h1 {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+.year h1:before, .year h1:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: black;
+}
+
+.year h1:before {
+  left:0;
+}
+.year h1:after {
+  right: 0;
+}
