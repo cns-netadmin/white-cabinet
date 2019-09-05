@@ -16,18 +16,34 @@
       {{/* $listExists := fileExists $listfile */}} <!-- bug?? -->
       {{ $menuName := .Name }}
       {{ if $indexExists }}
-	<button class="button active">{{ $menuName }}</button>
-        <div class="nest">
-          {{ if .Post }}
-	    {{ with ($.Site.GetPage $listfile) }}
-	      <p>{{ .Content }}</p>
+        {{ $defaultOpen := string .Pre }}
+	{{ if (eq $defaultOpen "open") }}
+  	  <button class="button active">{{ $menuName }}</button>
+          <div class="nest">
+            {{ if .Post }}
+	      {{ with ($.Site.GetPage $listfile) }}
+	        <p>{{ .Content }}</p>
+	      {{ end }}
+	    {{ else }}
+	      {{ with ($.Site.GetPage "section" $indxname) }}
+	        <p>{{ .Content }}</p>
+	      {{ end }}
 	    {{ end }}
-	  {{ else }}
-	    {{ with ($.Site.GetPage "section" $indxname) }}
-	      <p>{{ .Content }}</p>
+  	  </div>
+	{{ else }}
+  	  <button class="button">{{ $menuName }}</button>
+          <div class="nest" style="display: none;">
+            {{ if .Post }}
+	      {{ with ($.Site.GetPage $listfile) }}
+	        <p>{{ .Content }}</p>
+	      {{ end }}
+	    {{ else }}
+	      {{ with ($.Site.GetPage "section" $indxname) }}
+	        <p>{{ .Content }}</p>
+	      {{ end }}
 	    {{ end }}
-	  {{ end }}
-	</div>
+  	  </div>
+	{{ end }}
       {{ else }}
         <a href="{{ .URL | relLangURL }}"><button class="pseudo_button">{{- $menuName -}}</button></a>
       {{ end }}
