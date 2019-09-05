@@ -43,8 +43,6 @@
   width: 30%;
 }
 
-.main{
-}
 .single-title{
     margin-top: 0px;
     margin-bottom: 9px;
@@ -63,6 +61,4 @@
     background-color: #fff;
     border: solid 1px #ddd;
     border-radius: 10px;
-}
-.content{
 }

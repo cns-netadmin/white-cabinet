@@ -60,6 +60,7 @@
       {{ range .Params.tags }}
         {{ $category_name := . }}
         {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
+
           {{ range $i, $tag_name := $categories_color }}
             {{ if eq $tag_name $category_name }} 
               <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
