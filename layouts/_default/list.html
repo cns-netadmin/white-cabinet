@@ -8,15 +8,25 @@
     }
   </style>
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
 </head>
 
 <div class="main-list">
 {{ partial "breadcrumb.html" . }} 
-  <ul>
+{{ range (.Data.Pages.GroupByDate "2006") }}
+         <div class="single-title">{{ .Key }}</div>
     {{ range .Pages }}
+    {{ partial "postcard" (dict "context" . "card_type" "simple" ) }}
+    {{ end }}
+{{ end }}
+<!--
+  <ul>
+    {{ range .Pages.ByDate }}
       {{ partial "postcard" (dict "context" . "card_type" "simple" ) }}
     {{ end }}
   </ul>
+
+-->
 </div>
 
 {{end}}
