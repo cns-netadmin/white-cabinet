@@ -7,4 +7,4 @@ mktile = true
 weight = ""
 +++
 
-{{< tilelist page="section" path="/research" >}}
+{{< tilelist path="/research" >}}

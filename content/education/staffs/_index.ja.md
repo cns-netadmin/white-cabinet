@@ -7,7 +7,7 @@ bannerimg = ""
 +++
 
 
-{{< tilelist page="single" >}}
+{{< tilelist >}}
 
 
 

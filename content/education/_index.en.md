@@ -7,7 +7,7 @@ bannerimg = ""
 +++
 
 # Laboratories
-{{< tilelist page="single" path="/education/labs" >}}
+{{< tilelist path="/education/labs" >}}
 
 # Reseaerchers
-{{< tilelist page="single" path="/education/staffs" >}}
+{{< tilelist path="/education/staffs" >}}

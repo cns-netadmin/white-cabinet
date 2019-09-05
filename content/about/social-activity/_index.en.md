@@ -7,5 +7,5 @@ weight = "10"
 +++
 
 
-{{< listchildren page="single" >}}
+{{< textlist >}}
 
