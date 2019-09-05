@@ -140,11 +140,25 @@
   vertical-align: middle;
   width: 100%;
   height: auto;
-  left: calc(100% + 3px);
   text-align: left;
-  top: 3px;
 }
 
+@media screen and (min-width: 450px) {
+  .postcard div.tags {
+    left: calc(100% + 3px);
+    top: 3px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .postcard div.eventdate {
+    margin-bottom: 10px;
+  }
+  .postcard div.tags {
+    left: -5px;
+    top: 25px;
+  }
+}
 
 /* the default tag button */
 
