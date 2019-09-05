@@ -56,7 +56,7 @@
     {{ range ($paginator.Pages.GroupByDate "2006") }}
     <div class="year"><h1> {{ .Key }} </h1></div>
       {{ range .Pages }}
-      {{ partial "postcard" (dict "context" . "card_type" "simple" ) }}
+      {{ partial "postcard" (dict "context" . "card_type" "normal" ) }}
       {{ end }}
     {{ end }}
   </section>
