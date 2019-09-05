@@ -10,3 +10,18 @@ main {
   box-sizing: border-box;
   */
 }
+
+.main-terms {
+  display: block;
+  width: 95%;
+  text-align: left;
+  margin-left: 3%;
+}
+
+.main-list {
+  display: block;
+  width: 95%;
+  text-align: left;
+  margin-left: 3%;
+}
+

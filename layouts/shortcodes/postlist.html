@@ -1,5 +1,7 @@
 <!-- List of all the content pages inside /post -->
 
 {{ range where $.Site.Pages "Section" "post"  }}
-  <li><a href="{{ .Permalink }}">{{ .Title  }}</a></li>
+  {{ if (not (eq .Name "" )) }}
+    <li><a href="{{ .Permalink }}">{{ .Title  }}</a></li>
+  {{ end  }}    
 {{ end  }}    
