@@ -7,6 +7,6 @@ draft = false
 weight = ""
 +++
 
-{{< postlist >}}
+{{< postcards >}}
 
-
+[記事一覧はこちら]({{< ref "/post" >}})
