@@ -22,7 +22,7 @@
   <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
   <div class="black-belt">
     <div class="cns_logo">
-      <a href="{{ .Site.BaseURL | absLangURL }}"><img src="{{ $.Site.BaseURL }}{{ .Site.Params.logo }}" /></a>
+      <a href="{{ $.Site.BaseURL }}{{ .Site.Language.Lang }}"><img src="{{ $.Site.BaseURL }}{{ .Site.Params.logo }}" /></a>
     </div>
     <div class="title">
       <p> {{ .Site.Title }} </p>
