@@ -180,6 +180,7 @@ pygmentCodeFences = true
     name = "News"
     url = "/post"
     weight = 4
+    pre = "open"
     post = "post/postcard"
 
 [[Languages.en.menu.header]]
