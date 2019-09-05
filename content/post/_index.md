@@ -5,6 +5,5 @@ image = ""
 draft = false
 +++
 
-{{< postcards >}}
+{{< postlist >}}
 
-[記事一覧はこちら]({{< ref "/post/postlist" >}})
