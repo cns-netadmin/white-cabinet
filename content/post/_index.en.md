@@ -5,6 +5,5 @@ image = ""
 draft = false
 +++
 
-{{< postcards >}}
+{{< postlist >}}
 
-[Link to the list of posts]({{< ref "/post/postlist" >}})
