@@ -36,7 +36,7 @@ draft:
   stage: test
   script:
     - 'hugo -b https://www.cns.s.u-tokyo.ac.jp/test/${CI_COMMIT_REF_NAME}/'
-    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test/${CI_COMMIT_REF_NAME}
+    - rsync -au --delete -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test/${CI_COMMIT_REF_NAME}
   only:
     - /^draft_.*$/
 
@@ -62,8 +62,8 @@ staging:
   stage: deploy
   script: 
     - hugo
-    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test  
-#    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www4:/var/www/vhosts/cns.s.u-tokyo.ac.jp/httpd/html/www4_test
+    - rsync -au --delete -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www-intra:/home/httpd/html/test  
+#    - rsync -au --delete -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www4:/var/www/vhosts/cns.s.u-tokyo.ac.jp/httpd/html/www4_test
   only:
   - develop
   
@@ -71,7 +71,7 @@ production:
   stage: deploy
   script:
     - hugo -b https://www.cns.s.u-tokyo.ac.jp/www4_test/
-    - rsync -au -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www4:/var/www/vhosts/cns.s.u-tokyo.ac.jp/httpd/html/www4_test
+    - rsync -au --delete -e "ssh -oStrictHostKeyChecking=no" public/ web-updater@www4:/var/www/vhosts/cns.s.u-tokyo.ac.jp/httpd/html/www4_test
   artifacts:
     paths:
       - public
