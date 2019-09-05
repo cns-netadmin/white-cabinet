@@ -21,17 +21,22 @@
     }
   </style>
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/list.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
 </head>
 
+    {{/*{{ $pgttl := lower .Title }}
 <body>
   <div class="section_page">
+
+
     <section id="main">
-    {{/*{{ $pgttl := lower .Title }}
+
       {{ range .Site.Menus.main.ByWeight }}
         {{ if eq .Identifier $pgttl }}
 	<!--<h1 id="title">{{ .Name }}</h1>-->
 	{{ end }}
-	{{ end }}*/}}
     {{ partial "breadcrumb.html" . }}
     <div class="single-title">{{ .Title }}</div>
       <div>
@@ -42,5 +47,21 @@
     </section>
   </div>
 </body>
+	{{ end }}*/}}
+<div class="main-list">
+  {{ partial "breadcrumb.html" . }} 
+  <section id="main">
+    <div class="single-title"> {{ .Title }} </div>
+    {{ $paginator := .Paginate .Data.Pages }}
+    {{ range ($paginator.Pages.GroupByDate "2006") }}
+    <div class="year"><h1> {{ .Key }} </h1></div>
+      {{ range .Pages }}
+      {{ partial "postcard" (dict "context" . "card_type" "simple" ) }}
+      {{ end }}
+    {{ end }}
+  </section>
+  {{ partial "pagination" . }}
+</div>
+
 
 {{end}}
