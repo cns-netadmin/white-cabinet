@@ -1,3 +1,4 @@
+
 {{ if eq .card_type "upcoming" }}
 {{ with .context }}
 {{ $categories_color := .Site.Params.categories_colors }}
@@ -5,8 +6,8 @@
       {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
         <div class="eventdate">
 	  {{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
-          {{ $numtags := len .Params.tags }}
-	  {{ if gt $numtags 0 }}
+       {{ $numtags := len .Params.tags }}
+	     {{ if gt $numtags 0 }}
       <div class="tags">
       {{ range .Params.tags }}
         {{ $category_name := . }}
@@ -56,6 +57,7 @@
   <div class="postcard">
     <div class="eventdate">
       {{ dateFormat "2 Jan, 2006" .Date }}
+      {{ if .Params.tags }} {{ if gt .Params.tags 0 }}
       <div class="tags">
       {{ range .Params.tags }}
         {{ $category_name := . }}
@@ -71,6 +73,7 @@
         {{ end }}
       {{ end }}
       </div>
+      {{ end }} {{ end }}
     </div>
     <h2 class="post-title">{{ .Title }}</h2>
     <p>{{ .Content }}</p>
