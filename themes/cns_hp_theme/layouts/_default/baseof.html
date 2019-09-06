@@ -1,18 +1,12 @@
-{{ partial "header.html" . }}
-<head>
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
-  <meta charset="UTF-8">
-  <title>{{ .Site.Params.Title }}</title>
-</head>
-<body>
-{{/*  {{ partial "header.html" . }} */}}
-    <div class="container">
-      {{ block "main" . }}{{ end }}
-      
-      {{ partial "sidebar.html" . }}
+{{ partial "header" . }}
 
-    </div>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
+<script type="text/javascript" src="{{ .Site.BaseURL }}js/container.js"></script>
+<div class="container">
 
-    {{ partial "footer.html" . }}
-</body>
-</html>
+    {{ block "main" . }}{{ end }}
+    {{ partial "sidebar" . }}
+
+</div>
+
+{{ partial "footer" . }}

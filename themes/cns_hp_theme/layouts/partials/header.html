@@ -2,9 +2,11 @@
 <html lang="{{ .Site.LanguageCode }}">
 <head>
   <meta charset="UTF-8">
-  <title> {{ .Site.Title }} </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> {{ .Title }} | {{ .Site.Title }} </title>
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/header.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+  <link rel="stylesheet" href="{{ $.Site.BaseURL }}css/all.min.css">
   <script src="{{ .Site.BaseURL }}js/jquery-3.4.1.min.js"></script>
 </head>
 
@@ -20,7 +22,7 @@
   <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
   <div class="black-belt">
     <div class="cns_logo">
-      <a href="{{ .Site.BaseURL }}"><img src="{{ $.Site.BaseURL }}{{ .Site.Params.logo }}" /></a>
+      <a href="{{ $.Site.BaseURL }}{{ .Site.Language.Lang }}"><img src="{{ $.Site.BaseURL }}{{ .Site.Params.logo }}" /></a>
     </div>
     <div class="title">
       <p> {{ .Site.Title }} </p>
@@ -34,9 +36,14 @@
     <nav class="humberger-menu">
       <ul>
         {{ range .Site.Menus.main.ByWeight }}
-        <li>
-          <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
-        </li>
+	<a href="{{ .URL | relLangURL }}" title="{{ .Name }}">
+	  <li>{{ .Name }}</li>
+	</a>
+        {{ end }}
+        {{ range .Site.Params.exlink }}
+	  <li class="u-tokyo_logos">
+            <a href="{{ .url }}"><img src="{{ $.Site.BaseURL }}{{ .pass }}"></a>
+	  </li>
         {{ end }}
       </ul>
     </nav>
@@ -44,20 +51,26 @@
       <ul>
 	{{ range .Site.Menus.header.ByWeight }}
       <li>
-	    <a href="{{ .URL }}" title="{{ .Name }}"> {{ .Name }} </a>
+	    <a href="{{ .URL | relLangURL }}" title="{{ .Name }}"> {{ .Name }} </a>
 	    </li>
 	{{ end }}
-          {{ if .IsTranslated }}
+        {{ if .IsTranslated }}
           {{ range .Translations }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Site.Params.language_name }}</a>
-        </li>
+            <li>
+              <a href="{{ .Permalink }}">{{ .Site.Params.language_name }}</a>
+            </li>
           {{ end }}
-          {{ end }}
+        {{ end }}
+        {{ range .Site.Params.exlink }}
+	  <li class="u-tokyo_logos">
+            <a href="{{ .url }}"><img src="{{ $.Site.BaseURL }}{{ .pass }}"></a>
+	  </li>
+        {{ end }}
       </ul>
     </nav>
   </div>
   <div class="color-belt"></div>	  
+  <div class="background"></div>
 </header>
 
 <main>

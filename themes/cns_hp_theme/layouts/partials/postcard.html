@@ -1,0 +1,95 @@
+
+{{ if eq .card_type "upcoming" }}
+{{ with .context }}
+{{ $categories_color := .Site.Params.categories_colors }}
+    <div class="postcard">
+      {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
+        <div class="eventdate">
+	  {{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
+       {{ $numtags := len .Params.tags }}
+	     {{ if gt $numtags 0 }}
+      <div class="tags">
+      {{ range .Params.tags }}
+        {{ $category_name := . }}
+        {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
+          {{ range $i, $tag_name := $categories_color }}
+            {{ if eq $tag_name $category_name }} 
+              <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
+            {{ end }}
+          {{ end }}
+          {{ else }}
+            <a href="{{ $.Site.BaseURL | absLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton">{{ $category_name }}</a>
+        {{ end }}
+      {{ end }}
+      </div>
+	  {{ end }}
+	</div>
+      {{ else }}
+        <div class="eventdate">
+	  {{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
+          {{ $numtags := len .Params.tags }}
+          {{ if gt $numtags 0 }}
+      <div class="tags">
+      {{ range .Params.tags }}
+        {{ $category_name := . }}
+        {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
+          {{ range $i, $tag_name := $categories_color }}
+            {{ if eq $tag_name $category_name }} 
+              <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
+            {{ end }}
+          {{ end }}
+          {{ else }}
+            <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton">{{ $category_name }}</a>
+        {{ end }}
+      {{ end }}
+      </div>
+	  {{ end }}
+	</div>
+      {{ end }}
+      <h2 class="post-title">{{ .Title }}</h2>
+      <p>{{ .Content }}</p>
+      <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
+    </div>
+{{ end }}
+{{ else if eq .card_type "normal" }}
+{{ with .context }}
+{{ $categories_color := .Site.Params.categories_colors }}
+  <div class="postcard">
+    <div class="eventdate">
+      {{ dateFormat "2 Jan, 2006" .Date }}
+      {{ if .Params.tags }} {{ if gt .Params.tags 0 }}
+      <div class="tags">
+      {{ range .Params.tags }}
+        {{ $category_name := . }}
+        {{ if in $categories_color $category_name }} {{/* if tag_name is defined in categories_color */}}
+
+          {{ range $i, $tag_name := $categories_color }}
+            {{ if eq $tag_name $category_name }} 
+              <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton {{ index $categories_color (add $i 1) }}">{{ $category_name }}</a>
+            {{ end }}
+          {{ end }}
+          {{ else }}
+            <a href="{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $category_name }}/" class="tagbutton">{{ $category_name }}</a>
+        {{ end }}
+      {{ end }}
+      </div>
+      {{ end }} {{ end }}
+    </div>
+    <h2 class="post-title">{{ .Title }}</h2>
+    <p>{{ .Content }}</p>
+    <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
+  </div>
+{{ end }}
+{{ else if eq .card_type "simple" }}
+  {{ with .context }}
+    {{ $categories_color := .Site.Params.categories_colors }}
+    <div class="postcard">
+      <div class="eventdate">
+        {{ dateFormat "2 Jan, 2006" .Date }}
+      </div>
+      <h2 class="post-title">{{ .Title }}</h2>
+      <p>{{ .Content }}</p>
+      <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
+    </div>
+  {{ end }}
+{{ end }}

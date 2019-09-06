@@ -1,0 +1,18 @@
+.page-link {
+  margin-top: 20px;
+  width: auto;
+  font-size: 20px;
+  font-weight: bold;
+  /*padding: 0.25em 0.25em; */
+  padding: 1px 7px 1px 7px;
+  border-radius: 4px;
+  transition: .4s;
+  text-decoration: none;
+  border: solid 1px black;
+  color: black;
+}
+
+.page-link:hover {
+  background: black;
+  color: white;
+}

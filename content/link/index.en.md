@@ -1,41 +1,28 @@
-[the University of Tokyo](https://www.u-tokyo.ac.jp/)
++++
+title =  "Link"
+date = 2019-07-21T14:06:22+09:00
+image = ""
+draft = false
+weight = "1"
++++
 
-[School of Science, the University of Tokyo](https://www.s.u-tokyo.ac.jp/)
+## [the University of Tokyo](https://www.u-tokyo.ac.jp/en/)
 
-[Department of Physics, the University of Tokyo](https://www.phys.s.u-tokyo.ac.jp/)
+[School of Science](https://www.s.u-tokyo.ac.jp/en/)
+
+[Department of Physics](https://www.phys.s.u-tokyo.ac.jp/en/)
 
 
-[[menu.link]]
-    identifier = "institute"
-    name = "研究機関"
+***
 
-[[menu.link]]
-    parent = "institute"
-    name = "理化学研究所"
-    url = "http://www.riken.jp/"
-    weight = 1
+## Other Facility
 
-[[menu.link]]
-    parent = "institute"
-    name = "理研仁科センター"
-    url = "http://www.rarf.riken.go.jp/"
-    weight = 2
+[RIKEN](http://www.riken.jp/en/)
 
-[[menu.link]]
-    parent = "institute"
-    name = "高エネルギ加速器機構（KEK）"
-    url = "http://www.kek.jp/"
-    weight = 3
+[RIKEN Nishina Center](http://www.rarf.riken.go.jp/)
 
-[[menu.link]]
-    parent = "institute"
-    name = "大阪大学核物理研究センター（RCNP）"
-    url = "http://www.rcnp.osaka-u.ac.jp/"
-    weight = 4
+[KEK](http://www.kek.jp/)
 
-[[menu.link]]
-    parent = "institute"
-    name = "ブルックへブン国立研究所高エネルギー重イオン衝突型加速器（RHIC）"
-    url = "http://www.bnl.gov/rhic"
-    weight = 5
+[RCNP, Osaka University](http://www.rcnp.osaka-u.ac.jp/)
 
+[Relativistic Heavy Ion Coilder(RHIC)](http://www.bnl.gov/rhic)

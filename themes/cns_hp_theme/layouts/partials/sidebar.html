@@ -1,46 +1,77 @@
 <!--This page: Side bar of container -->
 
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/slick-theme.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/slick.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/sidebar.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/split_container.css">
 
-<div class="side_container">
+<script type="text/javascript">
+  function link(url) {
+    location.href = url;
+   }
+</script>
 
-  <div class="sidebar">
-    
+<div class="sidebar">
+  <div class="topic_list">
+    {{ $maxnum := .Site.Params.sidebar_maxnum }} <!--Max number of banner-->
+    {{ $dir := .Site.Params.sidebar_url }} <!--Directory of sidebar-->
+    {{ $.Scratch.Set "counter" 0 }} <!--counter of number of banner-->
+     
     {{ range $.Site.RegularPages }}
-    {{ if (.Param "mkbanner") }}
-    {{ if (.Param "image") }} 
-    <a href="{{ .RelPermalink }}"><img class="links" src="{{ .Site.BaseURL }}{{ .Params.image }}" width=250px height=auto></a>
-    {{ else }}
-    <!-- {{/*	<div class="tile"> -->
-      <!--   <a href="{{ .RelPermalink }}">{{.Title}}</a> -->
-      <!-- </div> -->
-    <!-- */}} -->
-    {{ end }}
-    {{ end }}
-    {{ end }}
+      {{ if $StatBanner := and (eq .Params.mkbanner true) (le now .Params.bannerEndDate) }}
+      {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+        {{ if .Params.bannerimg }} 
+          <div class="topic imgsize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+            <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
+          </div>
+        {{ else if .Params.image }} 
+          <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
+            <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
+            <h2> {{ .Title }} </h2>
+          </div>
+        {{ else }}
+        <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Site.Params.defaultBannerImage }});" >
+            <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
+            <h2> {{ .Title }} </h2>
+          </div>
+        {{ end }}<!--bannerimg-->
+      {{ end }}<!--StatBanner-->
+    {{ end }}<!--range-->
 
-    <h3>recent topics</h3>
-    {{ range $catkey, $catlist := $.Site.Taxonomies.categories }}
-    {{ if eq $catkey "topic" }}
+   <!--<h3>recent post</h3>-->
+    {{ with $.Site.GetPage $dir }}
+      {{ range first $maxnum .Pages.ByDate.Reverse }}
+        {{$StatBanner := and (eq .Params.mkbanner true) (le now .Params.bannerEndDate) }}
+        {{ if ne $StatBanner true }}
+        {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+          {{ if le ($.Scratch.Get "counter") $maxnum }} 
+            {{ if .Params.bannerimg }} 
+              <div class="topic imgsize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')">
+                <img src="{{ .Site.BaseURL }}{{ .Params.bannerimg }}">
+              </div>
+            {{ else if .Params.image }} 
+              <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
+                <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
+                <h2> {{ .Title }} </h2>
+              </div>
+              
+            {{ else }}
+               <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Site.Params.defaultBannerImage }});" >
+                 <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
+                 <h2> {{ .Title }} </h2>
+               </div>
+            {{ end }} <!--bannerimg-->
+          {{ end }} <!--num of banner-->
+        {{ end }}<!--exclude StatBanner-->
+      {{ end }}<!--range ByDate.Reverse-->
+    {{ end }}<!--from post-->
+  </div> <!-- topic_list -->
 
-    <div class="topic_list">
-      <ul>
-	{{ range .Pages.ByDate }}
-	<li> {{dateFormat "2 Jan, 2006" .Params.Date }} </li>
-	<a href="{{ .RelPermalink }}"> {{ .Title }} </a>
-	{{ end }}
-      </ul>
-    </div> <!-- topic_list -->
+</div> <!-- sidebar -->
 
-    {{ end }}
-    {{ end }}
-
-    <div class="links">
-      <a href="https://www.u-tokyo.ac.jp/"><img class="links" src="{{ $.Site.BaseURL }}img/utokyo.jpg" width=180px height=auto></a>
-      <a href="https://www.s.u-tokyo.ac.jp/"><img class="links" src="{{ $.Site.BaseURL }}img/sos_utokyo.jpg" width=230px height=auto></a>
-      <a href="{{ .Site.BaseURL }}/link"><h3>{{ .Site.Params.link }}</h3></a>
-
-    </div> <!-- links -->
-  </div> <!-- sidebar -->
-</div> <!-- side_container -->
+<div class="links">
+  {{ with .Site.Params.link }}
+  <a href="{{ $.Site.BaseURL }}/{{ $.Site.Params.linkpath }}"><h3>{{ . }}</h3></a>
+  {{ end }}
+</div> <!-- links -->
+<script type="text/javascript" src="{{ .Site.BaseURL }}js/slick.min.js"></script>

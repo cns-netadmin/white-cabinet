@@ -5,7 +5,7 @@ categories = "post"
 tags = ["Seminar","Conference"]
 image = ""
 draft = false
-mkbanner = true
+mkbanner = false
 mktile = true
 +++
 

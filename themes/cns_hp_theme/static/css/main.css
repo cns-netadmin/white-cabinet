@@ -1,3 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 main {
-  margin: 200px 0 0 0;
+  margin: 320px 0 0 0;
+  /*
+  border: solid 8px black;
+  box-sizing: border-box;
+  */
+}
+
+.main-list {
+  display: block;
+  width: 100%;
+}
+
+
+.main-terms {
+  display: block;
+  width: 100%;
 }
