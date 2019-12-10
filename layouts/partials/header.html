@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> {{ .Title }} | {{ .Site.Title }} </title>
+  <title>{{ if not .IsHome }}{{ .Title }}｜{{ end }}{{ .Site.Title }}</title>
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/header.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
   <link rel="stylesheet" href="{{ $.Site.BaseURL }}css/all.min.css">
