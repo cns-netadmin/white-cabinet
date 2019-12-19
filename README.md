@@ -1,5 +1,5 @@
 # White Cabinet theme for Hugo
-[[_TOC_]]
+
 <!--check "CHECK"-->
 White Cabinet theme can make sites with
 
@@ -212,7 +212,8 @@ These are the example in the case of English.
 ```
 
 ## How to edit each page 
-(About front matter)
+About front matter
+
 
 
 <!-- Finally, type like below and  -->
