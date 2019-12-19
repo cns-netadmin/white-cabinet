@@ -2,7 +2,7 @@
 <!--check "CHECK"-->
 White Cabinet theme can make sites with
 
-- slide pictures
+- slide images
 - site title w/ black ribbon & hamburger menu
 - accordion menu (expandable menu)
 - post card
@@ -37,8 +37,10 @@ $ hugo server
 
 and access to `localhost:1313` in your web browser, you will check it.
 
-## Edit "config.toml"
-You can customize the site at the config.toml.
+Here in README is according to the demo pages.
+
+## Edit `config.toml`
+You can customize the site at the `config.toml`.
 
 1. At first, edit your server name
 
@@ -48,6 +50,7 @@ baseurl = (*_YOUR_SERVER_NAME_*)
 
 2. You can set the parameters in each lauguage code.
 These are the example in the case of English.
+各言語のページは自動的に作られます。baseurl/en/
 
 ```config.toml
 [Languages]
@@ -60,19 +63,64 @@ These are the example in the case of English.
   ...
 ```
 
+<!--
+2. PATHはContent以下かStatic以下
+publicdirの話とか。
+-->
+
 ### Header
 At the header, following contents are stored:
   - title and subtitle
   - logo
-  - slide pictures (= top figures)
+  - slide images (= top figures)
   - hamburger menu : automatically changed with accodion menu.
   - heder menu
  
 
-1. Change the title
-2. Change the logo and top figures
-3. Change the header menu
+#### 1. Change the title.
 
+```config.toml
+[Languages]
+[Languages.en]
+  title = "SITE TITLE"
+[Languages.en.params]
+  subtitle = "SITE SUBTITLE"
+```
+#### 2. Change the logo and top figures.
+
+Prepare image files for logo and top figures and copy them under the directory "static".
+(ex. logo: `/foo/bar/static/img/logo.png`, top figure: `/foo/bar/static/img/topfig1.jpg`)
+
+Change the path to files at `config.toml`.
+Several image files are supported for top figures in sliding style.
+
+```config.toml
+[Params]
+  logo = "img/logo.png"
+  top_figures = [
+  "img/topfig1.jpg",
+  "PATH TO FILE2",
+  "PATH TO FILE3"
+  ]
+```
+
+#### 3. Change the header menu.
+To add new header menu, edit new `menu.header`.
+
+```config.toml
+[[menu.header]]
+   name = "NAME OF MENU TITLE"
+   url = "PATH TO MENU"
+   weight = ORDER OF EACH MENU
+```
+
+To add banner link, add following `Params.exlink`.
+
+```config.toml
+[[Params.exlink]]
+  url = "LINK"
+  pass = "PATH TO banner images"
+```
 
 ### Main contents
 In white cabinet, accordion menu is used as top menu.
@@ -94,6 +142,9 @@ See **[HOW TO MENU]()** for more information
 ### Footer
 - sitemap
 - location
+
+###taxsonomies
+To be updated.
 
 ## How to edit each page (About front matter)
 
