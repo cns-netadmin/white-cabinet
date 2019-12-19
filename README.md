@@ -108,7 +108,9 @@ Several image files are supported for top figures in sliding style.
 ```
 
 #### 3. Change the header menu.
+
 To add new header menu, add new parameter block `menu.header`.
+In the following case, the page created by `/foo/bar/content/URL/index.md` is corresponded.
 
 ```config.toml
 [[menu.header]]
@@ -131,6 +133,7 @@ In White Cabinet theme, accordion menu is used as top menu.
 Hamburger menu at header is automatically changed with accordion menu.
 
 To add new accodion menu, add new parameter block `menu.main`.
+In the following case, the page created by `/foo/bar/content/URL/index.md` is corresponded.
 
 ```config.toml
 [[menu.main]]
@@ -152,12 +155,12 @@ See **[HOW TO MENU]()** for more information.
 
 ### Sidebar (list of banners)
 
-There are List of banners and "link" at the sidebar.
+There are List of banners and "Links" at the sidebar.
 
 Banners are automatically created for latest posts in the directory specified by parameter `sidebar_url`.
 <br>Parameter `sidebar_maxnum` define the maximum number of banners at sidebar.
 
-Ex. banners are automatically created for latest 10 posts in the directory "/post":
+Ex. banners are automatically created for latest 10 posts in the directory `/post`:
 ```config.toml
 [Params]
 ...
@@ -169,8 +172,19 @@ Ex. banners are automatically created for latest 10 posts in the directory "/pos
 You can also create fixed banner.
 See **[FRONT MATTER]()**.
 
+Below the banners list, "Links" is prepared.
+
+This is determined by parameters `link` and `linkPath`.
+In the following case, the page created by `/foo/bar/content/link/index.md` is corresponded.
+
+```config.toml
+[Languages.en.params]
+  link = "DISPLAYED NAME"
+  linkPath = "en/link" #Permenent link of "Links".
+```
 
 ### Footer
+
 - sitemap
 - location
 
