@@ -113,7 +113,7 @@ The link switching languages is created by parameter block `Languages.**.params`
 [Languages.en.params]
   Language_name = "English" #Display name at header.
 ```
-See also **[Multilingual mode](# Multilingual mode)**.
+See also **[Multilingual mode](#multilingual-mode)**.
 
 
 ### Main contents
@@ -158,7 +158,7 @@ Ex. banners are automatically created for latest 10 posts in the directory `/pos
 ```
 
 You can also create fixed banner.
-See **[FRONT MATTER](# How to edit each page)**.
+See **[FRONT MATTER](#how-to-edit-each-page)**.
 
 Below the banners list, "Links" is prepared.
 
