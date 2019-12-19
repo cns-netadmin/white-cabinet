@@ -6,7 +6,7 @@ White Cabinet theme can make sites with
 - site title w/ black ribbon & hamburger menu
 - accordion menu (expandable menu)
 - post card
-- side banner
+- banner at sidebar
 - quicklinks (& address)
 
 components. White Cabinet theme can create introduction site for indivisual, group and all of facilities with upcoming/past events, information, location, etc...
@@ -91,6 +91,7 @@ The site title can be changed by the parameter `title`.
 #### 2. Change the logo and top figures.
 
 Prepare image files for logo and top figures and copy them under the directory "static".
+
 (ex. logo: `/foo/bar/static/img/logo.png`, top figure: `/foo/bar/static/img/topfig1.jpg`)
 
 Change the path to files at `config.toml`.
@@ -145,13 +146,29 @@ In each accordion menu, you can store contents in three ways:
   - tile
   - post card
 
-To use the postcard style, add parameter 'post = "postcard"' in the block `menu.header`.
+To use the postcard style, add parameter `post = "postcard"` in the block `menu.header`.
 
 See **[HOW TO MENU]()** for more information.
 
-### Banners at sidebar
+### Sidebar (list of banners)
 
-<!-- How to add new banner-->
+There are List of banners and "link" at the sidebar.
+
+Banners are automatically created for latest posts in the directory specified by parameter `sidebar_url`.
+<br>Parameter `sidebar_maxnum` define the maximum number of banners at sidebar.
+
+Ex. banners are automatically created for latest 10 posts in the directory "/post":
+```config.toml
+[Params]
+...
+  sidebar_maxnum = 10
+  sidebar_url = "/post"
+...
+```
+
+You can also create fixed banner.
+See **[FRONT MATTER]()**.
+
 
 ### Footer
 - sitemap
