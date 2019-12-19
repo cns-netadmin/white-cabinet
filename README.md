@@ -79,6 +79,7 @@ At the header, following contents are stored:
 
 #### 1. Change the title.
 
+The site title can be changed by the parameter `title`.
 ```config.toml
 [Languages]
 [Languages.en]
@@ -86,6 +87,7 @@ At the header, following contents are stored:
 [Languages.en.params]
   subtitle = "SITE SUBTITLE"
 ```
+
 #### 2. Change the logo and top figures.
 
 Prepare image files for logo and top figures and copy them under the directory "static".
@@ -105,45 +107,57 @@ Several image files are supported for top figures in sliding style.
 ```
 
 #### 3. Change the header menu.
-To add new header menu, edit new `menu.header`.
+To add new header menu, add new parameter block `menu.header`.
 
 ```config.toml
 [[menu.header]]
-   name = "NAME OF MENU TITLE"
-   url = "PATH TO MENU"
-   weight = ORDER OF EACH MENU
+   name = "DISPLAYED NAME"
+   url = "/URL" #Permanent Link of content
+   weight = 1 #Order of each menu
 ```
 
-To add banner link, add following `Params.exlink`.
+To add banner link, add new parameter block `Params.exlink`.
 
 ```config.toml
 [[Params.exlink]]
   url = "LINK"
-  pass = "PATH TO banner images"
+  pass = "PATH TO IMAGES"
 ```
 
 ### Main contents
-In white cabinet, accordion menu is used as top menu.
+
+In White Cabinet theme, accordion menu is used as top menu.
 Hamburger menu at header is automatically changed with accordion menu.
 
-<!-- How to add accodion menu-->
+To add new accodion menu, add new parameter block `menu.main`.
+
+```config.toml
+[[menu.main]]
+    identifier = "ID" #Identifier for each menu
+    name = "DISPLAYED NAME"
+    url = "/URL" #Permanent Link of content
+    weight = 1 #Order of each menu 
+    pre = "open"/"closed" #Default status of accodion menu
+```
 
 In each accordion menu, you can store contents in three ways:
-  - simple  
+  - list  
   - tile
   - post card
 
-You can also use header menu. 
-See **[HOW TO MENU]()** for more information
+To use the postcard style, add parameter 'post = "postcard"' in the block `menu.header`.
+
+See **[HOW TO MENU]()** for more information.
 
 ### Banners at sidebar
+
 <!-- How to add new banner-->
 
 ### Footer
 - sitemap
 - location
 
-###taxsonomies
+### taxsonomies
 To be updated.
 
 ## How to edit each page (About front matter)
