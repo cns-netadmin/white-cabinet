@@ -51,6 +51,7 @@ baseurl = (*_YOUR_SERVER_NAME_*)
 2. You can set the parameters in each lauguage code.
 These are the example in the case of English.
 各言語のページは自動的に作られます。baseurl/en/
+index.en.md, index.ja.md, ....
 
 ```config.toml
 [Languages]
@@ -66,6 +67,7 @@ These are the example in the case of English.
 <!--
 2. PATHはContent以下かStatic以下
 publicdirの話とか。
+.mdとhtmlの紐付けの話とか。
 -->
 
 ### Header
@@ -73,7 +75,7 @@ At the header, following contents are stored:
   - title and subtitle
   - logo
   - slide images (= top figures)
-  - hamburger menu : automatically changed with accodion menu.
+  - hamburger menu : automatically changed with accordion menu.
   - heder menu
  
 
@@ -110,7 +112,7 @@ Several image files are supported for top figures in sliding style.
 #### 3. Change the header menu.
 
 To add new header menu, add new parameter block `menu.header`.
-In the following case, the page created by `/foo/bar/content/URL/index.md` is corresponded.
+<!--In the following case, the page created by `/foo/bar/content/URL/index.md` is corresponded.-->
 
 ```config.toml
 [[menu.header]]
@@ -132,8 +134,7 @@ To add banner link, add new parameter block `Params.exlink`.
 In White Cabinet theme, accordion menu is used as top menu.
 Hamburger menu at header is automatically changed with accordion menu.
 
-To add new accodion menu, add new parameter block `menu.main`.
-In the following case, the page created by `/foo/bar/content/URL/index.md` is corresponded.
+To add new accordion menu, add new parameter block `menu.main`.
 
 ```config.toml
 [[menu.main]]
@@ -141,15 +142,15 @@ In the following case, the page created by `/foo/bar/content/URL/index.md` is co
     name = "DISPLAYED NAME"
     url = "/URL" #Permanent Link of content
     weight = 1 #Order of each menu 
-    pre = "open"/"closed" #Default status of accodion menu
+    pre = "open"/"closed" #Default status of accordion menu
 ```
 
-In each accordion menu, you can store contents in three ways:
+In this case, the page created by `/foo/bar/content/URL/_index.md` is corresponded.
+<br>You can store contents in three ways for each accordion menu:
   - list  
   - tile
   - post card
-
-To use the postcard style, add parameter `post = "postcard"` in the block `menu.header`.
+<br>To use the postcard style, add parameter `post = "postcard"` in the block `menu.header`.
 
 See **[HOW TO MENU]()** for more information.
 
@@ -175,7 +176,7 @@ See **[FRONT MATTER]()**.
 Below the banners list, "Links" is prepared.
 
 This is determined by parameters `link` and `linkPath`.
-In the following case, the page created by `/foo/bar/content/link/index.md` is corresponded.
+In the following case, the page created by `/foo/bar/content/link/index.en.md` is corresponded.
 
 ```config.toml
 [Languages.en.params]
@@ -184,9 +185,23 @@ In the following case, the page created by `/foo/bar/content/link/index.md` is c
 ```
 
 ### Footer
+Footer is consisted by "sitemap" and "location".
 
-- sitemap
-- location
+1. Sitemap is created by `/foo/bar/content/sitemap.en.md`.
+2. Location is created with the parameter block `[[Params.address]]`. 
+<br>You can set several locations.
+
+``` config.toml
+[[Params.address]]
+  description = "BUILDING"
+  postcode = "POSTCODE"
+  address = "ADDRESS"
+  room = "ROOM NUMBER"
+  tel = "XXX-XXXX-XXXX"
+  fax = "XXX-XXXX-XXXX"
+  googlemap_url = "https://www.google.com/maps/****" #Shared link from google map.
+```
+Embedded google maps are shown at the page `/access`
 
 ### taxsonomies
 To be updated.
