@@ -162,7 +162,7 @@ Ex. banners are automatically created for latest 10 posts in the directory `/pos
 ```
 
 You can also create fixed banner.
-See **[FRONT MATTER](#how-to-edit-each-page)**.
+See **[FRONT MATTER](#front-matter)**.
 
 Below the banners list, "Links" is prepared.
 
@@ -222,9 +222,39 @@ These are the example in the case of English.
   ...
 ```
 
-## How to edit each page 
-About front matter
+## Front matter
 
+```front-matter
++++
+title =  "Post2"
+date = 2019-12-11T15:32:38+09:00
+publishDate = 2019-12-11T15:32:38+09:00
 
+categories = ""
+##ex:  categories = "event"##
+## for categ. event : remove "#" following 2 columns. ##
+#eventStartDate = 2019-12-11
+#eventEndDate = 2019-12-11
 
-<!-- Finally, type like below and  -->
+tags = [""]
+##ex: tags = ["Seminar","Conference"]##
+
+image = ""
+
+###banner####
+mkbanner = true
+bannerEndDate = 2025-01-11
+bannerimg = "img/rabbit2.png"
+weight = 3 
+
+#For main menu contents
+#mktile false
+
+#For Local
+draft = false
++++
+```
+`mkbanner` is the parameter to fix banner at sidebar by `bannerEndDate`.
+<br>You can set banner image with `bannerimg`. Aspect ratio 4:3 is the best.
+<br>Or background image is using from `img`. 
+
