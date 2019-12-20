@@ -1,3 +1,7 @@
++++
+title = "README"
+weight = 1
++++
 # White Cabinet theme for Hugo
 
 White Cabinet theme can make sites with
