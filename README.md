@@ -163,7 +163,7 @@ See **[FRONT MATTER](#how-to-edit-each-page)**.
 Below the banners list, "Links" is prepared.
 
 This is determined by parameters `link` and `linkPath`.
-In the following case, the page created by `/foo/bar/content/link/index.en.md` is corresponded.
+In the following case, the page created by `/foo/bar/content/link/index.md` is corresponded.
 
 ```config.toml
 [Params]
@@ -174,7 +174,14 @@ In the following case, the page created by `/foo/bar/content/link/index.en.md` i
 ### Footer
 Footer is consisted by "sitemap" and "location".
 
-1. Sitemap is created by `/foo/bar/content/sitemap.en.md`.
+```config.toml
+[Params]
+  sitemap = "DISPLAYED NAME OF SITEMAP"
+  location = "DISPLAYED NAME OF LOCATION"
+```
+
+1. Sitemap is created by `/foo/bar/content/sitemap.md`.
+
 2. Location is created with the parameter block `[[Params.address]]`. 
 <br>You can set several locations.
 
