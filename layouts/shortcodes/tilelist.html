@@ -78,26 +78,13 @@
 {{ end }} 
 
 <div class="tilelist">
-  <!-- For section pages -->
-  {{ range $section.Sections.ByWeight }}  
-    {{ if .Params.mktile }}
-      <a href="{{ .Permalink }}" class="tile">
-        <img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}>
-	<div class="caption">
-	  <div>{{ .Title }}</div>
-	</div>
-      </a>
-    {{ end }}
-  {{ end }}  
-
-  <!-- For single pages -->
   {{ range $section.Pages.ByWeight }}  
     {{ if .Params.mktile }}
       <a href="{{ .Permalink }}" class="tile">
         <img src="{{ $.Site.BaseURL }}{{ .Param "image" }}" alt={{ .Title }} title={{ .Title }}>
-	<div class="caption">
-	  <div>{{ .Title }}</div>
-	</div>
+	      <div class="caption">
+          <div>{{ .Title }}</div>
+	      </div>
       </a>
     {{ end }}
   {{ end }}  
