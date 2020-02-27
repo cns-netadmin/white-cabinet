@@ -1,15 +1,42 @@
 .year {
   width: 100%;
-  margin: auto;
-  text-align: center;
+  margin-left: 45px;
+  text-align: left;
 }
 
+/*
 .year h1 {
   position: relative;
   display: inline-block;
-  padding: 0 55px;
+  padding: 0 21px;
+}
+*/
+.year h1 {
+  position: relative;
+  padding-left: 25px;
 }
 
+.year h1:before {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: none;
+  border-left: solid 15px transparent;
+  border-bottom: solid 15px rgb(47, 79,79);
+}
+.year h1:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: 10px;
+  width: 70%;
+  border-bottom: solid 3px rgb(47, 79,79);
+}
+
+/*
 .year h1:before, .year h1:after {
   content: '';
   position: absolute;
@@ -26,3 +53,4 @@
 .year h1:after {
   right: 0;
 }
+*/
