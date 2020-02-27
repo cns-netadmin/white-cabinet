@@ -10,10 +10,10 @@
   {{ partial "breadcrumb.html" . }} 
   <section id="main">
     <div class="single-title"> {{ .Title }} </div>
-    {{ $paginator := .Paginate .Site.RegularPages }}
+    {{ $paginator := .Paginate .RegularPages }}
     {{ range ($paginator.Pages.GroupByDate "2006") }}
     <div class="year"><h1> {{ .Key }} </h1></div>
-      {{ range .Pages }}
+      {{ range .Pages}}
       {{ partial "postcard" (dict "context" . "card_type" "simple" ) }}
       {{ end }}
     {{ end }}
