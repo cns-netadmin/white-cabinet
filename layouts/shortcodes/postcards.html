@@ -7,8 +7,7 @@
 <!-- For future posts -->
 <h3>Upcoming</h3>
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
-{{/* range ($.Page.CurrentSection.Pages.ByParam "endEventDate") */}}
-{{ range (.Site.RegularPages.ByParam "eventEndDate") }}
+{{ range (where (.Site.RegularPages.ByParam "eventEndDate") "Section" "post") }}
   {{ $FormattedNow := (now.AddDate 0 0 -1) }}
   {{ if le $FormattedNow .Params.eventEndDate }}
     {{ partial "postcard" (dict "context" . "card_type" "upcoming" ) }}
@@ -20,7 +19,6 @@
 {{ $numlist := 3 }} <!-- number of posts to display -->
 <hr>
 <h3>{{ $numlist }} Newest Posts</h3>
-{{/* range first $numlist (where $.Page.CurrentSection.Pages "Section" "post") */}}
 {{ range first $numlist (where .Site.RegularPages "Section" "post") }}
   {{ partial "postcard" (dict "context" . "card_type" "normal" ) }}
 {{ end }}
