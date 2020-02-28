@@ -13,13 +13,15 @@ main {
 
 .main-list {
   display: block;
-  width: 100%;
+  width: 94%;
   margin-left: 3%;
+  margin-right: 3%;
 }
 
 
 .main-terms {
   display: block;
-  width: 100%;
+  width: 94%;
   margin-left: 3%;
+  margin-right: 3%;
 }
