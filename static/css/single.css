@@ -2,7 +2,6 @@
   display: block;
   grid-area: areaA;
   width: 95%;
-  max-width: 95vw;
   text-align: left;
   margin-left: 3%;
 
@@ -14,22 +13,25 @@
   font-size: 23px;
   margin-left: 3px;
 }
+
 .single_page pre {
   width:100%;
-  align: center;
+  background: aqua;
   overflow-x:auto;
 }
 
+.single_page .katex{
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding: 4px;
+}
 .single_page .katex-display {
   display:block;
   width:100%;
   height:auto;
-  align:center;
-  overflow-x:auto;
-  overflow-y:no-content;
   background: aqua;
-
 }
+
 .single_page h2 {
   display: inline-block;
   text-align: center;
