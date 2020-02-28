@@ -1,9 +1,10 @@
 .single_page {
   display: block;
   grid-area: areaA;
-  width: 95%;
+  width: 94%;
   text-align: left;
   margin-left: 3%;
+  margin-right: 3%;
 
   /*border: solid 5px green;
     */
@@ -13,6 +14,23 @@
   font-size: 23px;
   margin-left: 3px;
 }
+
+.single_page pre {
+  width:100%;
+  overflow-x:auto;
+}
+
+.single_page .katex{
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding: 4px;
+}
+.single_page .katex-display {
+  display:block;
+  width:100%;
+  height:auto;
+}
+
 .single_page h2 {
   display: inline-block;
   text-align: center;
@@ -46,9 +64,10 @@
 .single-title{
     margin-top: 0px;
     margin-bottom: 9px;
-    padding-left: 15px;
-    width: 96%;
-    height: 50px;
+    padding-left: 6%;
+    padding-right: 6%;
+    width: 88%;
+    height: auto;
     line-height:50px;
     
     font-size: 25px;

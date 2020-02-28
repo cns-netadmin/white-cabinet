@@ -98,6 +98,10 @@
 {
     pointer-events: none;
 }
+.slick-initialized 
+{
+    opacity: 1;
+}
 .slick-initialized .slick-slide
 {
     display: block;

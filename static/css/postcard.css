@@ -230,3 +230,12 @@
   background: #67c5ff;
   color: white;
 }
+
+.postcard .katex-display {
+  overflow: hidden;
+  width: 100%;
+}
+.postcard pre {
+  overflow: hidden;
+  width: 100%;
+}
