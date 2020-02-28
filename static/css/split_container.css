@@ -4,7 +4,7 @@
   width: 100%;
   gap: 2vw;
   grid-template-rows: minmax(450px, auto);
-  grid-template-columns: 70vw 1fr;
+  grid-template-columns: 68vw 1fr;
   grid-template-areas:
     "areaA areaB"
     "areaA areaC";
