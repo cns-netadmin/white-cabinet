@@ -17,7 +17,6 @@
 
 .single_page pre {
   width:100%;
-  background: aqua;
   overflow-x:auto;
 }
 
@@ -30,7 +29,6 @@
   display:block;
   width:100%;
   height:auto;
-  background: aqua;
 }
 
 .single_page h2 {
