@@ -1,9 +1,10 @@
 .single_page {
   display: block;
   grid-area: areaA;
-  width: 95%;
+  width: 94%;
   text-align: left;
   margin-left: 3%;
+  margin-right: 3%;
 
   /*border: solid 5px green;
     */
@@ -65,9 +66,10 @@
 .single-title{
     margin-top: 0px;
     margin-bottom: 9px;
-    padding-left: 15px;
-    width: 96%;
-    height: 50px;
+    padding-left: 6%;
+    padding-right: 6%;
+    width: 88%;
+    height: auto;
     line-height:50px;
     
     font-size: 25px;
