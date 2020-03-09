@@ -1,4 +1,9 @@
++++
+title = "README"
+weight = 1
++++
 # White Cabinet theme for Hugo
+
 <!--check "CHECK"-->
 White Cabinet theme can make sites with
 
@@ -20,7 +25,7 @@ White Cabinet theme deal with not only PC but also Mobile without any extra code
 ## Installation
 
 1. Install [Hugo](https://gohugo.io/) in your server/client.
-1. Make web source directory (ex. `/foo/bar`) and clone our git repository
+2. Make web source directory (ex. `/foo/bar`) and clone our git repository
 
 ```
 $ mkdir -p /foo/bar/themes
@@ -28,7 +33,7 @@ $ cd /foo/bar/themes
 $ git clone ---NEED TO CHECK---
 ```
 
-1. If you test by our demo page, please type such as:
+3. If you test by our demo page, please type such as:
 
 ```
 $ cp white_cabinet_themes/demo-page/ /foo/bar/
@@ -42,33 +47,11 @@ Here in README is according to the demo pages.
 ## Edit `config.toml`
 You can customize the site at the `config.toml`.
 
-1. At first, edit your server name
+At first, edit your server name
 
 ```config.toml
 baseurl = (*_YOUR_SERVER_NAME_*)
 ```
-
-2. You can set the parameters in each lauguage code.
-These are the example in the case of English.
-各言語のページは自動的に作られます。baseurl/en/
-index.en.md, index.ja.md, ....
-
-```config.toml
-[Languages]
-[Languages.en]
-  title = "THE TITLE OF YOUR SITE"
-[Languages.en.params]
-  subtitle = "THE SUBTITLE OF YOUR SITE"
-  ...
-[[Languages.en.menu.main]]
-  ...
-```
-
-<!--
-2. PATHはContent以下かStatic以下
-publicdirの話とか。
-.mdとhtmlの紐付けの話とか。
--->
 
 ### Header
 At the header, following contents are stored:
@@ -83,10 +66,8 @@ At the header, following contents are stored:
 
 The site title can be changed by the parameter `title`.
 ```config.toml
-[Languages]
-[Languages.en]
   title = "SITE TITLE"
-[Languages.en.params]
+[Params]
   subtitle = "SITE SUBTITLE"
 ```
 
@@ -121,13 +102,23 @@ To add new header menu, add new parameter block `menu.header`.
    weight = 1 #Order of each menu
 ```
 
-To add banner link, add new parameter block `Params.exlink`.
+To add external link with small banner, add new parameter block `Params.exlink`.
 
 ```config.toml
 [[Params.exlink]]
   url = "LINK"
   pass = "PATH TO IMAGES"
 ```
+
+The link switching languages is created by parameter block `Languages.**.params`.
+```config.toml
+[Languages.en]
+  weight = 1 #Order of header menu to switch language.
+[Languages.en.params]
+  Language_name = "English" #Display name at header.
+```
+See also **[Multilingual mode](#multilingual-mode)**.
+
 
 ### Main contents
 
@@ -171,15 +162,15 @@ Ex. banners are automatically created for latest 10 posts in the directory `/pos
 ```
 
 You can also create fixed banner.
-See **[FRONT MATTER]()**.
+See **[FRONT MATTER](#front-matter)**.
 
 Below the banners list, "Links" is prepared.
 
 This is determined by parameters `link` and `linkPath`.
-In the following case, the page created by `/foo/bar/content/link/index.en.md` is corresponded.
+In the following case, the page created by `/foo/bar/content/link/index.md` is corresponded.
 
 ```config.toml
-[Languages.en.params]
+[Params]
   link = "DISPLAYED NAME"
   linkPath = "en/link" #Permenent link of "Links".
 ```
@@ -187,7 +178,14 @@ In the following case, the page created by `/foo/bar/content/link/index.en.md` i
 ### Footer
 Footer is consisted by "sitemap" and "location".
 
-1. Sitemap is created by `/foo/bar/content/sitemap.en.md`.
+```config.toml
+[Params]
+  sitemap = "DISPLAYED NAME OF SITEMAP"
+  location = "DISPLAYED NAME OF LOCATION"
+```
+
+1. Sitemap is created by `/foo/bar/content/sitemap.md`.
+
 2. Location is created with the parameter block `[[Params.address]]`. 
 <br>You can set several locations.
 
@@ -206,7 +204,57 @@ Embedded google maps are shown at the page `/access`
 ### taxsonomies
 To be updated.
 
-## How to edit each page (About front matter)
+### Multilingual mode
+Multilingual mode is available.
+See also **Multilingual Mode | HUGO(https://gohugo.io/content-management/multilingual/)**
 
+These are the example in the case of English.
 
-<!-- Finally, type like below and  -->
+```config.toml
+[Languages]
+[Languages.en]
+  title = "THE TITLE OF YOUR SITE"
+[Languages.en.params]
+  Language_name = "English" #For header menu
+  subtitle = "THE SUBTITLE OF YOUR SITE"
+  ...
+[[Languages.en.menu.main]]
+  ...
+```
+
+## Front matter
+
+```front-matter
++++
+title =  "Post2"
+date = 2019-12-11T15:32:38+09:00
+publishDate = 2019-12-11T15:32:38+09:00
+
+categories = ""
+##ex:  categories = "event"##
+## for categ. event : remove "#" following 2 columns. ##
+#eventStartDate = 2019-12-11
+#eventEndDate = 2019-12-11
+
+tags = [""]
+##ex: tags = ["Seminar","Conference"]##
+
+image = ""
+
+###banner####
+mkbanner = true
+bannerEndDate = 2025-01-11
+bannerimg = "img/rabbit2.png"
+weight = 3 
+
+#For main menu contents
+#mktile false
+
+#For Local
+draft = false
++++
+```
+`mkbanner` is the parameter to fix banner at sidebar by `bannerEndDate`.
+<br>You can set banner image with `bannerimg`. Aspect ratio 4:3 is the best.
+<br>Or background image is using from `img`. 
+
