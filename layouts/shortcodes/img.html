@@ -1,9 +1,0 @@
-{{ $src := .Get "src" }}
-{{ $config := imageConfig (printf "/static/%s") $src }}
-<img src="{{ .Site.BaseURL | absLangURL }}{{ $src }}"
-     alt="{{ .Get "alt" }}"
-     title="{{ .Get "title" }}"
-     style="width: 300px;">
-
-     <!--width="{{/* $config.Width */}}"
-	     height="{{/* $config.Height */}}"-->
