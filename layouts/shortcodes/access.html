@@ -1,10 +1,19 @@
-{{ range .Site.Params.address }}
-    <b> {{ .description }} </b><br>
-    &#12306; {{ .postcode }} <br>
-    {{ .address }} <br>
-    {{ .room }} <br>
-    TEL: {{ .tel }} <br>
-    FAX: {{ .fax }} <br>
-    <iframe src={{ .googlemap_url }} width="95%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
-    <hr>
+{{ range $val := .Site.Params.address }}
+  <div>
+    {{ with  $.Site.GetPage $val  }}
+      <b>{{ .Title }}</b>
+      {{ .Content }}
+      <iframe src={{ .Params.googlemap_url }} width="95%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe> 
+    {{ end }}
+	<!-- {{/* {{ end }} */}} -->
+        <!-- {{/* <b> {{ with .description }} {{.}} {{ end }} </b><br> */}} -->
+        <!-- {{/* &#12306; {{ .postcode }} <br> */}} -->
+        <!-- {{/* {{ .address }} <br> */}} -->
+        <!-- {{/* {{ .room }} <br> */}} -->
+        <!-- {{/* TEL: {{ .tel }} <br> */}} -->
+        <!-- {{/* FAX: {{ .fax }} <br> */}} -->
+  </div>
+  <hr>
 {{ end }}
+
+

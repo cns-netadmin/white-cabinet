@@ -148,7 +148,7 @@
       </div>
       <div class="item_sitemap">
 	{{ with  .Site.GetPage "sitemap"}}
-	{{ .Content }}
+	  {{ .Content }}
 	{{ end }}
         <!-- {{/* <ul> */}} -->
         <!-- {{/* {{ range .Site.Menus.main.ByWeight }} */}} -->
@@ -165,14 +165,21 @@
       </div>
       <div>
       <div class="item_address">
-      {{ range .Site.Params.address }}
+      {{ range $val := .Site.Params.address }}
       <div>
-        <b> {{ .description }} </b><br>
-        &#12306; {{ .postcode }} <br>
-        {{ .address }} <br>
-        {{ .room }} <br>
-        TEL: {{ .tel }} <br>
-        FAX: {{ .fax }} <br>
+	<!-- {{/* {{.}} */}} -->
+	<!-- {{/* {{ with .Site.GetPage {{ $val }}  }} */}} -->
+	{{ with  $.Site.GetPage $val  }}
+	  <b>{{ .Title }}</b>
+      	  {{ .Content }}
+	{{ end }}
+	<!-- {{/* {{ end }} */}} -->
+        <!-- {{/* <b> {{ with .description }} {{.}} {{ end }} </b><br> */}} -->
+        <!-- {{/* &#12306; {{ .postcode }} <br> */}} -->
+        <!-- {{/* {{ .address }} <br> */}} -->
+        <!-- {{/* {{ .room }} <br> */}} -->
+        <!-- {{/* TEL: {{ .tel }} <br> */}} -->
+        <!-- {{/* FAX: {{ .fax }} <br> */}} -->
       </div>
       {{ end }}
       </div>
