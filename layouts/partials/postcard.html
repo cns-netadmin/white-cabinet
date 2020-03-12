@@ -1,14 +1,14 @@
 
-{{ $tag_color := .Site.Params.categories_colors }}
 
 {{ if eq .card_type "upcoming" }}
     {{ with .context }}
+    {{ $tag_color := .Site.Params.categories_colors }}
 
         <div class="postcard">
         {{ if ne (.Params.eventStartDate) (.Params.eventEndDate) }}
 
             <div class="eventdate">
-            {{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}-{{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
+            {{ dateFormat "2 Jan, 2006" .Params.eventStartDate }}  -  {{ dateFormat "2 Jan, 2006" .Params.eventEndDate }}
             {{ if .Params.tags }}
                 {{ $numtags := len .Params.tags }}
                 {{ $first_tag := index .Params.tags 0 }}
@@ -65,7 +65,7 @@
 
         <h2 class="post-title">{{ .Title }}</h2>
         <p>{{ .Content }}</p>
-        <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
+        <p><a href="{{ .Permalink }}" class="read-more">Read more...</a></p>
 
         </div>
 
@@ -73,6 +73,7 @@
 
 {{ else if eq .card_type "normal" }}
     {{ with .context }}
+    {{ $tag_color := .Site.Params.categories_colors }}
         <div class="postcard">
         <div class="eventdate">
         {{ dateFormat "2 Jan, 2006" .Date }}
@@ -101,19 +102,20 @@
         </div>
         <h2 class="post-title">{{ .Title }}</h2>
         <p>{{ .Content }}</p>
-        <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
+        <p><a href="{{ .Permalink }}" class="read-more">Read more...</a></p>
         </div>
     {{ end }}
 
 {{ else if eq .card_type "simple" }}
     {{ with .context }}
+    {{ $tag_color := .Site.Params.categories_colors }}
         <div class="postcard">
         <div class="eventdate">
         {{ dateFormat "2 Jan, 2006" .Date }}
         </div>
         <h2 class="post-title">{{ .Title }}</h2>
         <p>{{ .Content }}</p>
-        <p><a href="{{ .Permalink }}" class="read-more">Read more</a></p>
+        <p><a href="{{ .Permalink }}" class="read-more">Read more...</a></p>
         </div>
     {{ end }}
 {{ end }}
