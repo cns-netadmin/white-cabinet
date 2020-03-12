@@ -150,11 +150,6 @@
 	{{ with  .Site.GetPage "sitemap"}}
 	  {{ .Content }}
 	{{ end }}
-        <!-- {{/* <ul> */}} -->
-        <!-- {{/* {{ range .Site.Menus.main.ByWeight }} */}} -->
-        <!-- {{/*   <li> <a href="{{ .URL }}"> {{ .Name }} </a> </li> */}} -->
-        <!-- {{/* {{ end }} */}} -->
-        <!-- {{/* </ul> */}} -->
       </div>
 	  </div>
     <div class="address">
@@ -167,25 +162,16 @@
       <div class="item_address">
       {{ range $val := .Site.Params.address }}
       <div>
-	<!-- {{/* {{.}} */}} -->
-	<!-- {{/* {{ with .Site.GetPage {{ $val }}  }} */}} -->
 	{{ with  $.Site.GetPage $val  }}
 	  <b>{{ .Title }}</b>
       	  {{ .Content }}
 	{{ end }}
-	<!-- {{/* {{ end }} */}} -->
-        <!-- {{/* <b> {{ with .description }} {{.}} {{ end }} </b><br> */}} -->
-        <!-- {{/* &#12306; {{ .postcode }} <br> */}} -->
-        <!-- {{/* {{ .address }} <br> */}} -->
-        <!-- {{/* {{ .room }} <br> */}} -->
-        <!-- {{/* TEL: {{ .tel }} <br> */}} -->
-        <!-- {{/* FAX: {{ .fax }} <br> */}} -->
       </div>
       {{ end }}
       </div>
   </div>
 
-  <div class="footer-copyright">© 2019 :
-    <a> Center for Nuclear Study, the University of Tokyo </a>
+  <div class="footer-copyright">&copy; {{ .Site.Params.copy_year }} :
+    <a> {{ .Site.Params.copy_name }} </a>
   </div>
 </footer>
