@@ -49,8 +49,8 @@
   position: absolute;
   top: 0;
   width: 100% !important;
-  height: 80%;
-  object-fit: cover;
+  height: 75%;
+  object-fit: scale-down;
   margin: 0 0 !important;
 }
 .tile .caption {
@@ -59,8 +59,8 @@
   align-items: center;
   position: absolute;
   width: 100%;
-  height: 20%;
-  top: 80%;
+  height: 25%;
+  top: 75%;
   left: 0;
   color: #000;
   background-color: #fff;
