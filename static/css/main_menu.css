@@ -54,6 +54,8 @@
     content: "\025bd";
     position: absolute;
     right: 20px;
+    top: 50%;
+    margin-top: -0.7em;
     color: #999;
     transition: all 0.2s ease-out;
     opacity: 0.5;
