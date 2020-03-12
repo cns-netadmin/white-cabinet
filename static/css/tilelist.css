@@ -8,6 +8,8 @@
   .tile {
     position: relative;
     width: 30%;
+    min-width: 200px;
+    max-width: 260px;
     margin: 10px 7px;
     box-shadow: 0 2px 5px #ccc;
     overflow: hidden;
@@ -19,6 +21,8 @@
   .tile {
     position: relative;
     width: 40%;
+    min-width: 200px;
+    max-width: 260px;
     margin: 10px 7px;
     box-shadow: 0 2px 5px #ccc;
     overflow: hidden;
@@ -30,6 +34,8 @@
   .tile {
     position: relative;
     width: 80%;
+    min-width: 200px;
+    max-width: 260px;
     margin: 10px 7px;
     box-shadow: 0 2px 5px #ccc;
     overflow: hidden;
