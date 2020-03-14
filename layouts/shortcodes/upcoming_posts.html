@@ -1,0 +1,15 @@
+{{- $title := .Get "title" -}}
+{{- if not $title -}}
+  {{ errorf "missing value for param 'title': ％s" .Position }}
+{{- end -}}
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
+<div class="posts-title" >{{ $title }}</div>
+{{ range (where (.Site.RegularPages.ByParam "eventEndDate") "Section" "post").ByDate.Reverse }}
+  {{ $FormattedNow := (now.AddDate 0 0 -1) }}
+  {{ if le $FormattedNow .Params.eventEndDate }}
+    {{ partial "postcard" (dict "context" . "card_type" "upcoming" ) }}
+  {{ end }}
+<!-- Add alternate content to show when there is no upcoming event -->
+{{ end }}
+<br>
+<br>
