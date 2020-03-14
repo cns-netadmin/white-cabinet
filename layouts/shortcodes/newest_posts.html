@@ -7,7 +7,6 @@
   {{ errorf "missing value for param 'number': ％s" .Position }}
 {{- end -}}
 <!-- For past posts -->
-<link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
 <div class="posts-title">{{ $title }}</div>
 {{ range first $number (where .Site.RegularPages "Section" "post").ByDate.Reverse }}
   {{ partial "postcard" (dict "context" . "card_type" "normal" ) }}
