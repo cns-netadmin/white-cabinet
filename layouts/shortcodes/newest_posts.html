@@ -1,10 +1,10 @@
 {{- $title := .Get "title" -}}
 {{- if not $title -}}
-  {{ errorf "missing value for param 'title': ％s" .Position }}
+    {{- $title := "Newest Posts" -}}
 {{- end -}}
 {{- $number:= .Get "number" -}}
 {{- if not $number -}}
-  {{ errorf "missing value for param 'number': ％s" .Position }}
+    {{- $number:= 3 -}}
 {{- end -}}
 <!-- For past posts -->
 <div class="posts-title">{{ $title }}</div>
