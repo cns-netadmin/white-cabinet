@@ -171,7 +171,12 @@
       </div>
   </div>
 
-  <div class="footer-copyright">&copy; {{ .Site.Params.copy_year }} :
-    <a> {{ .Site.Params.copy_name }} </a>
+      <div class="footer-copyright">
+	{{ if .Site.Params.copy_year }}
+	  {{ if .Site.Params.copy_name }}
+            &copy; {{ .Site.Params.copy_year }} :
+ 	    <a> {{ .Site.Params.copy_name }} </a>
+	  {{ end }}
+	{{ end }}  
   </div>
 </footer>
