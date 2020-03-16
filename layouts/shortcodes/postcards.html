@@ -19,6 +19,6 @@
 {{ $numlist := 3 }} <!-- number of posts to display -->
 <hr>
 <h3>{{ $numlist }} Newest Posts</h3>
-{{ range first $numlist (where .Site.RegularPages "Section" "post") }}
+{{ range first $numlist (where .Site.RegularPages "Section" "post").ByDate.Reverse }}
   {{ partial "postcard" (dict "context" . "card_type" "normal" ) }}
 {{ end }}

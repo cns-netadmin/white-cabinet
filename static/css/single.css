@@ -9,6 +9,15 @@
   /*border: solid 5px green;
     */
 }
+
+.single_page .content {
+  margin-top: 48px;
+}
+
+.single_page .tags {
+  margin-left: 6px;
+}
+
 .single_page h1 {
   border-bottom: solid 1px #ddd;;    
   font-size: 23px;
@@ -56,9 +65,8 @@
 }
 
 .single_page section div article img {
-  float: left;
   margin: 0 15px 15px 0;
-  width: 40%;
+  width: 40vw;
 }
 
 .single-title{
