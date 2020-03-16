@@ -1,6 +1,6 @@
 {{- $title := .Get "title" -}}
 {{- if not $title -}}
-  {{ errorf "missing value for param 'title': ％s" .Position }}
+    {{- $title := "Upcoming Events" -}}
 {{- end -}}
 <div class="posts-title" >{{ $title }}</div>
 {{ range (where (.Site.RegularPages.ByParam "eventEndDate") "Section" "post").ByDate.Reverse }}
