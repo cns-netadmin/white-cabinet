@@ -3,15 +3,10 @@
     {{ with  $.Site.GetPage $val  }}
       <b>{{ .Title }}</b>
       {{ .Content }}
-      <iframe src={{ .Params.googlemap_url }} width="95%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe> 
-    {{ end }}
-	<!-- {{/* {{ end }} */}} -->
-        <!-- {{/* <b> {{ with .description }} {{.}} {{ end }} </b><br> */}} -->
-        <!-- {{/* &#12306; {{ .postcode }} <br> */}} -->
-        <!-- {{/* {{ .address }} <br> */}} -->
-        <!-- {{/* {{ .room }} <br> */}} -->
-        <!-- {{/* TEL: {{ .tel }} <br> */}} -->
-        <!-- {{/* FAX: {{ .fax }} <br> */}} -->
+      {{ if .Params.googlemap_url }}
+        <iframe src={{ .Params.googlemap_url }} width="95%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
+        {{ end }}
+      {{ end }}
   </div>
   <hr>
 {{ end }}
