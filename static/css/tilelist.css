@@ -4,44 +4,16 @@
   justify-content: center;
   align-content: flex-start;      
 }
-@media screen and (min-width: 900px) {
-  .tile {
-    position: relative;
-    width: 30%;
-    min-width: 200px;
-    max-width: 260px;
-    margin: 10px 7px;
-    box-shadow: 0 2px 5px #ccc;
-    overflow: hidden;
-    border-radius: 3px;
-    transition: all 0.2s;
-  }
-}
-@media screen and (max-width: 900px) and (min-width: 540px) {
-  .tile {
-    position: relative;
-    width: 40%;
-    min-width: 200px;
-    max-width: 260px;
-    margin: 10px 7px;
-    box-shadow: 0 2px 5px #ccc;
-    overflow: hidden;
-    border-radius: 3px;
-    transition: all 0.2s;
-  }
-}
-@media screen and (max-width: 540px) {
-  .tile {
-    position: relative;
-    width: 80%;
-    min-width: 200px;
-    max-width: 260px;
-    margin: 10px 7px;
-    box-shadow: 0 2px 5px #ccc;
-    overflow: hidden;
-    border-radius: 3px;
-    transition: all 0.2s;
-  }
+.tile {
+  position: relative;
+  width: 30%;
+  min-width: 200px;
+  max-width: 260px;
+  margin: 10px 7px;
+  box-shadow: 0 2px 5px #ccc;
+  overflow: hidden;
+  border-radius: 3px;
+  transition: all 0.2s;
 }
 .tile:hover {
   box-shadow: 0px 0px 5px 2px #67c5ff;
@@ -74,6 +46,6 @@
   word-break: keep-all;
 }
 .tile .caption div {
-  line-height: 20px;
+  line-height: 18px;
   text-align: center;
 }
