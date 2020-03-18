@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-<head>
+  <head>
+
+    {{- partial "analytics" . -}}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if not .IsHome }}{{ .Title }}｜{{ end }}{{ .Site.Title }}</title>
