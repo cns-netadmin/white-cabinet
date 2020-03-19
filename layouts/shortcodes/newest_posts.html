@@ -1,0 +1,15 @@
+{{- $title := .Get "title" -}}
+{{- if not $title -}}
+    {{- $title := "Newest Posts" -}}
+{{- end -}}
+{{- $number:= .Get "number" -}}
+{{- if not $number -}}
+    {{- $number:= 3 -}}
+{{- end -}}
+<!-- For past posts -->
+<div class="posts-title">{{ $title }}</div>
+{{ range first $number (where .Site.RegularPages "Section" "post").ByDate.Reverse }}
+  {{ partial "postcard" (dict "context" . "card_type" "normal" ) }}
+{{ end }}
+<br>
+<br>

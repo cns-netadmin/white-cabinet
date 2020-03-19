@@ -209,3 +209,17 @@
   overflow: hidden;
   width: 100%;
 }
+
+.posts-title {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-left: 70px;
+  color: #124;
+  margin-right: 70px;
+  margin-bottom: 20px;
+  background: -moz-linear-gradient(top, #fff 0%, #eee 50%, #ddd 51%, #fff 100%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(50%,#eee), color-stop(51%,#ddd), color-stop(100%,#fff)); /* webkit */
+  -pie-background:linear-gradient(top, #fff 0%, #eee 50%, #ddd 51%, #fff 100%);
+  behavior: 
+}
