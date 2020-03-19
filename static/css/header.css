@@ -46,10 +46,10 @@ header {
     z-index: 200;
     color: #fff;
   }
-  .cns_logo {
+  .logo {
     margin-right: 10px;
   }
-  .cns_logo img {
+  .logo img {
     width: 60px;
   }
   .black-belt .title {
@@ -89,11 +89,11 @@ header {
     z-index: 200;
     color: #fff;
   }
-  .cns_logo {
+  .logo {
     top: 15px;
     margin: 0 5px;
   }
-  .cns_logo img {
+  .logo img {
     width: 50px;
   }
   .black-belt .title {
@@ -135,12 +135,12 @@ header {
     z-index: 200;
     color: #fff;
   }
-  .cns_logo {
+  .logo {
     top: -8px;
     position: relative;
     margin: 0 5px;
   }
-  .cns_logo img {
+  .logo img {
     width: 50px;
   }
   .black-belt .title {
@@ -222,13 +222,13 @@ header {
     font-size: 20px;
     transition: all 0.2s;
   }
-  .humberger-menu .u-tokyo_logos {
+  .humberger-menu .link_logo {
     display: none;
   }
-  .humberger-menu .u-tokyo_logos {
+  .humberger-menu .link_logo {
     padding: 0 0 !important;
   }
-  .humberger-menu .u-tokyo_logos img {
+  .humberger-menu .link_logo img {
     display: none;
   }
 }
@@ -254,17 +254,17 @@ header {
     font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic';
     font-size: 20px;
   }
-  .humberger-menu .u-tokyo_logos {
+  .humberger-menu .link_logo {
     padding: 0 0 !important;
   }
-  .humberger-menu .u-tokyo_logos img {
+  .humberger-menu .link_logo img {
     width: 140px;
   }
 }
 .humberger-menu ul li:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.humberger-menu .u-tokyo_logos:hover {
+.humberger-menu .link_logo:hover {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 .humberger-menu ul a {
@@ -310,10 +310,10 @@ header {
     margin: 0 5px;
     position: relative;
   }
-  .header-menu .u-tokyo_logos img {
+  .header-menu .link_logo img {
     height: 30px;
   }
-  .header-menu .u-tokyo_logos {
+  .header-menu .link_logo {
    margin: 0 4px !important
   }
 }
@@ -332,7 +332,7 @@ header {
     position: relative;
     font-size: 0.8em;
   }
-  .header-menu .u-tokyo_logos img {
+  .header-menu .link_logo img {
     display: none;
   }
 }
@@ -351,6 +351,6 @@ header {
 .header-menu ul li a:hover {
   color: #67c5ff;
 }
-.header-menu .u-tokyo_logos:before {
+.header-menu .link_logo:before {
   display: none !important;
 }

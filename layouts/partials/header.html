@@ -50,7 +50,7 @@
 <header>
   <script type="text/javascript" src="{{ .Site.BaseURL }}js/header.js"></script>
   <div class="black-belt">
-    <div class="cns_logo">
+    <div class="logo">
       <a href="{{ $.Site.BaseURL }}{{ .Site.Language.Lang }}"><img src="{{ $.Site.BaseURL }}{{ .Site.Params.logo }}" /></a>
     </div>
     <div class="title">
@@ -70,7 +70,7 @@
 	</a>
         {{ end }}
         {{ range .Site.Params.exlink }}
-	  <li class="u-tokyo_logos">
+	  <li class="link_logo">
             <a href="{{ .url }}"><img src="{{ $.Site.BaseURL }}{{ .pass }}"></a>
 	  </li>
         {{ end }}
@@ -91,7 +91,7 @@
           {{ end }}
         {{ end }}
         {{ range .Site.Params.exlink }}
-	  <li class="u-tokyo_logos">
+	  <li class="link_logo">
             <a href="{{ .url }}"><img src="{{ $.Site.BaseURL }}{{ .pass }}"></a>
 	  </li>
         {{ end }}
