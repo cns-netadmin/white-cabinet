@@ -1,0 +1,19 @@
+<style type="text/css">
+
+{{ range $key, $value := .Site.Data.tag_color }}
+
+a.tagbutton.{{ $key }} {
+  background-image: linear-gradient(45deg, {{ $value }} 0%, {{ $value }} 100%);
+  border: solid 1px {{ $value }};
+  color: white;
+}
+
+a.tagbutton.{{ $key }}:hover {
+  background : white;
+  border: solid 1px {{ $value }};
+  color:{{ $value }};
+}
+
+{{ end }}
+
+</style>
