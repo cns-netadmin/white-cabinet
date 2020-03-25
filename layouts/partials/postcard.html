@@ -12,24 +12,14 @@
             {{ if .Params.tags }}
                 {{ $numtags := len .Params.tags }}
                 {{ $first_tag := index .Params.tags 0 }}
-
                 {{ if gt $numtags 0 }} {{ if ne $first_tag "" }} {{/* --if-- insert tag box */}}
                     <div class="tags">
                     {{ range .Params.tags }}
                         {{ $param_tag_name := . }}
-                        {{ if in $tag_color $param_tag_name }} {{/* if tag_name is defined in categories_color */}}
-                            {{ range $i, $tag_name := $tag_color }}
-                                {{ if eq $tag_name $param_tag_name }} 
-                                    <a href="{{ $.Site.BaseURL | absLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton {{ index $tag_color (add $i 1) }}">{{ $param_tag_name }}</a>
-                                {{ end }}
-                            {{ end }}
-                        {{ else }}
-                            <a href="{{ $.Site.BaseURL | absLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton">{{ $param_tag_name }}</a>
-                        {{ end }}
+                        <a href="{{ $.Site.BaseURL | absLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton {{ $param_tag_name }}">{{ $param_tag_name }}</a>
                     {{ end }}
                     </div>
                 {{ end }} {{ end }} {{/* --end-- insert tag box */}}
-
             {{ end }}
             </div>
 
@@ -41,22 +31,12 @@
                 {{ $numtags := len .Params.tags }}
                 {{ $first_tag := index .Params.tags 0 }}
                 {{ if gt $numtags 0 }} {{ if ne $first_tag "" }}
-
                     <div class="tags"> {{/* --if-- insert tag box */}}
                     {{ range .Params.tags }}
                         {{ $param_tag_name := . }}
-                        {{ if in $tag_color $param_tag_name }} {{/* if tag_name is defined in categories_color */}}
-                            {{ range $i, $tag_name := $tag_color }}
-                                {{ if eq $tag_name $param_tag_name }} 
-                                    <a href="{{ $.Site.BaseURL | relLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton {{ index $tag_color (add $i 1) }}">{{ $param_tag_name }}</a>
-                                {{ end }}
-                            {{ end }}
-                        {{ else }}
-                            <a href="{{ $.Site.BaseURL | relLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton">{{ $param_tag_name }}</a>
-                        {{ end }}
+                        <a href="{{ $.Site.BaseURL | relLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton {{ $param_tag_name }}">{{ $param_tag_name }}</a>
                     {{ end }} {{/* --end-- insert tag box */}}
                     </div>
-
                 {{ end }} {{ end }}
             {{ end }}
             </div>
@@ -80,23 +60,13 @@
         {{ if .Params.tags }}
             {{ $numtags := len .Params.tags }}
             {{ $first_tag := index .Params.tags 0 }}
-
             {{ if gt $numtags 0 }} {{ if ne $first_tag "" }}
                 <div class="tags">
                 {{ range .Params.tags }}
                     {{ $param_tag_name := . }}
-                    {{ if in $tag_color $param_tag_name }} {{/* if tag_name is defined in categories_color */}}
-                        {{ range $i, $tag_name := $tag_color }}
-                            {{ if eq $tag_name $param_tag_name }} 
-                                <a href="{{ $.Site.BaseURL | relLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton {{ index $tag_color (add $i 1) }}">{{ $param_tag_name }}</a>
-                            {{ end }}
-                        {{ end }}
-                    {{ else }}
-                        <a href="{{ $.Site.BaseURL | relLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton">{{ $param_tag_name }}</a>
-                    {{ end }}
+                    <a href="{{ $.Site.BaseURL | relLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton {{ $param_tag_name }}">{{ $param_tag_name }}</a>
                 {{ end }}
                 </div>
-
             {{ end }} {{ end }}
         {{ end }}
         </div>
