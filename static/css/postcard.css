@@ -7,17 +7,16 @@
 
 .postcard {
   background-color: #fff;
-  padding: 10px;
+  padding: 3%;
   border-radius: 6px;
   box-shadow: 0 6px 15px #dde;
   width: 93%;
-  height: 165px;
-  color: #1700ad;
+  height: 176px;
   overflow: hidden;
   position: relative;
   font-size: 16px;
   text-align: left;
-  margin: 15px;
+  margin: 2% 8px 12px 2%;
 }
 
 .postcard p{
@@ -181,7 +180,7 @@ div.tags{
   }
 
   .postcard {
-    height: 130px;
+    height: 193px;
     width: 90%;
   }
   .postcard::before {
@@ -212,7 +211,6 @@ div.tags{
   text-decoration: none;
   border: solid 2px gray;
   color: gray;
-  background: white;
 }
 
 .postcard .read-more:hover{
@@ -240,5 +238,3 @@ div.tags{
   background: -moz-linear-gradient(top, #fff 0%, #eee 50%, #ddd 51%, #fff 100%); /* firefox */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(50%,#eee), color-stop(51%,#ddd), color-stop(100%,#fff)); /* webkit */
   -pie-background:linear-gradient(top, #fff 0%, #eee 50%, #ddd 51%, #fff 100%);
-  behavior: 
-}
