@@ -3,13 +3,13 @@
 
 name = "White Cabinet"
 license = "BSD 3-clause"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
-tags = ["blog","responsive","multilingual","mobile","white","business"]
-features = [""]
+licenselink = "https://github.com/cns-netadmin/white-cabinet/master/LICENSE"
+description = "Hugo theme adaptable to any content, from an institute website to a personal blog."
+homepage = "https://www.cns.s.u-tokyo.ac.jp/white-cabinet"
+tags = ["blog","responsive","multilingual","mobile","white","business","Google analytics","Customizable"]
+features = ["responsive","multilingual","mobile","Google analytics"]
 min_version = "0.61"
 
 [author]
   name = "CNS, the Univ. of Tokyo"
-  homepage = "www.cns.s.u-tokyo.ac.jp"
+  homepage = "https://www.cns.s.u-tokyo.ac.jp"
