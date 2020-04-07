@@ -12,8 +12,8 @@ $(function(){
       value = 700, /* Size for Narrow version, Change here!*/
       oldBrowserWidth = value+1;
  
- console.log("start logging");
- console.log($win.width());
+// console.log("start logging");
+// console.log($win.width());
  function wideCSS(){
 /*     $container.className=wideClass;
     $sidebar.className="sidebar";
@@ -29,12 +29,17 @@ $(function(){
  function narrowCSS(){
     $container.className=narrowClass;
     $sidebar.className="sidebar-narrow";
-    $topicList.className="topic_list-narrow";
     $links.className="links-narrow";
     $sitemap.className="sitemap-narrow";
     $address.className="address-narrow";
-    console.log("width changed: narrow");
+    $topicList.className="topic_list-narrow";
+    //console.log("width changed: narrow");
     $(function(){
+
+      $('.topic_list-narrow').css({
+          "opacity" : "0"
+      });
+
       $('.topic_list-narrow').not('.slick-initialized').slick({
         dots: true,
         respondTo: 'window',
@@ -44,25 +49,39 @@ $(function(){
         arrows: false,
         slidesToShow: 1,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 5000,
         swipe: true,
         variableWidth: true
       });
-      console.log("slick loaded");
+      //console.log("slick loaded");
+       //$('.slider').slick('slickGoTo', 0);
 
       $(".imgsize").css({
         "width" : "240px", //width cannot control by here
         "height" : "180px",
         //"border": "solid 5px orange"
-        });
+      });
 
       $(".bannersize").css({
         "width": "240px",
         "height": "180px",
         "padding-bottom": "0",
         //"border": "solid 5px green"
-          });
       });
+
+//      console.log($('.topic_list-narrow').slick('slickGetOption','autoplay'));
+
+      $('.topic_list-narrow').css({
+          "opacity" : 1,
+          "transition": "opacity 2s ease-in",
+          "-moz-transition": "opacity 2s ease-in",
+          "-webkit-transition": "opacity 2s ease-in",
+          "-o-transition": "opacity 2s ease-in"
+      });
+      $('.topic_list-narrow').slick('slickGoTo', 0);
+
+    });
+
  }
 
  var browserWidth = $win.width();

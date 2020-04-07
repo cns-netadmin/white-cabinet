@@ -13,11 +13,23 @@ main {
 
 .main-list {
   display: block;
-  width: 100%;
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 
 .main-terms {
   display: block;
-  width: 100%;
+  width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+p code {
+  padding: 2px 3px 2px 3px;
+  background-color: #e8e8e8;
+  font-weight: normal;
+  font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-size: 12px;
 }

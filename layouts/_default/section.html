@@ -21,7 +21,6 @@
     }
   </style>
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/list.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
 </head>
@@ -32,11 +31,10 @@
 
 
     <section id="main">
-
-      {{ range .Site.Menus.main.ByWeight }}
-        {{ if eq .Identifier $pgttl }}
+    {{ range .Site.Menus.main.ByWeight }}
+      {{ if eq .Identifier $pgttl }}
 	<!--<h1 id="title">{{ .Name }}</h1>-->
-	{{ end }}
+	  {{ end }}
     {{ partial "breadcrumb.html" . }}
     <div class="single-title">{{ .Title }}</div>
       <div>
@@ -48,11 +46,13 @@
   </div>
 </body>
 	{{ end }}*/}}
+
 <div class="main-list">
   {{ partial "breadcrumb.html" . }} 
   <section id="main">
     <div class="single-title"> {{ .Title }} </div>
-    {{ $paginator := .Paginate .Data.Pages }}
+
+    {{ $paginator := .Paginate .RegularPages }}
     {{ range ($paginator.Pages.GroupByDate "2006") }}
     <div class="year"><h1> {{ .Key }} </h1></div>
       {{ range .Pages }}

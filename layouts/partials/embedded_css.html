@@ -1,0 +1,17 @@
+
+<style type="text/css">
+{{ range .Site.Params.category_colors }}
+{{ range $key, $value := . }}
+a.tagbutton.{{ $key }} {
+  background-image: linear-gradient(45deg, {{ $value }} 0%, {{ $value }} 100%);
+  border: solid 1px {{ $value }};
+  color: white;
+}
+a.tagbutton.{{ $key }}:hover {
+  background : white;
+  border: solid 1px {{ $value }};
+  color:{{ $value }};
+}
+    {{ end }}
+{{ end }}
+</style>

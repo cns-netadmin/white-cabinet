@@ -1,212 +1,55 @@
-# White Cabinet theme for Hugo
+# The White Cabinet theme for Hugo
+
+![The image of the webpage created by the White Cabinet](https://www.cns.s.u-tokyo.ac.jp/white_cabinet/img/thumbnail.png)
+
 <!--check "CHECK"-->
-White Cabinet theme can make sites with
+Furnished with a simple design and numerous features, the White Cabinet theme serves as a versatile basis for your website construction.
 
-- slide images
-- site title w/ black ribbon & hamburger menu
-- accordion menu (expandable menu)
-- post card
-- banner at sidebar
-- quicklinks (& address)
+By making use of the responsive menu styles organized into a classical block-based layout, you and your visitors can obtain the necessary information at ease, just like opening a ***cabinet***. By keeping the base color ***white***, it will match any content, from a daily blog to the introduction of a research institute.
 
-components. White Cabinet theme can create introduction site for indivisual, group and all of facilities with upcoming/past events, information, location, etc...
-<!-- Introduction for  -->
-<!--   - shops -->
-<!--   - facilities for recreation -->
-See our **[Demo page]()** <!-- CHECK -->
+## Key features
 
-White Cabinet theme deal with not only PC but also Mobile without any extra codes.
+![Main components of the White Cabinet](https://www.cns.s.u-tokyo.ac.jp/white_cabinet/img/white_cabinet_components.png)
+
+Some of the features that make the White Cabinet unique are:
+
+- slideshow of images and black ribbon that stand out in the white background
+- accordion-style main menu that allows you to put visual emphasis on certain contents
+- easy-to-see postcard listing of events which includes automatic date filtering
+- customizable side banner displaying the most important posts on top
+- uncomplicated footer serving as a guide for visitors both in the screen and out on the streets
+- responsive design which allows you to visit the page on your favourite device
+
+To see how it looks, check out our **[Demo page](https://www.cns.s.u-tokyo.ac.jp/white_cabinet/)**! 
+
 
 ## Installation
 
-1. Install [Hugo](https://gohugo.io/) in your server/client.
-1. Make web source directory (ex. `/foo/bar`) and clone our git repository
+1. Install [Hugo](https://gohugo.io/) in your server/client
+2. Create the directory for the web source (ex. `/foo/bar`) and clone into our git repository
 
 ```
-$ mkdir -p /foo/bar/themes
-$ cd /foo/bar/themes
-$ git clone ---NEED TO CHECK---
+            $ mkdir -p /foo/bar/themes
+            $ cd /foo/bar/themes
+            $ git clone ---NEED TO CHECK---
 ```
 
-1. If you test by our demo page, please type such as:
+3. **Quick start:** You can check out the demo page we have prepared by building Hugo locally:
 
 ```
-$ cp white_cabinet_themes/demo-page/ /foo/bar/
-$ hugo server
+            $ cp white_cabinet_themes/demo-page/ /foo/bar/
+            $ hugo server
 ```
 
-and access to `localhost:1313` in your web browser, you will check it.
+The demo page can be seen at `localhost:1313` in your web browser.
 
-Here in README is according to the demo pages.
+## Setting up your site
 
-## Edit `config.toml`
-You can customize the site at the `config.toml`.
+Global settings of your website can be customized in the file `config.toml`. At first, edit your server name so that the internal paths are correctly directed:
 
-1. At first, edit your server name
-
-```config.toml
-baseurl = (*_YOUR_SERVER_NAME_*)
+```
+            baseurl = (YOUR_SERVER_NAME)
 ```
 
-2. You can set the parameters in each lauguage code.
-These are the example in the case of English.
-各言語のページは自動的に作られます。baseurl/en/
-index.en.md, index.ja.md, ....
+We have prepared several pages that demonstrate how you can make full use of the functionalities. See the [Features]({{< ref "features" >}}) section for details.
 
-```config.toml
-[Languages]
-[Languages.en]
-  title = "THE TITLE OF YOUR SITE"
-[Languages.en.params]
-  subtitle = "THE SUBTITLE OF YOUR SITE"
-  ...
-[[Languages.en.menu.main]]
-  ...
-```
-
-<!--
-2. PATHはContent以下かStatic以下
-publicdirの話とか。
-.mdとhtmlの紐付けの話とか。
--->
-
-### Header
-At the header, following contents are stored:
-  - title and subtitle
-  - logo
-  - slide images (= top figures)
-  - hamburger menu : automatically changed with accordion menu.
-  - heder menu
- 
-
-#### 1. Change the title.
-
-The site title can be changed by the parameter `title`.
-```config.toml
-[Languages]
-[Languages.en]
-  title = "SITE TITLE"
-[Languages.en.params]
-  subtitle = "SITE SUBTITLE"
-```
-
-#### 2. Change the logo and top figures.
-
-Prepare image files for logo and top figures and copy them under the directory "static".
-
-(ex. logo: `/foo/bar/static/img/logo.png`, top figure: `/foo/bar/static/img/topfig1.jpg`)
-
-Change the path to files at `config.toml`.
-Several image files are supported for top figures in sliding style.
-
-```config.toml
-[Params]
-  logo = "img/logo.png"
-  top_figures = [
-  "img/topfig1.jpg",
-  "PATH TO FILE2",
-  "PATH TO FILE3"
-  ]
-```
-
-#### 3. Change the header menu.
-
-To add new header menu, add new parameter block `menu.header`.
-<!--In the following case, the page created by `/foo/bar/content/URL/index.md` is corresponded.-->
-
-```config.toml
-[[menu.header]]
-   name = "DISPLAYED NAME"
-   url = "/URL" #Permanent Link of content
-   weight = 1 #Order of each menu
-```
-
-To add banner link, add new parameter block `Params.exlink`.
-
-```config.toml
-[[Params.exlink]]
-  url = "LINK"
-  pass = "PATH TO IMAGES"
-```
-
-### Main contents
-
-In White Cabinet theme, accordion menu is used as top menu.
-Hamburger menu at header is automatically changed with accordion menu.
-
-To add new accordion menu, add new parameter block `menu.main`.
-
-```config.toml
-[[menu.main]]
-    identifier = "ID" #Identifier for each menu
-    name = "DISPLAYED NAME"
-    url = "/URL" #Permanent Link of content
-    weight = 1 #Order of each menu 
-    pre = "open"/"closed" #Default status of accordion menu
-```
-
-In this case, the page created by `/foo/bar/content/URL/_index.md` is corresponded.
-<br>You can store contents in three ways for each accordion menu:
-  - list  
-  - tile
-  - post card
-<br>To use the postcard style, add parameter `post = "postcard"` in the block `menu.header`.
-
-See **[HOW TO MENU]()** for more information.
-
-### Sidebar (list of banners)
-
-There are List of banners and "Links" at the sidebar.
-
-Banners are automatically created for latest posts in the directory specified by parameter `sidebar_url`.
-<br>Parameter `sidebar_maxnum` define the maximum number of banners at sidebar.
-
-Ex. banners are automatically created for latest 10 posts in the directory `/post`:
-```config.toml
-[Params]
-...
-  sidebar_maxnum = 10
-  sidebar_url = "/post"
-...
-```
-
-You can also create fixed banner.
-See **[FRONT MATTER]()**.
-
-Below the banners list, "Links" is prepared.
-
-This is determined by parameters `link` and `linkPath`.
-In the following case, the page created by `/foo/bar/content/link/index.en.md` is corresponded.
-
-```config.toml
-[Languages.en.params]
-  link = "DISPLAYED NAME"
-  linkPath = "en/link" #Permenent link of "Links".
-```
-
-### Footer
-Footer is consisted by "sitemap" and "location".
-
-1. Sitemap is created by `/foo/bar/content/sitemap.en.md`.
-2. Location is created with the parameter block `[[Params.address]]`. 
-<br>You can set several locations.
-
-``` config.toml
-[[Params.address]]
-  description = "BUILDING"
-  postcode = "POSTCODE"
-  address = "ADDRESS"
-  room = "ROOM NUMBER"
-  tel = "XXX-XXXX-XXXX"
-  fax = "XXX-XXXX-XXXX"
-  googlemap_url = "https://www.google.com/maps/****" #Shared link from google map.
-```
-Embedded google maps are shown at the page `/access`
-
-### taxsonomies
-To be updated.
-
-## How to edit each page (About front matter)
-
-
-<!-- Finally, type like below and  -->

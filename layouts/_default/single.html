@@ -1,18 +1,29 @@
 {{ define "main" }}
 <head>
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/single.css">
 </head>
 <body>
-  <div class="single_page">
-    <section id="main">
-      {{ partial "breadcrumb.html" . }}
-      <div class="single-title">{{ .Title }}</div>
-      <div>
-        <article class="content">
-           {{ .Content }}
-        </article>
-      </div>
-    </section>
-  </div>
+    <div class="single_page">
+        <section id="main">
+        {{ partial "breadcrumb.html" . }}
+            <div class="single-title">{{ .Title }}</div>
+            {{ $tag_color := .Site.Params.categories_colors }}
+            {{ if .Params.tags }}
+                {{ $numtags := len .Params.tags }}
+                {{ $first_tag := index .Params.tags 0 }}
+                {{ if gt $numtags 0 }} {{ if ne $first_tag "" }} {{/* --if-- insert tag box */}}
+                    <div class="single-tags">
+                    {{ range .Params.tags }}
+                        {{ $param_tag_name := . }}
+                        <a href="{{ $.Site.BaseURL | absURL }}{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $param_tag_name }}" class="tagbutton {{ $param_tag_name }}">{{ $param_tag_name }}</a>
+                    {{ end }}
+                    </div>
+                {{ end }} {{ end }} {{/* --end-- insert tag box */}}
+            {{ end }}
+            <article class="content">
+                {{ .Content }}
+            </article>
+        </section>
+    </div>
 </body>
 {{end}}
