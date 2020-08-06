@@ -26,13 +26,13 @@
           </div>
         {{ else if .Params.image }} 
           <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
-            <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
-            <h2> {{ .Title }} </h2>
+            <h2> {{ .Title }} </h2><br>
+            <div class="date"> Posted on {{dateFormat "2 Jan, 2006" .Params.date }}   </div>
           </div>
         {{ else }}
         <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Site.Params.defaultBannerImage }});" >
-            <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
-            <h2> {{ .Title }} </h2>
+            <h2> {{ .Title }} </h2><br>
+            <div class="date"> Posted on {{dateFormat "2 Jan, 2006" .Params.date }}   </div>
           </div>
         {{ end }}<!--bannerimg-->
       {{ end }}<!--StatBanner-->
@@ -51,14 +51,14 @@
               </div>
             {{ else if .Params.image }} 
               <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
-                <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
-                <h2> {{ .Title }} </h2>
+                <h2> {{ .Title }} </h2><br>
+                <div class="date"> Posted on {{dateFormat "2 Jan, 2006" .Params.date }}   </div>
               </div>
               
             {{ else }}
                <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Site.Params.defaultBannerImage }});" >
-                 <h1> {{dateFormat "2 Jan, 2006" .Params.date }}   </h1><br>
-                 <h2> {{ .Title }} </h2>
+                 <h2> {{ .Title }} </h2><br>
+                 <div class="date"> Posted on {{dateFormat "2 Jan, 2006" .Params.date }}   </div>
                </div>
             {{ end }} <!--bannerimg-->
           {{ end }} <!--num of banner-->
