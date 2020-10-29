@@ -6,11 +6,21 @@ title_select.forEach(content =>{
 
 function shortenText(content) {
     var string = content.textContent
-    const max_length = 70;
-    if (string.length > max_length) {
-        return string.substr(0, max_length) + '...';
+    const max_length = 80;
+    console.log(string);
+    return ommitLongText(string, max_length);
+}
+
+function ommitLongText(str, n_max) {
+    var n = 0;
+    var length = 0;
+    for(i=0; n < n_max && i < str.length; i++) {
+        if (str[i].match(/[ -~]/) ) {
+            n += 1;
+        } else {
+            n += 2;
+        }
+        length += 1;
     }
-    else {
-        return string;
-    }
+    return str.substr(0, length) + '...';
 }
