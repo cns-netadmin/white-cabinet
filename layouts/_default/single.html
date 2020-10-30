@@ -12,7 +12,8 @@
                 {{ $numtags := len .Params.tags }}
                 {{ $first_tag := index .Params.tags 0 }}
                 {{ if gt $numtags 0 }} {{ if ne $first_tag "" }} {{/* --if-- insert tag box */}}
-                    <div class="single-tags">
+                    <div class="single-date-tags">
+                    <p> Posted on {{ dateFormat "2 Jan, 2006" .Date }} </p>
                     {{ range .Params.tags }}
                         {{ $param_tag_name := . }}
                         <a href="{{ $.Site.BaseURL | absURL }}{{ $.Site.BaseURL | relLangURL }}/tags/{{ lower $param_tag_name }}" class="tagbutton {{ $param_tag_name }}">{{ $param_tag_name }}</a>

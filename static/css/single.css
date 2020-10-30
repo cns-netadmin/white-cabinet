@@ -70,7 +70,7 @@
 }
 
 
-.single-tags {
+.single-date-tags {
   display: table;
   border-collapse: separate;
   border-spacing: 3px 3px;
@@ -80,7 +80,17 @@
   text-align: right;
 }
 
+
+.single-date-tags p {
+  text-align: left;
+  float: left;
+  padding-left: 4vw;
+  margin: 0;
+  color: #b0b0b0;
+}
+
 a.tagbutton {
+  float:right;
   padding: 1px 4px 1px 4px;
   margin: 1px 7px 1px 5px;
   font-size: 10px;
