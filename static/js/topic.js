@@ -7,7 +7,6 @@ title_select.forEach(content =>{
 function shortenText(content) {
     var string = content.textContent
     const max_length = 80;
-    console.log(string);
     return ommitLongText(string, max_length);
 }
 
@@ -22,5 +21,9 @@ function ommitLongText(str, n_max) {
         }
         length += 1;
     }
-    return str.substr(0, length) + '...';
+    if (length < str.length) {
+        return str.substr(0, length) + '...';
+    } else {
+        return str
+    }
 }
