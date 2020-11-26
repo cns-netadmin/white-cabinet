@@ -13,19 +13,18 @@
             </div>
         {{ end }}
 
-        <h2 class="post-title">{{ .Title }}
-            {{ if .Params.tags }}
-                {{ $numtags := len .Params.tags }}
-                {{ $first_tag := index .Params.tags 0 }}
-                {{ if gt $numtags 0 }} {{ if ne $first_tag "" }}
-                    <div class="tags"> {{/* --if-- insert tag box */}}                    {{ range .Params.tags }}
-                        {{ $param_tag_name := . }}
-                        <a href="{{ $.Site.BaseURL | relLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton {{ $param_tag_name }}">{{ $param_tag_name }}</a>
-                    {{ end }} {{/* --end-- insert tag box */}}
-                    </div>
-                {{ end }} {{ end }}
-            {{ end }}
-        </h2>
+        <h2 class="post-title">{{ .Title }}</h2>
+        {{ if .Params.tags }}
+            {{ $numtags := len .Params.tags }}
+            {{ $first_tag := index .Params.tags 0 }}
+            {{ if gt $numtags 0 }} {{ if ne $first_tag "" }}
+                <div class="tags"> {{/* --if-- insert tag box */}}                    {{ range .Params.tags }}
+                    {{ $param_tag_name := . }}
+                    <a href="{{ $.Site.BaseURL | relLangURL }}tags/{{ lower $param_tag_name }}/" class="tagbutton {{ $param_tag_name }}">{{ $param_tag_name }}</a>
+                {{ end }} {{/* --end-- insert tag box */}}
+                </div>
+            {{ end }} {{ end }}
+        {{ end }}
         <p>{{ .Content }}</p>
         <div class="date">
         Posted on {{ dateFormat "2 Jan, 2006" .Date }}
@@ -40,7 +39,7 @@
     {{ with .context }}
     {{ $tag_color := .Site.Params.categories_colors }}
         <div class="postcard">
-        <h2 class="post-title">{{ .Title }}
+        <h2 class="post-title">{{ .Title }}</h2>
         {{ if .Params.tags }}
             {{ $numtags := len .Params.tags }}
             {{ $first_tag := index .Params.tags 0 }}
@@ -53,7 +52,6 @@
                 </div>
             {{ end }} {{ end }}
         {{ end }}
-        </h2>
         <p>{{ .Content }}</p>
         <div class="date">
         Posted on {{ dateFormat "2 Jan, 2006" .Date }}
