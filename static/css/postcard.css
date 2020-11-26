@@ -183,8 +183,9 @@ div.tags{
 
 @media screen and (max-width: 720px) {
   .postcard div.tags {
-    left: -8px;
-    top: 35px;
+    left: -1.7vw;
+    top: 42px;
+    width: 88vw;
   }
   .postcard h2.post-title {
     margin-bottom: 40px;
@@ -200,10 +201,12 @@ div.tags{
     content: "";
   }
 
-  .tags div a.tagbutton {
+  .tags a.tagbutton {
+    float: left;
     font-size: 5px;
     border: solid 1px white;
   }
+
 }
 
 /* the default tag button */
