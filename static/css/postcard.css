@@ -84,6 +84,7 @@
 .postcard h2.post-title{
   margin-top : 0px;
   color: black;
+  width: 100%;
   font-size: 18px;
   position: relative;
   display: inline-block;
@@ -205,6 +206,7 @@ div.tags{
   }
   .postcard h2.post-title {
     margin-bottom: 40px;
+    font-size: 15px;
   }
 
   .postcard {
