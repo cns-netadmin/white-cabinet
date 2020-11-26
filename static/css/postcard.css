@@ -109,11 +109,11 @@
 .postcard h2.post-title:after {
   content: '';
   position: relative;
-  bottom: 27px;
-  display: inline-block;
-  width: 96%;
+  bottom: -8px;
+  display: block;
+  width: 58vw;
   height: 2px;
-  left: 48%;
+  left: 29.5vw;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background-color: #ccc;
@@ -133,15 +133,15 @@
 }
 
 div.tags{
+  top: -7px;
   display: table;
   border-collapse: separate;
   border-spacing: 3px 0;
-  position: absolute;
+  position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 100%;
-  height: auto;
   text-align: left;
+  width: 61vw;
 }
 
 .tags a.tagbutton {
@@ -162,6 +162,7 @@ div.tags{
   border: solid 1px gray;
   background : white;
 }
+
 
 
 .postcard div.eventdate {
@@ -188,13 +189,6 @@ div.tags{
   border-radius: 2px;
   height: auto;
   color: #000;
-}
-
-@media screen and (min-width: 720px) {
-  .postcard div.tags {
-    left: calc(100% + 3px);
-    top: 3px;
-  }
 }
 
 @media screen and (max-width: 720px) {
@@ -243,6 +237,16 @@ div.tags{
     border-radius: 2px;
   }
 
+  .postcard div.postcard-content {
+    position: relative;
+    margin-top: -31px;
+  }
+
+.postcard::before {
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 40%, rgba(255,255,255,0.9) 60%, rgba(255,254,253,1.0) 100%);
+  background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 40%, rgba(255,255,255,0.9) 60%, rgba(255,254,253,1.0) 100%);
+  content: "";
+}
 }
 
 /* the default tag button */

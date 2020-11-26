@@ -25,7 +25,9 @@
                 </div>
             {{ end }} {{ end }}
         {{ end }}
+        <div class="postcard-content">
         <p>{{ .Content }}</p>
+        </div>
         <div class="date">
         Posted on {{ dateFormat "2 Jan, 2006" .Date }}
         </div>
@@ -52,7 +54,9 @@
                 </div>
             {{ end }} {{ end }}
         {{ end }}
+        <div class="postcard-content">
         <p>{{ .Content }}</p>
+        </div>
         <div class="date">
         Posted on {{ dateFormat "2 Jan, 2006" .Date }}
         </div>
@@ -65,7 +69,9 @@
     {{ $tag_color := .Site.Params.categories_colors }}
         <div class="postcard">
         <h2 class="post-title">{{ .Title }}</h2>
-        <p>{{ .Content }}</p>
+        <div class="postcard-content">
+          <p>{{ .Content }}</p>
+        </div>
         <div class="date">
         Posted on {{ dateFormat "2 Jan, 2006" .Date }}
         </div>
