@@ -26,12 +26,12 @@
           </div>
         {{ else if .Params.image }} 
           <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
-            <h2> {{ .Title }} </h2><br>
+            <div class="title"> <h2> {{ .Title }} </2> </div><br>
             <div class="date"> Posted on {{dateFormat "2 Jan, 2006" .Params.date }}   </div>
           </div>
         {{ else }}
         <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Site.Params.defaultBannerImage }});" >
-            <h2> {{ .Title }} </h2><br>
+            <div class="title"> <h2> {{ .Title }} </h2></div><br>
             <div class="date"> Posted on {{dateFormat "2 Jan, 2006" .Params.date }}   </div>
           </div>
         {{ end }}<!--bannerimg-->
@@ -51,13 +51,13 @@
               </div>
             {{ else if .Params.image }} 
               <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
-                <h2> {{ .Title }} </h2><br>
+                <div class="title"> <h2> {{ .Title }} </h2> </div><br>
                 <div class="date"> Posted on {{dateFormat "2 Jan, 2006" .Params.date }}   </div>
               </div>
               
             {{ else }}
                <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Site.Params.defaultBannerImage }});" >
-                 <h2> {{ .Title }} </h2><br>
+                <div class="title"> <h2> {{ .Title }} </h2> </div><br>
                  <div class="date"> Posted on {{dateFormat "2 Jan, 2006" .Params.date }}   </div>
                </div>
             {{ end }} <!--bannerimg-->
@@ -65,8 +65,8 @@
         {{ end }}<!--exclude StatBanner-->
       {{ end }}<!--range ByDate.Reverse-->
     {{ end }}<!--from post-->
+  <script src="{{ .Site.BaseURL }}js/topic.js"></script>
   </div> <!-- topic_list -->
-
 </div> <!-- sidebar -->
 
 <div class="links">
