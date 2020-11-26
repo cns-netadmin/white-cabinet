@@ -129,32 +129,28 @@
   .topic div.date {
     font-size:9px;
   }
-
 }
 @media screen and (max-width: 720px) {
   .topic div.date {
-
-   /* height: 1vw; */
     position:absolute;
     font-size: 13px;
     color: #555;
     justify-content: center; 
     text-align: center;
-
     position: absolute;
-    bottom: 5.6vw;
-    height: 3vw;
-    padding-bottom:3vw;
+    bottom: 7px;
+    height: 13px;
     z-index: 4;
-    margin-left: 11vw;
+    margin-left: 52px;
+    padding-bottom: 23px;
   }
-
   .topic div.title {
     font-size:15px;
-    height: 38vw;
-    width: 59vw;
+    height: 170px;
+    width: 215px;
+    padding-left:  12px;
+    padding-right: 12px;
   }
-
 }
 
 .topic_list {
