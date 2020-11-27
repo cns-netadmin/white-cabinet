@@ -56,8 +56,8 @@ enableEmoji = true
 #  location = "Location"
 ########################################
 
-  logo = "img/hugo_logo.png"
-  favicon = "img/favicon.ico"
+  logo = "img/white_cabinet_logo.png"
+  favicon = "favicon.ico"
   dateFormat = "2006/01/02"
   defaultBannerImage = "img/banners/WhiteCabinet_defaultBannerImage.PNG"
   commit = false
