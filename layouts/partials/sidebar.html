@@ -26,7 +26,7 @@
           </div>
         {{ else if .Params.image }} 
           <div class="topic bannersize" onKeyPress="return true" onClick="link('{{ .Site.BaseURL }}{{ .RelPermalink }}')" style="background-image: url({{ .Site.BaseURL }}{{ .Params.image }});" >
-            <div class="title"> <h2> {{ .Title }} </2> </div><br>
+            <div class="title"> <h2> {{ .Title }} </h2> </div><br>
             <div class="date"> Posted on {{dateFormat "2 Jan, 2006" .Params.date }}   </div>
           </div>
         {{ else }}
