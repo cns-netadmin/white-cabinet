@@ -112,13 +112,18 @@
   position: relative;
   bottom: -8px;
   display: block;
-  width: 58vw;
+  width: 100%;
   height: 2px;
-  left: 29.5vw;
+  left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background-color: #ccc;
   border-radius: 2px;
+}
+
+div.nest div.postcard h2.post-title:after {
+    width: 100%; 
+    left: 50%;
 }
 
 .postcard::before {
@@ -219,9 +224,8 @@ div.tags{
     content: "";
   }
 
-
   .tags a.tagbutton {
-    float: right;
+    float: left;
     font-size: 5px;
     border: solid 1px white;
   }
@@ -237,6 +241,11 @@ div.tags{
     transform: translateX(-50%);
     background-color: #ccc;
     border-radius: 2px;
+  }
+
+  div.nest div.postcard h2.post-title:after {
+    width: 100%;
+    left: 50%;
   }
 
   .postcard div.postcard-content {
