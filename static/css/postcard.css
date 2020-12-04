@@ -112,9 +112,9 @@
   position: relative;
   bottom: -8px;
   display: block;
-  width: 58vw;
+  width: 100%;
   height: 2px;
-  left: 29.5vw;
+  left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   background-color: #ccc;
@@ -134,7 +134,7 @@
 }
 
 div.tags{
-  top: -7px;
+  top: -11px;
   display: table;
   border-collapse: separate;
   border-spacing: 3px 0;
@@ -142,7 +142,7 @@ div.tags{
   text-align: center;
   vertical-align: middle;
   text-align: left;
-  width: 61vw;
+  width: 100%;
 }
 
 .tags a.tagbutton {
@@ -156,6 +156,7 @@ div.tags{
   border: solid 1px gray;
   color: white;
   transition: .4s;
+  float: right;
 }
 
 .tags a.tagbutton:hover {
@@ -200,9 +201,7 @@ div.tags{
             
   .postcard div.tags {
     position: relative;
-    left: -1.7vw;
-    top: -24px;
-    width: 88vw;
+    top: -27px;
   }
   .postcard h2.post-title {
     margin-bottom: 40px;
@@ -219,9 +218,7 @@ div.tags{
     content: "";
   }
 
-
   .tags a.tagbutton {
-    float: right;
     font-size: 5px;
     border: solid 1px white;
   }
@@ -237,6 +234,11 @@ div.tags{
     transform: translateX(-50%);
     background-color: #ccc;
     border-radius: 2px;
+  }
+
+  div.nest div.postcard h2.post-title:after {
+    width: 100%;
+    left: 50%;
   }
 
   .postcard div.postcard-content {
