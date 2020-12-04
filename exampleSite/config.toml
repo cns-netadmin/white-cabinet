@@ -126,6 +126,13 @@ enableEmoji = true
     weight = 3
     pre = "open"
     post = "postcard"
+
+[[menu.main]]
+    identifier = "basic"
+    name = "Hugo basic example"
+    url = "/basic"
+    weight = 4
+    pre = "closed"
     
 #### For advance user ######################################
 ## in the case using HTML, uncomment following two lines ###
