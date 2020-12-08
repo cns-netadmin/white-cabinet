@@ -41,13 +41,13 @@ To see how it looks, check out our **[Demo page]({{< ref "/" >}})**!
 ```
             $ mkdir -p /foo/bar/themes
             $ cd /foo/bar/themes
-            $ git clone ---NEED TO CHECK---
+            $ git clone https://github.com/cns-netadmin/white-cabinet.git
 ```
 
 3. **Quick start:** You can check out the demo page we have prepared by building Hugo locally:
 
 ```
-            $ cp white_cabinet_themes/demo-page/ /foo/bar/
+            $ cp -r white_cabinet_themes/exampleSite/ /foo/bar/
             $ hugo server
 ```
 
