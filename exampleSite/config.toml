@@ -1,0 +1,140 @@
+baseurl = "https://example.com"
+
+contentdir    = "content"
+layoutdir     = "layouts"
+publishdir    = "public"
+canonifyurls  = true
+
+DefaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+theme = "white_cabinet_theme"
+metaDataFormat = "yaml"
+pygmentsUseClasses = true
+pygmentCodeFences = true
+enableEmoji = true
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
+
+#title = "White Cabinet" #for single language
+
+##### For multilingual #####################
+[Languages]
+[Languages.en]
+  weight = 1
+  title = "White Cabinet"
+[Languages.en.params]
+  Language_name="English" 
+  subtitle = "Hugo Theme"
+  link = "Links"
+  linkPath = "en/link"
+  sitemap = "Quicklinks"
+  location = "Location"
+  address = [
+    "greenwich.md",
+    "individual.md"
+    ]
+    
+[Languages.ja]
+  weight = 2
+  title = "White Cabinet"
+[Languages.ja.params]
+  Language_name="日本語" 
+  subtitle = "日本語ページ"
+  link = "関連リンクはこちら"
+  linkPath = "en/link"
+  sitemap = "サイトマップ"
+  location = "所在地"
+
+#########################################
+
+[Params]
+####For single language ################
+#  subtitle = "Hugo Theme"
+#  link = "Links"
+#  linkPath = "/link"
+#  sitemap = "Quicklinks"
+#  location = "Location"
+########################################
+
+  logo = "img/white_cabinet_logo.png"
+  faviconDir = "img/favicon"
+  dateFormat = "2006/01/02"
+  defaultBannerImage = "img/banners/WhiteCabinet_defaultBannerImage.PNG"
+  commit = false
+  rss = true
+  comments = true
+  math = true
+  
+  top_figures = [
+    "img/topfigure1.jpg",
+    "img/topfigure2.jpg",
+    "img/topfigure3.jpg",
+    "img/topfigure4.jpg",
+    "img/topfigure5.jpg",
+  ]
+  sidebar_maxnum = 10
+  sidebar_url = "/post"
+  # categories_colors = [
+  #   "Information", "red",
+  #   "News", "blue",
+  #   "Event", "green"
+  #  ]
+  ribbon_color = "#a9a9a9"
+
+  copy_year = "2020"
+  copy_name = "Center for Nuclear Study, the University of Tokyo"
+
+[[Params.category_colors]]
+  Information = "#8b0000"
+  News = "#00008b"
+  Event = "#2f4f4f"
+  
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+
+##### Header menu ##############################
+[[menu.header]]
+    name = "Home"
+    url = "/"
+    weight = 1
+[[menu.header]]
+    name = "Access"
+    url = "/access"
+    weight = 2
+
+##### Accordion menu ##############################
+[[menu.main]]
+    identifier = "about"
+    name = "Welcome to the 'White Cabinet' Demo Page"
+    url = "/about"
+    weight = 1
+    pre = "closed"
+
+[[menu.main]]
+    identifier = "features"
+    name = "Features of the White Cabinet theme"
+    url = "/features"
+    weight = 2
+    pre = "open"
+    
+[[menu.main]]
+    identifier = "post"
+    name = "Demonstration of the postcard style"
+    url = "/post"
+    weight = 3
+    pre = "open"
+    post = "postcard"
+
+[[menu.main]]
+    identifier = "basic"
+    name = "Hugo basic example"
+    url = "/basic"
+    weight = 4
+    pre = "closed"
+    
+#### For advance user ######################################
+## in the case using HTML, uncomment following two lines ###
+[markup.goldmark.renderer]
+  unsafe = true

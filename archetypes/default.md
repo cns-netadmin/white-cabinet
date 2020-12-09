@@ -23,6 +23,9 @@ weight = 3
 #For main menu contents
 #mktile false
 
+### When you use shortcodes [textlist, tilelist, postlist], enable next line ###
+#layout = "single"
+
 #For Local
 draft = false
 +++

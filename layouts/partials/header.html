@@ -6,11 +6,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if not .IsHome }}{{ .Title }}｜{{ end }}{{ .Site.Title }}</title>
+  <!-- favicon settings -->
+  <link rel="icon" href="{{ .Site.BaseURL }}{{ .Site.Params.faviconDir }}/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}{{ .Site.Params.faviconDir }}/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}{{ .Site.Params.faviconDir }}/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}{{ .Site.Params.faviconDir }}/favicon-16x16.png">
+  <link rel="manifest" href="{{ .Site.BaseURL }}{{ .Site.Params.faviconDir }}/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <!-- end favicon settings -->
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/header.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/postcard.css">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/category_tag.css">
   <link rel="stylesheet" href="{{ $.Site.BaseURL }}css/all.min.css">
   <script src="{{ .Site.BaseURL }}js/jquery-3.4.1.min.js"></script>
 

@@ -2,13 +2,23 @@
 {{- if not $title -}}
     {{- $title := "Upcoming Events" -}}
 {{- end -}}
-<div class="posts-title" >{{ $title }}</div>
+
+{{ $upcoming_posts := slice }}
 {{ range (where (.Site.RegularPages.ByParam "eventEndDate") "Section" "post").ByDate.Reverse }}
   {{ $FormattedNow := (now.AddDate 0 0 -1) }}
   {{ if le $FormattedNow .Params.eventEndDate }}
-    {{ partial "postcard" (dict "context" . "card_type" "upcoming" ) }}
+    {{ $upcoming_posts = $upcoming_posts | append . }}
   {{ end }}
-<!-- Add alternate content to show when there is no upcoming event -->
 {{ end }}
+
+{{ if ge (len $upcoming_posts) 1 }} 
+  <div class="posts-title" >{{ $title }}</div>
+
+{{- range $upcoming_posts }} 
+  {{ partial "postcard" (dict "context" . "card_type" "upcoming" ) }}
+{{- end }} 
+
 <br>
 <br>
+
+{{ end }} 

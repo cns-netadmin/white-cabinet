@@ -82,14 +82,16 @@
 }
 
 .postcard h2.post-title{
-  margin-top : 12px;
+  margin-top : 0px;
   color: black;
+  width: 100%;
   font-size: 18px;
   position: relative;
   display: inline-block;
   margin-bottom: 1em;
 }
 
+/*
 .postcard h2.post-title:before {
   content: '';
   position: absolute;
@@ -97,6 +99,21 @@
   display: inline-block;
   width: 100%;
   height: 1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #ccc;
+  border-radius: 2px;
+}
+*/
+
+.postcard h2.post-title:after {
+  content: '';
+  position: relative;
+  bottom: -8px;
+  display: block;
+  width: 100%;
+  height: 2px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -111,21 +128,21 @@
   left: 0;
   width: 100%;
   height: 100px;
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.8) 60%, rgba(255,254,253,1.0) 100%);
-  background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 60%, rgba(255,254,253,1.0) 100%);
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.8) 60%, rgba(255,254,253,1.0) 100%);
+  background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 40%, rgba(255,255,255,0.9) 60%, rgba(255,254,253,1.0) 100%);
   content: "";
 }
 
 div.tags{
+  top: -11px;
   display: table;
   border-collapse: separate;
   border-spacing: 3px 0;
-  position: absolute;
+  position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 100%;
-  height: auto;
   text-align: left;
+  width: 100%;
 }
 
 .tags a.tagbutton {
@@ -139,6 +156,7 @@ div.tags{
   border: solid 1px gray;
   color: white;
   transition: .4s;
+  float: right;
 }
 
 .tags a.tagbutton:hover {
@@ -148,35 +166,46 @@ div.tags{
 }
 
 
+
 .postcard div.eventdate {
   position: relative;
-  background-color: #2a2a2a;
-  padding: 3px 8px 3px 8px;
+  background-color: #020202;
+  padding: 5px 10px 5px 10px;
+  margin: 0px 0px 5px 0px;
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   border-radius: 2px;
-  width: 180px;
+  width: 250px;
   height: auto;
-  color: #eef;
+  color: #fff;
 }
 
-@media screen and (min-width: 720px) {
-  .postcard div.tags {
-    left: calc(100% + 3px);
-    top: 3px;
-  }
+.postcard div.date {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #f2f2f2;
+  padding: 2px 5px 5px 5px;
+  text-align: center;
+  font-size: 10px;
+  border-radius: 2px;
+  height: auto;
+  color: #000;
 }
 
 @media screen and (max-width: 720px) {
-  .postcard div.eventdate {
-    margin-bottom: 10px;
+  .postcard h2.post-title:before {
+    bottom : 16px;
+    width : 100%;
   }
+            
   .postcard div.tags {
-    left: -5px;
-    top: 31px;
+    position: relative;
+    top: -27px;
   }
   .postcard h2.post-title {
-    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 15px;
   }
 
   .postcard {
@@ -184,22 +213,45 @@ div.tags{
     width: 90%;
   }
   .postcard::before {
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.9) 80%, rgba(255,254,253,1.0) 100%);
-    background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.9) 80%, rgba(255,254,253,1.0) 100%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 40%, rgba(255,255,255,0.9) 60%, rgba(255,254,253,1.0) 100%);
+    background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 40%, rgba(255,255,255,0.9) 60%, rgba(255,254,253,1.0) 100%);
     content: "";
   }
 
-  .tags div a.tagbutton {
+  .tags a.tagbutton {
     font-size: 5px;
     border: solid 1px white;
   }
+
+  .postcard h2.post-title:after {
+    position: relative;
+    bottom: -12px;
+    display: block;
+    width: 84vw;
+    height: 2px;
+    left: 42.5vw;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #ccc;
+    border-radius: 2px;
+  }
+
+  div.nest div.postcard h2.post-title:after {
+    width: 100%;
+    left: 50%;
+  }
+
+  .postcard div.postcard-content {
+    margin-top: -31px;
+  }
+
 }
 
 /* the default tag button */
 .postcard .read-more{
   position: absolute;
   bottom: 20px;
-  box-shadow: 0 0 4px white;
+  box-shadow: 0 0px 4px white;
   right: 20px;
   width: auto;
   font-size: 12px;
@@ -230,7 +282,7 @@ div.tags{
 .posts-title {
   text-align: center;
   font-size: 18px;
-  margin-top: 15px;
+  margin-top: 18px;
   margin-left: 70px;
   color: #124;
   margin-right: 70px;
@@ -238,3 +290,4 @@ div.tags{
   background: -moz-linear-gradient(top, #fff 0%, #eee 50%, #ddd 51%, #fff 100%); /* firefox */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(50%,#eee), color-stop(51%,#ddd), color-stop(100%,#fff)); /* webkit */
   -pie-background:linear-gradient(top, #fff 0%, #eee 50%, #ddd 51%, #fff 100%);
+}

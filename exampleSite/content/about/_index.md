@@ -1,14 +1,25 @@
++++
+title =  "Welcome to White Cabinet demo page"
+date = 2019-07-21T14:06:22+09:00
+tags = [""]
+image = ""
+draft = false
+weight = "1"
+layout = "single"
++++
+
 # The White Cabinet theme for Hugo
 
-![The image of the webpage created by the White Cabinet](https://github.com/cns-netadmin/white-cabinet/blob/develop/images/tn.png)
+![The image of the webpage created by the White Cabinet](/img/thumbnail.png)
 
+<!--check "CHECK"-->
 Furnished with a simple design and numerous features, the White Cabinet theme serves as a versatile basis for your website construction.
 
 By making use of the responsive menu styles organized into a classical block-based layout, you and your visitors can obtain the necessary information at ease, just like opening a ***cabinet***. By keeping the base color ***white***, it will match any content, from a daily blog to the introduction of a research institute.
 
 ## Key features
 
-![Main components of the White Cabinet](https://github.com/cns-netadmin/white-cabinet/blob/develop/exampleSite/static/img/white_cabinet_components.png)
+![Main components of the White Cabinet](/img/white_cabinet_components.png)
 
 Some of the features that make the White Cabinet unique are:
 
@@ -19,7 +30,7 @@ Some of the features that make the White Cabinet unique are:
 - uncomplicated footer serving as a guide for visitors both in the screen and out on the streets
 - responsive design which allows you to visit the page on your favourite device
 
-To see how it looks, check out our **[Demo page](https://www.cns.s.u-tokyo.ac.jp/white_cabinet/)**! 
+To see how it looks, check out our **[Demo page]({{< ref "/" >}})**! 
 
 
 ## Installation
@@ -28,16 +39,16 @@ To see how it looks, check out our **[Demo page](https://www.cns.s.u-tokyo.ac.jp
 2. Create the directory for the web source (ex. `/foo/bar`) and clone into our git repository
 
 ```
-$ mkdir -p /foo/bar/themes
-$ cd /foo/bar/themes
-$ git clone https://github.com/cns-netadmin/white-cabinet.git
+            $ mkdir -p /foo/bar/themes
+            $ cd /foo/bar/themes
+            $ git clone https://github.com/cns-netadmin/white-cabinet.git
 ```
 
 3. **Quick start:** You can check out the demo page we have prepared by building Hugo locally:
 
 ```
-$ cp white_cabinet_themes/exampleSite/ /foo/bar/
-$ hugo server
+            $ cp -r white_cabinet_themes/exampleSite/ /foo/bar/
+            $ hugo server
 ```
 
 The demo page can be seen at `localhost:1313` in your web browser.
@@ -47,8 +58,9 @@ The demo page can be seen at `localhost:1313` in your web browser.
 Global settings of your website can be customized in the file `config.toml`. At first, edit your server name so that the internal paths are correctly directed:
 
 ```
-baseurl = (YOUR_SERVER_NAME)
+            baseurl = (YOUR_SERVER_NAME)
 ```
 
-We have prepared several pages that demonstrate how you can make full use of the functionalities. See the [Features](https://www.cns.s.u-tokyo.ac.jp/white_cabinet/en/features/) section for details.
+We have prepared several pages that demonstrate how you can make full use of the functionalities. See the [Features]({{< ref "features" >}}) section for details.
+
 
